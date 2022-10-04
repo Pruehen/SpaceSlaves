@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class ShipControl : MonoBehaviour
         laser = this.GetComponent<LineRenderer>();
     }
 
-    public Transform target;
+    public GameObject target;
 
     // Update is called once per frame
     void Update()
@@ -28,18 +29,19 @@ public class ShipControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Attack();
+            Attack(target.transform.position);
         }
 
-        RotateTarget(target.position);
+        RotateTarget(target.transform.position);
     }
 
 
     float defaultLaserWidth = 0.01f;
     float laserWidth;
-    void Attack()
+    void Attack(Vector3 targetPos)
     {
         laserWidth = defaultLaserWidth;
+        laser.SetPosition(1, new Vector3(0, 0, (target.transform.position - this.transform.position).magnitude));
     }
 
     void LaserGrapic()
@@ -52,7 +54,7 @@ public class ShipControl : MonoBehaviour
 
     void MoveFor()
     {
-        rigidbody.AddForce(this.transform.forward * speed * 0.001f, ForceMode.Force);
+        rigidbody.AddForce(this.transform.forward * speed * 0.01f, ForceMode.Force);
     }
 
     void RotateTarget(Vector3 target)
