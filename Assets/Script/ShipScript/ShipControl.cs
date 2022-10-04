@@ -8,16 +8,27 @@ public class ShipControl : MonoBehaviour
     Rigidbody rigidbody;
     LineRenderer laser;
 
-    float dmg = 10;
-    float hp = 200;
-    float speed = 10;
-    float agility = 10;
+    float dmg = 10;//발당 공격력
+    float fireDelay = 1;//공격 속도
+    float maxRange = 10;//최대 사거리
+    float minRange = 5;//최소 사거리
+    float hp = 100;//체력
+    float df = 1;//방어력
+    float sd = 100;//보호막
+    float speed = 10;//이동 속도
+    float agility = 10;//선회 속도
+
+    float delayCount = 0;
+    bool isRange = false;
+    Vector3 toTargetVec;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
+
+        InvokeRepeating("RangeCheck", 1, 1);
     }
 
     public GameObject target;
@@ -26,25 +37,36 @@ public class ShipControl : MonoBehaviour
     void Update()
     {
         LaserGrapic();
+        toTargetVec = target.transform.position - this.transform.position;
+        Vector3 toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        RotateTarget(toTargetVec_Local.x);
+
+        if(delayCount <= fireDelay)
         {
-            Attack(target.transform.position);
+            delayCount += Time.deltaTime;
         }
 
-        RotateTarget(target.transform.position);
+        if (isRange && delayCount > fireDelay)
+        {
+            delayCount = 0;
+            Attack();
+        }
+
+        MoveFor();
+
     }
 
 
     float defaultLaserWidth = 0.01f;
     float laserWidth;
-    void Attack(Vector3 targetPos)
+    void Attack()//공격 함수
     {
         laserWidth = defaultLaserWidth;
-        laser.SetPosition(1, new Vector3(0, 0, (target.transform.position - this.transform.position).magnitude));
+        laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
     }
 
-    void LaserGrapic()
+    void LaserGrapic()//레이저 길이 그려주는 함수. 임시
     {
         laser.startWidth = laserWidth;
         laser.endWidth = laserWidth;
@@ -52,16 +74,37 @@ public class ShipControl : MonoBehaviour
         laserWidth *= 0.95f;
     }
 
-    void MoveFor()
+    void MoveFor()//전진 명령 함수
     {
-        rigidbody.AddForce(this.transform.forward * speed * 0.01f, ForceMode.Force);
+        rigidbody.AddForce(this.transform.forward * speed * 0.001f, ForceMode.Force);
     }
 
-    void RotateTarget(Vector3 target)
+    void MoveBack()//후진 명령 함수
     {
-        Vector3 toTargetVec = target - this.transform.position;
-        toTargetVec = this.transform.InverseTransformDirection(toTargetVec);
+        rigidbody.AddForce(-this.transform.forward * speed * 0.001f, ForceMode.Force);
+    }
 
-        rigidbody.AddTorque(this.transform.up * agility * 0.001f * toTargetVec.x, ForceMode.Force);
+    void RotateTarget(float rotateOrder)//타겟 방향으로 방향 전환 함수
+    {
+        rigidbody.AddTorque(this.transform.up * agility * 0.0001f * rotateOrder, ForceMode.Force);
+    }
+
+    void RangeCheck()//타겟과의 거리 체크 함수. invoke로 초당 1회씩 호출
+    {
+        if(target == null)
+        {
+            return;
+        }
+
+        Debug.Log(toTargetVec.magnitude * 10);
+
+        if (toTargetVec.magnitude * 10 < maxRange && toTargetVec.magnitude * 10 > minRange)
+        {
+            isRange = true;
+        }
+        else
+        {
+            isRange = false;
+        }
     }
 }
