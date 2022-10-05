@@ -7,7 +7,7 @@ public class ScvMove : MonoBehaviour
     [SerializeField] Transform baseTrf, mineralTrf;
 
     Vector3 target;
-    bool isMindir = true;//지금 미네랄로 향하고 있는가?
+    bool isMindir = false;//지금 미네랄로 향하고 있는가?
 
     public GameObject mineral_Dumy;//자기가 들고 있는 광물더미
 
@@ -15,6 +15,7 @@ public class ScvMove : MonoBehaviour
     void Start()
     {
         DirSet();
+        LaborSceneManager.instance.SetMinUI();
     }
 
     float moveSpeed = 3;
