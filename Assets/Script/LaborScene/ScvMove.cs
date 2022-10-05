@@ -37,13 +37,13 @@ public class ScvMove : MonoBehaviour
         {
             target = mineralTrf.position;
             mineral_Dumy.SetActive(false);
+
+            MinGet();
         }
         else
         {
             target = baseTrf.position;
             mineral_Dumy.SetActive(true);
-
-            MinGet();
         }
         this.transform.forward = target - this.transform.position;
     }
@@ -51,5 +51,6 @@ public class ScvMove : MonoBehaviour
     void MinGet()//광물 수집 함수
     {
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, minAmount);
+        LaborSceneManager.instance.SetMinUI();
     }
 }

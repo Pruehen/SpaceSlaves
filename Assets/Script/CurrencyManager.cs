@@ -18,7 +18,8 @@ public class CurrencyManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
+            return;
         }
 
         instance = this;

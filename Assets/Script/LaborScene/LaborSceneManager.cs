@@ -7,14 +7,26 @@ using TMPro;
 
 public class LaborSceneManager : MonoBehaviour
 {
+    public static LaborSceneManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void ToBattleScene()
     {
         SceneManager.LoadScene("DefenceScene");
     }
 
     public TextMeshProUGUI minText;
-    void SetMinUI()
+    public void SetMinUI()
     {
-        //minText.text = CurrencyManager.instance.cu
+        minText.text = CurrencyManager.instance.GetCurrency(CURRENCY_TYPE.Mineral).ToString();
+    }
+
+    public GameObject buildWdw;
+    public void BuildWdwTogle(bool value)
+    {
+        buildWdw.SetActive(value);
     }
 }
