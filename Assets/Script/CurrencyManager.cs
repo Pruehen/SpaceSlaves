@@ -1,5 +1,7 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 // 재화타입
 public enum CURRENCY_TYPE
@@ -11,6 +13,17 @@ public enum CURRENCY_TYPE
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this);
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this);
+    }
 
     int minerals = 0;
     int debris = 0;
@@ -58,11 +71,8 @@ public class CurrencyManager : MonoBehaviour
 
     public void Save()
     { 
-    
     }
-
-    public void load()
-    { 
-    
+    public void LoadData()
+    {      
     }
 }
