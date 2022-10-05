@@ -21,16 +21,16 @@ public class ShipControl : MonoBehaviour
     float delayCount = 0;
     bool isRange = false;
     Vector3 toTargetVec;
-    public List<GameObject> FoundTarget;
+    public List<GameObject> FoundTarget = new List<GameObject>();
 
-    public string TargetTag;
+    public GameObject Targets;
 
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
 
-         InvokeRepeating("TargetFound", 1, 1);
+        InvokeRepeating("TargetFound", 1, 1);
     }
 
     private GameObject target;
@@ -40,7 +40,6 @@ public class ShipControl : MonoBehaviour
     void Update()
     {
         LaserGrapic();
-        //TargetFound();
         toTargetVec = target.transform.position - this.transform.position;//≈∏∞Ÿ¿ª «‚«œ¥¬ ∫§≈Õ
         Vector3 toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//¿ß ∫§≈Õ¿« ∑Œƒ√»≠
 
@@ -63,16 +62,21 @@ public class ShipControl : MonoBehaviour
     void TargetFound()
     {
         float ShortDis;
-        FoundTarget = new List<GameObject>(GameObject.FindGameObjectsWithTag(TargetTag));
+
+        for (int i = 0; i < Targets.transform.childCount; i++)
+        {
+            FoundTarget.Add(Targets.transform.GetChild(i).gameObject);
+        }
+
         ShortDis = Vector3.Distance(gameObject.transform.position, FoundTarget[0].transform.position);
 
         target = FoundTarget[0];
-        
-        foreach(GameObject found in FoundTarget)
+
+        foreach (GameObject found in FoundTarget)
         {
             float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
 
-            if(Distance < ShortDis)
+            if (Distance < ShortDis)
             {
                 target = found;
                 ShortDis = Distance;
