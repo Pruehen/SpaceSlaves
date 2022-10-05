@@ -28,25 +28,7 @@ public class CurrencyManager : MonoBehaviour
 
     int minerals = 0;
     int debris = 0;
-
-    public void AddCurrency(CURRENCY_TYPE type, int amount)
-    {
-        ref int currency = ref minerals;
-        switch (type)
-        {
-            case CURRENCY_TYPE.Mineral:
-                currency = ref minerals;
-                break;
-            case CURRENCY_TYPE.Debri:
-                currency = ref debris;
-                break;
-            default:
-                break;
-        }
-
-        currency += amount;
-    }
-    public int GetCurrency(CURRENCY_TYPE type)
+    public ref int GetCurrency(CURRENCY_TYPE type)
     {
         ref int cur = ref minerals;
 
@@ -61,24 +43,21 @@ public class CurrencyManager : MonoBehaviour
             default:
                 break;
         }
-        return cur;
+        return ref cur;
+    }
+
+    public void AddCurrency(CURRENCY_TYPE type, int amount)
+    {
+        ref int currency = ref minerals;
+        currency = GetCurrency(type);
+        currency += amount;
     }
 
 
     public bool CostCurrency(CURRENCY_TYPE type, int amount)
     {
         ref int currency = ref minerals;
-        switch (type)
-        {
-            case CURRENCY_TYPE.Mineral:
-                currency = ref minerals;
-                break;
-            case CURRENCY_TYPE.Debri:
-                currency = ref debris;
-                break;
-            default:
-                break;
-        }
+        currency = GetCurrency(type);
 
         if (currency >= amount)
         {             

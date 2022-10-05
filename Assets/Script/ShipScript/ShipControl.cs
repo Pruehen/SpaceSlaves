@@ -30,7 +30,7 @@ public class ShipControl : MonoBehaviour
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
 
-        InvokeRepeating("RangeCheck()", 1, 1);
+         InvokeRepeating("TargetFound", 1, 1);
     }
 
     private GameObject target;
@@ -41,8 +41,8 @@ public class ShipControl : MonoBehaviour
     {
         LaserGrapic();
         //TargetFound();
-        toTargetVec = target.transform.position - this.transform.position;
-        Vector3 toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;
+        toTargetVec = target.transform.position - this.transform.position;//≈∏∞Ÿ¿ª «‚«œ¥¬ ∫§≈Õ
+        Vector3 toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//¿ß ∫§≈Õ¿« ∑Œƒ√»≠
 
         RotateTarget(toTargetVec_Local.x);
 
@@ -60,7 +60,7 @@ public class ShipControl : MonoBehaviour
         MoveFor();
     }
 
-    public void TargetFound()
+    void TargetFound()
     {
         float ShortDis;
         FoundTarget = new List<GameObject>(GameObject.FindGameObjectsWithTag(TargetTag));
