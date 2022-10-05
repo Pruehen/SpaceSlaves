@@ -1,5 +1,7 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -12,9 +14,12 @@ public enum UPGRADE_TYPE
 }
 
 
+// 유저가 진행한 업그래이드를 기록하고 저장하고 있다
 public class UpgradeManager : MonoBehaviour
 {
-    public UpgradeManager instance;
+    string _saveFileName = "/upgrade_prog_data.json";
+
+    public static  UpgradeManager instance;
 
     // id 규칙 
     // 1000 단위로 카테고리 변경
@@ -50,18 +55,43 @@ public class UpgradeManager : MonoBehaviour
 
     public void NewUpgrade(string id)
     {
-        UpgradeActiveDict.Add(id, true);
-    }
+        // 무결성 체크
+        if (true)
+        {
 
-    public void LoadData()
-    { 
+        }  
+
+        UpgradeActiveDict.Add(id, true);
     }
     public void SaveData()
     {
+        var data =  JsonConvert.SerializeObject(UpgradeActiveDict);
+        
+        File.WriteAllText(Application.dataPath + _saveFileName, data);
     }
+    public void LoadData()
+    {
+        var fileData = File.ReadAllText(Application.dataPath + _saveFileName);
+        var data = JsonConvert.DeserializeObject<Dictionary<string, bool>>(fileData);
+        /*
+        ??
+        */
+        UpgradeActiveDict = data;
+    }
+
+    public void _ViewData()
+    {
+        var data = JsonConvert.SerializeObject(UpgradeActiveDict);
+        Debug.Log(data);
+    }
+
 
     private void Start()
     {
-        
+
+        NewUpgrade("1000");
+        NewUpgrade("1001");
+        //LoadData();
+        SaveData();
     }
 }
