@@ -30,7 +30,7 @@ public class ShipControl : MonoBehaviour
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
 
-        InvokeRepeating("TargetFound", 1, 1);
+         InvokeRepeating("TargetFound", 1, 1);
     }
 
     private GameObject target;
