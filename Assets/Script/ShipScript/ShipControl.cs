@@ -21,23 +21,27 @@ public class ShipControl : MonoBehaviour
     float delayCount = 0;
     bool isRange = false;
     Vector3 toTargetVec;
+    public List<GameObject> FoundTarget;
 
-    // Start is called before the first frame update
+    public string TargetTag;
+
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
 
-        InvokeRepeating("RangeCheck", 1, 1);
+        //InvokeRepeating("RangeCheck()", 1, 1);
     }
 
-    public GameObject target;
+    private GameObject target;
 
-    // Update is called once per frame
+    Vector3[] Distance;
+
     void Update()
     {
         LaserGrapic();
-        toTargetVec = target.transform.position - this.transform.position;
+        TargetFound();
+        toTargetVec = target.transform.position;
         Vector3 toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;
 
         RotateTarget(toTargetVec_Local.x);
@@ -54,12 +58,35 @@ public class ShipControl : MonoBehaviour
         }
 
         MoveFor();
-
     }
 
+    public void TargetFound()
+    {
+        float ShortDis;
+        FoundTarget = new List<GameObject>(GameObject.FindGameObjectsWithTag(TargetTag));
+        ShortDis = Vector3.Distance(gameObject.transform.position, FoundTarget[0].transform.position);
+
+        target = FoundTarget[0];
+        
+        foreach(GameObject found in FoundTarget)
+        {
+            float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
+
+            if(Distance < ShortDis)
+            {
+                target = found;
+                ShortDis = Distance;
+            }
+        }
+
+        Debug.Log(target);
+
+        RangeCheck();
+    }
 
     float defaultLaserWidth = 0.01f;
     float laserWidth;
+
     void Attack()//공격 함수
     {
         laserWidth = defaultLaserWidth;
