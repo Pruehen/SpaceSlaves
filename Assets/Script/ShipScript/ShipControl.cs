@@ -12,6 +12,7 @@ public class ShipControl : MonoBehaviour
     float fireDelay = 1;//공격 속도
     float maxRange = 10;//최대 사거리
     float minRange = 5;//최소 사거리
+    float fitRange = 7;
     float hp = 100;//체력
     float df = 1;//방어력
     float sd = 100;//보호막
@@ -21,26 +22,23 @@ public class ShipControl : MonoBehaviour
     float delayCount = 0;
     bool isRange = false;
     Vector3 toTargetVec;
-    public List<GameObject> FoundTarget;
+    public List<GameObject> FoundTarget = new List<GameObject>();
 
-    public string TargetTag;
+    public GameObject Targets;
 
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
 
-         InvokeRepeating("TargetFound", 1, 1);
+        InvokeRepeating("TargetFound", 1, 1);
     }
 
     private GameObject target;
 
-    Vector3[] Distance;
-
     void Update()
     {
         LaserGrapic();
-        //TargetFound();
         toTargetVec = target.transform.position - this.transform.position;//타겟을 향하는 벡터
         Vector3 toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//위 벡터의 로컬화
 
@@ -57,22 +55,35 @@ public class ShipControl : MonoBehaviour
             Attack();
         }
 
-        MoveFor();
+        if (toTargetVec.magnitude * 10 > fitRange)
+        {
+            MoveFor();
+
+        }
+        else if (toTargetVec.magnitude * 10 <= fitRange)
+        {
+            MoveBack();
+        }
     }
 
     void TargetFound()
     {
         float ShortDis;
-        FoundTarget = new List<GameObject>(GameObject.FindGameObjectsWithTag(TargetTag));
+
+        for (int i = 0; i < Targets.transform.childCount; i++)
+        {
+            FoundTarget.Add(Targets.transform.GetChild(i).gameObject);
+        }
+
         ShortDis = Vector3.Distance(gameObject.transform.position, FoundTarget[0].transform.position);
 
         target = FoundTarget[0];
-        
-        foreach(GameObject found in FoundTarget)
+
+        foreach (GameObject found in FoundTarget)
         {
             float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
 
-            if(Distance < ShortDis)
+            if (Distance < ShortDis)
             {
                 target = found;
                 ShortDis = Distance;
