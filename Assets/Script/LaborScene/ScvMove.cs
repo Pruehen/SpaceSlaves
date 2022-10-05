@@ -18,6 +18,7 @@ public class ScvMove : MonoBehaviour
     }
 
     float moveSpeed = 3;
+    int minAmount = 5;
 
     // Update is called once per frame
     void Update()
@@ -49,6 +50,6 @@ public class ScvMove : MonoBehaviour
 
     void MinGet()//광물 수집 함수
     {
-
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, minAmount);
     }
 }
