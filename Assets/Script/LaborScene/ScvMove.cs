@@ -7,7 +7,7 @@ public class ScvMove : MonoBehaviour
     [SerializeField] Transform baseTrf, mineralTrf;
 
     Vector3 target;
-    bool isMindir = true;//지금 미네랄로 향하고 있는가?
+    bool isMindir = false;//지금 미네랄로 향하고 있는가?
 
     public GameObject mineral_Dumy;//자기가 들고 있는 광물더미
 
@@ -15,9 +15,11 @@ public class ScvMove : MonoBehaviour
     void Start()
     {
         DirSet();
+        LaborSceneManager.instance.SetMinUI();
     }
 
     float moveSpeed = 3;
+    int minAmount = 5;
 
     // Update is called once per frame
     void Update()
@@ -36,6 +38,8 @@ public class ScvMove : MonoBehaviour
         {
             target = mineralTrf.position;
             mineral_Dumy.SetActive(false);
+
+            MinGet();
         }
         else
         {
@@ -43,5 +47,11 @@ public class ScvMove : MonoBehaviour
             mineral_Dumy.SetActive(true);
         }
         this.transform.forward = target - this.transform.position;
+    }
+
+    void MinGet()//광물 수집 함수
+    {
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, minAmount);
+        LaborSceneManager.instance.SetMinUI();
     }
 }
