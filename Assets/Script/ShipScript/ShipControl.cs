@@ -35,8 +35,6 @@ public class ShipControl : MonoBehaviour
 
     private GameObject target;
 
-    Vector3[] Distance;
-
     void Update()
     {
         LaserGrapic();
