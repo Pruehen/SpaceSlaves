@@ -41,7 +41,14 @@ public class ScvMove : MonoBehaviour
         {
             target = baseTrf.position;
             mineral_Dumy.SetActive(true);
+
+            MinGet();
         }
         this.transform.forward = target - this.transform.position;
+    }
+
+    void MinGet()//광물 수집 함수
+    {
+
     }
 }
