@@ -57,8 +57,6 @@ public class ShipControl : MonoBehaviour
             delayCount = 0;
             Attack();
         }
-
-        PlayerAi();
     }
 
 
