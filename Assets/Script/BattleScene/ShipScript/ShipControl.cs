@@ -8,6 +8,8 @@ public class ShipControl : MonoBehaviour
     Rigidbody rigidbody;
     LineRenderer laser;
 
+    State state = State.run;
+
     public float dmg = 10;//발당 공격력
     public float fireDelay = 1;//공격 속도
     public float maxRange = 10;//최대 사거리
@@ -33,6 +35,8 @@ public class ShipControl : MonoBehaviour
         laser = this.GetComponent<LineRenderer>();
 
         InvokeRepeating("RangeCheck", 0, 1);
+
+        state = State.run;
     }
 
     public GameObject target;//현재 함선이 지시하고 있는 타겟
@@ -58,7 +62,20 @@ public class ShipControl : MonoBehaviour
             Attack();
         }
 
-        PlayerAi();
+        if(state == State.run)
+        {
+            speed = defaultspeed;
+            MoveFor();
+        }
+        else if(state == State.Idle)
+        {
+            speed = 0;
+        }
+        else if(state == State.Back)
+        {
+            speed = defaultspeed;
+            MoveBack();
+        }
     }
 
 

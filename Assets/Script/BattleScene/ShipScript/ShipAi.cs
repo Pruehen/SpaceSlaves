@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
+public enum State
+{
+    run,
+    Back,
+    Idle
+}
+
 public class ShipAi : MonoBehaviour
 {
     ShipControl mainShipInfo;
-    enum State
-    {
-        run,
-        Back,
-        Idle
-    }
+
 
     State state = State.run;
+
     void Start()
     {
         mainShipInfo = this.gameObject.GetComponent<ShipControl>();
@@ -24,15 +27,18 @@ public class ShipAi : MonoBehaviour
 
     private void PlayerAi()
     {
-        if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.maxRange)
+        if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.fitRange)
         {
             state = State.run;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        else if (mainShipInfo.toTargetVec.magnitude * 10 < mainShipInfo.fitRange && mainShipInfo.toTargetVec.magnitude * 10 > mainShipInfo.minRange)
+        {
+            state = State.Idle;
+        }
+        else if (mainShipInfo.toTargetVec.magnitude * 10 <= mainShipInfo.minRange)
+        {
+            state = State.Back;
+        }
     }
 
     public Transform enemyManager;//적 트랜스폼 검색 용도
