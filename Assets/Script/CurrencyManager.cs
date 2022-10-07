@@ -81,7 +81,7 @@ public class CurrencyManager : MonoBehaviour
     {      
         if(PlayerPrefs.HasKey("mtx"))
         {
-            minText.text = PlayerPrefs.GetInt("mtx").ToString(); 
+            minerals = PlayerPrefs.GetInt("mtx"); 
         }
     }
 }
