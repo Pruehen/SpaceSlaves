@@ -22,7 +22,7 @@ public class ShipControl : MonoBehaviour
     float fireDelay = 1;//공격 속도
     float maxRange = 10;//최대 사거리
     float minRange = 5;//최소 사거리
-    float fitRange = 7;
+    public float fitRange = 5.5f;
     float hp = 100;//체력
     float df = 1;//방어력
     float sd = 100;//보호막
