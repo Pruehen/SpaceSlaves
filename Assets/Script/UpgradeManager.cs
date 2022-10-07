@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 
 public enum UPGRADE_TYPE 
 {
+    // 변경하지 말것
     SCV_MORE =1,
     SCV_SPEED_UP =2,
     SCV_AMOUNT_UP = 3,
@@ -35,10 +36,24 @@ public class UpgradeManager : MonoBehaviour
     // "id / 활성화됨"  으로 구성된 딕셔너리
     Dictionary<string, bool> UpgradeActiveDict = new Dictionary<string, bool>();
 
+    Dictionary<string, int> UpgradeTotal = new Dictionary<string, int>();
+
     public float GetTotalActiveVal(UPGRADE_TYPE type)
     {
-        float val = 0;
-        return val;
+        int id = (int)type * 1000;
+        if (!UpgradeTotal.ContainsKey(type.ToString()))
+        { 
+            int idx = id;
+            // 해당 업글이 활성화 되있는지 체크
+            while (UpgradeActiveDict.ContainsKey(idx.ToString()))
+            {
+                // 토탈에 static에서 얻어온 값을 더한다.
+                UpgradeTotal[type.ToString()] += UpgradeStaticManager.instance.GetVal(idx);
+                idx++;
+            }                
+        }  
+
+        return UpgradeTotal[type.ToString()];
     }
 
     //check 조건
@@ -52,7 +67,6 @@ public class UpgradeManager : MonoBehaviour
         return true;
     }
 
-
     public void NewUpgrade(string id)
     {
         // 무결성 체크
@@ -63,6 +77,8 @@ public class UpgradeManager : MonoBehaviour
 
         UpgradeActiveDict.Add(id, true);
     }
+
+
     public void SaveData()
     {
         var data =  JsonConvert.SerializeObject(UpgradeActiveDict);
