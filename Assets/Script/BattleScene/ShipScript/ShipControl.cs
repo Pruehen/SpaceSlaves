@@ -5,110 +5,60 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
-    enum State
-    {
-        run,
-        Back,
-        Idle
-    }
-
-    State state = State.run;
-
     Rigidbody rigidbody;
     LineRenderer laser;
 
-    float dmg = 10;//발당 공격력
-    float fireDelay = 1;//공격 속도
-    float maxRange = 10;//최대 사거리
-    float minRange = 5;//최소 사거리
-    float fitRange = 7;
-    float hp = 100;//체력
-    float df = 1;//방어력
-    float sd = 100;//보호막
-    float speed = 10;//이동 속도
-    float defaultspeed = 10;//기본 이동 속도
-    float agility = 10;//선회 속도
+    public float dmg = 10;//발당 공격력
+    public float fireDelay = 1;//공격 속도
+    public float maxRange = 10;//최대 사거리
+    public float minRange = 5;//최소 사거리
+    public float fitRange = 7;
+    public float hp = 100;//체력
+    public float df = 1;//방어력
+    public float sd = 100;//보호막
+    public float speed = 10;//이동 속도
+    public float defaultspeed = 10;//기본 이동 속도
+    public float agility = 10;//선회 속도
 
     float delayCount = 0;
-    bool isRange = false;
-    Vector3 toTargetVec;
-    Vector3 toTargetVec_Local;
-    public List<GameObject> FoundTarget = new List<GameObject>();
+    public bool isRange { private set; get; }
 
-    public GameObject Targets;
+    public Vector3 toTargetVec;
+    public Vector3 toTargetVec_Local;
+    public List<GameObject> FoundTarget = new List<GameObject>();
 
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
 
-        InvokeRepeating("TargetFound", 1, 1);
-
-        state = State.run;
+        InvokeRepeating("RangeCheck", 0, 1);
     }
 
-    private GameObject target;
+    public GameObject target;//현재 함선이 지시하고 있는 타겟
 
     void Update()
     {
         LaserGrapic();
-        if(target != null)
+        if(target != null)//타겟벡터 생성제어
         {
             toTargetVec = target.transform.position - this.transform.position;//타겟을 향하는 벡터
             toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//위 벡터의 로컬화
-        }
-        
-
-        RotateTarget(toTargetVec_Local.x);
-
-        if(delayCount <= fireDelay)
+        }       
+        RotateTarget(toTargetVec_Local.x);//함선 자동 회전 제어
+        if (delayCount <= fireDelay)//공격속도 변수 제어
         {
             delayCount += Time.deltaTime;
         }
 
-        if (isRange && delayCount > fireDelay)
+
+        if (isRange && delayCount > fireDelay && toTargetVec_Local.x < 0.1f)//사거리 내 적 자동 공격 제어
         {
             delayCount = 0;
             Attack();
         }
     }
 
-    private void PlayerAi()
-    {
-        if(toTargetVec.magnitude * 10 >= maxRange)
-        {
-            state = State.run;
-        }
-    }
-
-    void TargetFound()
-    {
-        float ShortDis;
-
-        for (int i = 0; i < Targets.transform.childCount; i++)
-        {
-            FoundTarget.Add(Targets.transform.GetChild(i).gameObject);
-        }
-
-        ShortDis = Vector3.Distance(gameObject.transform.position, FoundTarget[0].transform.position);
-
-        target = FoundTarget[0];
-
-        foreach (GameObject found in FoundTarget)
-        {
-            float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
-
-            if (Distance < ShortDis)
-            {
-                target = found;
-                ShortDis = Distance;
-            }
-        }
-
-        Debug.Log(target);
-
-        RangeCheck();
-    }
 
     float defaultLaserWidth = 0.01f;
     float laserWidth;
