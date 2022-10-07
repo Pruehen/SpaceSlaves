@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 // 재화타입
 public enum CURRENCY_TYPE
 {
@@ -13,6 +15,8 @@ public enum CURRENCY_TYPE
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager instance;
+    
+    public TextMeshProUGUI minText; 
 
     private void Awake()
     {
@@ -24,6 +28,8 @@ public class CurrencyManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(this);
+
+        
     }
 
     int minerals = 0;
@@ -68,9 +74,14 @@ public class CurrencyManager : MonoBehaviour
     }
 
     public void Save()
-    { 
+    {
+        PlayerPrefs.SetInt("mtx", int.Parse(minText.text)); 
     }
     public void LoadData()
     {      
+        if(PlayerPrefs.HasKey("mtx"))
+        {
+            minText.text = PlayerPrefs.GetInt("mtx").ToString(); 
+        }
     }
 }
