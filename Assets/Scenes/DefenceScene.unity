@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249468264}
   - component: {fileID: 249468263}
+  - component: {fileID: 249468265}
   m_Layer: 0
   m_Name: BattleSceneManager
   m_TagString: Untagged
@@ -167,6 +168,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249468265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249468262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0406cf9fbd8b68b4bb2b3a0a735e4300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &384780001
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,9 +527,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 249468263}
-        m_TargetAssemblyTypeName: BattleSceneManager, Assembly-CSharp
-        m_MethodName: ToLaborScene
+      - m_Target: {fileID: 249468265}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: GoLaborScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1195,5 +1208,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef4bf8f6584af046ab249ef6558e90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmg: 10
+  fireDelay: 1
+  maxRange: 10
+  minRange: 5
+  fitRange: 5.5
+  hp: 100
+  df: 1
+  sd: 100
+  speed: 10
+  defaultspeed: 10
+  agility: 10
+  toTargetVec: {x: 0, y: 0, z: 0}
+  toTargetVec_Local: {x: 0, y: 0, z: 0}
   FoundTarget: []
-  Targets: {fileID: 1832888570}
+  target: {fileID: 0}

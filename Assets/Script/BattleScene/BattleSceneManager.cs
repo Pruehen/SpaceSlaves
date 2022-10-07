@@ -5,8 +5,5 @@ using UnityEngine.SceneManagement;
 
 public class BattleSceneManager : MonoBehaviour
 {
-    public void ToLaborScene()
-    {
-        SceneManager.LoadScene("LaborScene");
-    }
+
 }

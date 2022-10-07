@@ -13,11 +13,6 @@ public class LaborSceneManager : MonoBehaviour
         instance = this;
     }
 
-    public void ToBattleScene()
-    {
-        SceneManager.LoadScene("DefenceScene");
-    }
-
     public TextMeshProUGUI minText;
     public void SetMinUI()
     {
