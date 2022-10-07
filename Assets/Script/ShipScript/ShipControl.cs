@@ -32,6 +32,7 @@ public class ShipControl : MonoBehaviour
     float delayCount = 0;
     bool isRange = false;
     Vector3 toTargetVec;
+    Vector3 toTargetVec_Local;
     public List<GameObject> FoundTarget = new List<GameObject>();
 
     public GameObject Targets;
@@ -51,8 +52,12 @@ public class ShipControl : MonoBehaviour
     void Update()
     {
         LaserGrapic();
-        toTargetVec = target.transform.position - this.transform.position;//타겟을 향하는 벡터
-        Vector3 toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//위 벡터의 로컬화
+        if(target != null)
+        {
+            toTargetVec = target.transform.position - this.transform.position;//타겟을 향하는 벡터
+            toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//위 벡터의 로컬화
+        }
+        
 
         RotateTarget(toTargetVec_Local.x);
 
