@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    public GameObject SettingWin;
-
     public void GoLaborScene()
     {
         SceneManager.LoadScene("LaborScene");
+    }
+    public void GoDefenceScene()
+    {
+        SceneManager.LoadScene("DefenceScene");
+    }
+
+    public void GoUpgradeScene()
+    {
+        SceneManager.LoadScene("UpgradeScene");
     }
 
     public void ExitButton()
@@ -17,13 +24,4 @@ public class SceneChange : MonoBehaviour
         Application.Quit();
     }
 
-    public void SettingsOn()
-    {
-        SettingWin.SetActive(true);
-    }
-
-    public void SettingOff()
-    {
-        SettingWin.SetActive(false);
-    }
 }
