@@ -21,6 +21,7 @@ public class ShipControl : MonoBehaviour
     public float speed = 10;//이동 속도
     public float defaultspeed = 10;//기본 이동 속도
     public float agility = 10;//선회 속도
+    public bool isDamage = false;
 
     float delayCount = 0;
     public bool isRange { private set; get; }
@@ -82,10 +83,44 @@ public class ShipControl : MonoBehaviour
     float defaultLaserWidth = 0.01f;
     float laserWidth;
 
+    void PlayerHP()
+    {
+        if (isDamage == true)
+        {
+            ShipControl call = target.GetComponent<ShipControl>();
+            if (call.sd > 0)
+            {
+                call.sd -= dmg;
+                Debug.Log(call.sd);
+                if (call.sd < dmg)
+                {
+                    call.hp = call.hp + call.sd + call.df;
+                }
+            }
+            else if (call.sd == 0)
+            {
+                call.hp = call.hp - (call.dmg - call.df);
+                Debug.Log(call.hp);
+            }
+
+            if (call.hp <= 0)
+            {
+                target.SetActive(false);
+                FoundTarget.Remove(target);
+                target = null;
+            }
+        }
+    }
+
     void Attack()//공격 함수
     {
+        if (target == null)
+            return;
+
         laserWidth = defaultLaserWidth;
         laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
+        isDamage = true;
+        PlayerHP();
     }
 
     void LaserGrapic()//레이저 길이 그려주는 함수. 임시
