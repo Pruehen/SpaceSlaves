@@ -27,7 +27,12 @@ public class ShipAi : MonoBehaviour
         TargetSet();
     }
 
-    private void PlayerAi()
+    private void Update()
+    {
+        PlayerAi();
+    }
+
+    public void PlayerAi()
     {
         if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.fitRange)
         {
@@ -72,6 +77,5 @@ public class ShipAi : MonoBehaviour
         {
             mainShipInfo.FoundTarget.Add(enemyManager.GetChild(i).gameObject);
         }
-
     }
 }
