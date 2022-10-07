@@ -86,44 +86,47 @@ public class ShipControl : MonoBehaviour
         }
     }
 
-    void PlayerHP()
+    void PlayerHP(float DMG)
     {
+        ShipControl call = target.GetComponent<ShipControl>();
+
         if (isDamage == true)
         {
-            ShipControl call = target.GetComponent<ShipControl>();
-            if (call.sd > 0)
+            if (sd > 0)
             {
-                call.sd -= dmg;
-                Debug.Log(call.sd);
-                if (call.sd < dmg)
+                sd -= DMG;
+                Debug.Log(sd);
+                if (sd < DMG)
                 {
-                    call.hp = call.hp + call.sd + call.df;
+                    hp = hp + sd + df;
                 }
             }
-            else if (call.sd == 0)
+            else if (sd == 0)
             {
-                call.hp = call.hp - (call.dmg - call.df);
-                Debug.Log(call.hp);
+                hp = hp - (DMG - df);
+                Debug.Log(hp);
             }
 
-            if (call.hp <= 0)
+            if (hp <= 0)
             {
-                target.SetActive(false);
-                FoundTarget.Remove(target);
-                target = null;
+                this.gameObject.SetActive(false);
+                FoundTarget.Remove(this.gameObject);
+                call = null;
             }
         }
     }
 
     void Attack()//공격 함수
     {
+        ShipControl call = target.GetComponent<ShipControl>();
+
         if (target == null)
             return;
 
         laserWidth = defaultLaserWidth;
         laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
         isDamage = true;
-        PlayerHP();
+        PlayerHP(call.dmg);
     }
 
     void LaserGrapic()//레이저 길이 그려주는 함수. 임시
