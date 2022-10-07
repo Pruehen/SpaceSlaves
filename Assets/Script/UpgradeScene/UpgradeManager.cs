@@ -9,8 +9,8 @@ using UnityEngine.Rendering;
 public enum UPGRADE_TYPE 
 {
     // 변경하지 말것
-    SCV_MORE =1,
-    SCV_SPEED_UP =2,
+    SCV_SPEED_UP =1,
+    SCV_MORE =2,
     SCV_AMOUNT_UP = 3,
 }
 
@@ -18,7 +18,7 @@ public enum UPGRADE_TYPE
 // 유저가 진행한 업그래이드를 기록하고 저장하고 있다
 public class UpgradeManager : MonoBehaviour
 {
-    string _saveFileName = "/upgrade_prog_data.json";
+    string _saveFileName = "/data_upgrade_prog.json";
 
     public static  UpgradeManager instance;
 
@@ -35,25 +35,57 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField]
     // "id / 활성화됨"  으로 구성된 딕셔너리
     Dictionary<string, bool> UpgradeActiveDict = new Dictionary<string, bool>();
+    // 업그레이드 총합을 들고 있는 딕셔너리
+    Dictionary<string, float> UpgradeTotal = new Dictionary<string, float>();
 
-    Dictionary<string, int> UpgradeTotal = new Dictionary<string, int>();
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this);
+    }
 
     public float GetTotalActiveVal(UPGRADE_TYPE type)
     {
         int id = (int)type * 1000;
         if (!UpgradeTotal.ContainsKey(type.ToString()))
-        { 
+        {
             int idx = id;
+            float foundVal = 0;
             // 해당 업글이 활성화 되있는지 체크
             while (UpgradeActiveDict.ContainsKey(idx.ToString()))
             {
-                // 토탈에 static에서 얻어온 값을 더한다.
-                UpgradeTotal[type.ToString()] += UpgradeStaticManager.instance.GetVal(idx);
+                // 활성화된 업글이 올려주는 값을 가져와 합산.
+                foundVal += UpgradeStaticManager.instance.GetVal(idx);
                 idx++;
-            }                
+            }
+            if (foundVal <= 0)
+                return 0;
+
+            // 토탈에 static에서 얻어온 값을 더한다.
+            UpgradeTotal.Add(type.ToString(), foundVal);
         }  
 
         return UpgradeTotal[type.ToString()];
+    }
+
+    public void RefreshUpgradeTotal(UPGRADE_TYPE type) 
+    {
+        int id = (int)type * 1000;            
+        int idx = id;
+        // 해당 업글이 활성화 되있는지 체크
+        while (UpgradeActiveDict.ContainsKey(idx.ToString()))
+        {
+            float foundVal = UpgradeStaticManager.instance.GetVal(idx);
+            // 토탈에 static에서 얻어온 값을 더한다.
+            UpgradeTotal[type.ToString()] += foundVal;
+            idx++;
+        }
     }
 
     //check 조건
@@ -67,7 +99,8 @@ public class UpgradeManager : MonoBehaviour
         return true;
     }
 
-    public void NewUpgrade(string id)
+    // 업그레이드를 한다.
+    public void DoUpgrade(string id)
     {
         // 무결성 체크
         if (true)
@@ -87,14 +120,15 @@ public class UpgradeManager : MonoBehaviour
     }
     public void LoadData()
     {
+        if (!File.Exists(Application.dataPath + _saveFileName))
+            return;
+
         var fileData = File.ReadAllText(Application.dataPath + _saveFileName);
         var data = JsonConvert.DeserializeObject<Dictionary<string, bool>>(fileData);
-        /*
-        ??
-        */
         UpgradeActiveDict = data;
     }
 
+    // 전체 업글된 항목을 출력, 테스트용임 
     public void _ViewData()
     {
         var data = JsonConvert.SerializeObject(UpgradeActiveDict);
@@ -104,10 +138,14 @@ public class UpgradeManager : MonoBehaviour
 
     private void Start()
     {
-
-        NewUpgrade("1000");
-        NewUpgrade("1001");
-        //LoadData();
-        SaveData();
+        LoadData();        
+        DoUpgrade("1000");
+        DoUpgrade("1001");
+        DoUpgrade("1002");
+        DoUpgrade("1003");
+        DoUpgrade("1004");
+        DoUpgrade("1005");
+        DoUpgrade("1006");
+        DoUpgrade("1007");
     }
 }
