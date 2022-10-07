@@ -5,6 +5,15 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
+    enum State
+    {
+        run,
+        Back,
+        Idle
+    }
+
+    State state = State.run;
+
     Rigidbody rigidbody;
     LineRenderer laser;
 
@@ -17,6 +26,7 @@ public class ShipControl : MonoBehaviour
     float df = 1;//방어력
     float sd = 100;//보호막
     float speed = 10;//이동 속도
+    float defaultspeed = 10;//기본 이동 속도
     float agility = 10;//선회 속도
 
     float delayCount = 0;
@@ -32,6 +42,8 @@ public class ShipControl : MonoBehaviour
         laser = this.GetComponent<LineRenderer>();
 
         InvokeRepeating("TargetFound", 1, 1);
+
+        state = State.run;
     }
 
     private GameObject target;
@@ -54,15 +66,13 @@ public class ShipControl : MonoBehaviour
             delayCount = 0;
             Attack();
         }
+    }
 
-        if (toTargetVec.magnitude * 10 > fitRange)
+    private void PlayerAi()
+    {
+        if(toTargetVec.magnitude * 10 >= maxRange)
         {
-            MoveFor();
-
-        }
-        else if (toTargetVec.magnitude * 10 <= fitRange)
-        {
-            MoveBack();
+            state = State.run;
         }
     }
 
