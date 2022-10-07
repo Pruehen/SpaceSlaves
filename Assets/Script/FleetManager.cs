@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FleetManager : MonoBehaviour
 {
-    public class BattleShipData
+    public class BattleShipData//키값은 id. 함선에 데이터를 입력할 때 아이디를 체크함. 아이디는 fleetQty의 index값 + 10 (index = 4일 때, id = 14)
     {
         int id = 10;//함선 아이디 (종류)
         ship_Class shipClass = ship_Class.Corvette;//함선 종류(함종)
@@ -28,13 +28,37 @@ public class FleetManager : MonoBehaviour
     }
     public enum ship_Class
     {
-        Corvette,
-        Frigate,
-        Destroyer,
-        Light_Cruiser,
-        heavy_cruiser,
-        Battleship
+        Corvette,//초계함
+        Frigate,//호위함
+        Destroyer,//구축함
+        Light_Cruiser,//경순양함
+        heavy_cruiser,//중순양함
+        Battleship//전함
     }
 
-    public List<BattleShipData> shipList = new List<BattleShipData>();
+
+    List<int> fleetQty = new List<int>();//함종별 수량 데이터. id 10 = index 0
+    int max_ShipType = 20;//최대 함선 종류
+    int max_ShipQty = 50;//함종별 최대 수량
+
+    public bool AddShip(int id, int count)
+    {       
+        if(fleetQty[id - 10] >= max_ShipQty)
+        {
+            return false;
+        }
+        else
+        {
+            fleetQty[id - 10] += count;
+            return true;
+        }
+    }
+
+    private void Start()
+    {
+        for (int i = 0; i < max_ShipType; i++)
+        {
+            fleetQty.Add(0);//여기서 xml이나 json 등의 외부 데이터를 참조해서, 기존에 가지고 있던 함대 데이터를 불러온 후 입력.
+        }
+    }
 }
