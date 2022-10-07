@@ -12,11 +12,21 @@ public class LaborSceneManager : MonoBehaviour
     {
         instance = this;
     }
+    private void Start()
+    {
+        SetMinUI();
+        SetDebriUI();
+    }
 
     public TextMeshProUGUI minText;
+    public TextMeshProUGUI debriText;
     public void SetMinUI()
     {
         minText.text = CurrencyManager.instance.GetCurrency(CURRENCY_TYPE.Mineral).ToString();
+    }
+    public void SetDebriUI()
+    {
+        debriText.text = CurrencyManager.instance.GetCurrency(CURRENCY_TYPE.Debri).ToString();
     }
 
     public GameObject buildWdw;
