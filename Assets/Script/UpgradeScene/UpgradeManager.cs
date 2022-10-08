@@ -139,6 +139,8 @@ public class UpgradeManager : MonoBehaviour
         var data =  JsonConvert.SerializeObject(UpgradeActiveDict);
         
         File.WriteAllText(Application.dataPath + _saveFileName, data);
+
+        Debug.Log("업그레이드 데이터 저장 완료");
     }
     public void LoadData()
     {
@@ -151,6 +153,8 @@ public class UpgradeManager : MonoBehaviour
 
         foreach (var item in UpgradeActiveDict.Keys)
             _DoUpgrade(int.Parse(item), true);
+
+        Debug.Log("업그레이드 데이터 불러오기 완료");
     }
 
     // 전체 업글된 항목을 출력, 테스트용임 
@@ -160,6 +164,10 @@ public class UpgradeManager : MonoBehaviour
         Debug.Log(data);
     }
 
+    private void OnApplicationQuit()
+    {
+        SaveData();
+    }
 
     private void Start()
     {
