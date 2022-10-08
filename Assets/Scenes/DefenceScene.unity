@@ -373,7 +373,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1135497758
 GameObject:
@@ -441,7 +441,39 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1136200264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1136200265}
+  m_Layer: 0
+  m_Name: AllianceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1136200265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136200264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 130.95218, y: 986.43976, z: 1.9740906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2112714316}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1263618607
 GameObject:
@@ -722,7 +754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1832888571}
   m_Layer: 0
-  m_Name: Enermy
+  m_Name: EnermyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -743,7 +775,7 @@ Transform:
   - {fileID: 2090435532}
   - {fileID: 2051089951}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929763833
 GameObject:
@@ -1028,7 +1060,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1136200265}
     m_Modifications:
     - target: {fileID: 129358, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_Name
@@ -1040,19 +1072,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -130.95218
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -986.43976
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.9740906
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1060,15 +1092,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1223,3 +1255,8 @@ MonoBehaviour:
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   FoundTarget: []
   target: {fileID: 0}
+--- !u!4 &2112714316 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
+  m_PrefabInstance: {fileID: 2112714312}
+  m_PrefabAsset: {fileID: 0}

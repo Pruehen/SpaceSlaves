@@ -59,8 +59,9 @@ public class FleetManager : MonoBehaviour
     private void Start()
     {
         LoadFleetData();
+        CreateShipDatas();
 
-        if(fleetDatas.Count == 0)//기존 함대 데이터가 없을 경우, id 10부터 29까지 총 20개의 데이터 생성
+        if (fleetDatas.Count == 0)//기존 함대 데이터가 없을 경우, id 10부터 29까지 총 20개의 데이터 생성
         {
             for (int i = 0; i < 20; i++)
             {
@@ -71,18 +72,20 @@ public class FleetManager : MonoBehaviour
                 fleetDatas.Add(fleet);
             }
 
-            Debug.Log("새 데이터 생성");
+            Debug.Log("새 함대 데이터 생성");
 
         }
 
-        for (int i = 0; i < 20; i++)
+
+        /*for (int i = 0; i < 20; i++)
         {
-            ShipInfoData shipData = new ShipInfoData();
-            shipData.id = i + 10;
-
-            shipInfoDatas.Add(shipData);
+            shipInfoDatas.Add(new ShipInfoData());
         }
-        CreateShipDatas();
+
+        string ToJsonData = JsonConvert.SerializeObject(shipInfoDatas);
+        string filePath = Application.dataPath + ShipInfoDatasFileName;
+        File.WriteAllText(filePath, ToJsonData);
+        Debug.Log("함선 json 파일 생성 완료");*/
     }
 
 
@@ -91,7 +94,8 @@ public class FleetManager : MonoBehaviour
     public string ShipInfoDatasFileName = "ShipDatas.json";
 
     List<FleetSaveData> fleetDatas = new List<FleetSaveData>();//함종별 수량 데이터. id 10 = index 0
-    List<ShipInfoData> shipInfoDatas = new List<ShipInfoData>();//함종별 속성 데이터. 위 리스트와 1:1 대응
+    List<ShipInfoData> shipInfoDatas = new List<ShipInfoData>();//함종별 속성 데이터. 위 리스트와 1:1 대응    
+
     public int GetFleetQtyData(int id)//id의 함선의 수량을 가져옴
     {
         if (id - 10 >= fleetDatas.Count)
@@ -114,7 +118,7 @@ public class FleetManager : MonoBehaviour
         string FromJsonData = File.ReadAllText(filePath);
         fleetDatas = JsonConvert.DeserializeObject<List<FleetSaveData>>(FromJsonData);
 
-        Debug.Log("불러오기 성공");
+        Debug.Log("함대 데이터 불러오기 성공");
     }
 
     void SaveFleetData()
@@ -122,16 +126,15 @@ public class FleetManager : MonoBehaviour
         string ToJsonData = JsonConvert.SerializeObject(fleetDatas);
         string filePath = Application.dataPath + FleetSaveDataFileName;
         File.WriteAllText(filePath, ToJsonData);
-        Debug.Log("저장 완료");
-
+        Debug.Log("함대 데이터 저장 완료");
     }
 
     void CreateShipDatas()
     {
-        string ToJsonData = JsonConvert.SerializeObject(shipInfoDatas);
         string filePath = Application.dataPath + ShipInfoDatasFileName;
-        File.WriteAllText(filePath, ToJsonData);
-        Debug.Log("함선 데이터 생성 완료");
+        string FromJsonData = File.ReadAllText(filePath);
+        shipInfoDatas = JsonConvert.DeserializeObject<List<ShipInfoData>>(FromJsonData);
+        Debug.Log("함선 데이터 불러오기 완료");
     }
 
     void OnApplicationQuit()
@@ -149,6 +152,7 @@ public class FleetSaveData//함대 데이터
 public class ShipInfoData
 {
     public int id;//함선 고유 아이디. 10부터 시작
+    public int cost;//함선 생산 가격
     public float dmg;//발당 공격력, 발당 n의 기초 데미지
     public float fireDelay;//공격 속도, n초에 1회 공격
     public float maxRange;//최대 사거리

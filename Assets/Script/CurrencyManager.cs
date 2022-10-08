@@ -27,24 +27,26 @@ public class CurrencyManager : MonoBehaviour
         }
 
         instance = this;
+        LoadCurrencyData();
         DontDestroyOnLoad(this);
-
-        
     }
 
-    int minerals = 0;
-    int debris = 0;
+    private void Start()
+    {
+        InvokeRepeating("SaveCurrencyData", 60, 60);
+    }
+
     public ref int GetCurrency(CURRENCY_TYPE type)
     {
-        ref int cur = ref minerals;
+        ref int cur = ref currencyData.minerals;
 
         switch (type)
         {
             case CURRENCY_TYPE.Mineral:
-                cur = ref minerals;
+                cur = ref currencyData.minerals;
                 break;
             case CURRENCY_TYPE.Debri:
-                cur = ref debris;
+                cur = ref currencyData.debris;
                 break;
             default:
                 break;
@@ -54,7 +56,7 @@ public class CurrencyManager : MonoBehaviour
 
     public void AddCurrency(CURRENCY_TYPE type, int amount)
     {
-        ref int currency = ref minerals;
+        ref int currency = ref currencyData.minerals;
         currency = GetCurrency(type);
         currency += amount;
     }
@@ -62,7 +64,7 @@ public class CurrencyManager : MonoBehaviour
 
     public bool CostCurrency(CURRENCY_TYPE type, int amount)
     {
-        ref int currency = ref minerals;
+        ref int currency = ref currencyData.minerals;
         currency = GetCurrency(type);
 
         if (currency >= amount)
@@ -73,15 +75,35 @@ public class CurrencyManager : MonoBehaviour
         return false;
     }
 
-    public void Save()
+
+    public string CurrencySaveDataFileName = "CurrencySaveData.json";
+    CurrencyData currencyData = new CurrencyData();
+
+    void LoadCurrencyData()
     {
-        PlayerPrefs.SetInt("mtx", int.Parse(minText.text)); 
+        string filePath = Application.dataPath + CurrencySaveDataFileName;
+        string FromJsonData = File.ReadAllText(filePath);
+        currencyData = JsonConvert.DeserializeObject<CurrencyData>(FromJsonData);
+
+        Debug.Log("재화 데이터 불러오기 성공");
     }
-    public void LoadData()
-    {      
-        if(PlayerPrefs.HasKey("mtx"))
-        {
-            minerals = PlayerPrefs.GetInt("mtx"); 
-        }
+
+    public void SaveCurrencyData()
+    {
+        string ToJsonData = JsonConvert.SerializeObject(currencyData);
+        string filePath = Application.dataPath + CurrencySaveDataFileName;
+        File.WriteAllText(filePath, ToJsonData);
+        Debug.Log("재화 데이터 저장 완료");
+    }
+
+    void OnApplicationQuit()
+    {
+        SaveCurrencyData();
+    }
+
+    public class CurrencyData
+    {
+        public int minerals = 0;
+        public int debris = 0;
     }
 }
