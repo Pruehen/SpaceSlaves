@@ -12,8 +12,8 @@ public enum UPGRADE_TYPE
     // 변경하지 말것
     NONE = 0,
     SCV_SPEED_UP =1,
-    SCV_MORE =2,
-    SCV_AMOUNT_UP = 3,
+    SCV_AMOUNT_UP = 2,
+    SCV_MORE =3,
 }
 
 
@@ -38,8 +38,8 @@ public class UpgradeManager : MonoBehaviour
     // "id / 활성화됨"  으로 구성된 딕셔너리
     Dictionary<string, bool> UpgradeActiveDict = new Dictionary<string, bool>();
     // 업그레이드 총합을 들고 있는 딕셔너리
-    Dictionary<string, float> UpgradeTotal = new Dictionary<string, float>();
-    // 현재 최대 레벨
+    Dictionary<UPGRADE_TYPE, float> UpgradeTotal = new Dictionary<UPGRADE_TYPE, float>();
+    // 다음 업글 레벨
     Dictionary<UPGRADE_TYPE, int> UpgradeMaxId = new Dictionary<UPGRADE_TYPE, int>();
 
     private void Awake()
@@ -57,32 +57,29 @@ public class UpgradeManager : MonoBehaviour
     public float GetTotalActiveVal(UPGRADE_TYPE type)
     {
         int id = (int)type * 1000;
-        if (!UpgradeTotal.ContainsKey(type.ToString()))
+        if (!UpgradeTotal.ContainsKey(type))
         {
             RefreshUpgradeTotal(type);
         }  
 
-        return UpgradeTotal[type.ToString()];
+        return UpgradeTotal[type];
     }
-
+    // 가지고있는 업글, 가지고있는 업글 합산, 다음 업글 단계 리프레시
     public void RefreshUpgradeTotal(UPGRADE_TYPE type) 
     {
         int id = (int)type * 1000;            
         int idx = id;
         float foundVal = 0;
+
         // 해당 업글이 활성화 되있는지 체크
         while (UpgradeActiveDict.ContainsKey(idx.ToString()))
         {
-            foundVal += UpgradeStaticManager.instance.GetVal(idx);
-            // 토탈에 static에서 얻어온 값을 더한다.
+            foundVal += UpgradeStaticManager.instance.GetVal(idx);            
             idx++;
-            if (!UpgradeMaxId.TryGetValue(type, out int temp))
-                UpgradeMaxId.Add(type, idx);
-            else
-                UpgradeMaxId[type] = idx;
         }
+
         // 토탈에 static에서 얻어온 값을 더한다.
-        UpgradeTotal.Add(type.ToString(), foundVal);
+        UpgradeTotal.Add(type, foundVal);
     }
 
     //check 조건
@@ -96,29 +93,44 @@ public class UpgradeManager : MonoBehaviour
         return true;
     }
 
+    // 가장 최고 업그레이드 반환
     public int GetBestUpgradeId(UPGRADE_TYPE type)
     {
-        return UpgradeMaxId[type];
+        if (UpgradeMaxId.ContainsKey(type))
+            return UpgradeMaxId[type];
+        return (int)type * 1000;
     }
 
-    // 업그레이드를 한다.
+    // 업그레이드를 한다. 
+    // 에디터 사용을 위해 파라미터는 int로 
     public void DoBestUpgrade(int idType)
     {
         var type = (UPGRADE_TYPE)idType;
-        RefreshUpgradeTotal(type);
-        int id = GetBestUpgradeId(type);
-        DoUpgrade(id);
+        _DoUpgrade(GetBestUpgradeId(type));
     }
 
-    public void DoUpgrade(int id)
+    void _DoUpgrade(int id, bool isLoading = false)
     {
-        // 무결성 체크
-        if (true)
+        // 다음 얼글 단계 계산
+        var type = (UPGRADE_TYPE)((int)id / 1000);
+        if (UpgradeMaxId.ContainsKey(type))
+            UpgradeMaxId[type] = Math.Max(UpgradeMaxId[type], id + 1);
+        else
+            UpgradeMaxId.Add(type, id + 1);
+
+        // 총합 계산
+        if (UpgradeTotal.ContainsKey(type))
+            UpgradeTotal[type] += UpgradeStaticManager.instance.GetVal(id);
+        else
+            UpgradeTotal.Add(type, UpgradeStaticManager.instance.GetVal(id));
+
+        // 이 업글은 활성화
+        if (!isLoading)
         {
+            UpgradeActiveDict.Add(id.ToString(), true);
+        }
 
-        }  
-
-        UpgradeActiveDict.Add(id.ToString(), true);
+        Debug.Log(id.ToString() + " upgraded");
     }
 
 
@@ -136,6 +148,9 @@ public class UpgradeManager : MonoBehaviour
         var fileData = File.ReadAllText(Application.dataPath + _saveFileName);
         var data = JsonConvert.DeserializeObject<Dictionary<string, bool>>(fileData);
         UpgradeActiveDict = data;
+
+        foreach (var item in UpgradeActiveDict.Keys)
+            _DoUpgrade(int.Parse(item), true);
     }
 
     // 전체 업글된 항목을 출력, 테스트용임 
