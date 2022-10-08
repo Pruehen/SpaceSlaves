@@ -1,14 +1,16 @@
 using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
-
+[Serializable]
 public enum UPGRADE_TYPE 
 {
     // 변경하지 말것
+    NONE = 0,
     SCV_SPEED_UP =1,
     SCV_MORE =2,
     SCV_AMOUNT_UP = 3,
@@ -18,9 +20,9 @@ public enum UPGRADE_TYPE
 // 유저가 진행한 업그래이드를 기록하고 저장하고 있다
 public class UpgradeManager : MonoBehaviour
 {
-    string _saveFileName = "/data_upgrade_prog.json";
-
     public static  UpgradeManager instance;
+
+    string _saveFileName = "/data_upgrade_prog.json";
 
     // id 규칙 
     // 1000 단위로 카테고리 변경
@@ -37,6 +39,8 @@ public class UpgradeManager : MonoBehaviour
     Dictionary<string, bool> UpgradeActiveDict = new Dictionary<string, bool>();
     // 업그레이드 총합을 들고 있는 딕셔너리
     Dictionary<string, float> UpgradeTotal = new Dictionary<string, float>();
+    // 현재 최대 레벨
+    Dictionary<UPGRADE_TYPE, int> UpgradeMaxId = new Dictionary<UPGRADE_TYPE, int>();
 
     private void Awake()
     {
@@ -55,20 +59,7 @@ public class UpgradeManager : MonoBehaviour
         int id = (int)type * 1000;
         if (!UpgradeTotal.ContainsKey(type.ToString()))
         {
-            int idx = id;
-            float foundVal = 0;
-            // 해당 업글이 활성화 되있는지 체크
-            while (UpgradeActiveDict.ContainsKey(idx.ToString()))
-            {
-                // 활성화된 업글이 올려주는 값을 가져와 합산.
-                foundVal += UpgradeStaticManager.instance.GetVal(idx);
-                idx++;
-            }
-            if (foundVal <= 0)
-                return 0;
-
-            // 토탈에 static에서 얻어온 값을 더한다.
-            UpgradeTotal.Add(type.ToString(), foundVal);
+            RefreshUpgradeTotal(type);
         }  
 
         return UpgradeTotal[type.ToString()];
@@ -78,14 +69,20 @@ public class UpgradeManager : MonoBehaviour
     {
         int id = (int)type * 1000;            
         int idx = id;
+        float foundVal = 0;
         // 해당 업글이 활성화 되있는지 체크
         while (UpgradeActiveDict.ContainsKey(idx.ToString()))
         {
-            float foundVal = UpgradeStaticManager.instance.GetVal(idx);
+            foundVal += UpgradeStaticManager.instance.GetVal(idx);
             // 토탈에 static에서 얻어온 값을 더한다.
-            UpgradeTotal[type.ToString()] += foundVal;
             idx++;
+            if (!UpgradeMaxId.TryGetValue(type, out int temp))
+                UpgradeMaxId.Add(type, idx);
+            else
+                UpgradeMaxId[type] = idx;
         }
+        // 토탈에 static에서 얻어온 값을 더한다.
+        UpgradeTotal.Add(type.ToString(), foundVal);
     }
 
     //check 조건
@@ -99,8 +96,21 @@ public class UpgradeManager : MonoBehaviour
         return true;
     }
 
+    public int GetBestUpgradeId(UPGRADE_TYPE type)
+    {
+        return UpgradeMaxId[type];
+    }
+
     // 업그레이드를 한다.
-    public void DoUpgrade(string id)
+    public void DoBestUpgrade(int idType)
+    {
+        var type = (UPGRADE_TYPE)idType;
+        RefreshUpgradeTotal(type);
+        int id = GetBestUpgradeId(type);
+        DoUpgrade(id);
+    }
+
+    public void DoUpgrade(int id)
     {
         // 무결성 체크
         if (true)
@@ -108,7 +118,7 @@ public class UpgradeManager : MonoBehaviour
 
         }  
 
-        UpgradeActiveDict.Add(id, true);
+        UpgradeActiveDict.Add(id.ToString(), true);
     }
 
 
@@ -138,14 +148,6 @@ public class UpgradeManager : MonoBehaviour
 
     private void Start()
     {
-        LoadData();        
-        DoUpgrade("1000");
-        DoUpgrade("1001");
-        DoUpgrade("1002");
-        DoUpgrade("1003");
-        DoUpgrade("1004");
-        DoUpgrade("1005");
-        DoUpgrade("1006");
-        DoUpgrade("1007");
+        LoadData();
     }
 }

@@ -19,6 +19,8 @@ public class FleetManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+
+
     public class BattleShipData//키값은 id. 함선에 데이터를 입력할 때 아이디를 체크함. 아이디는 fleetQty의 index값 + 10 (index = 4일 때, id = 14)
     {
         int id = 10;//함선 아이디 (종류)

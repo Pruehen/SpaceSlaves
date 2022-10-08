@@ -23,9 +23,16 @@ public class ShipAi : MonoBehaviour
         state = State.run;
 
         InvokeRepeating("TargetFound", 0, 1);
+
+        TargetSet();
     }
 
-    private void PlayerAi()
+    private void Update()
+    {
+        PlayerAi();
+    }
+
+    public void PlayerAi()
     {
         if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.fitRange)
         {
@@ -46,11 +53,6 @@ public class ShipAi : MonoBehaviour
     {
         float ShortDis;
 
-        for (int i = 0; i < enemyManager.childCount; i++)
-        {
-            mainShipInfo.FoundTarget.Add(enemyManager.GetChild(i).gameObject);
-        }
-
         ShortDis = Vector3.Distance(gameObject.transform.position, mainShipInfo.FoundTarget[0].transform.position);
 
         mainShipInfo.target = mainShipInfo.FoundTarget[0];
@@ -67,5 +69,13 @@ public class ShipAi : MonoBehaviour
         }
 
         Debug.Log(mainShipInfo.target);
+    }
+
+    void TargetSet()
+    {
+        for (int i = 0; i < enemyManager.childCount; i++)
+        {
+            mainShipInfo.FoundTarget.Add(enemyManager.GetChild(i).gameObject);
+        }
     }
 }
