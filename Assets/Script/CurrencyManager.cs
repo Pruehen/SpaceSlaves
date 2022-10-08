@@ -54,6 +54,7 @@ public class CurrencyManager : MonoBehaviour
         return ref cur;
     }
 
+    // È¹µæ
     public void AddCurrency(CURRENCY_TYPE type, int amount)
     {
         ref int currency = ref currencyData.minerals;
@@ -61,8 +62,13 @@ public class CurrencyManager : MonoBehaviour
         currency += amount;
     }
 
+    // »ç¿ë
+    public void CostCurrency(CURRENCY_TYPE type, int amount)
+    { 
+        // ÀÛ¾÷ ¿¹Á¤
+    }
 
-    public bool CostCurrency(CURRENCY_TYPE type, int amount)
+    public bool CheckCurrency(CURRENCY_TYPE type, int amount)
     {
         ref int currency = ref currencyData.minerals;
         currency = GetCurrency(type);

@@ -37,9 +37,15 @@ public class UpgradeStaticManager : MonoBehaviour
         
         return upgradeStaticData[id.ToString()].cost;
     }
+
     public float GetVal(int id)
     {
         return upgradeStaticData[id.ToString()].addval;
+    }
+
+    public bool IsExist(int id)
+    {
+        return upgradeStaticData.ContainsKey(id.ToString());
     }
 
     public void LoadData()

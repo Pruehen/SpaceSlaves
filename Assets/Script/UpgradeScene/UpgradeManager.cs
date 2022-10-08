@@ -110,7 +110,11 @@ public class UpgradeManager : MonoBehaviour
     }
 
     void _DoUpgrade(int id, bool isLoading = false)
-    {
+    { 
+        // 없는 업그레이드는 진행 할 수 없다.
+        if (!UpgradeStaticManager.instance.IsExist(id))
+            return;
+
         // 다음 얼글 단계 계산
         var type = (UPGRADE_TYPE)((int)id / 1000);
         if (UpgradeMaxId.ContainsKey(type))
