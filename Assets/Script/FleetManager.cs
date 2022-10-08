@@ -78,7 +78,6 @@ public class FleetManager : MonoBehaviour
 
         }
 
-
         /*for (int i = 0; i < 20; i++)
         {
             shipInfoDatas.Add(new ShipInfoData());
@@ -90,6 +89,11 @@ public class FleetManager : MonoBehaviour
         Debug.Log("함선 json 파일 생성 완료");*/
     }
 
+    public int GetShipCost(int id_)
+    {
+        int cost = shipInfoDatas[id_ - 10].cost;
+        return cost;
+    }
 
 
     public string FleetSaveDataFileName = "FleetSaveData.json";
