@@ -129,7 +129,7 @@ public class UpgradeManager : MonoBehaviour
             UpgradeTotal.Add(type, UpgradeStaticManager.instance.GetVal(id));
 
         // 이 업글은 활성화
-        if (!isLoading)
+        if (!isLoading || !UpgradeActiveDict.ContainsKey(id.ToString()))
         {
             UpgradeActiveDict.Add(id.ToString(), true);
         }
