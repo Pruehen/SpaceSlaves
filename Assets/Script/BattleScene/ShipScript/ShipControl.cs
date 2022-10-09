@@ -5,8 +5,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
-    State ShipState;
-
     Rigidbody rigidbody;
     LineRenderer laser;
 
@@ -21,7 +19,6 @@ public class ShipControl : MonoBehaviour
     public float speed = 10;//이동 속도
     public float defaultspeed = 10;//기본 이동 속도
     public float agility = 10;//선회 속도
-    public bool isDamage = false;
 
     float delayCount = 0;
     public bool isRange { private set; get; }
@@ -55,78 +52,73 @@ public class ShipControl : MonoBehaviour
         }
 
 
-        if (isRange && delayCount > fireDelay && toTargetVec_Local.x < 0.1f)//사거리 내 적 자동 공격 제어
+        if (isRange && delayCount > fireDelay && toTargetVec_Local.x < 0.01f)//사거리 내 적 자동 공격 제어
         {
             delayCount = 0;
             Attack();
         }
-
-        StateControl();
     }
 
 
     float defaultLaserWidth = 0.01f;
     float laserWidth;
 
-    void StateControl()
+    public void StateControl(State state)
     {
-        if (ShipState == State.run)
+        if (state == State.run)
         {
             speed = defaultspeed;
             MoveFor();
         }
-        else if (ShipState == State.Idle)
+        else if (state == State.Idle)
         {
             speed = 0;
         }
-        else if (ShipState == State.Back)
+        else if (state == State.Back)
         {
             speed = defaultspeed;
             MoveBack();
         }
     }
 
-    void PlayerHP(float DMG)
+    public void Hit(float dmg)
     {
-        ShipControl call = target.GetComponent<ShipControl>();
+        float inputDmg = dmg;
 
-        if (isDamage == true)
+        if (sd > 0 && inputDmg <= sd)
         {
-            if (sd > 0)
-            {
-                sd -= DMG;
-                Debug.Log(sd);
-                if (sd < DMG)
-                {
-                    hp = hp + sd + df;
-                }
-            }
-            else if (sd == 0)
-            {
-                hp = hp - (DMG - df);
-                Debug.Log(hp);
-            }
-
-            if (hp <= 0)
-            {
-                this.gameObject.SetActive(false);
-                FoundTarget.Remove(this.gameObject);
-                call = null;
-            }
+            sd -= inputDmg;
         }
+        else if(sd > 0 && inputDmg > sd)
+        {
+
+        }
+        else if (sd == 0)
+        {
+            hp = hp - (DMG - df);
+            Debug.Log(hp);
+        }
+
+        if (hp <= 0)
+        {
+            this.gameObject.SetActive(false);
+            FoundTarget.Remove(this.gameObject);
+            call = null;
+        }
+
     }
 
     void Attack()//공격 함수
     {
-        ShipControl call = target.GetComponent<ShipControl>();
+        ShipControl targetSC = target.GetComponent<ShipControl>();
 
         if (target == null)
             return;
 
         laserWidth = defaultLaserWidth;
         laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
-        isDamage = true;
-        PlayerHP(call.dmg);
+
+        targetSC.Hit(dmg);
     }
 
     void LaserGrapic()//레이저 길이 그려주는 함수. 임시

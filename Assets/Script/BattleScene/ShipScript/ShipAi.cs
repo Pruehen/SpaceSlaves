@@ -46,6 +46,8 @@ public class ShipAi : MonoBehaviour
         {
             state = State.Back;
         }
+
+        mainShipInfo.StateControl(state);
     }
 
     public Transform enemyManager;//적 트랜스폼 검색 용도
@@ -67,8 +69,6 @@ public class ShipAi : MonoBehaviour
                 ShortDis = Distance;
             }
         }
-
-        Debug.Log(mainShipInfo.target);
     }
 
     void TargetSet()
