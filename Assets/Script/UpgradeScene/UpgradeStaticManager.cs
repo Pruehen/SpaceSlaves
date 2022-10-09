@@ -22,11 +22,15 @@ public class UpgradeStaticManager : MonoBehaviour
 
     private void Awake()
     {
+
         if (instance != null)
         {
             Destroy(this.gameObject);
             return;
         }
+
+        // 단한번의 로딩 필요
+        LoadData();
 
         instance = this;
         DontDestroyOnLoad(this);
@@ -37,9 +41,15 @@ public class UpgradeStaticManager : MonoBehaviour
         
         return upgradeStaticData[id.ToString()].cost;
     }
+
     public float GetVal(int id)
     {
         return upgradeStaticData[id.ToString()].addval;
+    }
+
+    public bool IsExist(int id)
+    {
+        return upgradeStaticData.ContainsKey(id.ToString());
     }
 
     public void LoadData()
@@ -55,6 +65,6 @@ public class UpgradeStaticManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadData();
+        
     }
 }

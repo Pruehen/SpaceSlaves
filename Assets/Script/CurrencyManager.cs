@@ -54,6 +54,7 @@ public class CurrencyManager : MonoBehaviour
         return ref cur;
     }
 
+    // 획득
     public void AddCurrency(CURRENCY_TYPE type, int amount)
     {
         ref int currency = ref currencyData.minerals;
@@ -61,8 +62,15 @@ public class CurrencyManager : MonoBehaviour
         currency += amount;
     }
 
+    // 사용
+    public void CostCurrency(CURRENCY_TYPE type, int amount)
+    {
+        ref int currency = ref currencyData.minerals;
+        currency = GetCurrency(type);
+        currency -= amount;
+    }
 
-    public bool CostCurrency(CURRENCY_TYPE type, int amount)
+    public bool CheckCurrency(CURRENCY_TYPE type, int amount)
     {
         ref int currency = ref currencyData.minerals;
         currency = GetCurrency(type);
@@ -93,6 +101,7 @@ public class CurrencyManager : MonoBehaviour
         string ToJsonData = JsonConvert.SerializeObject(currencyData);
         string filePath = Application.dataPath + CurrencySaveDataFileName;
         File.WriteAllText(filePath, ToJsonData);
+
         Debug.Log("재화 데이터 저장 완료");
     }
 
