@@ -17,12 +17,16 @@ public class ShipAi : MonoBehaviour
     }
     State state = State.idle;
 
+    private void Awake()
+    {
+
+    }
+
     void Start()
     {
         mainShipInfo = this.gameObject.GetComponent<ShipControl>();
 
         InvokeRepeating("TargetFound", 0, 1);
-
         TargetSet();
     }
 

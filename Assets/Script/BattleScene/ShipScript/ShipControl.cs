@@ -36,6 +36,8 @@ public class ShipControl : MonoBehaviour
         shipAi = this.GetComponent<ShipAi>();
 
         InvokeRepeating("RangeCheck", 0, 1);
+
+        shipAi.TargetFound();
     }
 
     public GameObject target;//현재 함선이 지시하고 있는 타겟
@@ -55,18 +57,15 @@ public class ShipControl : MonoBehaviour
             delayCount += Time.deltaTime;
         }
 
-
-        if(!target.activeSelf)
-        {
-            FoundTarget.Remove(target);
-            target = null;
-            shipAi.TargetFound();
-        }
-
-        if (isRange && delayCount > fireDelay && toTargetVec_Local.x < 0.01f)//사거리 내 적 자동 공격 제어
+        if (isRange && delayCount > fireDelay && Mathf.Abs(toTargetVec_Local.x) < 0.01f)//사거리 내 적 자동 공격 제어
         {
             delayCount = 0;
             Attack();
+        }
+
+        if(!target.activeSelf && target != null)
+        {
+            TargetDestroyed();
         }
     }
 
@@ -75,7 +74,7 @@ public class ShipControl : MonoBehaviour
     float laserWidth;
 
 
-    public void Hit(float dmg)
+    public float Hit(float dmg)
     {
         float inputDmg = dmg;
 
@@ -96,7 +95,9 @@ public class ShipControl : MonoBehaviour
             {
                 this.gameObject.SetActive(false);         
             }
-        }    
+        }
+
+        return hp;
     }
 
     void Attack()//공격 함수
@@ -109,7 +110,20 @@ public class ShipControl : MonoBehaviour
         laserWidth = defaultLaserWidth;
         laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
 
-        targetSC.Hit(dmg);
+        if(targetSC.Hit(dmg) <= 0)
+        {
+            TargetDestroyed();
+        }
+    }
+
+    void TargetDestroyed()
+    {
+        FoundTarget.Remove(target);
+        target = null;
+        if (FoundTarget.Count > 0)
+        {
+            shipAi.TargetFound();
+        }
     }
 
     void LaserGrapic()//레이저 길이 그려주는 함수. 임시
