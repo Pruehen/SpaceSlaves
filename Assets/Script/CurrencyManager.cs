@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; 
 using TMPro;
 // ÀçÈ­Å¸ÀÔ
 public enum CURRENCY_TYPE
@@ -16,7 +16,9 @@ public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager instance;
     
-    public TextMeshProUGUI minText; 
+    public TextMeshProUGUI minText;
+
+    Button button; 
 
     private void Awake()
     {
@@ -34,6 +36,7 @@ public class CurrencyManager : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("SaveCurrencyData", 60, 60);
+        
     }
 
     public ref int GetCurrency(CURRENCY_TYPE type)
@@ -54,6 +57,8 @@ public class CurrencyManager : MonoBehaviour
         return ref cur;
     }
 
+    
+
     // È¹µæ
     public void AddCurrency(CURRENCY_TYPE type, int amount)
     {
@@ -64,12 +69,12 @@ public class CurrencyManager : MonoBehaviour
 
     // »ç¿ë
     public void CostCurrency(CURRENCY_TYPE type, int amount)
-    {
+    { 
         ref int currency = ref currencyData.minerals;
         currency = GetCurrency(type);
         currency -= amount;
     }
-
+    
     public bool CheckCurrency(CURRENCY_TYPE type, int amount)
     {
         ref int currency = ref currencyData.minerals;
