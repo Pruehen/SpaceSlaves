@@ -9,6 +9,7 @@ using static UnityEngine.GraphicsBuffer;
 public class ShipAi : MonoBehaviour
 {
     ShipControl mainShipInfo;
+
     public enum State
     {
         run,
@@ -26,7 +27,17 @@ public class ShipAi : MonoBehaviour
     {
         mainShipInfo = this.gameObject.GetComponent<ShipControl>();
 
-        InvokeRepeating("TargetFound", 0, 1);
+        if(this.gameObject.layer == 8)//friedlyLayer
+        {
+            enemyManager = BattleSceneManager.instance.FriendlyManager;
+        }
+        else if(this.gameObject.layer == 7)//enemyLayer
+        {
+            enemyManager = BattleSceneManager.instance.EnemyManager;
+        }
+        Debug.Log(enemyManager.name);
+
+        InvokeRepeating("TargetFound", 1, 1);
         TargetSet();
     }
 
@@ -64,7 +75,7 @@ public class ShipAi : MonoBehaviour
         }
     }
 
-    public Transform enemyManager;//적 트랜스폼 검색 용도
+    Transform enemyManager;//적 트랜스폼 검색 용도
     public void TargetFound()
     {
         float ShortDis;

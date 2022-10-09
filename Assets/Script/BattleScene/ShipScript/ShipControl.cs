@@ -37,7 +37,7 @@ public class ShipControl : MonoBehaviour
 
         InvokeRepeating("RangeCheck", 0, 1);
 
-        shipAi.TargetFound();
+        //shipAi.TargetFound();
     }
 
     public GameObject target;//현재 함선이 지시하고 있는 타겟
@@ -63,7 +63,7 @@ public class ShipControl : MonoBehaviour
             Attack();
         }
 
-        if(!target.activeSelf && target != null)
+        if(target != null && !target.activeSelf)
         {
             TargetDestroyed();
         }
