@@ -1,63 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public enum State
-{
-    run,
-    Back,
-    Idle
-}
+
 
 public class ShipAi : MonoBehaviour
 {
     ShipControl mainShipInfo;
-
-
-    State state = State.run;
+    public enum State
+    {
+        run,
+        back,
+        idle
+    }
+    State state = State.idle;
 
     void Start()
     {
         mainShipInfo = this.gameObject.GetComponent<ShipControl>();
-        state = State.run;
 
         InvokeRepeating("TargetFound", 0, 1);
 
         TargetSet();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        PlayerAi();
+        AiStateSet();
+
+        if(state == State.run)
+        {
+            mainShipInfo.MoveFor();
+        }
+        else if(state == State.back)
+        {
+            mainShipInfo.MoveBack();
+        }
+        else if(state == State.idle)
+        {
+
+        }
     }
 
-    public void PlayerAi()
-    {
+    public void AiStateSet()
+    {        
         if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.fitRange)
         {
             state = State.run;
         }
         else if (mainShipInfo.toTargetVec.magnitude * 10 < mainShipInfo.fitRange && mainShipInfo.toTargetVec.magnitude * 10 > mainShipInfo.minRange)
         {
-            state = State.Idle;
+            state = State.idle;
         }
         else if (mainShipInfo.toTargetVec.magnitude * 10 <= mainShipInfo.minRange)
         {
-            state = State.Back;
+            state = State.back;
         }
-
-        mainShipInfo.StateControl(state);
     }
 
     public Transform enemyManager;//적 트랜스폼 검색 용도
-    void TargetFound()
+    public void TargetFound()
     {
         float ShortDis;
 
-        ShortDis = Vector3.Distance(gameObject.transform.position, mainShipInfo.FoundTarget[0].transform.position);
+        ShortDis = Vector3.Distance(gameObject.transform.position, mainShipInfo.FoundTarget.First.Value.transform.position);
 
-        mainShipInfo.target = mainShipInfo.FoundTarget[0];
+        mainShipInfo.target = mainShipInfo.FoundTarget.First.Value;
 
         foreach (GameObject found in mainShipInfo.FoundTarget)
         {
@@ -66,16 +76,17 @@ public class ShipAi : MonoBehaviour
             if (Distance < ShortDis)
             {
                 mainShipInfo.target = found;
+                //mainShipInfo.targetNode = found;
                 ShortDis = Distance;
             }
         }
     }
 
     void TargetSet()
-    {
+    {        
         for (int i = 0; i < enemyManager.childCount; i++)
         {
-            mainShipInfo.FoundTarget.Add(enemyManager.GetChild(i).gameObject);
+            mainShipInfo.FoundTarget.AddLast(enemyManager.GetChild(i).gameObject);
         }
     }
 }

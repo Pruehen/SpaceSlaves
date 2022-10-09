@@ -5,6 +5,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
+    ShipAi shipAi;
+
     Rigidbody rigidbody;
     LineRenderer laser;
 
@@ -25,19 +27,21 @@ public class ShipControl : MonoBehaviour
 
     public Vector3 toTargetVec;
     public Vector3 toTargetVec_Local;
-    public List<GameObject> FoundTarget = new List<GameObject>();
+    public LinkedList<GameObject> FoundTarget = new LinkedList<GameObject>();
 
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
+        shipAi = this.GetComponent<ShipAi>();
 
         InvokeRepeating("RangeCheck", 0, 1);
     }
 
     public GameObject target;//현재 함선이 지시하고 있는 타겟
+    //public LinkedListNode<GameObject> targetNode;
 
-    void Update()
+    void FixedUpdate()
     {
         LaserGrapic();
         if(target != null)//타겟벡터 생성제어
@@ -52,6 +56,13 @@ public class ShipControl : MonoBehaviour
         }
 
 
+        if(!target.activeSelf)
+        {
+            FoundTarget.Remove(target);
+            target = null;
+            shipAi.TargetFound();
+        }
+
         if (isRange && delayCount > fireDelay && toTargetVec_Local.x < 0.01f)//사거리 내 적 자동 공격 제어
         {
             delayCount = 0;
@@ -63,23 +74,6 @@ public class ShipControl : MonoBehaviour
     float defaultLaserWidth = 0.01f;
     float laserWidth;
 
-    public void StateControl(State state)
-    {
-        if (state == State.run)
-        {
-            speed = defaultspeed;
-            MoveFor();
-        }
-        else if (state == State.Idle)
-        {
-            speed = 0;
-        }
-        else if (state == State.Back)
-        {
-            speed = defaultspeed;
-            MoveBack();
-        }
-    }
 
     public void Hit(float dmg)
     {
@@ -91,21 +85,18 @@ public class ShipControl : MonoBehaviour
         }
         else if(sd > 0 && inputDmg > sd)
         {
-
+            sd -= inputDmg;
+            inputDmg = -sd;
         }
-        else if (sd == 0)
+
+        if (sd <= 0)
         {
-            hp = hp - (DMG - df);
-            Debug.Log(hp);
-        }
-
-        if (hp <= 0)
-        {
-            this.gameObject.SetActive(false);
-            FoundTarget.Remove(this.gameObject);
-            call = null;
-        }
-
+            hp = hp - (inputDmg - df);
+            if (hp <= 0)
+            {
+                this.gameObject.SetActive(false);         
+            }
+        }    
     }
 
     void Attack()//공격 함수
@@ -129,16 +120,6 @@ public class ShipControl : MonoBehaviour
         laserWidth *= 0.95f;
     }
 
-    void MoveFor()//전진 명령 함수
-    {
-        rigidbody.AddForce(this.transform.forward * speed * 0.001f, ForceMode.Force);
-    }
-
-    void MoveBack()//후진 명령 함수
-    {
-        rigidbody.AddForce(-this.transform.forward * speed * 0.001f, ForceMode.Force);
-    }
-
     void RotateTarget(float rotateOrder)//타겟 방향으로 방향 전환 함수
     {
         rigidbody.AddTorque(this.transform.up * agility * 0.0001f * rotateOrder, ForceMode.Force);
@@ -151,7 +132,7 @@ public class ShipControl : MonoBehaviour
             return;
         }
 
-        Debug.Log(toTargetVec.magnitude * 10);
+        //Debug.Log(toTargetVec.magnitude * 10);
 
         if (toTargetVec.magnitude * 10 < maxRange && toTargetVec.magnitude * 10 > minRange)
         {
@@ -161,5 +142,16 @@ public class ShipControl : MonoBehaviour
         {
             isRange = false;
         }
+    }
+
+
+    public void MoveFor()//전진 명령 함수
+    {
+        rigidbody.AddForce(this.transform.forward * speed * 0.001f, ForceMode.Force);
+    }
+
+    public void MoveBack()//후진 명령 함수
+    {
+        rigidbody.AddForce(-this.transform.forward * speed * 0.001f, ForceMode.Force);
     }
 }
