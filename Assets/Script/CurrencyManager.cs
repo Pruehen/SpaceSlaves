@@ -65,6 +65,8 @@ public class CurrencyManager : MonoBehaviour
         ref int currency = ref currencyData.minerals;
         currency = GetCurrency(type);
         currency += amount;
+
+        LaborSceneManager.instance.SetMinUI();
     }
 
     // »ç¿ë
@@ -73,6 +75,8 @@ public class CurrencyManager : MonoBehaviour
         ref int currency = ref currencyData.minerals;
         currency = GetCurrency(type);
         currency -= amount;
+
+        LaborSceneManager.instance.SetMinUI();
     }
     
     public bool CheckCurrency(CURRENCY_TYPE type, int amount)
@@ -83,6 +87,7 @@ public class CurrencyManager : MonoBehaviour
         if (currency >= amount)
         {             
             currency -= amount;
+            LaborSceneManager.instance.SetMinUI();
             return true;
         }
         return false;
