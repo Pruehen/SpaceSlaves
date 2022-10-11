@@ -6,9 +6,12 @@ using TMPro;
 
 public class SystemMessage : MonoBehaviour
 {
+    public GameObject SystemMessageUI;
+    public TextMeshProUGUI logText = null;
+    bool IsMessageIn = false;
+    float MessageCool;
     private static SystemMessage instance;
-    public TextMeshProUGUI textMassage; 
-    Button button; 
+    public TextMeshProUGUI textMassage;
 
     public static SystemMessage Instance
     {
@@ -24,12 +27,15 @@ public class SystemMessage : MonoBehaviour
 
     public void selectYN()
     {
-        
+        if (IsMessageIn == true)
+        {
+            SystemMessageUI.gameObject.SetActive(true);
+        }
     }
 
-    public void MessageQ()
+    public void MessageQ(string Message)
     {
-
+        IsMessageIn = true;
+        logText.text = Message;
     }
-
 }
