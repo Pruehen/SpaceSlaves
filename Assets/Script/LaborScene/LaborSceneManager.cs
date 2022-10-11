@@ -28,6 +28,9 @@ public class LaborSceneManager : MonoBehaviour
             shipNameTmp[i].text = data.shipName + "Class " + data.shipClass;//함선의 이름과 함종을 불러와서 텍스트에 입력
             shipQtyTmp[i].text = FleetManager.instance.GetFleetQtyData(i).ToString();//함선의 수량을 텍스트에 입력
         }
+
+        InvokeRepeating("SetMinUI", 0, 0.5f);
+        InvokeRepeating("SetDebriUI", 0, 0.5f);
     }
 
     public TextMeshProUGUI minText;
