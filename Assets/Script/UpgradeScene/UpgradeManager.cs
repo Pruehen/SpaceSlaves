@@ -115,14 +115,15 @@ public class UpgradeManager : MonoBehaviour
         int cost = UpgradeStaticManager.instance.GetCost(id);
         if (!isLoading)
         {
-            if (CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
-            {
-                CurrencyManager.instance.CostCurrency(CURRENCY_TYPE.Debri, cost);
-            }
-            else  // 돈없는 상태일때
+            // 돈없는 상태일때
+            if (!CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
             {
                 Debug.Log("돈없음 / " + cost + " 필요");
                 return;
+            }
+            else // 돈이 충분한 상태일때 
+            {
+                
             }
         }
 
