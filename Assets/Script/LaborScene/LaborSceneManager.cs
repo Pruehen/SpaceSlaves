@@ -25,7 +25,7 @@ public class LaborSceneManager : MonoBehaviour
 
             ShipInfoData data = FleetManager.instance.GetShipData(i);//i 함선 데이터 불러옴
 
-            shipNameTmp[i].text = data.shipName + "급 " + data.shipClass;//함선의 이름과 함종을 불러와서 텍스트에 입력
+            shipNameTmp[i].text = data.shipName + "Class " + data.shipClass;//함선의 이름과 함종을 불러와서 텍스트에 입력
             shipQtyTmp[i].text = FleetManager.instance.GetFleetQtyData(i).ToString();//함선의 수량을 텍스트에 입력
         }
     }
