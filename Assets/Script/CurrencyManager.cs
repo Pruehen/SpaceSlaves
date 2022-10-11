@@ -18,7 +18,10 @@ public class CurrencyManager : MonoBehaviour
     
     public TextMeshProUGUI minText;
 
-    Button button; 
+    Button button;
+
+    public string CurrencySaveDataFileName = "CurrencySaveData.json";
+    CurrencyData currencyData = new CurrencyData();
 
     private void Awake()
     {
@@ -35,8 +38,7 @@ public class CurrencyManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SaveCurrencyData", 60, 60);
-        
+        InvokeRepeating("SaveCurrencyData", 60, 60);        
     }
 
     public ref int GetCurrency(CURRENCY_TYPE type)
@@ -62,8 +64,7 @@ public class CurrencyManager : MonoBehaviour
     // È¹µæ
     public void AddCurrency(CURRENCY_TYPE type, int amount)
     {
-        ref int currency = ref currencyData.minerals;
-        currency = GetCurrency(type);
+        ref int currency = ref GetCurrency(type);
         currency += amount;
 
         //LaborSceneManager.instance.SetMinUI();
@@ -72,8 +73,7 @@ public class CurrencyManager : MonoBehaviour
     // »ç¿ë
     public void CostCurrency(CURRENCY_TYPE type, int amount)
     { 
-        ref int currency = ref currencyData.minerals;
-        currency = GetCurrency(type);
+        ref int currency = ref GetCurrency(type);
         currency -= amount;
 
         //LaborSceneManager.instance.SetMinUI();
@@ -81,8 +81,7 @@ public class CurrencyManager : MonoBehaviour
     
     public bool CheckCurrency(CURRENCY_TYPE type, int amount)
     {
-        ref int currency = ref currencyData.minerals;
-        currency = GetCurrency(type);
+        ref int currency = ref GetCurrency(type);
 
         if (currency >= amount)
         {             
@@ -91,11 +90,7 @@ public class CurrencyManager : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-
-    public string CurrencySaveDataFileName = "CurrencySaveData.json";
-    CurrencyData currencyData = new CurrencyData();
+    }    
 
     void LoadCurrencyData()
     {
