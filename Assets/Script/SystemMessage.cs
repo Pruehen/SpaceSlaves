@@ -9,14 +9,21 @@ public class SystemMessage : MonoBehaviour
     public ScrollRect scroll = null;
     public TextMeshProUGUI logText = null;
     bool IsMessageIn = false;
+    float MessageCool;
 
     private void Start()
     {
+
     }
 
     private void Update()
     {
         MessageDown();
+
+        if(IsMessageIn == true)
+        {
+
+        }
     }
 
     void MessageDown()
@@ -26,6 +33,7 @@ public class SystemMessage : MonoBehaviour
 
     public void MessageQ(string Message)
     {
+        IsMessageIn = true;
         logText.text += Message;
     }
 }
