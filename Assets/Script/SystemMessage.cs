@@ -13,6 +13,7 @@ public class SystemMessage : MonoBehaviour
     float defaultMessageCool = 1.5f;
     //public TextMeshProUGUI textMassage;
     bool IsFade = false;
+    public GameObject Log;
 
     private void Update()
     {
@@ -25,7 +26,9 @@ public class SystemMessage : MonoBehaviour
 
     public void SeletYes()
     {
+        //BattleSceneManager LogMsg = Log.GetComponent<BattleSceneManager>();
         IsMessageIn = false;
+       // LogMsg.isClicked = true;
     }
 
     public void MessageManage()
@@ -37,7 +40,6 @@ public class SystemMessage : MonoBehaviour
         else
         {
             SystemMessageUI.gameObject.SetActive(false);
-            IsMessageIn = false;
         }    
     }
 
