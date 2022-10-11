@@ -8,10 +8,10 @@ public class SystemMessage : MonoBehaviour
 {
     public ScrollRect scroll = null;
     public TextMeshProUGUI logText = null;
+    bool IsMessageIn = false;
 
     private void Start()
     {
-        
     }
 
     private void Update()
@@ -24,8 +24,8 @@ public class SystemMessage : MonoBehaviour
         scroll.verticalNormalizedPosition = 0.0f;
     }
 
-    public void MessageQ()
+    public void MessageQ(string Message)
     {
-
+        logText.text += Message;
     }
 }

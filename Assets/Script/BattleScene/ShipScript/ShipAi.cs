@@ -20,7 +20,7 @@ public class ShipAi : MonoBehaviour
 
     private void Awake()
     {
-
+        
     }
 
     void Start()
