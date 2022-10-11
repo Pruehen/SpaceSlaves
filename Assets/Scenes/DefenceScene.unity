@@ -666,6 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyManager: {fileID: 1832888571}
   FriendlyManager: {fileID: 1136200265}
+  DestroyedShip: {fileID: 1687175224}
 --- !u!4 &249468264
 Transform:
   m_ObjectHideFlags: 0
@@ -1004,7 +1005,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1263618608}
-  - {fileID: 13364604}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3629,6 +3629,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 424012, guid: c340ff13085b4174bac452e6cc3d490c, type: 3}
   m_PrefabInstance: {fileID: 1681926895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1687175223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687175224}
+  m_Layer: 0
+  m_Name: DestroyedShip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1687175224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687175223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05313295, y: -5.545275, z: 3.3849735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1728283195
 PrefabInstance:
   m_ObjectHideFlags: 0

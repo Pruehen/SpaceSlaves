@@ -7,15 +7,18 @@ public class SceneChange : MonoBehaviour
 {
     public void GoLaborScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("LaborScene");
     }
     public void GoDefenceScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("DefenceScene");
     }
 
     public void GoUpgradeScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("UpgradeScene");
     }
 
