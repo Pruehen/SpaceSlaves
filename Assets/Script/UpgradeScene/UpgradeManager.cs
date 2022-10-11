@@ -112,6 +112,15 @@ public class UpgradeManager : MonoBehaviour
 
     void _DoUpgrade(int id, bool isLoading = false)
     {
+        // 존재 여부 체크
+        // 없는 업그레이드는 진행 할 수 없다.
+        if (!UpgradeStaticManager.instance.IsExist(id))
+        {
+            Debug.Log("상위 업그레이드 없음");
+            return;
+        }
+
+        // 돈 체크
         int cost = UpgradeStaticManager.instance.GetCost(id);
         if (!isLoading)
         {
@@ -125,11 +134,7 @@ public class UpgradeManager : MonoBehaviour
             {
                 
             }
-        }
-
-        // 없는 업그레이드는 진행 할 수 없다.
-        if (!UpgradeStaticManager.instance.IsExist(id))
-            return;
+        }        
 
         // 다음 얼글 단계 계산
         var type = (UPGRADE_TYPE)((int)id / 1000);
