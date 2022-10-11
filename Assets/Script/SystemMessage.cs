@@ -23,7 +23,7 @@ public class SystemMessage : MonoBehaviour
         }
     }
 
-    void SeletYes()
+    public void SeletYes()
     {
         IsMessageIn = false;
     }
