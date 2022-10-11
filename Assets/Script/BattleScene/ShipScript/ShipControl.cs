@@ -10,8 +10,6 @@ public class ShipControl : MonoBehaviour
     Rigidbody rigidbody;
     LineRenderer laser;
 
-
-
     int id = -1;//함선 고유 아이디. 0부터 시작
     public string shipName;//함선 이름 (함급)
     public ship_Class shipClass;//함선 종류 (함종)

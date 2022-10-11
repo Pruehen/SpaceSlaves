@@ -12,23 +12,20 @@ public class SystemMessage : MonoBehaviour
     float MessageCool;
     private static SystemMessage instance;
     //public TextMeshProUGUI textMassage;
+    bool IsFade = false;
 
-    public static SystemMessage Instance
+    private void Start()
     {
-        get
-        {
-            if (null == instance)
-            {
-                instance = new SystemMessage();
-            }
-            return instance;
-        }
+        
     }
 
-    public void SelectYN()
+    private void Update()
     {
         
-        
+    }
+
+    public void MessageManage()
+    { 
         if (IsMessageIn == true)
         {
             SystemMessageUI.gameObject.SetActive(true);

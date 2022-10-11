@@ -27,7 +27,7 @@ public class SceneChange : MonoBehaviour
     public void ExitButton()
     {
         
-        Message.SendMessage("SelectYN");
+        //Message.SendMessage("SelectYN");
         //Application.Quit();
     }
 
