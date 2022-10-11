@@ -11,7 +11,7 @@ public class SystemMessage : MonoBehaviour
     bool IsMessageIn = false;
     float MessageCool;
     private static SystemMessage instance;
-    public TextMeshProUGUI textMassage;
+    //public TextMeshProUGUI textMassage;
 
     public static SystemMessage Instance
     {
@@ -25,15 +25,21 @@ public class SystemMessage : MonoBehaviour
         }
     }
 
-    public void selectYN()
+    public void SelectYN()
     {
+        
+        
         if (IsMessageIn == true)
         {
             SystemMessageUI.gameObject.SetActive(true);
         }
+        else
+        {
+            SystemMessageUI.gameObject.SetActive(false); 
+        }    
     }
 
-    public void MessageQ(string Message)
+    public void MessageQ(string Message)//메시지 인식하는 역할
     {
         IsMessageIn = true;
         logText.text = Message;

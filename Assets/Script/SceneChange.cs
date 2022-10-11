@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public GameObject Message;
+
     public void GoLaborScene()
     {
         Time.timeScale = 1;
@@ -24,7 +26,8 @@ public class SceneChange : MonoBehaviour
 
     public void ExitButton()
     {
-        SystemMessage.Instance.selectYN(); 
+        
+        Message.SendMessage("SelectYN");
         //Application.Quit();
     }
 
