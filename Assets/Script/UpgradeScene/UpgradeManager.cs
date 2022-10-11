@@ -112,23 +112,29 @@ public class UpgradeManager : MonoBehaviour
 
     void _DoUpgrade(int id, bool isLoading = false)
     {
+        // 존재 여부 체크
+        // 없는 업그레이드는 진행 할 수 없다.
+        if (!UpgradeStaticManager.instance.IsExist(id))
+        {
+            Debug.Log("상위 업그레이드 없음");
+            return;
+        }
+
+        // 돈 체크
         int cost = UpgradeStaticManager.instance.GetCost(id);
         if (!isLoading)
         {
-            if (CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
-            {
-                CurrencyManager.instance.CostCurrency(CURRENCY_TYPE.Debri, cost);
-            }
-            else  // 돈없는 상태일때
+            // 돈없는 상태일때
+            if (!CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
             {
                 Debug.Log("돈없음 / " + cost + " 필요");
                 return;
             }
-        }
-
-        // 없는 업그레이드는 진행 할 수 없다.
-        if (!UpgradeStaticManager.instance.IsExist(id))
-            return;
+            else // 돈이 충분한 상태일때 
+            {
+                
+            }
+        }        
 
         // 다음 얼글 단계 계산
         var type = (UPGRADE_TYPE)((int)id / 1000);
