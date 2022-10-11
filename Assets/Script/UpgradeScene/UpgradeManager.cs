@@ -13,7 +13,8 @@ public enum UPGRADE_TYPE
     NONE = 0,
     SCV_SPEED_UP =1,
     SCV_AMOUNT_UP = 2,
-    SCV_MORE =3,
+    COLLECTOR_CAPA = 3,
+    FLEET = 4,
 }
 
 
@@ -110,7 +111,21 @@ public class UpgradeManager : MonoBehaviour
     }
 
     void _DoUpgrade(int id, bool isLoading = false)
-    { 
+    {
+        int cost = UpgradeStaticManager.instance.GetCost(id);
+        if (!isLoading)
+        {
+            if (CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
+            {
+                CurrencyManager.instance.CostCurrency(CURRENCY_TYPE.Debri, cost);
+            }
+            else  // 돈없는 상태일때
+            {
+                Debug.Log("돈없음 / " + cost + " 필요");
+                return;
+            }
+        }
+
         // 없는 업그레이드는 진행 할 수 없다.
         if (!UpgradeStaticManager.instance.IsExist(id))
             return;
@@ -129,7 +144,7 @@ public class UpgradeManager : MonoBehaviour
             UpgradeTotal.Add(type, UpgradeStaticManager.instance.GetVal(id));
 
         // 이 업글은 활성화
-        if (!isLoading || !UpgradeActiveDict.ContainsKey(id.ToString()))
+        if (!UpgradeActiveDict.ContainsKey(id.ToString()))
         {
             UpgradeActiveDict.Add(id.ToString(), true);
         }
