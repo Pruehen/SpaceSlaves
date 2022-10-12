@@ -72,6 +72,22 @@ public class ShipControl : MonoBehaviour
         agility = refData.agility;//선회 속도   
     }
 
+        shipName = refData.shipName;//함선 이름 (함급)
+        shipClass = refData.shipClass;//함선 종류 (함종)
+        cost = refData.cost;//함선 생산 가격
+        dmg = refData.dmg;//발당 공격력, 발당 n의 기초 데미지
+        dmgType = refData.dmgType;//무기 타입
+        fireDelay = refData.fireDelay;//공격 속도, n초에 1회 공격
+        maxRange = refData.maxRange;//최대 사거리
+        minRange = refData.minRange;//최소 사거리
+        fitRange = refData.fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
+        hp = refData.hp;//체력
+        df = refData.df;//방어력
+        sd = refData.sd;//보호막    
+        defaultspeed = refData.defaultspeed;//기본 이동 속도
+        agility = refData.agility;//선회 속도   
+    }
+
     public GameObject target;//현재 함선이 지시하고 있는 타겟
     //public LinkedListNode<GameObject> targetNode;
 

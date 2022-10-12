@@ -57,7 +57,7 @@ public class SystemMessage : MonoBehaviour
     { 
         if (IsMessageIn == true)
         {
-            SystemMessageUI.gameObject.SetActive(true);
+            logText.text = Message;
         }
         else
         {
