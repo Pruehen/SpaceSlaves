@@ -18,7 +18,7 @@ public class SystemMessage : MonoBehaviour
     private void Update()
     {
         MessageManage();
-        if(IsFade == true && IsFade == true)
+        if(IsMessageIn == true && IsFade == true)
         {
             MassageCoolManage();
         }
