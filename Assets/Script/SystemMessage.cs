@@ -9,16 +9,10 @@ public class SystemMessage : MonoBehaviour
     public GameObject SystemMessageUI;
     public TextMeshProUGUI logText = null;
     bool IsMessageIn = false;
-<<<<<<< HEAD
-    float MessageCool;
-    private static SystemMessage instance;
-    public TextMeshProUGUI textMassage; 
-=======
     float MessageCool = 1.5f;
     float defaultMessageCool = 1.5f;
     bool IsFade = false;
     public GameObject Log;
->>>>>>> 24dcc12bab1976f23b86a6a3f9e1ddfbaaf25884
 
     private void Update()
     {
@@ -31,19 +25,6 @@ public class SystemMessage : MonoBehaviour
 
     public void SelectYes(string Message)
     {
-<<<<<<< HEAD
-        if(IsMessageIn == true)
-        {
-            SystemMessageUI.gameObject.SetActive(true);
-        }
-    }
-
-    public void MessageQ(string Message)
-    {
-        IsMessageIn = true;
-        logText.text = Message;
-    }
-=======
         IsMessageIn = false;
         Log.SendMessage(Message);
     }
@@ -94,5 +75,4 @@ public class SystemMessage : MonoBehaviour
             MessageCool = defaultMessageCool;
         }
     }
->>>>>>> 24dcc12bab1976f23b86a6a3f9e1ddfbaaf25884
 }
