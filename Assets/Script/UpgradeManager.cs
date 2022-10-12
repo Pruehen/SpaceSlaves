@@ -13,7 +13,8 @@ public enum UPGRADE_TYPE
     NONE = 0,
     SCV_SPEED_UP =1,
     SCV_AMOUNT_UP = 2,
-    SCV_MORE =3,
+    COLLECTOR_CAPA = 3,
+    FLEET = 4,
 }
 
 
@@ -35,7 +36,7 @@ public class UpgradeManager : MonoBehaviour
     //ex 1030의 다음 단계 업그레이드가 1039일수는 없다. 
 
     [SerializeField]
-    // "id / 활성화됨"  으로 구성된 딕셔너리
+    // 활성화된 업그레이드 "id / 활성화됨"  으로 구성된 딕셔너리
     Dictionary<string, bool> UpgradeActiveDict = new Dictionary<string, bool>();
     // 업그레이드 총합을 들고 있는 딕셔너리
     Dictionary<UPGRADE_TYPE, float> UpgradeTotal = new Dictionary<UPGRADE_TYPE, float>();
@@ -82,11 +83,16 @@ public class UpgradeManager : MonoBehaviour
         UpgradeTotal.Add(type, foundVal);
     }
 
+    public bool IsUpgradeActive(int id)
+    {
+        return UpgradeActiveDict.ContainsKey(id.ToString());        
+    }
+
     //check 조건
-    public bool CheckUpgradeable(string id)
+    public bool CheckUpgradeable(int id)
     {
         bool val;
-        if (UpgradeActiveDict.TryGetValue(id, out val))
+        if (UpgradeActiveDict.TryGetValue(id.ToString(), out val))
         {
             return val;
         }
@@ -109,11 +115,59 @@ public class UpgradeManager : MonoBehaviour
         _DoUpgrade(GetBestUpgradeId(type));
     }
 
+    // 사전 업그레이드 조건체크
+    bool _CheckReqUpgrade(int id, out string reqError)
+    {
+        bool result = true;
+        int req1 = UpgradeStaticManager.instance.GetReqUpgrade1(id);
+        int req2 = UpgradeStaticManager.instance.GetReqUpgrade2(id);
+        reqError = "req! ";
+
+        if (req1 != 0 && !IsUpgradeActive(req1))
+        {
+            reqError += req1;
+            result = false;
+        }
+        if (req2 != 0 && !IsUpgradeActive(req2))
+        {
+            reqError += req1;
+            result = false;
+        }
+        return result;
+    }
+
     void _DoUpgrade(int id, bool isLoading = false)
-    { 
+    {
+        // 존재 여부 체크
         // 없는 업그레이드는 진행 할 수 없다.
         if (!UpgradeStaticManager.instance.IsExist(id))
+        {
+            Debug.Log("상위 업그레이드 없음");
             return;
+        }
+
+        // 사전 업그레이드 조건이 충족되지 않은 업그레이드는 할수없다.
+        if (!_CheckReqUpgrade(id, out string reError))
+        {
+            Debug.Log("먼저 업그레이드 필요 : " + reError);
+            return;
+        }
+
+        // 돈 체크
+        int cost = UpgradeStaticManager.instance.GetCost(id);
+        if (!isLoading)
+        {
+            // 돈없는 상태일때
+            if (!CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
+            {
+                Debug.Log("돈없음 / " + cost + " 필요");
+                return;
+            }
+            else // 돈이 충분한 상태일때 
+            {
+                
+            }
+        }        
 
         // 다음 얼글 단계 계산
         var type = (UPGRADE_TYPE)((int)id / 1000);
@@ -129,14 +183,13 @@ public class UpgradeManager : MonoBehaviour
             UpgradeTotal.Add(type, UpgradeStaticManager.instance.GetVal(id));
 
         // 이 업글은 활성화
-        if (!isLoading || !UpgradeActiveDict.ContainsKey(id.ToString()))
+        if (!UpgradeActiveDict.ContainsKey(id.ToString()))
         {
             UpgradeActiveDict.Add(id.ToString(), true);
         }
 
         Debug.Log(id.ToString() + " upgraded");
     }
-
 
     public void SaveData()
     {
@@ -161,13 +214,6 @@ public class UpgradeManager : MonoBehaviour
         Debug.Log("업그레이드 데이터 불러오기 완료");
     }
 
-    // 전체 업글된 항목을 출력, 테스트용임 
-    public void _ViewData()
-    {
-        var data = JsonConvert.SerializeObject(UpgradeActiveDict);
-        Debug.Log(data);
-    }
-
     private void OnApplicationQuit()
     {
         SaveData();
@@ -176,5 +222,17 @@ public class UpgradeManager : MonoBehaviour
     private void Start()
     {
         LoadData();
+    }
+
+    public int GetFleetLevel(int id)
+    {
+        int lv = GetBestUpgradeId(UPGRADE_TYPE.FLEET) % 1000;
+        return lv + 1;
+    }
+
+    // 강제로 자원 추가, 테스트용
+    public void TestCur(int amount = 300)
+    {
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, amount);
     }
 }
