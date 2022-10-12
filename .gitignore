@@ -67,3 +67,5 @@ crashlytics-build.properties
 /Assets/data_upgrade_prog.json
 /Assets/data_upgrade_prog.json.meta
 /UserSettings/EditorUserSettings.asset
+/AssetsCurrencySaveData.json
+/AssetsFleetSaveData.json
