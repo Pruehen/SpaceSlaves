@@ -2778,7 +2778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SystemMessageUI: {fileID: 1743036775}
   logText: {fileID: 1457434864}
-  Log: {fileID: 0}
+  Log: {fileID: 11537619}
 --- !u!4 &2033042650
 Transform:
   m_ObjectHideFlags: 0
