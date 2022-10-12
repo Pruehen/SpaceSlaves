@@ -1,356 +1,106 @@
 {
   "1000": {
     "addval": 0.2,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "1001": {
     "addval": 0.2,
-    "cost": 15,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 15
   },
   "1002": {
     "addval": 0.2,
-    "cost": 20,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 20
   },
   "1003": {
     "addval": 0.2,
-    "cost": 25,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 25
   },
   "1004": {
     "addval": 0.2,
-    "cost": 30,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 30
   },
   "1005": {
     "addval": 0.2,
-    "cost": 35,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 35
   },
   "1006": {
     "addval": 0.2,
-    "cost": 40,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 40
   },
   "1007": {
     "addval": 0.2,
-    "cost": 45,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 45
   },
   "1008": {
     "addval": 0.2,
-    "cost": 50,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 50
   },
   "1009": {
     "addval": 0.2,
-    "cost": 55,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 55
   },
   "1010": {
     "addval": 0.2,
-    "cost": 60,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 60
   },
   "1011": {
     "addval": 0.2,
-    "cost": 65,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 65
   },
   "1012": {
     "addval": 0.2,
-    "cost": 70,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 70
   },
   "2000": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2001": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2002": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2003": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2004": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2005": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2006": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2007": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2008": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2009": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2010": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2011": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   },
   "2012": {
     "addval": 1,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3000": {
-    "addval": 100,
-    "cost": 10,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3001": {
-    "addval": 100,
-    "cost": 15,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3002": {
-    "addval": 100,
-    "cost": 20,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3003": {
-    "addval": 100,
-    "cost": 25,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3004": {
-    "addval": 100,
-    "cost": 30,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3005": {
-    "addval": 100,
-    "cost": 35,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3006": {
-    "addval": 100,
-    "cost": 40,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3007": {
-    "addval": 100,
-    "cost": 45,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3008": {
-    "addval": 100,
-    "cost": 50,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3009": {
-    "addval": 100,
-    "cost": 55,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3010": {
-    "addval": 100,
-    "cost": 60,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3011": {
-    "addval": 100,
-    "cost": 65,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "3012": {
-    "addval": 100,
-    "cost": 70,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4000": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4001": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4002": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4003": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4004": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4005": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4006": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4007": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4008": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4009": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4010": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4011": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4012": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4013": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4014": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4015": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4016": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4017": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4018": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4019": {
-    "addval": 1,
-    "cost": 100,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
+    "cost": 10
   }
 }
