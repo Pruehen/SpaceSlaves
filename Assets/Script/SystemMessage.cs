@@ -9,6 +9,11 @@ public class SystemMessage : MonoBehaviour
     public GameObject SystemMessageUI;
     public TextMeshProUGUI logText = null;
     bool IsMessageIn = false;
+
+    //float MessageCool;
+    private static SystemMessage instance;
+    public TextMeshProUGUI textMassage; 
+
     float MessageCool = 1.5f;
     float defaultMessageCool = 1.5f;
     bool IsFade = false;
@@ -16,29 +21,18 @@ public class SystemMessage : MonoBehaviour
 
     private void Update()
     {
-        MessageManage();
+        //MessageManage();
         if(IsMessageIn == true && IsFade == true)
         {
             MassageCoolManage();
         }
     }
 
-    public void SelectYes(string Message)
-    {
-        IsMessageIn = false;
-        Log.SendMessage(Message);
-    }
-
-    public void Check()//확인창
-    {
-        IsMessageIn = false;
-    }
-
-    public void MessageManage()//예/아니오 선택창
+    public void MessageManage(string Message)//예/아니오 선택창
     { 
         if (IsMessageIn == true)
         {
-            SystemMessageUI.gameObject.SetActive(true);
+            logText.text = Message;
         }
         else
         {

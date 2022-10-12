@@ -26,7 +26,7 @@ public class BattleSceneManager : MonoBehaviour
         Debug.Log("테스트용 함수 작동");
     }
 
-    int[] positioningShipId = { 1, -1, -1, -1, -1 };
+    int[] positioningShipId = { 0, 1, -1, -1, -1 };
 
     private void Start()
     {
