@@ -1,39 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SystemMessage : MonoBehaviour
 {
-    public ScrollRect scroll = null;
+    public GameObject SystemMessageUI;
     public TextMeshProUGUI logText = null;
     bool IsMessageIn = false;
     float MessageCool;
+    private static SystemMessage instance;
+    public TextMeshProUGUI textMassage; 
 
-    private void Start()
+    public static SystemMessage Instance
     {
-
-    }
-
-    private void Update()
-    {
-        MessageDown();
-
-        if(IsMessageIn == true)
+        get
         {
-
+            if (null == instance)
+            {
+                instance = new SystemMessage();
+            }
+            return instance;
         }
     }
 
-    void MessageDown()
+    public void selectYN()
     {
-        scroll.verticalNormalizedPosition = 0.0f;
+        if(IsMessageIn == true)
+        {
+            SystemMessageUI.gameObject.SetActive(true);
+        }
     }
 
     public void MessageQ(string Message)
     {
         IsMessageIn = true;
-        logText.text += Message;
+        logText.text = Message;
     }
 }

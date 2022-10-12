@@ -26,41 +26,41 @@ public class ShipAi : MonoBehaviour
     void Start()
     {
         mainShipInfo = this.gameObject.GetComponent<ShipControl>();
+        this.gameObject.layer = this.transform.parent.gameObject.layer;
 
-        if(this.gameObject.layer == 8)//friedlyLayer
+        if (this.gameObject.layer == 8)//friedlyLayer
         {
             enemyManager = BattleSceneManager.instance.FriendlyManager;
         }
-        else if(this.gameObject.layer == 7)//enemyLayer
+        else if (this.gameObject.layer == 7)//enemyLayer
         {
             enemyManager = BattleSceneManager.instance.EnemyManager;
         }
-        Debug.Log(enemyManager.name);
 
         InvokeRepeating("TargetFound", 1, 1);
-        TargetSet();
+        Invoke("TargetSet", 0.2f);
     }
 
     private void FixedUpdate()
     {
         AiStateSet();
 
-        if(state == State.run)
+        if (state == State.run)
         {
             mainShipInfo.MoveFor();
         }
-        else if(state == State.back)
+        else if (state == State.back)
         {
             mainShipInfo.MoveBack();
         }
-        else if(state == State.idle)
+        else if (state == State.idle)
         {
 
         }
     }
 
     public void AiStateSet()
-    {        
+    {
         if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.fitRange)
         {
             state = State.run;
@@ -98,7 +98,7 @@ public class ShipAi : MonoBehaviour
     }
 
     void TargetSet()
-    {        
+    {
         for (int i = 0; i < enemyManager.childCount; i++)
         {
             mainShipInfo.FoundTarget.AddLast(enemyManager.GetChild(i).gameObject);

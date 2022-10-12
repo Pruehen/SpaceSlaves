@@ -93,6 +93,8 @@ public class ShipControl : MonoBehaviour
             hp = hp - (inputDmg - df);
             if (hp <= 0)
             {
+                BattleSceneManager.instance.GameEndCheck();
+                this.transform.SetParent(BattleSceneManager.instance.DestroyedShip);
                 this.gameObject.SetActive(false);         
             }
         }
@@ -102,10 +104,10 @@ public class ShipControl : MonoBehaviour
 
     void Attack()//공격 함수
     {
-        ShipControl targetSC = target.GetComponent<ShipControl>();
-
         if (target == null)
             return;
+
+        ShipControl targetSC = target.GetComponent<ShipControl>();
 
         laserWidth = defaultLaserWidth;
         laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
@@ -131,12 +133,12 @@ public class ShipControl : MonoBehaviour
         laser.startWidth = laserWidth;
         laser.endWidth = laserWidth;
 
-        laserWidth *= 0.95f;
+        laserWidth *= 0.8f;
     }
 
     void RotateTarget(float rotateOrder)//타겟 방향으로 방향 전환 함수
     {
-        rigidbody.AddTorque(this.transform.up * agility * 0.0001f * rotateOrder, ForceMode.Force);
+        rigidbody.AddTorque(this.transform.up * agility * 0.001f * rotateOrder, ForceMode.Force);
     }
 
     void RangeCheck()//타겟과의 거리 체크 함수. invoke로 초당 1회씩 호출
@@ -161,11 +163,11 @@ public class ShipControl : MonoBehaviour
 
     public void MoveFor()//전진 명령 함수
     {
-        rigidbody.AddForce(this.transform.forward * speed * 0.001f, ForceMode.Force);
+        rigidbody.AddForce(this.transform.forward * speed * 0.01f, ForceMode.Force);
     }
 
     public void MoveBack()//후진 명령 함수
     {
-        rigidbody.AddForce(-this.transform.forward * speed * 0.001f, ForceMode.Force);
+        rigidbody.AddForce(-this.transform.forward * speed * 0.005f, ForceMode.Force);
     }
 }
