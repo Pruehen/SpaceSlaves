@@ -9,51 +9,26 @@ public class SystemMessage : MonoBehaviour
     public GameObject SystemMessageUI;
     public TextMeshProUGUI logText = null;
     bool IsMessageIn = false;
-<<<<<<< HEAD
-    float MessageCool;
+
+    //float MessageCool;
     private static SystemMessage instance;
     public TextMeshProUGUI textMassage; 
-=======
+
     float MessageCool = 1.5f;
     float defaultMessageCool = 1.5f;
     bool IsFade = false;
     public GameObject Log;
->>>>>>> 24dcc12bab1976f23b86a6a3f9e1ddfbaaf25884
 
     private void Update()
     {
-        MessageManage();
+        //MessageManage();
         if(IsMessageIn == true && IsFade == true)
         {
             MassageCoolManage();
         }
     }
 
-    public void SelectYes(string Message)
-    {
-<<<<<<< HEAD
-        if(IsMessageIn == true)
-        {
-            SystemMessageUI.gameObject.SetActive(true);
-        }
-    }
-
-    public void MessageQ(string Message)
-    {
-        IsMessageIn = true;
-        logText.text = Message;
-    }
-=======
-        IsMessageIn = false;
-        Log.SendMessage(Message);
-    }
-
-    public void Check()//확인창
-    {
-        IsMessageIn = false;
-    }
-
-    public void MessageManage()//예/아니오 선택창
+    public void MessageManage(string Message)//예/아니오 선택창
     { 
         if (IsMessageIn == true)
         {
@@ -94,5 +69,4 @@ public class SystemMessage : MonoBehaviour
             MessageCool = defaultMessageCool;
         }
     }
->>>>>>> 24dcc12bab1976f23b86a6a3f9e1ddfbaaf25884
 }
