@@ -9,7 +9,7 @@ public class BattleSceneManager : MonoBehaviour
 {
     public static BattleSceneManager instance;
     public GameObject Log;
-    public bool isClicked { set; get; }
+    //public bool isClicked { set; get; }
 
     private void Awake()
     {
@@ -61,11 +61,11 @@ public class BattleSceneManager : MonoBehaviour
             Log.SendMessage("MessageQ", "게임 패배!");
         }
 
-        if (isClicked == true)
-        {
-            Debug.Log("Hello");
-            this.GetComponent<SceneChange>().GoLaborScene();
-        }
+        //if (isClicked == true)
+        //{
+        //    Debug.Log("Hello");
+        //    this.GetComponent<SceneChange>().GoLaborScene();
+        //}
     }
 }
 
