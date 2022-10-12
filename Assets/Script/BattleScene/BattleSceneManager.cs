@@ -60,12 +60,6 @@ public class BattleSceneManager : MonoBehaviour
         {
             Log.SendMessage("MessageQ", "게임 패배!");
         }
-
-        //if (isClicked == true)
-        //{
-        //    Debug.Log("Hello");
-        //    this.GetComponent<SceneChange>().GoLaborScene();
-        //}
     }
 }
 
