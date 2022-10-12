@@ -25,9 +25,13 @@ public class SceneChange : MonoBehaviour
     }
 
     public void ExitButton()
-    {        
-        Message.SendMessage("MessageQ","종료하시겠습니까?");
+    {
+        Message.SendMessage("MessageQ", "종료하시겠습니까?");
         //Application.Quit();
     }
 
+    public void _Exit()
+    {
+        Application.Quit();
+    }
 }
