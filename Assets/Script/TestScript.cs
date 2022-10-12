@@ -5,6 +5,7 @@ using UnityEngine;
 public class TestScript : MonoBehaviour
 {
     public GameObject Log;
+
     // Start is called before the first frame update
     void Start()
     {

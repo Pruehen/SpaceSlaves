@@ -16,7 +16,7 @@ public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager instance;
     
-    public TextMeshProUGUI minText;
+    //public TextMeshProUGUI minText;
 
     Button button;
 
@@ -84,8 +84,8 @@ public class CurrencyManager : MonoBehaviour
         ref int currency = ref GetCurrency(type);
 
         if (currency >= amount)
-        {             
-            currency -= amount;
+        {
+            CostCurrency(type, amount);
             //LaborSceneManager.instance.SetMinUI();
             return true;
         }

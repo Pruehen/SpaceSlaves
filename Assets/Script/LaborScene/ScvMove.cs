@@ -15,7 +15,6 @@ public class ScvMove : MonoBehaviour
     void Start()
     {
         DirSet();
-        LaborSceneManager.instance.SetMinUI();
     }
 
     float moveSpeed = 3;
@@ -54,6 +53,5 @@ public class ScvMove : MonoBehaviour
     {
         int totalMineral = minAmount + (int)UpgradeManager.instance.GetTotalActiveVal(UPGRADE_TYPE.SCV_AMOUNT_UP);
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, totalMineral);
-        LaborSceneManager.instance.SetMinUI();
     }
 }

@@ -6,23 +6,30 @@ using static UnityEngine.GraphicsBuffer;
 public class ShipControl : MonoBehaviour
 {
     ShipAi shipAi;
+    public List<Turret> turrets;
 
     Rigidbody rigidbody;
     LineRenderer laser;
 
-    public float dmg = 10;//발당 공격력
-    public float fireDelay = 1;//공격 속도
-    public float maxRange = 10;//최대 사거리
-    public float minRange = 5;//최소 사거리
-    public float fitRange = 5.5f;
-    public float hp = 100;//체력
-    public float df = 1;//방어력
-    public float sd = 100;//보호막
-    public float speed = 10;//이동 속도
-    public float defaultspeed = 10;//기본 이동 속도
-    public float agility = 10;//선회 속도
+    int id = -1;//함선 고유 아이디. 0부터 시작
+    public string shipName;//함선 이름 (함급)
+    public ship_Class shipClass;//함선 종류 (함종)
+    public int cost;//함선 생산 가격
+    public float dmg;//발당 공격력, 발당 n의 기초 데미지
+    public dmg_Type dmgType;//무기 타입
+    public bool isTurret;//터렛 유무
+    public float fireDelay;//공격 속도, n초에 1회 공격
+    public float maxRange;//최대 사거리
+    public float minRange;//최소 사거리
+    public float fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
+    public float hp;//체력
+    public float df;//방어력
+    public float sd;//보호막    
+    public float defaultspeed;//기본 이동 속도
+    public float agility;//선회 속도   
 
     float delayCount = 0;
+    float randomDelay = 0;
     public bool isRange { private set; get; }
 
     public Vector3 toTargetVec;
@@ -35,9 +42,34 @@ public class ShipControl : MonoBehaviour
         laser = this.GetComponent<LineRenderer>();
         shipAi = this.GetComponent<ShipAi>();
 
+        if(id == -1)
+        {
+            idSet(0);
+        }
         InvokeRepeating("RangeCheck", 0, 1);
 
         //shipAi.TargetFound();
+    }    
+    public void idSet(int id)
+    {
+        this.id = id;
+        ShipInfoData refData = FleetManager.instance.GetShipData(id);
+
+        shipName = refData.shipName;//함선 이름 (함급)
+        shipClass = refData.shipClass;//함선 종류 (함종)
+        cost = refData.cost;//함선 생산 가격
+        dmg = refData.dmg;//발당 공격력, 발당 n의 기초 데미지
+        dmgType = refData.dmgType;//무기 타입
+        isTurret = refData.turretType;
+        fireDelay = refData.fireDelay;//공격 속도, n초에 1회 공격
+        maxRange = refData.maxRange;//최대 사거리
+        minRange = refData.minRange;//최소 사거리
+        fitRange = refData.fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
+        hp = refData.hp;//체력
+        df = refData.df;//방어력
+        sd = refData.sd;//보호막    
+        defaultspeed = refData.defaultspeed;//기본 이동 속도
+        agility = refData.agility;//선회 속도   
     }
 
     public GameObject target;//현재 함선이 지시하고 있는 타겟
@@ -45,21 +77,25 @@ public class ShipControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        LaserGrapic();
+        if(dmgType == dmg_Type.particle && !isTurret)//레이저 고정 주포일 경우, 레이저 셋팅
+        {
+            LaserGrapic();
+        }
+        
         if(target != null)//타겟벡터 생성제어
         {
             toTargetVec = target.transform.position - this.transform.position;//타겟을 향하는 벡터
             toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//위 벡터의 로컬화
         }       
         RotateTarget(toTargetVec_Local.x);//함선 자동 회전 제어
-        if (delayCount <= fireDelay)//공격속도 변수 제어
+
+        if (delayCount <= fireDelay + randomDelay)//공격속도 변수 제어
         {
             delayCount += Time.deltaTime;
         }
 
-        if (isRange && delayCount > fireDelay && Mathf.Abs(toTargetVec_Local.x) < 0.01f)//사거리 내 적 자동 공격 제어
+        if (isRange && delayCount > fireDelay + randomDelay)//사거리 내 적 자동 공격 제어
         {
-            delayCount = 0;
             Attack();
         }
 
@@ -69,15 +105,14 @@ public class ShipControl : MonoBehaviour
         }
     }
 
-
     float defaultLaserWidth = 0.01f;
     float laserWidth;
 
 
-    public float Hit(float dmg)
+    public float Hit(float dmg)//함선 피격 함수
     {
         float inputDmg = dmg;
-
+        
         if (sd > 0 && inputDmg <= sd)
         {
             sd -= inputDmg;
@@ -93,32 +128,53 @@ public class ShipControl : MonoBehaviour
             hp = hp - (inputDmg - df);
             if (hp <= 0)
             {
-                BattleSceneManager.instance.GameEndCheck();
-                this.transform.SetParent(BattleSceneManager.instance.DestroyedShip);
-                this.gameObject.SetActive(false);         
+                ShipDestroy();
             }
         }
 
         return hp;
     }
 
-    void Attack()//공격 함수
+    void ShipDestroy()
     {
-        if (target == null)
-            return;
+        BattleSceneManager.instance.GameEndCheck();
+        this.transform.SetParent(BattleSceneManager.instance.DestroyedShip);
 
-        ShipControl targetSC = target.GetComponent<ShipControl>();
-
-        laserWidth = defaultLaserWidth;
-        laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
-
-        if(targetSC.Hit(dmg) <= 0)
-        {
-            TargetDestroyed();
-        }
+        this.gameObject.SetActive(false);
     }
 
-    void TargetDestroyed()
+    void Attack()//공격 함수
+    {
+        if (target == null || Mathf.Abs(toTargetVec_Local.x) > 0.1f)
+            return;
+
+        delayCount = 0;
+        ShipControl targetSC = target.GetComponent<ShipControl>();
+
+        if (!isTurret)//고정 주포일 경우
+        {            
+            if (dmgType == dmg_Type.particle)//레이저 무기일 경우, 레이저 그래픽 세팅 및 다이렉트 피해 입힘
+            {
+                laserWidth = defaultLaserWidth;
+                laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
+                if (targetSC.Hit(dmg) <= 0)
+                {
+                    TargetDestroyed();
+                }
+            }
+        }
+        else if(isTurret)//터렛일 경우
+        {
+            for(int i = 0; i < turrets.Count; i++)
+            {
+                turrets[i].Attack(targetSC);
+            }
+        }
+
+        randomDelay = Random.Range(-0.1f, 0.1f);
+    }
+
+    public void TargetDestroyed()
     {
         FoundTarget.Remove(target);
         target = null;
@@ -163,11 +219,11 @@ public class ShipControl : MonoBehaviour
 
     public void MoveFor()//전진 명령 함수
     {
-        rigidbody.AddForce(this.transform.forward * speed * 0.01f, ForceMode.Force);
+        rigidbody.AddForce(this.transform.forward * defaultspeed * 0.01f, ForceMode.Force);
     }
 
     public void MoveBack()//후진 명령 함수
     {
-        rigidbody.AddForce(-this.transform.forward * speed * 0.005f, ForceMode.Force);
+        rigidbody.AddForce(-this.transform.forward * defaultspeed * 0.005f, ForceMode.Force);
     }
 }

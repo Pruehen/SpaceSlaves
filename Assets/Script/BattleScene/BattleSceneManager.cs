@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class BattleSceneManager : MonoBehaviour
 {
     public static BattleSceneManager instance;
+    public GameObject Log;
+    //public bool isClicked { set; get; }
 
     private void Awake()
     {
@@ -23,7 +26,7 @@ public class BattleSceneManager : MonoBehaviour
         Debug.Log("테스트용 함수 작동");
     }
 
-    int[] positioningShipId = { 0, -1, -1, -1, -1 };
+    int[] positioningShipId = { 0, 1, -1, -1, -1 };
 
     private void Start()
     {
@@ -51,17 +54,14 @@ public class BattleSceneManager : MonoBehaviour
 
         if(isWin)
         {
-            Debug.Log("게임 승리!");
+            Log.SendMessage("MessageQ", "게임 승리!");
         }
         else
         {
-            Debug.Log("게임 패배!");
+            Log.SendMessage("MessageQ", "게임 패배!");
         }
-
-        this.GetComponent<SceneChange>().GoLaborScene();
     }
 }
-
 
 public enum battlePosition
 {
