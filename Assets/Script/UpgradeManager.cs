@@ -214,13 +214,6 @@ public class UpgradeManager : MonoBehaviour
         Debug.Log("업그레이드 데이터 불러오기 완료");
     }
 
-    // 전체 업글된 항목을 출력, 테스트용임 
-    public void _ViewData()
-    {
-        var data = JsonConvert.SerializeObject(UpgradeActiveDict);
-        Debug.Log(data);
-    }
-
     private void OnApplicationQuit()
     {
         SaveData();
@@ -231,6 +224,13 @@ public class UpgradeManager : MonoBehaviour
         LoadData();
     }
 
+    public int GetFleetLevel(int id)
+    {
+        int lv = GetBestUpgradeId(UPGRADE_TYPE.FLEET) % 1000;
+        return lv + 1;
+    }
+
+    // 강제로 자원 추가, 테스트용
     public void TestCur(int amount = 300)
     {
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, amount);

@@ -23,6 +23,19 @@ public class UpgradeProgText : MonoBehaviour
         var total = UpgradeManager.instance.GetTotalActiveVal(type);
         var lv = UpgradeManager.instance.GetBestUpgradeId(type) % 1000;
 
-        txt.text = string.Format("{0} lv / 총합 {1} + ", lv, total);
+        // 함대 레벨은 다르게 처리
+        switch (type)
+        {
+            case UPGRADE_TYPE.NONE:
+                txt.text = "WTF is this type of value doing here?";
+                break;
+            case UPGRADE_TYPE.FLEET:
+                txt.text = string.Format("{0} lv", lv + 1);
+                break;
+            default:
+                txt.text = string.Format("{0} lv / 총합 {1} + ", lv, total);
+                break;
+        }
+
     }
 }
