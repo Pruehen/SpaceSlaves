@@ -11,7 +11,6 @@ public class SystemMessage : MonoBehaviour
     bool IsMessageIn = false;
     float MessageCool = 1.5f;
     float defaultMessageCool = 1.5f;
-    //public TextMeshProUGUI textMassage;
     bool IsFade = false;
     public GameObject Log;
 
@@ -24,21 +23,18 @@ public class SystemMessage : MonoBehaviour
         }
     }
 
-    public void notice()//자동으로 사라지는 알림창
+    public void SelectYes(string Message)//확인 후 실행
     {
-
+        IsMessageIn = false;
+        Log.SendMessage(Message);
     }
 
     public void Check()//확인창
     {
-        //BattleSceneManager LogMsg = Log.GetComponent<BattleSceneManager>();
         IsMessageIn = false;
-
-        
-       // LogMsg.isClicked = true;
     }
 
-    public void MessageManage()//예/아니오 선택창
+    public void MessageManage()// 창 띄우는거
     { 
         if (IsMessageIn == true)
         {
@@ -69,7 +65,7 @@ public class SystemMessage : MonoBehaviour
         }
     }
 
-    void MassageCoolManage()
+    void MassageCoolManage() //사라지는 창 쿨
     {
         MessageCool -= Time.deltaTime;
         if(MessageCool <= 0)

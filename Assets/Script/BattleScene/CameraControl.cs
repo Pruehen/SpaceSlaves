@@ -19,7 +19,7 @@ public class CameraControl : MonoBehaviour
 
         ClickCheck();
         DragPos(clickPoint);
-        CamMove(MovePos);
+        CamMove();
 
         ZoomIN_Ont(CamPos);
     }
@@ -66,19 +66,23 @@ public class CameraControl : MonoBehaviour
         }
     }
 
-    void CamMove(Vector3 Pos)
+    void CamMove()
     {
         if (isClicked == true)
         {
-            Pos.z = Pos.y;
-            Pos.y = 0f;
+            Vector3 position
+                    = Camera.main.ScreenToViewportPoint((Vector2)Input.mousePosition - clickPoint);
 
-            Vector3 move = Pos * (Time.deltaTime * dragSpeed);
+
+            position.z = position.y;
+            position.y = 0f;
+
+            Vector3 move = position * (Time.deltaTime * dragSpeed);
 
             float y = transform.position.y;
 
             transform.Translate(move);
-            transform.transform.position = 
+            transform.position = 
                 new Vector3(transform.position.x, y, transform.position.z);
         }
     }
