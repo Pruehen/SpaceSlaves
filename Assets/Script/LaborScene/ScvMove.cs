@@ -11,6 +11,7 @@ public class ScvMove : MonoBehaviour
 
     public GameObject mineral_Dumy;//자기가 들고 있는 광물더미
 
+    public static ScvMove instance; 
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class ScvMove : MonoBehaviour
     }
 
     float moveSpeed = 3;
-    int minAmount = 5;
+    public int minAmount = 5;
 
     // Update is called once per frame
     void Update()
