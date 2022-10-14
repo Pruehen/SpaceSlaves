@@ -34,6 +34,7 @@ public class CurrencyManager : MonoBehaviour
         instance = this;
         LoadCurrencyData();
         DontDestroyOnLoad(this);
+        OffCurrencyData(); 
     }
 
     private void Start()
@@ -108,6 +109,12 @@ public class CurrencyManager : MonoBehaviour
         File.WriteAllText(filePath, ToJsonData);
 
         Debug.Log("재화 데이터 저장 완료");
+    }
+
+    void OffCurrencyData()
+    {
+
+        Debug.Log((int)Time.realtimeSinceStartup); 
     }
 
     void OnApplicationQuit()
