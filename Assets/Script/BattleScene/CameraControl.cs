@@ -11,8 +11,11 @@ public class CameraControl : MonoBehaviour
     Vector2 MovePos;
     float dragSpeed = 15f;
     float defaultdragSpeed = 15f;
+    float defaultRotateSpeed = 500f;
     float WheelSpeed = 4f;
     public GameObject Cam;
+    private float xRotateMove;
+    private float yRotateMove;
 
     private void Update()
     {
@@ -23,6 +26,7 @@ public class CameraControl : MonoBehaviour
         CamMove(MovePos);
 
         ZoomIN_Ont(CamPos);
+        CamRotate(CamPos);
     }
 
     void DragPos(Vector2 Pos)
@@ -92,8 +96,35 @@ public class CameraControl : MonoBehaviour
             float y = transform.position.y;
 
             transform.Translate(move);
-            transform.transform.position = 
+            transform.position = 
                 new Vector3(transform.position.x, y, transform.position.z);
+        }
+    }
+
+    void CamRotate(Vector3 Pos)
+    {
+        if (IsRClicked == true)
+        {
+            if (Input.GetAxis("Mouse X") == 0)
+            {
+                dragSpeed = 0;
+            }
+            else if (Input.GetAxis("Mouse Y") == 0)
+            {
+                dragSpeed = 0;
+            }
+            else
+            {
+                dragSpeed = defaultRotateSpeed;
+            }
+
+            xRotateMove = Input.GetAxis("Mouse X") * Time.deltaTime * dragSpeed;
+            yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * dragSpeed;
+
+            transform.RotateAround(Pos, Vector3.right, -yRotateMove);
+            transform.RotateAround(Pos, Vector3.up, xRotateMove);
+
+            transform.LookAt(Pos);
         }
     }
 
