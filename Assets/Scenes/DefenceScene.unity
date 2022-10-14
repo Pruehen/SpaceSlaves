@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 163059810}
   - component: {fileID: 163059809}
   m_Layer: 5
-  m_Name: YN
+  m_Name: Yes_GoLaber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4617,7 +4617,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 60
+  field of view: 59.03804
   orthographic: 0
   orthographic size: 0.16
   m_Depth: -1
@@ -4642,14 +4642,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929763833}
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 0.229, z: -0.359}
+  m_LocalRotation: {x: 0.1229235, y: 0.29221475, z: -0.040613215, w: 0.94754994}
+  m_LocalPosition: {x: 0.1, y: 0.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.874, y: 34.239, z: -0.304}
 --- !u!114 &1929763837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4662,6 +4662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5428955711d947b4baff6be948605e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cam: {fileID: 1929763833}
 --- !u!1001 &2132634875
 PrefabInstance:
   m_ObjectHideFlags: 0
