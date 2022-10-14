@@ -32,7 +32,9 @@ public class LaborSceneManager : MonoBehaviour
     TextMeshProUGUI[] shipNameTmp = new TextMeshProUGUI[20]; //각 함선별 지정된 이름
     TextMeshProUGUI[] shipQtyTmp = new TextMeshProUGUI[20]; //각 함선별 수량
 
-    public void BuildWdwTogle(bool value)//함선 건조 버튼을 눌렀을 때 실행. bool이 true일 경우 창이 켜지고 false이면 창이 꺼짐
+    public GameObject fleetFormationWdw;
+
+    public void BuildWdwToggle(bool value)//함선 건조 버튼을 눌렀을 때 실행. bool이 true일 경우 창이 켜지고 false이면 창이 꺼짐
     {
         buildWdw.SetActive(value);
 
@@ -43,6 +45,11 @@ public class LaborSceneManager : MonoBehaviour
                 shipQtyTmp[i].text = FleetManager.instance.GetFleetQtyData(i).ToString();
             }
         }
+    }
+
+    public void ffWdwToggle(bool value)
+    {
+        fleetFormationWdw.SetActive(value);
     }
 
     public void ShipAdd(int index)//함선 생산 버튼을 눌렀을 때 실행. 누른 버튼에 따라서 무슨 함선을 만들지 고름.
