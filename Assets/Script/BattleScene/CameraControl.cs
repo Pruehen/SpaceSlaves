@@ -10,6 +10,7 @@ public class CameraControl : MonoBehaviour
     Vector2 UpPoint;
     Vector2 MovePos;
     float dragSpeed = 15f;
+    float defaultdragSpeed = 15f;
     float WheelSpeed = 4f;
     public GameObject Cam;
 
@@ -19,7 +20,7 @@ public class CameraControl : MonoBehaviour
 
         ClickCheck();
         DragPos(clickPoint);
-        CamMove();
+        CamMove(MovePos);
 
         ZoomIN_Ont(CamPos);
     }
@@ -66,30 +67,39 @@ public class CameraControl : MonoBehaviour
         }
     }
 
-    void CamMove()
+    void CamMove(Vector3 Pos)
     {
         if (isClicked == true)
         {
-            Vector3 position
-                    = Camera.main.ScreenToViewportPoint((Vector2)Input.mousePosition - clickPoint);
+            if(Input.GetAxis("Mouse X") == 0)
+            {
+                dragSpeed = 0;
+            }
+            else if(Input.GetAxis("Mouse Y") == 0)
+            {
+                dragSpeed = 0;
+            }
+            else
+            {
+                dragSpeed = defaultdragSpeed;
+            }          
 
+            Pos.z = Pos.y;
+            Pos.y = 0f;
 
-            position.z = position.y;
-            position.y = 0f;
-
-            Vector3 move = position * (Time.deltaTime * dragSpeed);
+            Vector3 move = Pos * (Time.deltaTime * dragSpeed);
 
             float y = transform.position.y;
 
             transform.Translate(move);
-            transform.position = 
+            transform.transform.position = 
                 new Vector3(transform.position.x, y, transform.position.z);
         }
     }
 
     void ClickCheck()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             isClicked = true;
             clickPoint = Input.mousePosition;
@@ -99,7 +109,7 @@ public class CameraControl : MonoBehaviour
             isClicked = false;
             UpPoint = Input.mousePosition;
         }
-        else if(Input.GetMouseButtonDown(1))
+        else if(Input.GetMouseButton(1))
         {
             IsRClicked = true;
             clickPoint = Input.mousePosition;
