@@ -13,7 +13,7 @@ public class ShipSpownSystem : MonoBehaviour
                 int shipQty = FleetManager.instance.GetFleetQtyData(positioning[i]);
                 for (int j = 0; j < shipQty; j++)
                 {
-                    GameObject ship = Instantiate(shipPrf[positioning[i]], new Vector3(j * 0.2f, 0, 0), Quaternion.identity, BattleSceneManager.instance.FriendlyManager);
+                    GameObject ship = Instantiate(shipPrf[positioning[i]], new Vector3(j * 0.2f, 0, 0 - i + Random.Range(-0.2f, 0.2f)), Quaternion.identity, BattleSceneManager.instance.FriendlyManager);
                     ship.GetComponent<ShipControl>().idSet(positioning[i]);
                 }
             }
