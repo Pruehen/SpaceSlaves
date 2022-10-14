@@ -45,6 +45,7 @@ public class ShipAi : MonoBehaviour
     {
         AiStateSet();
 
+        // 상태에 따른 이동 처리
         if (state == State.run)
         {
             mainShipInfo.MoveFor();
