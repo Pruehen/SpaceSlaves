@@ -10,7 +10,7 @@ public class FleetFormationUI : MonoBehaviour
     public Scrollbar goQtySlider;
     public TextMeshProUGUI goQtySliderTxt;
 
-    public GameObject[] goFleets;
+    public FleetBarUI[] goFleets;
     public GameObject goSelectPop;
 
     int formIdx = 0;

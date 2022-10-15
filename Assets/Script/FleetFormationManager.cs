@@ -7,12 +7,12 @@ using UnityEngine;
 [SerializeField]
 public class FleetFormation
 {
-    int size = 10;
-    int idType = -1;
-    int amount = 0;
+    public int idType = -1;
+    public int amount = 0;    
     
     public void Add(int id, int qty, out bool isSuccess)
     {
+        int size = 10;
         isSuccess = false;
 
         // 빈곳에 넣으면 타입 세팅
@@ -20,8 +20,10 @@ public class FleetFormation
             idType = id;
 
         // 사이즈 초과
-        if (amount > size)
-            return;
+        if (qty + amount > size)
+        {
+            qty = size - amount;
+        }
 
         // 새로운거 들어오면 초기화
         if (id != idType)
@@ -42,6 +44,7 @@ public class FleetFormation
 
 public class FleetFormationManager : MonoBehaviour
 {
+    [SerializeField]
     Dictionary<int, FleetFormation> formations = new Dictionary<int, FleetFormation>();
     private string FormationSaveDataFileName = "/data_fleet_formation.json";
     
@@ -83,6 +86,14 @@ public class FleetFormationManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public int GetFleetQty(int formIdx)
+    {
+        if (!formations.ContainsKey(formIdx))
+            return 0;
+        
+        return formations[formIdx].amount;
     }
 
     void OnApplicationQuit()
