@@ -7,6 +7,7 @@ public class ShipControl : MonoBehaviour
 {
     ShipAi shipAi;
     public List<Turret> turrets;
+    ShipSound shipSound;
 
     Rigidbody rigidbody;
     LineRenderer laser;
@@ -41,8 +42,9 @@ public class ShipControl : MonoBehaviour
         rigidbody = this.GetComponent<Rigidbody>();
         laser = this.GetComponent<LineRenderer>();
         shipAi = this.GetComponent<ShipAi>();
+        shipSound = this.GetComponent<ShipSound>();
 
-        if(id == -1)
+        if (id == -1)
         {
             idSet(0);
         }
@@ -158,6 +160,7 @@ public class ShipControl : MonoBehaviour
             {
                 laserWidth = defaultLaserWidth;
                 laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
+                shipSound.FireSoundPlay();
                 if (targetSC.Hit(dmg) <= 0)
                 {
                     TargetDestroyed();
