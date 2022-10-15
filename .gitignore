@@ -71,3 +71,5 @@ crashlytics-build.properties
 /AssetsFleetSaveData.json
 /Assets/data_fleet_formation.json
 /Assets/data_fleet_formation.json.meta
+/Assets/data_currency_save.json
+/Assets/data_currency_save.json.meta
