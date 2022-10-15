@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turrets: []
+  shipSound: {fileID: 0}
   shipName: 
   shipClass: 0
   cost: 0
@@ -270,6 +271,7 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  shipDebriPrf: {fileID: 129358, guid: f699cfe6e2361f94c8502884c243961f, type: 3}
 --- !u!114 &2112714319
 MonoBehaviour:
   m_ObjectHideFlags: 0

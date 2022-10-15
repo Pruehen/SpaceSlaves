@@ -138,10 +138,14 @@ public class ShipControl : MonoBehaviour
         return hp;
     }
 
+    public GameObject shipDebriPrf;
     void ShipDestroy()
     {
         BattleSceneManager.instance.GameEndCheck();
         this.transform.SetParent(BattleSceneManager.instance.DestroyedShip);
+
+        GameObject debri = Instantiate(shipDebriPrf, this.transform.position, this.transform.rotation);
+        debri.GetComponent<Rigidbody>().velocity = rigidbody.velocity;
 
         this.gameObject.SetActive(false);
     }
