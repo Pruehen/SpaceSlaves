@@ -15,24 +15,23 @@ public class FleetFormation
         int size = 10;
         isSuccess = false;
 
-        // 빈곳에 넣으면 타입 세팅
-        if (amount == 0)
-            idType = id;
-
-        // 사이즈 초과
-        if (qty + amount > size)
-        {
-            qty = size - amount;
-        }
-
         // 새로운거 들어오면 초기화
         if (id != idType)
         {
             idType = id;
-            amount = 0;
         }
 
-        amount += qty;
+        // 빈곳에 넣으면 타입 세팅 명시적으로 한번더
+        if (amount == 0)
+            idType = id;
+
+        // 사이즈 초과
+        if (qty > size)
+        {
+            qty = size;
+        }
+
+        amount = qty;
         isSuccess = true;
     }
     public void Remove()
@@ -94,6 +93,25 @@ public class FleetFormationManager : MonoBehaviour
             return 0;
         
         return formations[formIdx].amount;
+    }
+
+    public int GetFleetShipIdx(int formIdx)
+    {
+        if (!formations.ContainsKey(formIdx))
+            return -1;
+
+        return formations[formIdx].idType;
+    }
+
+    public List<int> GetActiveFleetIdxList()
+    {
+        List<int> list = new List<int>();
+        foreach (var item in formations.Keys)
+        {
+            list.Add(item);
+        }
+
+        return list;
     }
 
     void OnApplicationQuit()

@@ -20,7 +20,7 @@ public class CurrencyManager : MonoBehaviour
 
     Button button;
 
-    public string CurrencySaveDataFileName = "CurrencySaveData.json";
+    string CurrencySaveDataFileName = "/data_currency_save.json";
     CurrencyData currencyData = new CurrencyData();
 
     private void Awake()

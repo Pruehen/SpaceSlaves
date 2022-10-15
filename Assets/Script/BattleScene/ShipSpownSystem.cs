@@ -4,21 +4,47 @@ using UnityEngine;
 
 public class ShipSpownSystem : MonoBehaviour
 {
-    public void FriendlyShipSpown(int[] positioning)
+    // 함선 Prefab, 외형과 기본적인 AI만 담고있고 세부 함선 깡스펙 세팅은 소환시 해줌 
+    public List<GameObject> shipPrf = new List<GameObject>();
+
+    //함대 마다 스폰될 위치
+    Transform spawnPos;
+
+    public float spaceBetX = 0.2f;
+    public float spaceBetZ = 0.2f;
+
+    public void FriendlyShipSpown(Transform center)
     {
-        for(int i = 0; i < positioning.Length; i++)
-        {
-            if (positioning[i] >= 0)
-            {                
-                int shipQty = FleetManager.instance.GetFleetQtyData(positioning[i]);
+        spawnPos = center;
+
+        var  activeList = FleetFormationManager.instance.GetActiveFleetIdxList();
+
+        foreach(int fleetID in activeList)
+        { 
+            if (fleetID >= 0)
+            {
+                int shipQty = FleetFormationManager.instance.GetFleetQty(fleetID);
+                int shipid = FleetFormationManager.instance.GetFleetShipIdx(fleetID);
+
+                // 데이터가 비어있는경우 
+                if (shipid == -1)
+                    continue;
+
                 for (int j = 0; j < shipQty; j++)
                 {
-                    GameObject ship = Instantiate(shipPrf[positioning[i]], new Vector3(j * 0.2f, 0, 0 - i + Random.Range(-0.2f, 0.2f)), Quaternion.identity, BattleSceneManager.instance.FriendlyManager);
-                    ship.GetComponent<ShipControl>().idSet(positioning[i]);
+                    var go_ship = shipPrf[shipid];
+
+                    // 자연스러운 위치 조정 값
+                    int adjuster = j % 2 == 0 ? -1 : 1;
+                    Vector3 randomAdjValue = new Vector3(((spaceBetX * j) * adjuster), 0, 0 - fleetID + Random.Range(-spaceBetZ, spaceBetZ));
+
+                    Transform pos = spawnPos;
+                    GameObject ship = Instantiate(go_ship, pos.position + randomAdjValue, Quaternion.identity, BattleSceneManager.instance.FriendlyManager);
+
+                    // 스팩 세팅
+                    ship.GetComponent<ShipControl>().idSet(shipid);
                 }
             }
         }        
     }
-
-    public List<GameObject> shipPrf = new List<GameObject>();
 }
