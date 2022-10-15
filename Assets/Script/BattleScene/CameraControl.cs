@@ -29,14 +29,25 @@ public class CameraControl : MonoBehaviour
         CamRotate(CamPos);
     }
 
+    float camControlSpeed = 10f;
+    Vector2 valueTemp;
+
     void DragPos(Vector2 Pos)
     {
-        Vector2 Value = Pos - UpPoint;
-        Value = Value.normalized;
+        //Vector2 Value = Pos - UpPoint;
+        //Value = Value.normalized;
 
-        MovePos = 
-            new Vector2(Value.x * 100 * Time.deltaTime, 
-            Value.y * 100 * Time.deltaTime);
+        Vector2 value = Pos;
+        Vector2 value_dif = value - valueTemp;
+        valueTemp = value;
+
+        //MovePos = 
+        //    new Vector2(value.x * 100 * Time.deltaTime,
+        //    value.y * 100 * Time.deltaTime);
+        if (value_dif.magnitude < 30)
+        {
+            MovePos = -value_dif * camControlSpeed * Time.deltaTime;
+        }
     }
 
     void ZoomIN_Ont(Vector3 Pos)

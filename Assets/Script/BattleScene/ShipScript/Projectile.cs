@@ -10,6 +10,13 @@ public class Projectile : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(this.transform.forward * 5, ForceMode.Impulse);
     }
 
+    float dmg;
+
+    public void Init(float dmg)
+    {
+        this.dmg = dmg;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +27,7 @@ public class Projectile : MonoBehaviour
     {
         if(other.gameObject.layer == 7 || other.gameObject.layer == 8)
         {
-            other.GetComponent<ShipControl>().Hit(40);
+            other.GetComponent<ShipControl>().Hit(dmg);
             Destroy(this.gameObject);
         }
     }
