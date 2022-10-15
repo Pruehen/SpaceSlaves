@@ -1,70 +1,76 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 [SerializeField]
-public class FleetUnit
-{
-    public int id;
-    public FleetUnit(int id)
-    {
-        this.id = id;
-    }
-
-}
-[SerializeField]
 public class FleetFormation
 {
-    public int idType;
     int size = 10;
-    FleetUnit[] units;
+    int idType = -1;
+    int amount = 0;
     
-    public void Add(int id, out bool isSuccess)
+    public void Add(int id, int qty, out bool isSuccess)
     {
         isSuccess = false;
 
-        if (units.Length == 0)
+        // 빈곳에 넣으면 타입 세팅
+        if (amount == 0)
             idType = id;
 
-        if (units.Length > size)
+        // 사이즈 초과
+        if (amount > size)
             return;
 
+        // 새로운거 들어오면 초기화
         if (id != idType)
-            return;
+        {
+            idType = id;
+            amount = 0;
+        }
 
-        var unit = new FleetUnit(id);
-        units[units.Length] = unit;
+        amount += qty;
         isSuccess = true;
     }
     public void Remove()
     {
-        if (units.Length <= 0)
-            return;
-        units[units.Length - 1] = null;
+        amount = 0;
+        idType = -1;
     }
 }
 
 public class FleetFormationManager : MonoBehaviour
 {
-    [SerializeField]
-    Dictionary<int, FleetFormation> formations;
+    Dictionary<int, FleetFormation> formations = new Dictionary<int, FleetFormation>();
+    private string FormationSaveDataFileName = "/data_fleet_formation.json";
+    
+    public static FleetFormationManager instance;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        instance = this;
+
+        LoadFormationData();
+        DontDestroyOnLoad(this);
     }
 
-    public bool AddUnit(int id, int formIdx)
+    public bool SetUnit(int id, int formIdx, int qty)
     {
-        if (formations.ContainsKey(id))
+        if (formations.ContainsKey(formIdx))
         {
-            formations[formIdx].Add(id, out bool success);
+            formations[formIdx].Add(id, qty, out bool success);
             return success;
         }
 
         var data = new FleetFormation();        
-        data.Add(id, out bool suc);
+        data.Add(id, qty, out bool suc);
         formations.Add(formIdx, data);
         return suc;
     }
@@ -77,6 +83,29 @@ public class FleetFormationManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    void OnApplicationQuit()
+    {
+        SaveFormationData();
+    }
+
+    void LoadFormationData()
+    {
+        string filePath = Application.dataPath + FormationSaveDataFileName;
+        string FromJsonData = File.ReadAllText(filePath);
+        formations = JsonConvert.DeserializeObject<Dictionary<int, FleetFormation>>(FromJsonData);
+
+        Debug.Log("함대 편성 데이터 불러오기 성공");
+    }
+
+    public void SaveFormationData()
+    {
+        string ToJsonData = JsonConvert.SerializeObject(formations);
+        string filePath = Application.dataPath + FormationSaveDataFileName;
+        File.WriteAllText(filePath, ToJsonData);
+                
+        Debug.Log("함대 편성 데이터 저장 완료");
     }
 
 }
