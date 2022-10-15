@@ -16,9 +16,12 @@ public class BattleSceneManager : MonoBehaviour
         instance = this;
     }
 
+
     public Transform EnemyManager;
     public Transform FriendlyManager;
     public Transform DestroyedShip;
+
+    public Transform FriendlyFleetSpawnCenter;
 
     public void edUp_Test()
     {
@@ -26,12 +29,14 @@ public class BattleSceneManager : MonoBehaviour
         Debug.Log("테스트용 함수 작동");
     }
 
+    // deprecated
     int[] positioningShipId = { 0, 1, -1, -1, -1 };
 
     private void Start()
     {
         InvokeRepeating("GameEndCheck", 5, 1);
-        this.GetComponent<ShipSpownSystem>().FriendlyShipSpown(positioningShipId);
+        this.GetComponent<ShipSpownSystem>().FriendlyShipSpown(FriendlyFleetSpawnCenter);
+        //this.GetComponent<ShipSpownSystem>().FriendlyShipSpown(positioningShipId);
     }
     
     public void GameEndCheck()

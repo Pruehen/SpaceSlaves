@@ -34,12 +34,29 @@ public class FleetFormationUI : MonoBehaviour
         goQtySelect.SetActive(false);
         goQtySlider.value = 0;
         FleetFormationManager.instance.SetUnit(idx, formIdx, selAmount);
+
+        Refresh();
     }
     public void OnEmptyShip()
     {
         goQtySelect.SetActive(false);
         goQtySlider.value = 0;
         FleetFormationManager.instance.RemoveUnit(formIdx);
+
+        Refresh();
+    }
+
+    void Refresh()
+    {
+        RefreshFleetBar();
+    }
+
+    void RefreshFleetBar()
+    {
+        foreach (var item in goFleets)
+        {
+            item.Refresh();
+        }        
     }
 
     // Update is called once per frame
