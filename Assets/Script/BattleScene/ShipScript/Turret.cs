@@ -48,10 +48,11 @@ public class Turret : MonoBehaviour
                 mainShipControl.TargetDestroyed();
             }
         }
-        else
+        else if(dmgType == dmg_Type.kinetic)
         {
             Projectile projectile = Instantiate(Shell, this.transform.position, this.transform.rotation).GetComponent<Projectile>();
             projectile.Init(dmg);
+            mainShipControl.shipSound.FireSoundPlay();
         }
     }
 }

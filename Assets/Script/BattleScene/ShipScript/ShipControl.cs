@@ -7,7 +7,7 @@ public class ShipControl : MonoBehaviour
 {
     ShipAi shipAi;
     public List<Turret> turrets;
-    ShipSound shipSound;
+    public ShipSound shipSound;
 
     Rigidbody rigidbody;
     LineRenderer laser;
