@@ -116,11 +116,7 @@ public class CameraControl : MonoBehaviour
     {
         if (IsRClicked == true)
         {
-            if (Input.GetAxis("Mouse X") == 0)
-            {
-                dragSpeed = 0;
-            }
-            else if (Input.GetAxis("Mouse Y") == 0)
+            if (Input.GetAxis("Mouse X") == 0 || Input.GetAxis("Mouse Y") == 0)
             {
                 dragSpeed = 0;
             }
@@ -130,9 +126,9 @@ public class CameraControl : MonoBehaviour
             }
 
             xRotateMove = Input.GetAxis("Mouse X") * Time.deltaTime * dragSpeed;
-            yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * dragSpeed;
+            //yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * dragSpeed;
 
-            transform.RotateAround(Pos, Vector3.right, -yRotateMove);
+            //transform.RotateAround(Pos, Vector3.right, -yRotateMove);
             transform.RotateAround(Pos, Vector3.up, xRotateMove);
 
             transform.LookAt(Pos);
