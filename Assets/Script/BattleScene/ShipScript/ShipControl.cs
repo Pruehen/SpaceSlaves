@@ -179,7 +179,7 @@ public class ShipControl : MonoBehaviour
             }
         }
 
-        randomDelay = Random.Range(-0.1f, 0.1f);
+        randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
     }
 
     public void TargetDestroyed()

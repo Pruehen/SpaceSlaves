@@ -23,7 +23,7 @@ public class CurrencyUI : MonoBehaviour
         SetMinUI();
         SetDebriUI();
 
-        InvokeRepeating("SetMinUI", 0, 0.5f);
-        InvokeRepeating("SetDebriUI", 0, 0.5f);
+        InvokeRepeating("SetMinUI", 0, 0.1f);
+        InvokeRepeating("SetDebriUI", 0, 1f);
     }
 }
