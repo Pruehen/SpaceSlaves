@@ -102,7 +102,7 @@ public class FleetManager : MonoBehaviour
         }
 
         shipInfoDatas[0].DataSet(0, "H", ship_Class.Corvette, 100, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[1].DataSet(1, "I", ship_Class.Corvette, 200, 40, dmg_Type.kinetic, true, 5, 30, 10, 20, 150, 1, 100, 20, 20);
+        shipInfoDatas[1].DataSet(1, "I", ship_Class.Corvette, 200, 40, dmg_Type.kinetic, true, 2, 30, 8, 20, 150, 1, 50, 20, 10);
         shipInfoDatas[2].DataSet(2, "J", ship_Class.Corvette, 400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
         shipInfoDatas[3].DataSet(3, "K", ship_Class.Frigate, 800, 10, dmg_Type.particle,false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
         shipInfoDatas[4].DataSet(4, "L", ship_Class.Frigate, 1600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
