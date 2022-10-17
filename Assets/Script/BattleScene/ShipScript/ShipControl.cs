@@ -8,6 +8,7 @@ public class ShipControl : MonoBehaviour
     ShipAi shipAi;
     public List<Turret> turrets;
     public ShipSound shipSound;
+    public ShipShield shipShield;
 
     Rigidbody rigidbody;
     LineRenderer laser;
@@ -43,6 +44,7 @@ public class ShipControl : MonoBehaviour
         laser = this.GetComponent<LineRenderer>();
         shipAi = this.GetComponent<ShipAi>();
         shipSound = this.GetComponent<ShipSound>();
+        shipShield = this.GetComponent<ShipShield>();
 
         if (id == -1)
         {
@@ -119,11 +121,13 @@ public class ShipControl : MonoBehaviour
         if (sd > 0 && inputDmg <= sd)
         {
             sd -= inputDmg;
+            shipShield.EffectOn();
         }
         else if(sd > 0 && inputDmg > sd)
         {
             sd -= inputDmg;
             inputDmg = -sd;
+            shipShield.EffectOn();
         }
 
         if (sd <= 0)
@@ -179,7 +183,7 @@ public class ShipControl : MonoBehaviour
             }
         }
 
-        randomDelay = Random.Range(-0.1f, 0.1f);
+        randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
     }
 
     public void TargetDestroyed()
