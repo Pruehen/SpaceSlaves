@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -154,6 +155,9 @@ public class ShipControl : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    public GameObject shell;
+    public GameObject cannon;
+
     void Attack()//공격 함수
     {
         if (target == null || Mathf.Abs(toTargetVec_Local.x) > 0.1f)
@@ -173,6 +177,12 @@ public class ShipControl : MonoBehaviour
                 {
                     TargetDestroyed();
                 }
+            }
+            else if(dmgType == dmg_Type.explosion)
+            {
+                Missile missile = Instantiate(shell, cannon.transform.position, cannon.transform.rotation).GetComponent<Missile>();
+                missile.Init(dmg, target.transform);
+                shipSound.FireSoundPlay();
             }
         }
         else if(isTurret)//터렛일 경우

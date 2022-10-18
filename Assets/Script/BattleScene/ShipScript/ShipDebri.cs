@@ -7,7 +7,7 @@ public class ShipDebri : MonoBehaviour
     float addTorquePower = 0.3f;
     private void Start()
     {
-        Destroy(gameObject, 60);
+        Destroy(gameObject, 15);
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
 
         if (Random.Range(0, 1f) > 0.5f)
