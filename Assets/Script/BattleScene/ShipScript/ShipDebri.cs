@@ -5,6 +5,10 @@ using UnityEngine;
 public class ShipDebri : MonoBehaviour
 {
     float addTorquePower = 0.3f;
+
+    List<AudioSource> weaponSounds = new List<AudioSource>();
+    public Transform soundTrf;
+
     private void Start()
     {
         Destroy(gameObject, 15);
@@ -22,5 +26,21 @@ public class ShipDebri : MonoBehaviour
         {
             rb.AddTorque(this.transform.right * addTorquePower, ForceMode.Impulse);
         }
+
+
+        DestroySoundPlay();
+    }
+
+
+
+    public void DestroySoundPlay()
+    {
+        for (int i = 0; i < soundTrf.childCount; i++)
+        {
+            weaponSounds.Add(soundTrf.GetChild(i).gameObject.GetComponent<AudioSource>());
+        }
+        int count = Random.Range(0, weaponSounds.Count);
+        weaponSounds[count].Play();
     }
 }
+

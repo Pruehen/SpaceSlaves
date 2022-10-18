@@ -18,13 +18,14 @@ public class Missile : MonoBehaviour
     {
         rigidbody = this.GetComponent<Rigidbody>();
 
-        Destroy(this.gameObject, 10);
+        Destroy(this.gameObject, 20);
     }
 
     // Update is called once per frame
     void Update()
     {
         rigidbody.AddForce(this.transform.forward, ForceMode.Force);
+        
         this.transform.Rotate(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized));
     }
 

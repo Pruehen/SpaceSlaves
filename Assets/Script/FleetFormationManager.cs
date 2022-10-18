@@ -12,7 +12,7 @@ public class FleetFormation
     
     public void Add(int id, int qty, out bool isSuccess)
     {
-        int size = 10;
+        int size = 30;
         isSuccess = false;
 
         // 새로운거 들어오면 초기화

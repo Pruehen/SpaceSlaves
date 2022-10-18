@@ -157,6 +157,7 @@ public class ShipControl : MonoBehaviour
 
     public GameObject shell;
     public GameObject cannon;
+    Missile controledMissile;
 
     void Attack()//공격 함수
     {
@@ -180,8 +181,8 @@ public class ShipControl : MonoBehaviour
             }
             else if(dmgType == dmg_Type.explosion)
             {
-                Missile missile = Instantiate(shell, cannon.transform.position, cannon.transform.rotation).GetComponent<Missile>();
-                missile.Init(dmg, target.transform);
+                controledMissile = Instantiate(shell, cannon.transform.position, cannon.transform.rotation).GetComponent<Missile>();
+                controledMissile.Init(dmg, target.transform);
                 shipSound.FireSoundPlay();
             }
         }
@@ -203,6 +204,10 @@ public class ShipControl : MonoBehaviour
         if (FoundTarget.Count > 0)
         {
             shipAi.TargetFound();
+            if (controledMissile != null)
+            {
+                controledMissile.Init(dmg, target.transform);
+            }
         }
     }
 
