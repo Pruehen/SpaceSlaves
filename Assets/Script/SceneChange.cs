@@ -30,4 +30,15 @@ public class SceneChange : MonoBehaviour
         //Application.Quit();
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void GoTitle()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("TitleScene");
+    }
+
 }

@@ -9,13 +9,18 @@ public class CameraControl : MonoBehaviour
     Vector2 clickPoint;
     Vector2 UpPoint;
     Vector2 MovePos;
-    float dragSpeed = 15f;
-    float defaultdragSpeed = 15f;
-    float defaultRotateSpeed = 500f;
+    float dragSpeed = 10f;
+    float defaultdragSpeed = 10f;
+    float defaultRotateSpeed = 200f;
     float WheelSpeed = 4f;
     public GameObject Cam;
     private float xRotateMove;
-    private float yRotateMove;
+    Vector3 defaultCamPos;
+
+    private void Start()
+    {
+        defaultCamPos = new Vector3(14.874f, 34f, -0.304f);
+    }
 
     private void Update()
     {
@@ -27,6 +32,8 @@ public class CameraControl : MonoBehaviour
 
         ZoomIN_Ont(CamPos);
         CamRotate(CamPos);
+
+        ZoomTarget();
     }
 
     float camControlSpeed = 10f;
@@ -50,6 +57,37 @@ public class CameraControl : MonoBehaviour
         }
     }
 
+    RaycastHit hit;
+
+    void ZoomTarget()
+    {
+        if(Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hit, 1000))
+        {
+            Debug.Log(hit.collider.name);
+            //Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * hit.distance, Color.red);
+            if (hit.distance <= 1f)
+            {
+                Debug.Log("¿À¿¹~~~");
+                //yRotateMove = dragSpeed * Time.deltaTime;
+
+                //Cam.transform.localEulerAngles = 
+                //new Vector3(transform.rotation.x, transform.rotation.y, hit.transform.rotation.z);
+
+                Vector3 dir = new Vector3(hit.transform.rotation.x, defaultCamPos.y, defaultCamPos.z);
+
+                transform.rotation =
+                    Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 0.1f);
+                //defaultdragSpeed /= 2;
+            }
+            else if(hit.distance > 1f)
+            {
+                transform.rotation =
+                    Quaternion.Lerp(transform.rotation, Quaternion.Euler(defaultCamPos), Time.deltaTime * 0.1f);
+                //defaultdragSpeed *= 2;
+            }
+        }
+    }
+
     void ZoomIN_Ont(Vector3 Pos)
     {
         if(Input.GetAxis("Mouse ScrollWheel") < 0)//ÈÙ³»¸±‹š ÁÜÀÎ
@@ -58,12 +96,11 @@ public class CameraControl : MonoBehaviour
 
             Vector3 move = Pos * (Time.deltaTime * WheelSpeed);
 
-            float z = transform.position.z;
-            //float z = transform.position.z;
+            float x = transform.position.x;
 
             transform.Translate(move);
             transform.transform.position = 
-                new Vector3(transform.position.x, transform.position.y, z);
+                new Vector3(x, transform.position.y, transform.position.z);
         }
         else if(Input.GetAxis("Mouse ScrollWheel") > 0)//ÈÙ´ç±æ‹š ÁÜ¾Æ¿ô
         {
@@ -71,14 +108,11 @@ public class CameraControl : MonoBehaviour
 
             Vector3 move = -Pos * (Time.deltaTime * WheelSpeed);
 
-            float z = transform.position.z;
-            //float z = transform.position.z;
+            float x = transform.position.x;
 
             transform.Translate(move);
             transform.transform.position = 
-                new Vector3(transform.position.x, transform.position.y, z);
-
-            Debug.Log(transform.position.y);
+                new Vector3(x, transform.position.y, transform.position.z);
         }
     }
 
