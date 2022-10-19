@@ -57,6 +57,12 @@ public class Missile : MonoBehaviour
         if (other.gameObject.layer == 7 || other.gameObject.layer == 8)
         {
             other.GetComponent<ShipControl>().Hit(dmg);
+            GameObject effect = this.transform.GetChild(0).gameObject;
+            effect.transform.SetParent(null);
+            effect.SetActive(true);
+
+
+            Destroy(effect, 5);
             Destroy(this.gameObject);
         }
     }
