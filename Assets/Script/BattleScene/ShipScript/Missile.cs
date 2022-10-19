@@ -25,8 +25,31 @@ public class Missile : MonoBehaviour
     void Update()
     {
         rigidbody.AddForce(this.transform.forward, ForceMode.Force);
-        
-        this.transform.Rotate(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized));
+
+        //this.transform.Rotate(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized));
+        rigidbody.AddTorque(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized) * 10, ForceMode.Force);
+        //Guided();
+    }
+
+    Vector3 angleError_diff;
+    Vector3 angleError_temp;
+
+    void Guided()
+    {
+        Vector3 toTargetVec = target.position - this.transform.position;//missile to target Vector
+        toTargetVec = toTargetVec.normalized;
+        angleError_diff = toTargetVec - angleError_temp;//¹ÌºÐÇ×
+        angleError_temp = toTargetVec;
+
+        Vector3 orderVec = angleError_diff;
+
+        Vector3 side1 = toTargetVec;
+        Vector3 side2 = side1 + orderVec;
+        Vector3 orderAxis = Vector3.Cross(side1, side2);
+
+
+        //rigidbody.AddTorque(Vector3.ClampMagnitude(orderAxis * (rigidbody.velocity.magnitude * 0.002f), 10), ForceMode.Force);
+        this.transform.Rotate(orderAxis * 500);
     }
 
     private void OnTriggerEnter(Collider other)
