@@ -10,39 +10,66 @@ public class Turret : MonoBehaviour
     float dmg;//발당 공격력, 발당 n의 기초 데미지
     dmg_Type dmgType;//무기 타입
     float fireDelay;//공격 속도, n초에 1회 공격
-    float agility;//(포탑의) 선회 속도
+    float delayCount = 0;
+    float randomDelay= 0;
 
     public GameObject Shell;
 
-    void TurretDataSet()
+    public void TurretDataInit(float dmg, dmg_Type dmgType, float fireDelay)
     {
-        dmg = mainShipControl.dmg;
-        dmgType = mainShipControl.dmgType;
-        fireDelay = mainShipControl.fireDelay;
-        agility = mainShipControl.agility;
+        this.dmg = dmg;
+        this.dmgType = dmgType;
+        this.fireDelay = fireDelay;
 
-        mainShipControl.turrets.Add(this);
+        Debug.Log(dmg + " " + dmgType + " " + fireDelay);
     }
 
     private void Start()
     {
         mainShipControl = this.transform.parent.parent.GetComponent<ShipControl>();
-
-        TurretDataSet();
+        laser = this.GetComponent<LineRenderer>();
     }
 
     private void Update()
     {
+        if (delayCount <= fireDelay + randomDelay)//터렛 공격속도 변수 제어
+        {
+            delayCount += Time.deltaTime;
+        }
+
+        if (dmgType == dmg_Type.particle)//레이저 터렛일 경우, 레이저 셋팅
+        {
+            LaserGrapic();
+        }
+
         if (mainShipControl.target != null)
         {
             transform.LookAt(mainShipControl.target.transform.position);
+            if(mainShipControl.isRange && delayCount >= fireDelay + randomDelay)
+            {
+                Attack(mainShipControl.target.GetComponent<ShipControl>());
+            }
         }
     }
+    LineRenderer laser;
+    float laserWidth = 0;
+    public float defaultLaserWidth = 0.01f;
 
-    public void Attack(ShipControl target)
+    void LaserGrapic()//레이저 길이 그려주는 함수. 임시
     {
+        laser.startWidth = laserWidth;
+        laser.endWidth = laserWidth;
+
+        laserWidth *= 0.8f;
+    }
+
+    void Attack(ShipControl target)
+    {
+        Debug.Log("프리깃이 공격함");
         if (dmgType == dmg_Type.particle)
         {
+            laserWidth = defaultLaserWidth;
+            laser.SetPosition(1, new Vector3(0, 0, mainShipControl.toTargetVec.magnitude));
             if (target.Hit(dmg) <= 0)
             {
                 mainShipControl.TargetDestroyed();
@@ -52,7 +79,10 @@ public class Turret : MonoBehaviour
         {
             Projectile projectile = Instantiate(Shell, this.transform.position, this.transform.rotation).GetComponent<Projectile>();
             projectile.Init(dmg);
-            mainShipControl.shipSound.FireSoundPlay();
         }
+        mainShipControl.shipSound.FireSoundPlay();
+
+        delayCount = 0;
+        randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
     }
 }

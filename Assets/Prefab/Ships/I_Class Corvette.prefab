@@ -82,7 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef4bf8f6584af046ab249ef6558e90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turrets: []
+  turrets:
+  - {fileID: 2493906936070153402}
   shipSound: {fileID: 0}
   shipShield: {fileID: 0}
   shipName: 
@@ -104,6 +105,8 @@ MonoBehaviour:
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
   shipDebriPrf: {fileID: 101806, guid: 3b40de24edb874241b4563fcc4c0cfe8, type: 3}
+  shell: {fileID: 0}
+  cannon: {fileID: 0}
 --- !u!114 &6328612228847904751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 445252}
   m_Layer: 0
-  m_Name: EquipmentNoCombineChildren
+  m_Name: Turrets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

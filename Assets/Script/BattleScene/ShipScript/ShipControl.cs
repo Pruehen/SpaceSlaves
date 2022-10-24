@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Progress;
 using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
     ShipAi shipAi;
     public List<Turret> turrets;
+
     public ShipSound shipSound;
     public ShipShield shipShield;
 
@@ -51,10 +53,20 @@ public class ShipControl : MonoBehaviour
         {
             idSet(0);
         }
+
+        if (isTurret)
+        {
+            for (int i = 0; i < turrets.Count; i++)
+            {
+                turrets[i].TurretDataInit(dmg, dmgType, fireDelay);
+            }
+        }
+
         InvokeRepeating("RangeCheck", 0, 1);
 
         //shipAi.TargetFound();
-    }    
+    }
+
     public void idSet(int id)
     {
         this.id = id;
@@ -93,6 +105,7 @@ public class ShipControl : MonoBehaviour
             toTargetVec = target.transform.position - this.transform.position;//타겟을 향하는 벡터
             toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//위 벡터의 로컬화
         }       
+
         RotateTarget(toTargetVec_Local.x);//함선 자동 회전 제어
 
         if (delayCount <= fireDelay + randomDelay)//공격속도 변수 제어
@@ -161,10 +174,9 @@ public class ShipControl : MonoBehaviour
 
     void Attack()//공격 함수
     {
-        if (target == null || Mathf.Abs(toTargetVec_Local.x) > 0.1f)
+        if (target == null || Mathf.Abs(toTargetVec_Local.x) > 0.05f)
             return;
 
-        delayCount = 0;
         ShipControl targetSC = target.GetComponent<ShipControl>();
 
         if (!isTurret)//고정 주포일 경우
@@ -188,12 +200,10 @@ public class ShipControl : MonoBehaviour
         }
         else if(isTurret)//터렛일 경우
         {
-            for(int i = 0; i < turrets.Count; i++)
-            {
-                turrets[i].Attack(targetSC);
-            }
+            //turret 스크립트에서 range를 참조해서 완전제어
         }
 
+        delayCount = 0;
         randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
     }
 

@@ -101,10 +101,10 @@ public class FleetManager : MonoBehaviour
             shipInfoDatas.Add(new ShipInfoData());
         }
 
-        shipInfoDatas[0].DataSet(0, "H", ship_Class.Corvette, 100, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[1].DataSet(1, "I", ship_Class.Corvette, 200, 30, dmg_Type.kinetic, true, 2, 30, 5, 20, 150, 3, 100, 20, 10);
+        shipInfoDatas[0].DataSet(0, "H", ship_Class.Corvette, 100, 10, dmg_Type.particle, false, 1.5f, 10, 2, 7, 100, 1, 100, 30, 20);
+        shipInfoDatas[1].DataSet(1, "I", ship_Class.Corvette, 200, 30, dmg_Type.kinetic, true, 3, 30, 5, 20, 150, 3, 100, 20, 10);
         shipInfoDatas[2].DataSet(2, "J", ship_Class.Corvette, 400, 100, dmg_Type.explosion, false, 8, 50, 20, 50, 80, 1, 160, 20, 10);
-        shipInfoDatas[3].DataSet(3, "K", ship_Class.Frigate, 800, 10, dmg_Type.particle,false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        shipInfoDatas[3].DataSet(3, "K", ship_Class.Frigate, 800, 25, dmg_Type.particle, true, 3, 25, 2, 20, 300, 5, 400, 25, 15);
         shipInfoDatas[4].DataSet(4, "L", ship_Class.Frigate, 1600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
         shipInfoDatas[5].DataSet(5, "M", ship_Class.Frigate, 3200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
         shipInfoDatas[6].DataSet(6, "N", ship_Class.Destroyer, 6400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);

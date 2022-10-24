@@ -273,7 +273,7 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  shipDebriPrf: {fileID: 129358, guid: f699cfe6e2361f94c8502884c243961f, type: 3}
+  shipDebriPrf: {fileID: 101806, guid: 1b1e9210125ff3746ba56014cff5fb44, type: 3}
   shell: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
   cannon: {fileID: 306513308421395320}
 --- !u!114 &2112714319
