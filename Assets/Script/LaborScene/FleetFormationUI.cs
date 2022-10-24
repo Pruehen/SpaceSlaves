@@ -65,6 +65,8 @@ public class FleetFormationUI : MonoBehaviour
         if (goQtySelect.active)
         {
             var qty = FleetManager.instance.GetFleetQtyData(idx);
+            qty = qty - FleetFormationManager.instance.GetFleetQty(idx);
+            qty = Mathf.Max(qty, 0);
             selAmount = (int)Mathf.Floor(qty * goQtySlider.value);
             goQtySliderTxt.text = selAmount.ToString();
         }

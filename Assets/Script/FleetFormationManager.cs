@@ -7,6 +7,7 @@ using UnityEngine;
 [SerializeField]
 public class FleetFormation
 {
+    // 없으면 명시적으로 -1로 변경
     public int idType = -1;
     public int amount = 0;    
     
@@ -103,6 +104,49 @@ public class FleetFormationManager : MonoBehaviour
         return formations[formIdx].idType;
     }
 
+    public void Test()
+    {
+        if (CheckeValidateData())
+        {
+            Debug.Log("it is good");
+        }
+    }
+
+    public bool CheckeValidateData()
+    {
+        bool isGoodToGo = true;
+
+        // 편성된 함선들의 합, 타입당갯수를 기록 <함선 타입, 합개>
+        Dictionary<int, int> dict = new Dictionary<int, int>();
+
+        foreach (var fleet in formations.Values)
+        {
+            int id_type = fleet.idType;
+            if (id_type == -1)
+                continue;
+
+            if (dict.ContainsKey(id_type))
+                dict.Add(id_type, fleet.amount);
+            else
+                dict[id_type] += fleet.amount;
+
+        }
+        foreach (var id_type in dict.Keys)
+        {
+            int curQty = dict[id_type];
+            int stockQty = FleetManager.instance.GetFleetQtyData(id_type);
+            if (curQty > stockQty)
+            {
+                isGoodToGo = false;
+                break;
+            }
+        }
+
+
+        return isGoodToGo;
+    }
+
+    //GetActiveFleetIdxList : 당장은 특별한 기능없음.
     public List<int> GetActiveFleetIdxList()
     {
         List<int> list = new List<int>();
