@@ -19,14 +19,15 @@ public class FleetBarUI : MonoBehaviour
 
     public void Refresh()
     {
+        var num = FleetFormationManager.instance.GetFleetQty(id);
+        var shipidx= FleetFormationManager.instance.GetFleetShipIdx(id);
+
         if (goShipImage != null)
         {
-
+            goShipImage.SetActive(num > 0);
         }
-
         if (goTextQty != null)
         {
-            var num = FleetFormationManager.instance.GetFleetQty(id);
             goTextQty.text = num.ToString();
         }
         if (goTextFleetName != null)
