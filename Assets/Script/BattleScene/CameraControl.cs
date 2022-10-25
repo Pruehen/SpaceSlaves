@@ -33,7 +33,7 @@ public class CameraControl : MonoBehaviour
         ZoomIN_Ont(CamPos);
         CamRotate(CamPos);
 
-        ZoomTarget();
+        //ZoomTarget();
     }
 
     float camControlSpeed = 10f;
@@ -59,7 +59,7 @@ public class CameraControl : MonoBehaviour
 
     RaycastHit hit;
 
-    void ZoomTarget()
+    /*void ZoomTarget()
     {
         if(Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hit, 1000))
         {
@@ -86,12 +86,18 @@ public class CameraControl : MonoBehaviour
                 //defaultdragSpeed *= 2;
             }
         }
-    }
+    }*/
+
+    float zoomValue = 0; //0~1
 
     void ZoomIN_Ont(Vector3 Pos)
     {
         if(Input.GetAxis("Mouse ScrollWheel") < 0)//»Ÿ≥ª∏±ãö ¡‹¿Œ
         {
+            if(zoomValue < 1)
+            {
+                zoomValue += Time.deltaTime * WheelSpeed;
+            }
             //Camera.main.fieldOfView += WheelSpeed; // fov∑Œ ¿Ãµø
 
             Vector3 move = Pos * (Time.deltaTime * WheelSpeed);
@@ -104,6 +110,10 @@ public class CameraControl : MonoBehaviour
         }
         else if(Input.GetAxis("Mouse ScrollWheel") > 0)//»Ÿ¥Á±Êãö ¡‹æ∆øÙ
         {
+            if (zoomValue > 0)
+            {
+                zoomValue -= Time.deltaTime * WheelSpeed;
+            }
             //Camera.main.fieldOfView -= WheelSpeed; //fov∑Œ ¿Ãµø
 
             Vector3 move = -Pos * (Time.deltaTime * WheelSpeed);
@@ -114,6 +124,7 @@ public class CameraControl : MonoBehaviour
             transform.transform.position = 
                 new Vector3(x, transform.position.y, transform.position.z);
         }
+        Debug.Log(zoomValue);
     }
 
     void CamMove(Vector3 Pos)
@@ -165,7 +176,7 @@ public class CameraControl : MonoBehaviour
             //transform.RotateAround(Pos, Vector3.right, -yRotateMove);
             transform.RotateAround(Pos, Vector3.up, xRotateMove);
 
-            transform.LookAt(Pos);
+            //transform.LookAt(Pos);
         }
     }
 
