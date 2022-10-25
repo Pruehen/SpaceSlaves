@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-//using UnityEngine.UI;
 //using static UnityEditor.Progress;
 //using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
     ShipAi shipAi;
+    public HPBarControl hpbarCon;
     public List<Turret> turrets;
 
     public ShipSound shipSound;
@@ -44,8 +44,7 @@ public class ShipControl : MonoBehaviour
     public Vector3 toTargetVec_Local;
     public LinkedList<GameObject> FoundTarget = new LinkedList<GameObject>();
 
-    //public Image HPBar;
-    //public Image SDBar;
+    public bool IsHit = false;
 
     void Start()
     {
@@ -54,8 +53,6 @@ public class ShipControl : MonoBehaviour
         shipAi = this.GetComponent<ShipAi>();
         shipSound = this.GetComponent<ShipSound>();
         shipShield = this.GetComponent<ShipShield>();
-        //HPBar = this.GetComponent<Image>();
-        //SDBar = this.GetComponent<Image>();
 
         if (id == -1)
         {
@@ -140,6 +137,7 @@ public class ShipControl : MonoBehaviour
 
     public float Hit(float dmg, float hpFactor, float sdFactor)//함선 피격 함수
     {
+        IsHit = true;
         float inputDmg = dmg;
         
         if (sd > 0 && inputDmg * sdFactor <= sd)
@@ -163,13 +161,9 @@ public class ShipControl : MonoBehaviour
             }
         }
 
-        return hp;
-    }
+        hpbarCon.ShipHP(hp, sd, IsHit);
 
-    void ShipHP()
-    {
-        //HPBar.fillAmount = hp * 0.1f;
-        //SDBar.fillAmount = sd * 0.1f;
+        return hp;
     }
 
     public GameObject shipDebriPrf;
