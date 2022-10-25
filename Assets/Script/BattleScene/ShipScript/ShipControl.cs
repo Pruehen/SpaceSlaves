@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+//using UnityEngine.UI;
 //using static UnityEditor.Progress;
 //using static UnityEngine.GraphicsBuffer;
 
@@ -41,8 +42,8 @@ public class ShipControl : MonoBehaviour
     public Vector3 toTargetVec_Local;
     public LinkedList<GameObject> FoundTarget = new LinkedList<GameObject>();
 
-    public Image HPBar;
-    public Image SDBar;
+    //public Image HPBar;
+    //public Image SDBar;
 
     void Start()
     {
@@ -51,8 +52,8 @@ public class ShipControl : MonoBehaviour
         shipAi = this.GetComponent<ShipAi>();
         shipSound = this.GetComponent<ShipSound>();
         shipShield = this.GetComponent<ShipShield>();
-        HPBar = this.GetComponent<Image>();
-        SDBar = this.GetComponent<Image>();
+        //HPBar = this.GetComponent<Image>();
+        //SDBar = this.GetComponent<Image>();
 
         if (id == -1)
         {
@@ -127,7 +128,7 @@ public class ShipControl : MonoBehaviour
             TargetDestroyed();
         }
 
-        ShipHP();
+        //ShipHP();
     }
 
     float defaultLaserWidth = 0.01f;
@@ -163,8 +164,8 @@ public class ShipControl : MonoBehaviour
 
     void ShipHP()
     {
-        HPBar.fillAmount = hp * 0.1f;
-        SDBar.fillAmount = sd * 0.1f;
+        //HPBar.fillAmount = hp * 0.1f;
+        //SDBar.fillAmount = sd * 0.1f;
     }
 
     public GameObject shipDebriPrf;
