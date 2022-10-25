@@ -9,26 +9,38 @@ using System;
 public class LaborSceneManager : MonoBehaviour
 {
     public static LaborSceneManager instance;
+
+    public Transform buildBtnTrf;//버튼 상위 트랜스폼. 버튼들의 자식 객체들에게 접근하기 위함.
+    public Transform shipSelectBtnTrf;
+
+
     private void Awake()
     {
         instance = this;
     }
     private void Start()
     {
+        RefreshShipBuyBtns();
+        RefreshShipSelectBtns();
+    }
+
+    public void RefreshShipBuyBtns()
+    {
+        // 함대 건조
         for (int i = 0; i < 20; i++)
         {
-            ShipInfoData data = FleetManager.instance.GetShipData(i);//i 함선 데이터 불러옴
-
             shipNameTmp[i] = buildBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();//텍스트 배열에 객체 집어넣음.
             shipQtyTmp[i] = buildBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();//위와 같음            
 
             // 함선의 이름과 함선의 수량을 텍스트에 입력
-            SetShipName(
-                shipNameTmp[i],
-                shipQtyTmp[i],
-                i);
-
-            // 함대 편성 세팅
+            SetShipName( shipNameTmp[i], shipQtyTmp[i], i);            
+        }
+    }
+    public void RefreshShipSelectBtns()
+    { 
+        // 함대 편성 세팅
+        for (int i = 0; i < 20; i++)
+        {
             // 함선의 이름과 함선의 수량을 텍스트에 입력
             SetShipName(
                 shipSelectBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>(),
@@ -44,9 +56,7 @@ public class LaborSceneManager : MonoBehaviour
         name.text = data.shipName + "Class " + data.shipClass;//함선의 이름과 함종을 불러와서 텍스트에 입력
         qty.text = FleetManager.instance.GetFleetQtyData(id_).ToString();//함선의 수량을 텍스트에 입력
     }
-
-    public Transform buildBtnTrf;//버튼 상위 트랜스폼. 버튼들의 자식 객체들에게 접근하기 위함.
-    public Transform shipSelectBtnTrf;
+    
     TextMeshProUGUI[] shipNameTmp = new TextMeshProUGUI[20]; //각 함선별 지정된 이름
     TextMeshProUGUI[] shipQtyTmp = new TextMeshProUGUI[20]; //각 함선별 수량
 
