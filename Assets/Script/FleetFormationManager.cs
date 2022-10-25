@@ -119,6 +119,7 @@ public class FleetFormationManager : MonoBehaviour
         // 편성된 함선들의 합, 타입당갯수를 기록 <함선 타입, 합개>
         Dictionary<int, int> dict = new Dictionary<int, int>();
 
+        //편성에 들어간 합계
         foreach (var fleet in formations.Values)
         {
             int id_type = fleet.idType;
@@ -141,7 +142,15 @@ public class FleetFormationManager : MonoBehaviour
                 break;
             }
         }
+        // 한 개도  없으면 안된다
+        int totalQty = 0;
+        foreach (var qty in dict.Values)
+            totalQty += qty;
 
+        if (totalQty <= 0)
+        {
+            isGoodToGo = false;
+        }
 
         return isGoodToGo;
     }
