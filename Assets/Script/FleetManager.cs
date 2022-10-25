@@ -69,6 +69,7 @@ public class FleetManager : MonoBehaviour
             return false;
 
         fleetDatas[id].qty += qty_;
+        SaveFleetData();
         return true;
     }
 

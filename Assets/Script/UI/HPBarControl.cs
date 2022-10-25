@@ -19,20 +19,18 @@ public class HPBarControl : MonoBehaviour
         Fade();
     }
 
-    public void ShipHP(float hp, float sd, bool ishit)
+    public void ShipHP(float hp, float sd, float maxHp, float maxSd)
     {
-        if (ishit == true)
-        {
-            HPbar.gameObject.SetActive(true);
-            SDbar.gameObject.SetActive(true);
 
-            HPBar.fillAmount = hp * 0.01f;
-            SDBar.fillAmount = sd * 0.01f;
+        HPbar.gameObject.SetActive(true);
+        SDbar.gameObject.SetActive(true);
 
-            Debug.Log(HPBar.fillAmount + SDBar.fillAmount);
+        SDBar.fillAmount = hp/ maxHp;
+        HPBar.fillAmount = sd/maxSd;
 
-            Cooling = true;
-        }
+        Debug.Log(HPBar.fillAmount + SDBar.fillAmount);
+
+        Cooling = true;
     }
 
     void Fade()
