@@ -69,8 +69,6 @@ public class FleetFormationUI : MonoBehaviour
             qty = Mathf.Max(qty, 0);
             selAmount = (int)Mathf.Floor(qty * goQtySlider.value);
             goQtySliderTxt.text = selAmount.ToString();
-        }
-        
-        
+        }  
     }
 }

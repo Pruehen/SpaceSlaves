@@ -33,27 +33,30 @@ public class LaborSceneManager : MonoBehaviour
             shipQtyTmp[i] = buildBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();//위와 같음            
 
             // 함선의 이름과 함선의 수량을 텍스트에 입력
-            SetShipName( shipNameTmp[i], shipQtyTmp[i], i);            
+            SetShipName(shipNameTmp[i], i);
+            SetShipQty(shipQtyTmp[i], i);
         }
     }
+
     public void RefreshShipSelectBtns()
-    { 
+    {
         // 함대 편성 세팅
         for (int i = 0; i < 20; i++)
         {
             // 함선의 이름과 함선의 수량을 텍스트에 입력
-            SetShipName(
-                shipSelectBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>(),
-                shipSelectBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>(), 
-                i); 
+            SetShipName(shipSelectBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>(), i);
+            SetShipQty(shipSelectBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>(), i);
         }
     }
 
-    public void SetShipName(TextMeshProUGUI name, TextMeshProUGUI qty, int id_)
+    public void SetShipName(TextMeshProUGUI name, int id_)
     {
         ShipInfoData data = FleetManager.instance.GetShipData(id_);//i 함선 데이터 불러옴
-
         name.text = data.shipName + "Class " + data.shipClass;//함선의 이름과 함종을 불러와서 텍스트에 입력
+    }
+
+    public void SetShipQty(TextMeshProUGUI qty, int id_)
+    {
         qty.text = FleetManager.instance.GetFleetQtyData(id_).ToString();//함선의 수량을 텍스트에 입력
     }
     
@@ -73,20 +76,27 @@ public class LaborSceneManager : MonoBehaviour
         if(value)//빌드창을 불러올 때, 플릿매니저에서 함대 수량 데이터를 같이 불러옴
         {
             for (int i = 0; i < 20; i++)
-            {                
-                shipQtyTmp[i].text = FleetManager.instance.GetFleetQtyData(i).ToString();
+            {
+                SetShipQty(shipQtyTmp[i], i);
             }
         }
     }
 
-    public void ffWdwToggle(bool value)
+    public void ffWdwToggle(bool value)//플릿 포메이션 윈도우 토글
     {
         fleetFormationWdw.SetActive(value);
     }
 
-    public void ShipSelectWdwToggle(bool value)
+    public void ShipSelectWdwToggle(bool value)//함선 선택 윈도우 토글
     {
         shipSelectWdw.SetActive(value);
+        if(value)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                SetShipQty(shipSelectBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>(), i);
+            }
+        }
     }
 
     public TextMeshProUGUI[] shipDatas = new TextMeshProUGUI[10];
