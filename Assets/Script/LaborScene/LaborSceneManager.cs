@@ -54,6 +54,7 @@ public class LaborSceneManager : MonoBehaviour
     public GameObject buildWdw;
     public GameObject fleetFormationWdw;
     public GameObject shipSelectWdw;
+    public GameObject shipInfoWdw;
 
     public void BuildWdwToggle(bool value)//함선 건조 버튼을 눌렀을 때 실행. bool이 true일 경우 창이 켜지고 false이면 창이 꺼짐
     {
@@ -76,6 +77,50 @@ public class LaborSceneManager : MonoBehaviour
     public void ShipSelectWdwToggle(bool value)
     {
         shipSelectWdw.SetActive(value);
+    }
+
+    public TextMeshProUGUI[] shipDatas = new TextMeshProUGUI[10];
+    public TextMeshProUGUI shipExplainTmp;
+    public void ShipInfoWdwToggle(int index)
+    {
+        if(index == -1)
+        {
+            shipInfoWdw.SetActive(false);
+        }
+        else
+        {
+            shipInfoWdw.SetActive(true);
+
+            shipDatas[0].text = shipNameTmp[index].text;//이름
+            shipDatas[1].text = FleetManager.instance.GetShipData(index).cost.ToString();//가격
+            shipDatas[2].text = FleetManager.instance.GetShipData(index).dmg.ToString() + " (" + FleetManager.instance.GetShipData(index).dmgType.ToString() + ")";//공격력과 속성
+            shipDatas[3].text = FleetManager.instance.GetShipData(index).fireDelay.ToString();//공격 속도
+            shipDatas[4].text = FleetManager.instance.GetShipData(index).maxRange.ToString();//최대사거리
+            shipDatas[5].text = FleetManager.instance.GetShipData(index).hp.ToString();//체력
+            shipDatas[6].text = FleetManager.instance.GetShipData(index).df.ToString();//방어력
+            shipDatas[7].text = FleetManager.instance.GetShipData(index).sd.ToString();//보호막
+            shipDatas[8].text = FleetManager.instance.GetShipData(index).defaultspeed.ToString();//속도
+            shipDatas[9].text = FleetManager.instance.GetShipData(index).agility.ToString();//기동성
+
+            switch(index)
+            {
+                case 0:
+                    shipExplainTmp.text = " 염가형 초계함. 레이저 고정 주포를 가지고 있으며, 저렴한 제작 단가와 빠른 기동성 및 근접 화력이 강점이다.";
+                    break;
+                case 1:
+                    shipExplainTmp.text = " 중거리 화력 지원형 초계함. 건보트라고도 불리우는 형태로써, 크기에 비해 강력한 함포를 보유하고 있어 화력 지원에 적합하다.";
+                    break;
+                case 2:
+                    shipExplainTmp.text = " 큰 함선을 파괴하기 위해 수직 미사일 발사대를 장착한 초계함. 긴 사거리를 가지고 있다.";
+                    break;
+                case 3:
+                    shipExplainTmp.text = " 초계함들을 상대로 우위를 점하기 위해 제작된 중대형 호위함. 보다 막강한 화력과 방어력을 통해서 전선을 형성하는 데 유리하다.";
+                    break;
+                default:
+                    shipExplainTmp.text = "미구현된 함선입니다.";
+                    break;
+            }
+        }
     }
 
     public void ShipAdd(int index)//함선 생산 버튼을 눌렀을 때 실행. 누른 버튼에 따라서 무슨 함선을 만들지 고름.

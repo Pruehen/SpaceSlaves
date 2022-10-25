@@ -11,7 +11,7 @@ public class ShipDebri : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 15);
+        Destroy(gameObject, 7);
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
 
         if (Random.Range(0, 1f) > 0.5f)
