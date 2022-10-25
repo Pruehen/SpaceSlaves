@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
 //using UnityEngine.UI;
@@ -178,6 +179,13 @@ public class ShipControl : MonoBehaviour
         debri.GetComponent<Rigidbody>().velocity = rigidbody.velocity;
 
         this.gameObject.SetActive(false);
+
+        if (tag == "Friend")
+        {
+            UnityEngine.Debug.Log("ÇÔ¼± ÆÄ±« : " + id.ToString());
+
+            FleetManager.instance.DecreaseFleetData(id, 1);
+        }
     }
 
     public GameObject shell;

@@ -22,6 +22,12 @@ public class SceneChange : MonoBehaviour
     }
     public void GoDefenceScene()
     {
+        if (!FleetFormationManager.instance.CheckeValidateData())
+        {
+            MessageManager.instance.PopupOk("함선이 부족하여 진행 할 수 없습니다.");
+            return;
+        }
+
         Time.timeScale = 1;
         SceneManager.LoadScene("DefenceScene");
     }

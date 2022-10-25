@@ -13,6 +13,7 @@ public class ShipSpownSystem : MonoBehaviour
     public float spaceBetX = 0.2f;
     public float spaceBetZ = 0.2f;
 
+    // 아군 함선 소환 
     public void FriendlyShipSpown(Transform center)
     {
         spawnPos = center;
@@ -40,6 +41,9 @@ public class ShipSpownSystem : MonoBehaviour
 
                     Transform pos = spawnPos;
                     GameObject ship = Instantiate(go_ship, pos.position + randomAdjValue, Quaternion.identity, BattleSceneManager.instance.FriendlyManager);
+
+                    // 태그 세팅
+                    ship.tag = "Friend";
 
                     // 스팩 세팅
                     ship.GetComponent<ShipControl>().idSet(shipid);
