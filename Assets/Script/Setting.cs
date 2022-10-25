@@ -10,12 +10,12 @@ public class Setting : MonoBehaviour
     public void SettingsOn()
     {
         Time.timeScale = 0;
-        SettingWin.SetActive(true);
+        SettingWin.gameObject.SetActive(true);
     }
 
     public void SettingOff()
     {
         Time.timeScale = 1;
-        SettingWin.SetActive(false);
+        SettingWin.gameObject.SetActive(false);
     }
 }
