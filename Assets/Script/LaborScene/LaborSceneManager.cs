@@ -158,6 +158,11 @@ public class LaborSceneManager : MonoBehaviour
         {
             Debug.Log("광물이 더 필요합니다");
         }
+    }
 
+    public void SmMoney()
+    {
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, 10000);
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, 1000);
     }
 }
