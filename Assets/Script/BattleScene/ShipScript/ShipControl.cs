@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
-//using UnityEngine.UI;
 //using static UnityEditor.Progress;
 //using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
     ShipAi shipAi;
+    public HPBarControl hpbarCon;
     public List<Turret> turrets;
 
     public ShipSound shipSound;
@@ -29,8 +29,10 @@ public class ShipControl : MonoBehaviour
     public float maxRange;//최대 사거리
     public float minRange;//최소 사거리
     public float fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
+    public float maxHp;
     public float hp;//체력
     public float df;//방어력
+    public float maxSd;
     public float sd;//보호막    
     public float defaultspeed;//기본 이동 속도
     public float agility;//선회 속도   
@@ -43,8 +45,7 @@ public class ShipControl : MonoBehaviour
     public Vector3 toTargetVec_Local;
     public LinkedList<GameObject> FoundTarget = new LinkedList<GameObject>();
 
-    //public Image HPBar;
-    //public Image SDBar;
+    public bool IsHit = false;
 
     void Start()
     {
@@ -53,8 +54,6 @@ public class ShipControl : MonoBehaviour
         shipAi = this.GetComponent<ShipAi>();
         shipSound = this.GetComponent<ShipSound>();
         shipShield = this.GetComponent<ShipShield>();
-        //HPBar = this.GetComponent<Image>();
-        //SDBar = this.GetComponent<Image>();
 
         if (id == -1)
         {
@@ -70,7 +69,7 @@ public class ShipControl : MonoBehaviour
         }
 
         InvokeRepeating("RangeCheck", 0, 1);
-
+        //InvokeRepeating("ShieldGeneration", 0, 5);
         //shipAi.TargetFound();
     }
 
@@ -90,8 +89,10 @@ public class ShipControl : MonoBehaviour
         minRange = refData.minRange;//최소 사거리
         fitRange = refData.fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
         hp = refData.hp;//체력
+        maxHp = hp;
         df = refData.df;//방어력
         sd = refData.sd;//보호막    
+        maxSd = sd;
         defaultspeed = refData.defaultspeed;//기본 이동 속도
         agility = refData.agility;//선회 속도   
     }
@@ -135,38 +136,35 @@ public class ShipControl : MonoBehaviour
     float defaultLaserWidth = 0.01f;
     float laserWidth;
 
-    public float Hit(float dmg)//함선 피격 함수
+    public float Hit(float dmg, float hpFactor, float sdFactor)//함선 피격 함수
     {
+        IsHit = true;
         float inputDmg = dmg;
         
-        if (sd > 0 && inputDmg <= sd)
+        if (sd > 0 && inputDmg * sdFactor <= sd)
         {
-            sd -= inputDmg;
+            sd -= inputDmg * sdFactor;            
             shipShield.EffectOn();
         }
-        else if(sd > 0 && inputDmg > sd)
+        else if(sd > 0 && inputDmg * sdFactor > sd)
         {
-            sd -= inputDmg;
+            sd -= inputDmg * sdFactor;
             inputDmg = -sd;
             shipShield.EffectOn();
         }
 
         if (sd <= 0)
         {
-            hp = hp - (inputDmg - df);
+            hp = hp - (inputDmg * hpFactor - df);
             if (hp <= 0)
             {
                 ShipDestroy();
             }
         }
 
-        return hp;
-    }
+        hpbarCon.ShipHP(hp, sd, IsHit);
 
-    void ShipHP()
-    {
-        //HPBar.fillAmount = hp * 0.1f;
-        //SDBar.fillAmount = sd * 0.1f;
+        return hp;
     }
 
     public GameObject shipDebriPrf;
@@ -206,7 +204,7 @@ public class ShipControl : MonoBehaviour
                 laserWidth = defaultLaserWidth;
                 laser.SetPosition(1, new Vector3(0, 0, toTargetVec.magnitude));
                 shipSound.FireSoundPlay();
-                if (targetSC.Hit(dmg) <= 0)
+                if (targetSC.Hit(dmg, 1.5f, 0.75f) <= 0)
                 {
                     TargetDestroyed();
                 }
@@ -270,6 +268,14 @@ public class ShipControl : MonoBehaviour
         else
         {
             isRange = false;
+        }
+    }
+
+    void ShieldGeneration()
+    {
+        if(sd < maxSd)
+        {
+            sd = Mathf.Clamp(maxSd - sd, 0, maxSd*0.2f);
         }
     }
 

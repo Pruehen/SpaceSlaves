@@ -70,7 +70,7 @@ public class Turret : MonoBehaviour
         {
             laserWidth = defaultLaserWidth;
             laser.SetPosition(1, new Vector3(0, 0, mainShipControl.toTargetVec.magnitude));
-            if (target.Hit(dmg) <= 0)
+            if (target.Hit(dmg, 1.5f, 0.75f) <= 0)
             {
                 mainShipControl.TargetDestroyed();
             }
