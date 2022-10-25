@@ -75,7 +75,7 @@ public class FleetManager : MonoBehaviour
     public void DecreaseFleetData(int id, int _qty) //id 함선의 수량에 qty_만큼을 뺀다
     {
         fleetDatas[id].qty -= _qty;
-        fleetDatas[id].qty = Mathf.Max(0, _qty);
+        fleetDatas[id].qty = Mathf.Max(0, fleetDatas[id].qty);
         
     }
 

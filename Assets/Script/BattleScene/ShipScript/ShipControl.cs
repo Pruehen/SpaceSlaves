@@ -177,8 +177,9 @@ public class ShipControl : MonoBehaviour
         debri.GetComponent<Rigidbody>().velocity = rigidbody.velocity;
 
         this.gameObject.SetActive(false);
-
-        if (tag == "Friend")
+        
+        string layerName = LayerMask.LayerToName(gameObject.layer);
+        if (layerName == "Friendly")
         {
             UnityEngine.Debug.Log("ÇÔ¼± ÆÄ±« : " + id.ToString());
 
