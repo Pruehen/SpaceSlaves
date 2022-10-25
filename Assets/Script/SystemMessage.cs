@@ -49,7 +49,18 @@ public class SystemMessage : MonoBehaviour
     public void SelectYes(string Message)//확인 후 실행
     {
         IsMessageIn = false;
-        Log.SendMessage(Message);
+        if (Message != "")
+        {
+            Log.SendMessage(Message);
+        }
+    }
+    public void SelectNo(string Message)//확인 후 실행
+    {
+        IsMessageIn = false;
+        if (Message != "")
+        {
+            Log.SendMessage(Message);
+        }
     }
 
     public void Check()//확인창
