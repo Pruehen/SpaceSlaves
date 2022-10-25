@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class BattleSceneManager : MonoBehaviour
 {
     public static BattleSceneManager instance;
-    public GameObject Log;
     //public bool isClicked { set; get; }
 
     private void Awake()
@@ -59,11 +58,11 @@ public class BattleSceneManager : MonoBehaviour
 
         if(isWin)
         {
-            Log.SendMessage("MessageQ", "게임 승리!");
+            MessageManager.instance.PopupOk("게임 승리!", gameObject);
         }
         else
         {
-            Log.SendMessage("MessageQ", "게임 패배!");
+            MessageManager.instance.PopupOk("게임 패배!", gameObject);
         }
     }
 }
