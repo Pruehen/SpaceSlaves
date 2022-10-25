@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEditor.Progress;
 using static UnityEngine.GraphicsBuffer;
 
@@ -41,6 +42,9 @@ public class ShipControl : MonoBehaviour
     public Vector3 toTargetVec_Local;
     public LinkedList<GameObject> FoundTarget = new LinkedList<GameObject>();
 
+    public Image HPBar;
+    public Image SDBar;
+
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
@@ -48,6 +52,8 @@ public class ShipControl : MonoBehaviour
         shipAi = this.GetComponent<ShipAi>();
         shipSound = this.GetComponent<ShipSound>();
         shipShield = this.GetComponent<ShipShield>();
+        HPBar = this.GetComponent<Image>();
+        SDBar = this.GetComponent<Image>();
 
         if (id == -1)
         {
@@ -89,7 +95,6 @@ public class ShipControl : MonoBehaviour
         agility = refData.agility;//선회 속도   
     }
     
-
     public GameObject target;//현재 함선이 지시하고 있는 타겟
     //public LinkedListNode<GameObject> targetNode;
 
@@ -122,11 +127,12 @@ public class ShipControl : MonoBehaviour
         {
             TargetDestroyed();
         }
+
+        ShipHP();
     }
 
     float defaultLaserWidth = 0.01f;
     float laserWidth;
-
 
     public float Hit(float dmg)//함선 피격 함수
     {
@@ -154,6 +160,12 @@ public class ShipControl : MonoBehaviour
         }
 
         return hp;
+    }
+
+    void ShipHP()
+    {
+        HPBar.fillAmount = hp * 0.1f;
+        SDBar.fillAmount = sd * 0.1f;
     }
 
     public GameObject shipDebriPrf;
@@ -252,7 +264,6 @@ public class ShipControl : MonoBehaviour
             isRange = false;
         }
     }
-
 
     public void MoveFor()//전진 명령 함수
     {
