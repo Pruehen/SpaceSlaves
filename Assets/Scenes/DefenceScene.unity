@@ -185,6 +185,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 424012, guid: 8211b8259e46b53488448eb8feae0351, type: 3}
   m_PrefabInstance: {fileID: 9014801}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9861048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9861050}
+  - component: {fileID: 9861049}
+  m_Layer: 0
+  m_Name: MessageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &9861049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9861048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ce68753723212449ad399f9ac40f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &9861050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9861048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &22600102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1406,7 +1450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515f1dd694e42a04b928ec710eef3564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Log: {fileID: 1796527607}
   EnemyManager: {fileID: 1832888571}
   FriendlyManager: {fileID: 1136200265}
   DestroyedShip: {fileID: 1687175224}
@@ -4628,7 +4671,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SystemMessageUI: {fileID: 0}
   logText: {fileID: 0}
-  Log: {fileID: 0}
 --- !u!1001 &908483182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7891,7 +7933,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1543094094
@@ -8834,7 +8876,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SystemMessageUI: {fileID: 163059807}
   logText: {fileID: 1543094093}
-  Log: {fileID: 249468262}
 --- !u!222 &1796527610
 CanvasRenderer:
   m_ObjectHideFlags: 0

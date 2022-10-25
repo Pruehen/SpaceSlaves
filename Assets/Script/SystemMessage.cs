@@ -12,15 +12,38 @@ public class SystemMessage : MonoBehaviour
     float MessageCool = 1.5f;
     float defaultMessageCool = 1.5f;
     bool IsFade = false;
-    public GameObject Log;
+    GameObject Log;
+
+    public void Start()
+    {
+        if (MessageManager.instance == null)
+            return;
+        MessageManager.instance.SetGoMessage(this);
+    }
+    public void OnDestroy()
+    {
+        if (MessageManager.instance == null)
+            return;
+        MessageManager.instance.RemoveGoMessage(this);
+    }
 
     private void Update()
     {
+        if (SystemMessageUI == null)
+        {
+            return;
+        }
+
         MessageManage();
         if(IsMessageIn == true && IsFade == true)
         {
             MassageCoolManage();
         }
+    }
+
+    public void _SetLog(GameObject gameObject)
+    {
+        Log = gameObject;
     }
 
     public void SelectYes(string Message)//확인 후 실행
