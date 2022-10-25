@@ -144,6 +144,7 @@ public class ShipControl : MonoBehaviour
         {
             sd -= inputDmg * sdFactor;            
             shipShield.EffectOn();
+            hpbarCon.ShipHP(hp, sd, IsHit);
         }
         else if(sd > 0 && inputDmg * sdFactor > sd)
         {
@@ -155,13 +156,12 @@ public class ShipControl : MonoBehaviour
         if (sd <= 0)
         {
             hp = hp - (inputDmg * hpFactor - df);
+            hpbarCon.ShipHP(hp, sd, IsHit);
             if (hp <= 0)
             {
                 ShipDestroy();
             }
         }
-
-        hpbarCon.ShipHP(hp, sd, IsHit);
 
         return hp;
     }
