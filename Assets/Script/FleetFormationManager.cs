@@ -126,7 +126,7 @@ public class FleetFormationManager : MonoBehaviour
             if (id_type == -1)
                 continue;
 
-            if (dict.ContainsKey(id_type))
+            if (!dict.ContainsKey(id_type))
                 dict.Add(id_type, fleet.amount);
             else
                 dict[id_type] += fleet.amount;
