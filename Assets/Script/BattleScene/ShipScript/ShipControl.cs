@@ -45,8 +45,6 @@ public class ShipControl : MonoBehaviour
     public Vector3 toTargetVec_Local;
     public LinkedList<GameObject> FoundTarget = new LinkedList<GameObject>();
 
-    public bool IsHit = false;
-
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
@@ -138,14 +136,13 @@ public class ShipControl : MonoBehaviour
 
     public float Hit(float dmg, float hpFactor, float sdFactor)//함선 피격 함수
     {
-        IsHit = true;
         float inputDmg = dmg;
         
         if (sd > 0 && inputDmg * sdFactor <= sd)
         {
             sd -= inputDmg * sdFactor;            
             shipShield.EffectOn();
-            hpbarCon.ShipHP(hp, sd, IsHit);
+            hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
         }
         else if(sd > 0 && inputDmg * sdFactor > sd)
         {
@@ -157,7 +154,7 @@ public class ShipControl : MonoBehaviour
         if (sd <= 0)
         {
             hp = hp - (inputDmg * hpFactor - df);
-            hpbarCon.ShipHP(hp, sd, IsHit);
+            hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
             if (hp <= 0)
             {
                 ShipDestroy();
