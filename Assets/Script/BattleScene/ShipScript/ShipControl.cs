@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.Progress;
-using static UnityEngine.GraphicsBuffer;
+//using static UnityEditor.Progress;
+//using static UnityEngine.GraphicsBuffer;
 
 public class ShipControl : MonoBehaviour
 {
