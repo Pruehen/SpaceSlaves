@@ -3,10 +3,78 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
+using System;
+public class FleetSaveData//함대 데이터
+{
+    public int id;
+    public int qty;
+}
+
+public enum dmg_Type
+{
+    kinetic,//물리 데미지 (실탄 무기)
+    explosion,//폭발 데미지 (폭발 무기)
+    particle//입자 데미지 (레이저 무기)
+}
+public enum ship_Class
+{
+    Corvette,//초계함
+    Frigate,//호위함
+    Destroyer,//구축함
+    Light_Cruiser,//경순양함
+    heavy_cruiser,//중순양함
+    Battleship//전함
+}
+
+[Serializable]
+public class ShipInfoData
+{
+    public int id;//함선 고유 아이디. 0부터 시작
+    public string shipName;//함선 이름 (함급)
+    public ship_Class shipClass;//함선 종류 (함종)
+    public int cost;//함선 생산 가격
+    public float dmg;//발당 공격력, 발당 n의 기초 데미지
+    public dmg_Type dmgType;//무기 타입
+    public bool turretType;
+    public float fireDelay;//공격 속도, n초에 1회 공격
+    public float maxRange;//최대 사거리
+    public float minRange;//최소 사거리
+    public float fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
+    public float hp;//체력
+    public float df;//방어력
+    public float sd;//보호막    
+    public float defaultspeed;//기본 이동 속도
+    public float agility;//선회 속도   
+
+    // deprecated
+    public void DataSet(int id, string shipName, ship_Class ship_Class, int cost, float dmg, dmg_Type dmg_Type, bool turretType, float fireDelay, float maxRange, float minRange, float fitRange, float hp,
+        float df, float sd, float defoultSpeed, float agility)
+    {
+        this.id = id;
+        this.shipName = shipName;
+        this.shipClass = ship_Class;
+        this.cost = cost;
+        this.dmg = dmg;
+        this.dmgType = dmg_Type;
+        this.turretType = turretType;
+        this.fireDelay = fireDelay;
+        this.maxRange = maxRange;
+        this.minRange = minRange;
+        this.fitRange = fitRange;
+        this.hp = hp;
+        this.df = df;
+        this.sd = sd;
+        this.defaultspeed = defoultSpeed;
+        this.agility = agility;
+    }
+}
 
 public class FleetManager : MonoBehaviour
 {
+    string _saveFileName = "/static_ship_data.json";
+
     public static FleetManager instance;
+
     private void Awake()
     {
         if (instance != null)
@@ -25,6 +93,7 @@ public class FleetManager : MonoBehaviour
 
     private void Start()
     {
+        LoadStaticData();
         LoadFleetData();
 
         if (fleetDatas.Count == 0)//기존 함대 데이터가 없을 경우, id 0부터 19까지 총 20개의 데이터 생성
@@ -39,22 +108,19 @@ public class FleetManager : MonoBehaviour
             }
 
             Debug.Log("새 함대 데이터 생성");
-
         }
-
-        ShipDataInit();
     }
 
     public ShipInfoData GetShipData(int id_)
     {
-        return shipInfoDatas[id_];
+        return staticShipDatas[id_];
     }
 
 
     public string FleetSaveDataFileName = "FleetSaveData.json";
 
     List<FleetSaveData> fleetDatas = new List<FleetSaveData>();//함종별 수량 데이터. id 0 = index 0
-    List<ShipInfoData> shipInfoDatas = new List<ShipInfoData>();//함종별 속성 데이터. 위 리스트와 1:1 대응    
+    List<ShipInfoData> staticShipDatas = new List<ShipInfoData>();//함종별 속성 데이터. 위 리스트와 1:1 대응    
 
     public int GetFleetQtyData(int id)//id의 함선의 수량을 가져옴
     {
@@ -101,96 +167,58 @@ public class FleetManager : MonoBehaviour
     {
         SaveFleetData();
     }
-
+    // deprecated, not in use
+    /*
     void ShipDataInit()
     {
         for (int i = 0; i < max_ShipType; i++)//max 20
         {
-            shipInfoDatas.Add(new ShipInfoData());
+            staticShipDatas.Add(new ShipInfoData());
         }
 
-        shipInfoDatas[0].DataSet(0, "H", ship_Class.Corvette, 100, 10, dmg_Type.particle, false, 1.5f, 10, 2, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[1].DataSet(1, "I", ship_Class.Corvette, 200, 30, dmg_Type.kinetic, true, 3, 30, 5, 20, 150, 3, 100, 20, 10);
-        shipInfoDatas[2].DataSet(2, "J", ship_Class.Corvette, 400, 100, dmg_Type.explosion, false, 8, 50, 20, 50, 80, 1, 160, 20, 10);
-        shipInfoDatas[3].DataSet(3, "K", ship_Class.Frigate, 800, 25, dmg_Type.particle, true, 3, 25, 2, 20, 300, 5, 400, 25, 15);
-        shipInfoDatas[4].DataSet(4, "L", ship_Class.Frigate, 1600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[5].DataSet(5, "M", ship_Class.Frigate, 3200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[6].DataSet(6, "N", ship_Class.Destroyer, 6400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[7].DataSet(7, "O", ship_Class.Destroyer, 12800, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[8].DataSet(8, "P", ship_Class.Destroyer, 25600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[9].DataSet(9, "Q", ship_Class.Destroyer, 51200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[10].DataSet(10, "R", ship_Class.Light_Cruiser, 102400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[11].DataSet(11, "S", ship_Class.Light_Cruiser, 204800, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[12].DataSet(12, "T", ship_Class.Light_Cruiser, 409600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[13].DataSet(13, "U", ship_Class.Light_Cruiser, 819200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[14].DataSet(14, "V", ship_Class.heavy_cruiser, 1638400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[15].DataSet(15, "W", ship_Class.heavy_cruiser, 3276800, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[16].DataSet(16, "X", ship_Class.heavy_cruiser, 6553600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[17].DataSet(17, "Y", ship_Class.Battleship, 13107200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[18].DataSet(18, "Z", ship_Class.Battleship, 26214400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
-        shipInfoDatas[19].DataSet(19, "A", ship_Class.Battleship, 52428800, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[0].DataSet( 0, "H", ship_Class.Corvette, 100, 10, dmg_Type.particle, false, 1.5f, 10, 2, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[1].DataSet( 1, "I", ship_Class.Corvette, 200, 30, dmg_Type.kinetic, true, 3, 30, 5, 20, 150, 3, 100, 20, 10);
+        staticShipDatas[2].DataSet( 2, "J", ship_Class.Corvette, 400, 100, dmg_Type.explosion, false, 8, 50, 20, 50, 80, 1, 160, 20, 10);
+        staticShipDatas[3].DataSet( 3, "K", ship_Class.Frigate, 800, 25, dmg_Type.particle, true, 3, 25, 2, 20, 300, 5, 400, 25, 15);
+        staticShipDatas[4].DataSet( 4, "L", ship_Class.Frigate, 1600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[5].DataSet( 5, "M", ship_Class.Frigate, 3200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[6].DataSet( 6, "N", ship_Class.Destroyer, 6400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[7].DataSet( 7, "O", ship_Class.Destroyer, 12800, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[8].DataSet( 8, "P", ship_Class.Destroyer, 25600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[9].DataSet( 9, "Q", ship_Class.Destroyer, 51200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[10].DataSet(10, "R", ship_Class.Light_Cruiser, 102400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[11].DataSet(11, "S", ship_Class.Light_Cruiser, 204800, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[12].DataSet(12, "T", ship_Class.Light_Cruiser, 409600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[13].DataSet(13, "U", ship_Class.Light_Cruiser, 819200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[14].DataSet(14, "V", ship_Class.heavy_cruiser, 1638400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[15].DataSet(15, "W", ship_Class.heavy_cruiser, 3276800, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[16].DataSet(16, "X", ship_Class.heavy_cruiser, 6553600, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[17].DataSet(17, "Y", ship_Class.Battleship, 13107200, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[18].DataSet(18, "Z", ship_Class.Battleship, 26214400, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+        staticShipDatas[19].DataSet(19, "A", ship_Class.Battleship, 52428800, 10, dmg_Type.particle, false, 1, 10, 5, 7, 100, 1, 100, 30, 20);
+
+        string ToJsonData = JsonConvert.SerializeObject(staticShipDatas,Formatting.Indented);
+        string filePath = Application.dataPath + _saveFileName;
+        File.WriteAllText(filePath, ToJsonData);
     }
-}
-
-public class FleetSaveData//함대 데이터
-{
-    public int id;
-    public int qty;
-}
-
-public enum dmg_Type
-{
-    kinetic,//물리 데미지 (실탄 무기)
-    explosion,//폭발 데미지 (폭발 무기)
-    particle//입자 데미지 (레이저 무기)
-}
-public enum ship_Class
-{
-    Corvette,//초계함
-    Frigate,//호위함
-    Destroyer,//구축함
-    Light_Cruiser,//경순양함
-    heavy_cruiser,//중순양함
-    Battleship//전함
-}
-
-public class ShipInfoData
-{
-    public int id;//함선 고유 아이디. 0부터 시작
-    public string shipName;//함선 이름 (함급)
-    public ship_Class shipClass;//함선 종류 (함종)
-    public int cost;//함선 생산 가격
-    public float dmg;//발당 공격력, 발당 n의 기초 데미지
-    public dmg_Type dmgType;//무기 타입
-    public bool turretType;
-    public float fireDelay;//공격 속도, n초에 1회 공격
-    public float maxRange;//최대 사거리
-    public float minRange;//최소 사거리
-    public float fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
-    public float hp;//체력
-    public float df;//방어력
-    public float sd;//보호막    
-    public float defaultspeed;//기본 이동 속도
-    public float agility;//선회 속도   
-
-    public void DataSet(int id, string shipName, ship_Class ship_Class, int cost, float dmg, dmg_Type dmg_Type, bool turretType, float fireDelay, float maxRange, float minRange, float fitRange, float hp, 
-        float df, float sd, float defoultSpeed, float agility)
+    */
+        
+    void LoadStaticData()
     {
-        this.id = id;
-        this.shipName = shipName;
-        this.shipClass = ship_Class;
-        this.cost = cost;
-        this.dmg = dmg;
-        this.dmgType = dmg_Type;
-        this.turretType = turretType;
-        this.fireDelay = fireDelay;
-        this.maxRange = maxRange;
-        this.minRange = minRange;
-        this.fitRange = fitRange;
-        this.hp = hp;
-        this.df = df;
-        this.sd = sd;
-        this.defaultspeed = defoultSpeed;
-        this.agility = agility;
+        if (staticShipDatas.Count == 0)
+        {
+            if (!File.Exists(Application.dataPath + _saveFileName))
+                return;
+
+            var fileData = File.ReadAllText(Application.dataPath + _saveFileName);
+            var data = JsonConvert.DeserializeObject<List<ShipInfoData>>(fileData);
+
+            staticShipDatas = data;
+        }
+
     }
+
+
 }
+
+
