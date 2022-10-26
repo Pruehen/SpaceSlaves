@@ -68,7 +68,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (07)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -130,7 +130,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -192,7 +192,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (5)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -254,7 +254,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (14)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -316,7 +316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (3)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -378,7 +378,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (1)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -440,7 +440,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (9)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -502,7 +502,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (12)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -564,7 +564,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (16)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -626,7 +626,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (11)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -688,7 +688,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (17)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -750,7 +750,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -812,7 +812,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (8)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -874,7 +874,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (2)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -936,7 +936,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (9)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -998,7 +998,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (05)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -1060,7 +1060,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (1)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -1122,7 +1122,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (15)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -1184,7 +1184,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (6)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -1246,7 +1246,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (7)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -1308,7 +1308,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (8)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -1370,7 +1370,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (6)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -1432,7 +1432,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (2)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -1494,7 +1494,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (04)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -1556,7 +1556,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (3)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
@@ -1618,7 +1618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (10)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -1680,7 +1680,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_Name
-      value: H_Class Corvette_Enemy (13)
+      value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
@@ -1742,7 +1742,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_Name
-      value: I_Class Corvette_Enemy (4)
+      value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder

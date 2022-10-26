@@ -26,6 +26,32 @@ public class StageManager : MonoBehaviour
         return stages[index];
     }
 
+    public Dictionary<string, int> GetStageFleetData(int stageNum)
+    {
+        Dictionary<string, int> StageFleetData = new Dictionary<string, int>();
+        GameObject item = stageEnemyPrfs[stageNum];
+
+        List<int> ints = new List<int>();
+
+        for(int i = 0; i < item.transform.childCount; i++)
+        {
+            string shipName = (item.transform.GetChild(i).gameObject.name).Split('_')[0];
+
+            if(!StageFleetData.ContainsKey(shipName))//함선이 최초로 탐색되었을 경우, value 1로 초기화
+            {
+                StageFleetData.Add(shipName, 1);
+            }
+            else
+            {
+                StageFleetData[shipName]++;
+            }
+        }
+
+        return StageFleetData;
+    }
+
+
+
     string[] stageNameArray =
     {
         "스테이지 1",
