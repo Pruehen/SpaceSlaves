@@ -34,7 +34,7 @@ public class ShipAi : MonoBehaviour
         }
         else if (this.gameObject.layer == 7)//enemyLayer
         {
-            enemyManager = BattleSceneManager.instance.EnemyManager;
+            enemyManager = BattleSceneManager.instance.EnemyManager.GetChild(0);
         }
 
         InvokeRepeating("TargetFound", 1, 1);
@@ -100,9 +100,9 @@ public class ShipAi : MonoBehaviour
 
     void TargetSet()
     {
-        for (int i = 0; i < enemyManager.GetChild(0).childCount; i++)
+        for (int i = 0; i < enemyManager.childCount; i++)
         {
-            mainShipInfo.FoundTarget.AddLast(enemyManager.GetChild(0).GetChild(i).gameObject);
+            mainShipInfo.FoundTarget.AddLast(enemyManager.GetChild(i).gameObject);
         }
     }
 }

@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6328612228847904751}
   - component: {fileID: 2240727728015252811}
   - component: {fileID: 4551835210713573866}
-  m_Layer: 7
-  m_Name: I_Class Corvette
+  m_Layer: 8
+  m_Name: I_Class Corvette_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   - {fileID: 2493906936070153402}
   shipSound: {fileID: 0}
   shipShield: {fileID: 0}
-  enemyId: -1
+  enemyId: 1
   shipName: 
   shipClass: 0
   cost: 0
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 445252}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Turrets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 425916}
   - component: {fileID: 3335230}
   - component: {fileID: 2360746}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a4b63be164a7de41b552ee5e8c3dff0, type: 2}
+  - {fileID: 2100000, guid: 25910f2b46107f74ebb4838c4d2b53e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 410392}
   - component: {fileID: 3367990}
   - component: {fileID: 2312182}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,90 +326,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6f528bdcc2e2d94db8d2e142b4bc502, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &134356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 474986}
-  - component: {fileID: 3358388}
-  - component: {fileID: 2352716}
-  m_Layer: 7
-  m_Name: HeavyTurretBarrelAnimated1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &474986
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134356}
-  m_LocalRotation: {x: -0.00000003774895, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01404, z: -0.0059}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 460400}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3358388
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134356}
-  m_Mesh: {fileID: 4300000, guid: 1781ece96623ba54e9eb1a3ca5252003, type: 3}
---- !u!23 &2352716
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134356}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a6f528bdcc2e2d94db8d2e142b4bc502, type: 2}
+  - {fileID: 2100000, guid: a0c6ce656ee42a74ba1d414ed4caf9bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -442,7 +359,7 @@ GameObject:
   - component: {fileID: 437216}
   - component: {fileID: 3341318}
   - component: {fileID: 2392316}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +409,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6f528bdcc2e2d94db8d2e142b4bc502, type: 2}
+  - {fileID: 2100000, guid: a0c6ce656ee42a74ba1d414ed4caf9bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -524,7 +441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 460400}
   - component: {fileID: 2493906936070153402}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyTurretWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +462,6 @@ Transform:
   m_Children:
   - {fileID: 437216}
   - {fileID: 410392}
-  - {fileID: 474986}
   m_Father: {fileID: 445252}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -561,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e151d040c579b42bf9fa3c4a59d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shell: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+  Shell: {fileID: 7096125181597962739, guid: f7b24754ad562ef468b66c5be0bb6109, type: 3}
   defaultLaserWidth: 0.01
 --- !u!1 &2021757780506225290
 GameObject:
@@ -572,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159825309794257764}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: WeaponSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7501813503424827822}
   - component: {fileID: 5033812526264855296}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +650,7 @@ GameObject:
   - component: {fileID: 3203900891003641286}
   - component: {fileID: 9184407304184110206}
   - component: {fileID: 3376610974971945914}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,6 +734,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4019493415329950733, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493415329950733, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -826,8 +746,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416000165470, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416000165470, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416128343070, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416128343070, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
@@ -836,6 +764,10 @@ PrefabInstance:
     - target: {fileID: 4019493416259861604, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416774953093, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416774953093, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
@@ -932,6 +864,10 @@ PrefabInstance:
     - target: {fileID: 4019493417242238094, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_Name
       value: HPCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493417242238094, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}

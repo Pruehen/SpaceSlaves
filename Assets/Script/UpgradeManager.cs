@@ -224,7 +224,7 @@ public class UpgradeManager : MonoBehaviour
         LoadData();
     }
 
-    public int GetFleetLevel(int id)
+    public int GetFleetLevel()
     {
         int lv = GetBestUpgradeId(UPGRADE_TYPE.FLEET) % 1000;
         return lv + 1;

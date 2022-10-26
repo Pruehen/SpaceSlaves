@@ -65,7 +65,6 @@ public class Turret : MonoBehaviour
 
     void Attack(ShipControl target)
     {
-        Debug.Log("프리깃이 공격함");
         if (dmgType == dmg_Type.particle)
         {
             laserWidth = defaultLaserWidth;

@@ -176,6 +176,12 @@ public class LaborSceneManager : MonoBehaviour
 
     public void ShipAdd(int index)//함선 생산 버튼을 눌렀을 때 실행. 누른 버튼에 따라서 무슨 함선을 만들지 고름.
     {
+        if(UpgradeManager.instance.GetFleetLevel() - 1 < index)
+        {
+            Debug.Log("조선소 레벨이 부족합니다");
+            return;
+        }
+
         int useCost = FleetManager.instance.GetShipData(index).cost;
 
         if(CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Mineral, useCost))
@@ -195,5 +201,9 @@ public class LaborSceneManager : MonoBehaviour
     {
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, 10000);
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, 1000);
+    }
+    public void UgrdReset()
+    {
+
     }
 }

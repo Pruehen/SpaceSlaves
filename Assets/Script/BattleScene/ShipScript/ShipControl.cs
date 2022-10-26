@@ -19,6 +19,7 @@ public class ShipControl : MonoBehaviour
     LineRenderer laser;
 
     int id = -1;//함선 고유 아이디. 0부터 시작
+    public int enemyId = -1;//적 함선 고유 아이디
     public string shipName;//함선 이름 (함급)
     public ship_Class shipClass;//함선 종류 (함종)
     public int cost;//함선 생산 가격
@@ -55,7 +56,7 @@ public class ShipControl : MonoBehaviour
 
         if (id == -1)
         {
-            idSet(0);
+            idSet(enemyId);
         }
 
         if (isTurret)
