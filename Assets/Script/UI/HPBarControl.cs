@@ -28,7 +28,7 @@ public class HPBarControl : MonoBehaviour
         SDBar.fillAmount = hp/ maxHp;
         HPBar.fillAmount = sd/maxSd;
 
-        Debug.Log(HPBar.fillAmount + SDBar.fillAmount);
+        //Debug.Log(HPBar.fillAmount + SDBar.fillAmount);
 
         Cooling = true;
     }
