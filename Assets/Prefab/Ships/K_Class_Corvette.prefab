@@ -91,6 +91,7 @@ MonoBehaviour:
   - {fileID: 4936145571516538321}
   shipSound: {fileID: 0}
   shipShield: {fileID: 0}
+  enemyId: -1
   shipName: 
   shipClass: 0
   cost: 0
