@@ -24,7 +24,11 @@ public class ScvMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float totalMoveSpeed = moveSpeed + UpgradeManager.instance.GetTotalActiveVal(UPGRADE_TYPE.SCV_SPEED_UP);
+        float upgraeAddVal = 0;
+        if (UpgradeManager.instance)
+            upgraeAddVal = UpgradeManager.instance.GetTotalActiveVal(UPGRADE_TYPE.SCV_SPEED_UP);
+
+        float totalMoveSpeed = moveSpeed + upgraeAddVal;
         this.transform.position += this.transform.forward * totalMoveSpeed * Time.deltaTime;
 
         if ((target - this.transform.position).magnitude < 1f)
