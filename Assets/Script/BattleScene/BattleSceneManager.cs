@@ -44,8 +44,8 @@ public class BattleSceneManager : MonoBehaviour
     
     public void GameEndCheck()
     {
-        Debug.Log(EnemyManager.childCount);
-        Debug.Log(DestroyedShip.childCount);
+        //Debug.Log(EnemyManager.childCount);
+        //Debug.Log(DestroyedShip.childCount);
         if (EnemyManager.GetChild(0).childCount == 0)//enemymanager 내부에 있는 프리팹 모체 자식들을 탐색
         {
             GameEnd(true);            
