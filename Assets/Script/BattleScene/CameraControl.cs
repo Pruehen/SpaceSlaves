@@ -116,7 +116,7 @@ public class CameraControl : MonoBehaviour
         }
 
         this.transform.position = new Vector3(transform.position.x, defaultCamPos.y - zoomValue * zoomPower, transform.position.z);
-        Debug.Log(zoomValue);
+        //Debug.Log(zoomValue);
     }
 
     void CamMove(Vector3 Pos)

@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+public class FleetCheckResultData 
+{
+    public bool isGood = false;
+    public List<int> ProbFleetIdx = new List<int>();
+}
+
 [SerializeField]
 public class FleetFormation
 {
@@ -106,14 +112,21 @@ public class FleetFormationManager : MonoBehaviour
 
     public void Test()
     {
-        if (CheckeValidateData())
+        if (CheckValidateData())
         {
             Debug.Log("it is good");
         }
     }
 
-    public bool CheckeValidateData()
+    
+    public bool CheckValidateData()
     {
+        FleetCheckResultData data = MakeValidateData();
+        return data.isGood;
+    }
+    public FleetCheckResultData MakeValidateData()
+    {
+        FleetCheckResultData data = new FleetCheckResultData();
         bool isGoodToGo = true;
 
         // 편성된 함선들의 합, 타입당갯수를 기록 <함선 타입, 합개>
@@ -138,8 +151,8 @@ public class FleetFormationManager : MonoBehaviour
             int stockQty = FleetManager.instance.GetFleetQtyData(id_type);
             if (curQty > stockQty)
             {
-                isGoodToGo = false;
-                break;
+                data.ProbFleetIdx.Add(id_type);
+                isGoodToGo = false;                
             }
         }
         // 한 개도  없으면 안된다
@@ -151,8 +164,10 @@ public class FleetFormationManager : MonoBehaviour
         {
             isGoodToGo = false;
         }
+        
+        data.isGood = isGoodToGo;
 
-        return isGoodToGo;
+        return data;
     }
 
     //GetActiveFleetIdxList : 당장은 특별한 기능없음.

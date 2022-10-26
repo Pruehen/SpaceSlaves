@@ -25300,7 +25300,7 @@ GameObject:
   - component: {fileID: 1407693748}
   - component: {fileID: 1407693749}
   m_Layer: 5
-  m_Name: ShipSetBtn's
+  m_Name: ShipSetBtns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
