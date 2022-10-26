@@ -22,7 +22,6 @@ public class LaborSceneManager : MonoBehaviour
     {
         RefreshShipBuyBtns();
         RefreshShipSelectBtns();
-        RefreshStageNameBtns();
     }
 
     public void RefreshShipBuyBtns()
@@ -54,7 +53,7 @@ public class LaborSceneManager : MonoBehaviour
     {
         for (int i = 0; i < 20; i++)
         {
-            stageBtnTrf.GetChild(i).GetComponent<TextMeshProUGUI>();
+            stageBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = StageManager.instance.GetStageData(i).stageName;
         }
     }
 
@@ -156,7 +155,22 @@ public class LaborSceneManager : MonoBehaviour
     public Transform stageBtnTrf;
     public void StageSelectWdwToggle(bool value)
     {
+        RefreshStageNameBtns();
         stageSelectWdw.SetActive(value);
+    }
+
+
+    public GameObject stageInfoWdw;
+    public void StageInfoWdwToggle(int index)
+    {
+        if (index == -1)
+        {
+            stageInfoWdw.SetActive(false);
+        }
+        else
+        {
+            stageInfoWdw.SetActive(true);
+        }
     }
 
     public void ShipAdd(int index)//함선 생산 버튼을 눌렀을 때 실행. 누른 버튼에 따라서 무슨 함선을 만들지 고름.
