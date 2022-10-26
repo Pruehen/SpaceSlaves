@@ -46,6 +46,11 @@ public class FleetFormationUI : MonoBehaviour
         Refresh();
     }
 
+    private void OnEnable()
+    {
+        Refresh();
+    }
+
     void Refresh()
     {
         RefreshFleetBar();
@@ -55,7 +60,10 @@ public class FleetFormationUI : MonoBehaviour
     {
         foreach (var item in goFleets)
         {
+            var data = FleetFormationManager.instance.MakeValidateData();
+
             item.Refresh();
+            item.SetWarningIcon(data.ProbFleetIdx.Contains(item.id));            
         }        
     }
 

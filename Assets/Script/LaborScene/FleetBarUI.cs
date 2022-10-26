@@ -9,12 +9,19 @@ public class FleetBarUI : MonoBehaviour
     public int id = -1;
 
     public GameObject goShipImage;
+    public GameObject goWarningIcon;
     public TextMeshProUGUI goTextQty;
     public TextMeshProUGUI goTextFleetName;
     // Start is called before the first frame update
     private void OnEnable()
     {
         Refresh();
+    }
+
+    public void SetWarningIcon(bool isSet) 
+    {
+        if (goWarningIcon != null)
+            goWarningIcon.SetActive(isSet);
     }
 
     public void Refresh()
