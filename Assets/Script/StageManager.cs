@@ -52,6 +52,7 @@ public class StageManager : MonoBehaviour
 
     public GameObject[] stageEnemyPrfs = new GameObject[STAGE_COUNT];
 
+    public int selectedStage = 0;
 
     private void Start()
     {

@@ -31,11 +31,14 @@ public class BattleSceneManager : MonoBehaviour
     // deprecated
     int[] positioningShipId = { 0, 1, -1, -1, -1 };
 
+    int selectedStage;
     private void Start()
     {
+        selectedStage = StageManager.instance.selectedStage;
+
         InvokeRepeating("GameEndCheck", 5, 5);
         this.GetComponent<ShipSpownSystem>().FriendlyShipSpown(FriendlyFleetSpawnCenter);
-        this.GetComponent<ShipSpownSystem>().EnemyShipSpown(EnemyManager, 0);
+        this.GetComponent<ShipSpownSystem>().EnemyShipSpown(EnemyManager, selectedStage);
         //this.GetComponent<ShipSpownSystem>().FriendlyShipSpown(positioningShipId);
     }
     
@@ -60,6 +63,7 @@ public class BattleSceneManager : MonoBehaviour
         if(isWin)
         {
             MessageManager.instance.PopupOk("°ÔÀÓ ½Â¸®!", gameObject);
+            StageManager.instance.GetStageData(selectedStage).isClear = true;
         }
         else
         {

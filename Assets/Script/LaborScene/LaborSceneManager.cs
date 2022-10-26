@@ -170,6 +170,7 @@ public class LaborSceneManager : MonoBehaviour
         else
         {
             stageInfoWdw.SetActive(true);
+            StageManager.instance.selectedStage = index;
         }
     }
 
