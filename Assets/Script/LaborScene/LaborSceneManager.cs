@@ -144,6 +144,12 @@ public class LaborSceneManager : MonoBehaviour
                 case 3:
                     shipExplainTmp.text = " 초계함들을 상대로 우위를 점하기 위해 제작된 중대형 호위함. 보다 막강한 화력과 방어력을 통해서 전선을 형성하는 데 유리하다.";
                     break;
+                case 4:
+                    shipExplainTmp.text = " 강력한 속사포를 탑재한 중거리 화력 지원 함선.";
+                    break;
+                case 5:
+                    shipExplainTmp.text = " 막대한 피해를 주는 어뢰를 장거리에서 발사하는 뇌장 호위함.";
+                    break;
                 default:
                     shipExplainTmp.text = "미구현된 함선입니다.";
                     break;

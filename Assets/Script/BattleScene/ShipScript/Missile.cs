@@ -21,13 +21,16 @@ public class Missile : MonoBehaviour
         Destroy(this.gameObject, 20);
     }
 
+    public float speed = 1;
+    public float agility = 10;
+
     // Update is called once per frame
     void Update()
     {
-        rigidbody.AddForce(this.transform.forward, ForceMode.Force);
+        rigidbody.AddForce(this.transform.forward * speed, ForceMode.Force);
 
         //this.transform.Rotate(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized));
-        rigidbody.AddTorque(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized) * 10, ForceMode.Force);
+        rigidbody.AddTorque(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized) * agility, ForceMode.Force);
         //Guided();
     }
 
