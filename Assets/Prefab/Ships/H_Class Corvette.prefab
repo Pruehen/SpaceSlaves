@@ -268,14 +268,15 @@ MonoBehaviour:
   maxRange: 10
   minRange: 5
   fitRange: 5.5
+  maxHp: 0
   hp: 100
   df: 1
+  maxSd: 0
   sd: 100
   defaultspeed: 10
   agility: 10
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
-  IsHit: 0
   target: {fileID: 0}
   shipDebriPrf: {fileID: 129358, guid: f699cfe6e2361f94c8502884c243961f, type: 3}
   shell: {fileID: 0}
@@ -1935,6 +1936,10 @@ PrefabInstance:
     - target: {fileID: 4019493417242238089, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493417242238091, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4019493417242238094, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_Name
