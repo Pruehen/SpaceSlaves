@@ -276,7 +276,6 @@ MonoBehaviour:
   agility: 10
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
-  IsHit: 0
   target: {fileID: 0}
   shipDebriPrf: {fileID: 101806, guid: 1b1e9210125ff3746ba56014cff5fb44, type: 3}
   shell: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
