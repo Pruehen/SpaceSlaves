@@ -9,17 +9,20 @@ public class CameraControl : MonoBehaviour
     Vector2 clickPoint;
     Vector2 UpPoint;
     Vector2 MovePos;
-    float dragSpeed = 5f;
-    float defaultdragSpeed = 5f;
-    float defaultRotateSpeed = 200f;
-    float WheelSpeed = 4f;
+    float dragSpeed = 10f;
+    float defaultdragSpeed = 10f;
+    float defaultRotateSpeed = 400f;
+    float WheelSpeed = 10f;
     public GameObject Cam;
     private float xRotateMove;
     Vector3 defaultCamPos;
 
+
+    Rigidbody rb;
     private void Start()
     {
         defaultCamPos = this.transform.position;
+        rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -34,6 +37,8 @@ public class CameraControl : MonoBehaviour
         CamRotate(CamPos);
 
         //ZoomTarget();
+
+        AutoRoll();
     }
 
     float camControlSpeed = 10f;
@@ -89,7 +94,7 @@ public class CameraControl : MonoBehaviour
     }*/
 
     float zoomValue = 0; //0~1
-    float zoomPower = 0.7f;
+    float zoomPower = 2.7f;
 
     void ZoomIN_Ont(Vector3 Pos)
     {
@@ -100,7 +105,9 @@ public class CameraControl : MonoBehaviour
             {
                 zoomValue += Time.deltaTime * WheelSpeed;
                 this.transform.position += transform.forward * Time.deltaTime * zoomPower;
-                transform.Rotate(transform.right, -0.5f);
+                //transform.Rotate(transform.right, -0.5f);
+
+                rb.AddTorque(-transform.right, ForceMode.Force);
             }
             //Camera.main.fieldOfView += WheelSpeed; // fov로 이동
         }
@@ -110,7 +117,9 @@ public class CameraControl : MonoBehaviour
             {
                 zoomValue -= Time.deltaTime * WheelSpeed;
                 this.transform.position -= transform.forward * Time.deltaTime * zoomPower;
-                transform.Rotate(transform.right, 0.5f);
+                //transform.Rotate(transform.right, 0.5f);
+
+                rb.AddTorque(transform.right, ForceMode.Force);
             }
             //Camera.main.fieldOfView -= WheelSpeed; //fov로 이동
         }
@@ -194,5 +203,10 @@ public class CameraControl : MonoBehaviour
             IsRClicked = false;
             UpPoint = Input.mousePosition;
         }
+    }
+
+    void AutoRoll()
+    {
+        rb.AddTorque(this.transform.forward * -this.transform.right.y, ForceMode.Force);
     }
 }

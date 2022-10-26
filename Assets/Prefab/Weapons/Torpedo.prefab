@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3498485040014963336}
   - component: {fileID: 5316221621942296837}
   m_Layer: 9
-  m_Name: Missile
+  m_Name: Torpedo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: 54fe0a68405fe4a46bade17df97f8a67, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 11b9c6f45cb14f44eb6c93c317be1831, type: 3}
 --- !u!23 &2300000
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619d1baba17900341987206159df4b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  agility: 20
+  speed: 0.4
+  agility: 2
 --- !u!198 &3498485040014963336
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5100,15 +5100,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198166025632870074, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
