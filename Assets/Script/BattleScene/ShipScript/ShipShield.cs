@@ -101,7 +101,7 @@ public class ShipShield : MonoBehaviour
         {
             counter += Time.deltaTime;
             float alpha = Mathf.Lerp(a, b, counter / duration);
-            Debug.Log(alpha);
+            //Debug.Log(alpha);
 
 
             MyRenderer.material.color = new Color(meshColor.r, meshColor.g, meshColor.b, alpha);
