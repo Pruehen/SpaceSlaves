@@ -33,8 +33,9 @@ public class BattleSceneManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("GameEndCheck", 5, 1);
+        InvokeRepeating("GameEndCheck", 5, 5);
         this.GetComponent<ShipSpownSystem>().FriendlyShipSpown(FriendlyFleetSpawnCenter);
+        this.GetComponent<ShipSpownSystem>().EnemyShipSpown(EnemyManager, 0);
         //this.GetComponent<ShipSpownSystem>().FriendlyShipSpown(positioningShipId);
     }
     
@@ -42,7 +43,7 @@ public class BattleSceneManager : MonoBehaviour
     {
         Debug.Log(EnemyManager.childCount);
         Debug.Log(DestroyedShip.childCount);
-        if (EnemyManager.childCount == 0)
+        if (EnemyManager.GetChild(0).childCount == 0)//enemymanager 내부에 있는 프리팹 모체 자식들을 탐색
         {
             GameEnd(true);            
         }

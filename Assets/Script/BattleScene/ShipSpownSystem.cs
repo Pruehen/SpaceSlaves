@@ -51,4 +51,13 @@ public class ShipSpownSystem : MonoBehaviour
             }
         }        
     }
+
+    //적 함선 소환
+    public void EnemyShipSpown(Transform center, int stageNum)
+    {
+        spawnPos = center;
+
+        GameObject enemyFleet = StageManager.instance.GetStageData(stageNum).enemysPrf;
+        Instantiate(enemyFleet, spawnPos.position, Quaternion.identity, center);
+    }
 }

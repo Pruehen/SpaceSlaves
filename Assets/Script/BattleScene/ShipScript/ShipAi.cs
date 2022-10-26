@@ -100,9 +100,9 @@ public class ShipAi : MonoBehaviour
 
     void TargetSet()
     {
-        for (int i = 0; i < enemyManager.childCount; i++)
+        for (int i = 0; i < enemyManager.GetChild(0).childCount; i++)
         {
-            mainShipInfo.FoundTarget.AddLast(enemyManager.GetChild(i).gameObject);
+            mainShipInfo.FoundTarget.AddLast(enemyManager.GetChild(0).GetChild(i).gameObject);
         }
     }
 }

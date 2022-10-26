@@ -1144,7 +1144,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3205,7 +3205,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4430,7 +4430,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6966,7 +6966,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7100,7 +7100,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11388,7 +11388,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14278,7 +14278,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17562,7 +17562,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21365,7 +21365,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23168,7 +23168,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28481,7 +28481,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30190,7 +30190,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30978,7 +30978,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31600,7 +31600,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36402,7 +36402,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38383,7 +38383,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38517,7 +38517,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42961,7 +42961,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44492,7 +44492,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45189,7 +45189,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipInfoWdwToggle
+        m_MethodName: StageInfoWdwToggle
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

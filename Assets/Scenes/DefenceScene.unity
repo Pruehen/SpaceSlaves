@@ -2316,7 +2316,7 @@ GameObject:
   - component: {fileID: 1136200265}
   m_Layer: 7
   m_Name: FriendlyManager
-  m_TagString: Untagged
+  m_TagString: Friend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3332,7 +3332,7 @@ GameObject:
   - component: {fileID: 1832888571}
   m_Layer: 8
   m_Name: EnemyManager
-  m_TagString: Untagged
+  m_TagString: Enermy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
