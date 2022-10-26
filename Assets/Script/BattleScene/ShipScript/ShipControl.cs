@@ -46,6 +46,7 @@ public class ShipControl : MonoBehaviour
     public Vector3 toTargetVec_Local;
     public LinkedList<GameObject> FoundTarget = new LinkedList<GameObject>();
 
+
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
@@ -132,6 +133,8 @@ public class ShipControl : MonoBehaviour
         //ShipHP();
     }
 
+    bool isDead = false;
+
     float defaultLaserWidth = 0.01f;
     float laserWidth;
 
@@ -168,6 +171,10 @@ public class ShipControl : MonoBehaviour
     public GameObject shipDebriPrf;
     void ShipDestroy()
     {
+        if (isDead)
+            return;
+
+        isDead = true;
         BattleSceneManager.instance.GameEndCheck();
         this.transform.SetParent(BattleSceneManager.instance.DestroyedShip);
 
@@ -179,7 +186,7 @@ public class ShipControl : MonoBehaviour
         string layerName = LayerMask.LayerToName(gameObject.layer);
         if (layerName == "Friendly")
         {
-            UnityEngine.Debug.Log("ÇÔ¼± ÆÄ±« : " + id.ToString());
+            UnityEngine.Debug.Log("ÇÔ¼± ÆÄ±« : " + id.ToString() +" : " + gameObject.GetInstanceID() );
 
             FleetManager.instance.DecreaseFleetData(id, 1);
         }
