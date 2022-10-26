@@ -133,19 +133,19 @@ public class LaborSceneManager : MonoBehaviour
             switch(index)
             {
                 case 0:
-                    shipExplainTmp.text = " 염가형 초계함. 레이저 고정 주포를 가지고 있으며, 저렴한 제작 단가와 빠른 기동성 및 근접 화력이 강점이다.";
+                    shipExplainTmp.text = " 레이저 주포를 가진 다목적 초계함.";
                     break;
                 case 1:
-                    shipExplainTmp.text = " 중거리 화력 지원형 초계함. 건보트라고도 불리우는 형태로써, 크기에 비해 강력한 함포를 보유하고 있어 화력 지원에 적합하다.";
+                    shipExplainTmp.text = " 중거리 실탄 화력 지원형 초계함.";
                     break;
                 case 2:
-                    shipExplainTmp.text = " 큰 함선을 파괴하기 위해 수직 미사일 발사대를 장착한 초계함. 긴 사거리를 가지고 있다.";
+                    shipExplainTmp.text = " 긴 사거리를 가진 수직 미사일 발사대를 장착한 초계함.";
                     break;
                 case 3:
-                    shipExplainTmp.text = " 초계함들을 상대로 우위를 점하기 위해 제작된 중대형 호위함. 보다 막강한 화력과 방어력을 통해서 전선을 형성하는 데 유리하다.";
+                    shipExplainTmp.text = " 중대형 호위함. 다량의 레이저 주포를 탑재하고 있다.";
                     break;
                 case 4:
-                    shipExplainTmp.text = " 강력한 속사포를 탑재한 중거리 화력 지원 함선.";
+                    shipExplainTmp.text = " 빠른 발사 속도를 가진 기관포를 탑재한 중거리 화력 지원 함선.";
                     break;
                 case 5:
                     shipExplainTmp.text = " 막대한 피해를 주는 어뢰를 장거리에서 발사하는 뇌장 호위함.";
