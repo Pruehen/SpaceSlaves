@@ -161,6 +161,7 @@ public class LaborSceneManager : MonoBehaviour
 
 
     public GameObject stageInfoWdw;
+    public TextMeshProUGUI stageInfoText;
     public void StageInfoWdwToggle(int index)
     {
         if (index == -1)
@@ -169,8 +170,17 @@ public class LaborSceneManager : MonoBehaviour
         }
         else
         {
+            stageInfoText.text = null;
+
             stageInfoWdw.SetActive(true);
             StageManager.instance.selectedStage = index;
+
+            Dictionary<string, int> fleetData = StageManager.instance.GetStageFleetData(index);
+
+            foreach (KeyValuePair<string, int> kvp in fleetData)
+            {
+                stageInfoText.text = stageInfoText.text + kvp.Key + "Бо X" + kvp.Value + "\n";
+            }
         }
     }
 

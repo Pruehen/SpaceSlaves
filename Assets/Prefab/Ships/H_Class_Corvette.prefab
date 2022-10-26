@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 3521935028500256746}
   - component: {fileID: 5147777349703076241}
   m_Layer: 7
-  m_Name: H_Class Corvette
+  m_Name: H_Class_Corvette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
