@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class MineralCollector : MonoBehaviour
 {
+    public TimerUI goRemainTime;
+
     int MAX_TIME = (60 * 60) * 10; // sec
     int MIN_TIME = (60 * 10);      // sec
 
@@ -88,8 +90,20 @@ public class MineralCollector : MonoBehaviour
             minRequiredTime = recentCollectedTime + mintick;
             maxRewardTime = recentCollectedTime + maxtick;
         }
+
+        InvokeRepeating("RefreshTimer", 0, 1);
     }
 
+    void RefreshTimer()
+    {
+        if (goRemainTime == null)
+            return;
+
+        var now = DateTime.Now.Ticks;
+        long maxtick = new TimeSpan(0, 0, MAX_TIME).Ticks;
+        goRemainTime.SetAvail(now >= minRequiredTime);
+        goRemainTime.UpdateTimer( Math.Min(now - recentCollectedTime, maxtick));
+    }
     private void OnDestroy()
     {
         SaveData();
