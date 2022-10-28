@@ -20,18 +20,21 @@ public class FleetFormationUI : MonoBehaviour
     public void OnSelectFleet(int idx)
     {
         goSelectPop.SetActive(true);
+        SoundManager.instance.clickSoundOn();
         formIdx = idx;
     }
      
     public void OnSelectShip(int idx)
     {
         goQtySelect.SetActive(true);
+        SoundManager.instance.clickSoundOn();
         goQtySlider.value = 0;
         this.idx = idx;
     }
     public void OnConfirmShip()
     {
         goQtySelect.SetActive(false);
+        SoundManager.instance.CloseSoundOn();
         goQtySlider.value = 0;
         FleetFormationManager.instance.SetUnit(idx, formIdx, selAmount);
 
@@ -40,6 +43,7 @@ public class FleetFormationUI : MonoBehaviour
     public void OnEmptyShip()
     {
         goQtySelect.SetActive(false);
+        SoundManager.instance.CloseSoundOn();
         goQtySlider.value = 0;
         FleetFormationManager.instance.RemoveUnit(formIdx);
 

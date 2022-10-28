@@ -74,6 +74,7 @@ public class DialogueUI : MonoBehaviour
     {
         if (!isPlaying)
             return;
+        SoundManager.instance.clickSoundOn();
 
         if (queueDial.Count == 0)
         {
