@@ -24,10 +24,15 @@ public class ModelCam : MonoBehaviour
         }
     }
 
-    public void CamSet()
+    public void CamSet(int count)
     {
-        CamTarget.gameObject.SetActive(true);
-        Cam.gameObject.SetActive(true);
+        if (model[count] != null)
+        {
+            CamTarget = model[count];
+
+            CamTarget.gameObject.SetActive(true);
+            Cam.gameObject.SetActive(true);
+        }
     }
 
     public void CamSetOff()
