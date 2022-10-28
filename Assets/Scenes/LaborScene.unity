@@ -1762,6 +1762,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &31211742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3570,6 +3582,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipAdd
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12809,6 +12833,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &500846942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14814,6 +14850,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &569069763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15451,6 +15499,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipAdd
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17776,6 +17836,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipInfoWdwToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22751,6 +22823,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSetOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &875829169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23635,6 +23719,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 14
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &910663598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23760,6 +23856,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipInfoWdwToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25050,6 +25158,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &979596453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25610,8 +25730,8 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.25
-    y: 0.5
+    x: 0.26
+    y: 0.51
     width: 0.2
     height: 0.4
   near clip plane: 0.3
@@ -25619,7 +25739,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 8
@@ -28674,6 +28794,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1142493230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28802,6 +28934,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipAdd
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29086,7 +29230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152496375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 691.9, y: 0, z: 34.1}
+  m_LocalPosition: {x: 691.9, y: 0, z: 34.88}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29114,6 +29258,7 @@ MonoBehaviour:
   model: []
   Cam: {fileID: 1002657587}
   modelfound: {fileID: 1152496376}
+  CamTarget: {fileID: 1586448221}
 --- !u!224 &1154793346 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8945792744205499717, guid: 8b1b9bd74ee68f24f885a1803f6562d8, type: 3}
@@ -32105,6 +32250,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 16
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1245689213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32628,6 +32785,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipInfoWdwToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33971,6 +34140,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipAdd
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36503,6 +36684,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1403756218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38590,6 +38783,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1505935375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39028,6 +39233,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipInfoWdwToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 19
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40885,6 +41102,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6240516340422028426, guid: 2e2d306b2a034aa45a0be80de818fcf8, type: 3}
   m_PrefabInstance: {fileID: 6240516339709569749}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1586448221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6240516340422520200, guid: 2e2d306b2a034aa45a0be80de818fcf8, type: 3}
+  m_PrefabInstance: {fileID: 6240516339709569749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1586741729
 GameObject:
   m_ObjectHideFlags: 0
@@ -41879,6 +42101,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1608793293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42498,7 +42732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1625304043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42644,6 +42878,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipInfoWdwToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43515,6 +43761,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipInfoWdwToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48394,6 +48652,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 17
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1972185982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49200,6 +49470,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2007208979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49713,6 +49995,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipInfoWdwToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 18
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50516,6 +50810,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 13
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2074696110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50934,6 +51240,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1487191642}
         m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
         m_MethodName: ShipInfoWdwToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -52156,6 +52474,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1152496377}
+        m_TargetAssemblyTypeName: ModelCam, Assembly-CSharp
+        m_MethodName: CamSet
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2124941341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52954,10 +53284,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: I_Class_Corvette
       objectReference: {fileID: 0}
-    - target: {fileID: 4327417946034596452, guid: 2c89a54b4cfc6c24690e1c2e6cc3cc60, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4327417946034726310, guid: 2c89a54b4cfc6c24690e1c2e6cc3cc60, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -53058,10 +53384,6 @@ PrefabInstance:
     - target: {fileID: 4386456375865628695, guid: 1758d3caa90a8544688e4b3d855db52d, type: 3}
       propertyPath: m_Name
       value: L_Class_Frigate
-      objectReference: {fileID: 0}
-    - target: {fileID: 4386456375865628695, guid: 1758d3caa90a8544688e4b3d855db52d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1758d3caa90a8544688e4b3d855db52d, type: 3}
@@ -53273,10 +53595,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: J_Class_Corvette
       objectReference: {fileID: 0}
-    - target: {fileID: 5792221268833931365, guid: d56118e8892eac1419aef87a8ebb2333, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56118e8892eac1419aef87a8ebb2333, type: 3}
 --- !u!1001 &6048690914402582573
@@ -53334,10 +53652,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Class_Frigate
       objectReference: {fileID: 0}
-    - target: {fileID: 6048690912986709089, guid: eedc8351b9a89e14ea6e89b87dbba120, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eedc8351b9a89e14ea6e89b87dbba120, type: 3}
 --- !u!1001 &6240516339709569749
@@ -53394,6 +53708,10 @@ PrefabInstance:
     - target: {fileID: 6240516340422520200, guid: 2e2d306b2a034aa45a0be80de818fcf8, type: 3}
       propertyPath: m_Name
       value: H_Class_Corvette
+      objectReference: {fileID: 0}
+    - target: {fileID: 6240516340422520200, guid: 2e2d306b2a034aa45a0be80de818fcf8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e2d306b2a034aa45a0be80de818fcf8, type: 3}
@@ -53631,10 +53949,6 @@ PrefabInstance:
     - target: {fileID: 7007374224946705033, guid: e56b3073595a5cc44944d244a1bbea12, type: 3}
       propertyPath: m_Name
       value: K_Class_Frigate
-      objectReference: {fileID: 0}
-    - target: {fileID: 7007374224946705033, guid: e56b3073595a5cc44944d244a1bbea12, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56b3073595a5cc44944d244a1bbea12, type: 3}

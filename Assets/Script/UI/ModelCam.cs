@@ -7,6 +7,7 @@ public class ModelCam : MonoBehaviour
     public List<GameObject> model = new List<GameObject>();
     public GameObject Cam;
     public Transform modelfound;
+    public GameObject CamTarget;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class ModelCam : MonoBehaviour
 
     void ModelsSet()
     {
-        //Cam.SetActive(false);
+        Cam.SetActive(false);
 
         for (int i = 0; i < modelfound.childCount; i++)
         {
@@ -23,15 +24,20 @@ public class ModelCam : MonoBehaviour
         }
     }
 
-    public void CamSet()
+    public void CamSet(int count)
     {
-        //model.gameObject.SetActive(true);
-        Cam.gameObject.SetActive(true);
+        if (model[count] != null)
+        {
+            CamTarget = model[count];
+
+            CamTarget.gameObject.SetActive(true);
+            Cam.gameObject.SetActive(true);
+        }
     }
 
     public void CamSetOff()
     {
-        //model.gameObject.SetActive(false);
+        CamTarget.gameObject.SetActive(false);
         Cam.gameObject.SetActive(false);
     }
 }
