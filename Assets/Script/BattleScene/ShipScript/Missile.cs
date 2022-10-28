@@ -18,11 +18,12 @@ public class Missile : MonoBehaviour
     {
         rigidbody = this.GetComponent<Rigidbody>();
 
-        Destroy(this.gameObject, 20);
+        Destroy(this.gameObject, lifeTime);
     }
 
     public float speed = 1;
     public float agility = 10;
+    public float lifeTime = 10;
 
     // Update is called once per frame
     void Update()
