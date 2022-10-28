@@ -37,7 +37,9 @@ Shader "Custom/NewSurfaceShader"
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
 
             float rim = saturate(dot(o.Normal, IN.viewDir));
-            rim = pow(1 - rim, _RimPower) + pow(frac(IN.worldPos.g * _LineCount - _Time.y), _LinePower);
+            rim = 
+                pow(1 - rim, _RimPower) +
+                pow(frac(IN.worldPos.g * _LineCount - _Time.y), _LinePower);
 
             o.Emission = _RimColor.rgb;
             o.Alpha = rim * (sin(_Time.y * _RimBlinkPower) * 0.5 + _RimBlinkRange);
