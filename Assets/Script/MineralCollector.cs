@@ -7,14 +7,17 @@ using UnityEngine;
 public class MineralCollector : MonoBehaviour
 {
     public TimerUI goRemainTime;
+    public TMPro.TMP_Text goTextExpectedReward;
 
     int MAX_TIME = (60 * 60) * 10; // sec
     int MIN_TIME = (60 * 10);      // sec
+    int MAX_REWARD = 10000;
+
 
     long recentCollectedTime = 0;
     long maxRewardTime = 0;
     long minRequiredTime = 0;
-    
+
     string _saveFileName = "/data_m_collector.txt";
 
     public void ClaimRewards()
@@ -27,7 +30,7 @@ public class MineralCollector : MonoBehaviour
             return;
         }
 
-        int MAX_REWARD = 1000 + (int)UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.COLLECTOR_CAPA);
+        int maxReward = MAX_REWARD + (int)UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.COLLECTOR_CAPA);
 
         var rewardValTick = Math.Min(now, maxRewardTime) - recentCollectedTime;
 
@@ -36,23 +39,23 @@ public class MineralCollector : MonoBehaviour
 
         recentCollectedTime = now;
         minRequiredTime = recentCollectedTime + mintick;
-        maxRewardTime = recentCollectedTime +  maxtick;
-        
+        maxRewardTime = recentCollectedTime + maxtick;
 
-        var reward = MAX_REWARD * (float)(TimeSpan.FromTicks(rewardValTick).TotalSeconds / TimeSpan.FromTicks(maxtick).TotalSeconds);
+
+        var reward = maxReward * (float)(TimeSpan.FromTicks(rewardValTick).TotalSeconds / TimeSpan.FromTicks(maxtick).TotalSeconds);
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, (int)reward);
 
         Debug.Log("Rewarded : " + reward);
 
-        Debug.Log(string.Format("{0} , {1}, {2}s need to be elasped", 
-            new TimeSpan(maxRewardTime).TotalSeconds, 
+        Debug.Log(string.Format("{0} , {1}, {2}s need to be elasped",
+            new TimeSpan(maxRewardTime).TotalSeconds,
             new TimeSpan(minRequiredTime).TotalSeconds,
             new TimeSpan(recentCollectedTime - maxRewardTime).TotalSeconds
             ));
 
         SaveData();
     }
-    
+
     public void SaveData()
     {
         string data = string.Format("{0},{1},{2}", recentCollectedTime, maxRewardTime, minRequiredTime);
@@ -67,9 +70,9 @@ public class MineralCollector : MonoBehaviour
 
         var datas = fileData.Split(",");
 
-        recentCollectedTime = long.Parse(datas[0]); 
-        maxRewardTime       = long.Parse(datas[1]);
-        minRequiredTime     = long.Parse(datas[2]);
+        recentCollectedTime = long.Parse(datas[0]);
+        maxRewardTime = long.Parse(datas[1]);
+        minRequiredTime = long.Parse(datas[2]);
 
         Debug.Log("광물 수집기 가동기록 불러옴");
     }
@@ -92,13 +95,22 @@ public class MineralCollector : MonoBehaviour
         }
 
         InvokeRepeating("RefreshTimer", 0, 1);
+        InvokeRepeating("RefreshReward", 0, 1);
     }
+    
+    void RefreshReward()
+    {
+        var now = DateTime.Now.Ticks;
+        long maxtick = new TimeSpan(0, 0, MAX_TIME).Ticks;
+        var rewardValTick = Math.Min(now, maxRewardTime) - recentCollectedTime;
 
+        var reward = MAX_REWARD * (float)(TimeSpan.FromTicks(rewardValTick).TotalSeconds / TimeSpan.FromTicks(maxtick).TotalSeconds);
+        goTextExpectedReward.text = ((int)reward).ToString();
+    }
     void RefreshTimer()
     {
         if (goRemainTime == null)
             return;
-
         var now = DateTime.Now.Ticks;
         long maxtick = new TimeSpan(0, 0, MAX_TIME).Ticks;
         goRemainTime.SetAvail(now >= minRequiredTime);
