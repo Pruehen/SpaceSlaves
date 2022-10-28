@@ -37,7 +37,7 @@ public class LaborSceneManager : MonoBehaviour
             shipQtyTmp[i] = buildBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();//위와 같음            
             SetShipQty(shipQtyTmp[i], i);//수량 입력
 
-            targetTmp[i] = buildBtnTrf.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>();//함선 가격 텍스트 위치
+            targetTmp[i] = buildBtnTrf.GetChild(i).GetChild(3).GetComponent<TextMeshProUGUI>();//함선 가격 텍스트 위치
             SetShipPrice(targetTmp[i], i);
         }
     }
