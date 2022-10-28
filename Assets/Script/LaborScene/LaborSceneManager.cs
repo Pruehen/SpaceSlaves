@@ -231,11 +231,10 @@ public class LaborSceneManager : MonoBehaviour
 
     public void ShipAdd(int index)//함선 생산 버튼을 눌렀을 때 실행. 누른 버튼에 따라서 무슨 함선을 만들지 고름.
     {
-        SoundManager.instance.clickSoundOn();
-
         if (UpgradeManager.instance.GetFleetLevel() - 1 < index)
         {
             Debug.Log("조선소 레벨이 부족합니다");
+            SoundManager.instance.clickSoundOn();
             return;
         }
 
@@ -247,10 +246,12 @@ public class LaborSceneManager : MonoBehaviour
             shipQtyTmp[index].text = FleetManager.instance.GetFleetQtyData(index).ToString();
 
             Debug.Log("함선이 건조되었습니다");
+            SoundManager.instance.ShipBuildSoundOn();
         }
         else
         {
             Debug.Log("광물이 더 필요합니다");
+            SoundManager.instance.clickSoundOn();
         }
     }
 

@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public AudioSource clickSound, closeSound;
+    public AudioSource clickSound, closeSound, shipBuildSound;
     public void clickSoundOn()
     {
         clickSound.Play();
@@ -25,6 +25,10 @@ public class SoundManager : MonoBehaviour
     public void CloseSoundOn()
     {
         closeSound.Play();
+    }
+    public void ShipBuildSoundOn()
+    {
+        shipBuildSound.Play();
     }
 
     // Start is called before the first frame update
