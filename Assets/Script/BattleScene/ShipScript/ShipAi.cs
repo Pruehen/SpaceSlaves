@@ -37,7 +37,7 @@ public class ShipAi : MonoBehaviour
             enemyManager = BattleSceneManager.instance.EnemyManager.GetChild(0);
         }
 
-        InvokeRepeating("TargetFound", 1, 1);
+        Invoke("TargetFound", 1);
         Invoke("TargetSet", 0.2f);
     }
 
@@ -81,6 +81,8 @@ public class ShipAi : MonoBehaviour
     {
         float ShortDis;
 
+        float time = Time.time;
+
         ShortDis = Vector3.Distance(gameObject.transform.position, mainShipInfo.FoundTarget.First.Value.transform.position);
 
         mainShipInfo.target = mainShipInfo.FoundTarget.First.Value;
@@ -96,6 +98,8 @@ public class ShipAi : MonoBehaviour
                 ShortDis = Distance;
             }
         }
+
+        Debug.Log(Time.time - time);
     }
 
     void TargetSet()
