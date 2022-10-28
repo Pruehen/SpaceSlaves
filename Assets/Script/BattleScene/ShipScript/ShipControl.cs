@@ -38,7 +38,7 @@ public class ShipControl : MonoBehaviour
     public float defaultspeed;//기본 이동 속도
     public float agility;//선회 속도   
 
-    float delayCount = 0;
+    float delayCount = 100;
     float randomDelay = 0;
     public bool isRange { private set; get; }
 
