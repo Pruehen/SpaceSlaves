@@ -15,6 +15,8 @@ public class ModelCam : MonoBehaviour
 
     void ModelsSet()
     {
+        //Cam.SetActive(false);
+
         for (int i = 0; i < modelfound.childCount; i++)
         {
             model.Add(modelfound.GetChild(i).gameObject);

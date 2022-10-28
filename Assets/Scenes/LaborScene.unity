@@ -29070,6 +29070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1152496376}
+  - component: {fileID: 1152496377}
   m_Layer: 3
   m_Name: Models
   m_TagString: Untagged
@@ -29085,8 +29086,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152496375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 691.9, y: 0, z: 46.03}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 691.9, y: 0, z: 34.1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1586021983}
@@ -29098,6 +29099,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1152496377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152496375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea8586cc077fa6147ab7c534ff24b72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: []
+  Cam: {fileID: 1002657587}
+  modelfound: {fileID: 1152496376}
 --- !u!224 &1154793346 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8945792744205499717, guid: 8b1b9bd74ee68f24f885a1803f6562d8, type: 3}
@@ -52938,6 +52954,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: I_Class_Corvette
       objectReference: {fileID: 0}
+    - target: {fileID: 4327417946034596452, guid: 2c89a54b4cfc6c24690e1c2e6cc3cc60, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4327417946034726310, guid: 2c89a54b4cfc6c24690e1c2e6cc3cc60, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -53038,6 +53058,10 @@ PrefabInstance:
     - target: {fileID: 4386456375865628695, guid: 1758d3caa90a8544688e4b3d855db52d, type: 3}
       propertyPath: m_Name
       value: L_Class_Frigate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386456375865628695, guid: 1758d3caa90a8544688e4b3d855db52d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1758d3caa90a8544688e4b3d855db52d, type: 3}
@@ -53249,6 +53273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: J_Class_Corvette
       objectReference: {fileID: 0}
+    - target: {fileID: 5792221268833931365, guid: d56118e8892eac1419aef87a8ebb2333, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56118e8892eac1419aef87a8ebb2333, type: 3}
 --- !u!1001 &6048690914402582573
@@ -53305,6 +53333,10 @@ PrefabInstance:
     - target: {fileID: 6048690912986709089, guid: eedc8351b9a89e14ea6e89b87dbba120, type: 3}
       propertyPath: m_Name
       value: M_Class_Frigate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6048690912986709089, guid: eedc8351b9a89e14ea6e89b87dbba120, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eedc8351b9a89e14ea6e89b87dbba120, type: 3}
@@ -53599,6 +53631,10 @@ PrefabInstance:
     - target: {fileID: 7007374224946705033, guid: e56b3073595a5cc44944d244a1bbea12, type: 3}
       propertyPath: m_Name
       value: K_Class_Frigate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007374224946705033, guid: e56b3073595a5cc44944d244a1bbea12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56b3073595a5cc44944d244a1bbea12, type: 3}
