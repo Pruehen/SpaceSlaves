@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.4
   agility: 2
+  lifeTime: 30
 --- !u!198 &3498485040014963336
 ParticleSystem:
   m_ObjectHideFlags: 0
