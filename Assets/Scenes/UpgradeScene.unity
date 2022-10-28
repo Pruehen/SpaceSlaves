@@ -3096,6 +3096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeBtn (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150641, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4250525720878560929, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: type
       value: 2
@@ -9337,6 +9341,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2669465598854903717, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9428,6 +9436,14 @@ PrefabInstance:
     - target: {fileID: 2669465599781150641, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_Name
       value: UpgradeBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150641, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006899148328118760, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
