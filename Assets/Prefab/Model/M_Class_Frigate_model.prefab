@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 4660570135088926396}
   - component: {fileID: 1395253379988213394}
   m_Layer: 3
-  m_Name: M_Class_Frigate
+  m_Name: M_Class_Frigate_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

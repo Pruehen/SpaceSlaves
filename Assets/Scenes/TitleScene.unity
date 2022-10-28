@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
-  m_sharedMaterial: {fileID: -1684480679489403059, guid: 814064e92f549654db2a269c07ac59aa, type: 2}
+  m_sharedMaterial: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2778,7 +2778,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SystemMessageUI: {fileID: 1743036775}
   logText: {fileID: 1457434864}
-  Log: {fileID: 11537619}
 --- !u!4 &2033042650
 Transform:
   m_ObjectHideFlags: 0
