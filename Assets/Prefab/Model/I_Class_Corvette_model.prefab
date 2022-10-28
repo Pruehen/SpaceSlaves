@@ -175,7 +175,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4327417946034692538}
-  - component: {fileID: 2202876582623921008}
   m_Layer: 3
   m_Name: HeavyTurretWhite
   m_TagString: Untagged
@@ -201,20 +200,6 @@ Transform:
   m_Father: {fileID: 4327417946034777230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2202876582623921008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4327417946034504700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e151d040c579b42bf9fa3c4a59d02e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Shell: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
-  defaultLaserWidth: 0.01
 --- !u!1 &4327417946034534670
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +493,7 @@ GameObject:
   - component: {fileID: 3410065217206048953}
   - component: {fileID: 1395253380964563718}
   m_Layer: 3
-  m_Name: I_Class_Corvette
+  m_Name: I_Class_Corvette_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

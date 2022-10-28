@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 3423647605102897866}
   - component: {fileID: 1395253381256829344}
   m_Layer: 3
-  m_Name: L_Class_Frigate
+  m_Name: L_Class_Frigate_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -53709,10 +53709,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: H_Class_Corvette
       objectReference: {fileID: 0}
-    - target: {fileID: 6240516340422520200, guid: 2e2d306b2a034aa45a0be80de818fcf8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e2d306b2a034aa45a0be80de818fcf8, type: 3}
 --- !u!1001 &6734507920328558776
