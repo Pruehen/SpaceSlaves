@@ -21457,6 +21457,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4047415295343670611, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4047415295509815617, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
@@ -21556,6 +21560,18 @@ PrefabInstance:
     - target: {fileID: 4047415295642555243, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
       propertyPath: m_Name
       value: SystemMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047415295642555243, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047415295881905783, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098741394926172203, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
@@ -47024,6 +47040,10 @@ PrefabInstance:
     - target: {fileID: 605816957603037498, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: m_Name
       value: DialogueBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 605816957603037498, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 605816957603037499, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: m_Pivot.x
