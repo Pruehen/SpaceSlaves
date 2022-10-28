@@ -116,6 +116,10 @@ public class FleetManager : MonoBehaviour
         return staticShipDatas[id_];
     }
 
+    public string GetShipName(int id_)
+    {
+        return GetShipData(id_).shipName;
+    }
 
     public string FleetSaveDataFileName = "FleetSaveData.json";
 
