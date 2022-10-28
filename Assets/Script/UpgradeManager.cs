@@ -55,15 +55,23 @@ public class UpgradeManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public float GetTotalActiveVal(UPGRADE_TYPE type)
+    static public float GetTotalActiveVal(UPGRADE_TYPE type)
     {
-        int id = (int)type * 1000;
-        if (!UpgradeTotal.ContainsKey(type))
+        var inst = UpgradeManager.instance;
+
+        if (UpgradeManager.instance == null)
         {
-            RefreshUpgradeTotal(type);
+            Debug.Log("!!!!!!!!!!!!!!UpgradeManger : Called before Load!!!!!!!!!!!!!!!");
+            return 0;
+        }
+
+        int id = (int)type * 1000;
+        if (!inst.UpgradeTotal.ContainsKey(type))
+        {
+            inst.RefreshUpgradeTotal(type);
         }  
 
-        return UpgradeTotal[type];
+        return inst.UpgradeTotal[type];
     }
     // 가지고있는 업글, 가지고있는 업글 합산, 다음 업글 단계 리프레시
     public void RefreshUpgradeTotal(UPGRADE_TYPE type) 

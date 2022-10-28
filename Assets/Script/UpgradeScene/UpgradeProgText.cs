@@ -20,7 +20,7 @@ public class UpgradeProgText : MonoBehaviour
 
     void Refresh()
     {
-        var total = UpgradeManager.instance.GetTotalActiveVal(type);
+        var total = UpgradeManager.GetTotalActiveVal(type);
         var lv = UpgradeManager.instance.GetBestUpgradeId(type) % 1000;
 
         // 함대 레벨은 다르게 처리

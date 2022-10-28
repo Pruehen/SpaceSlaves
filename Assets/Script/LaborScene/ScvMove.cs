@@ -24,9 +24,7 @@ public class ScvMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float upgraeAddVal = 0;
-        if (UpgradeManager.instance)
-            upgraeAddVal = UpgradeManager.instance.GetTotalActiveVal(UPGRADE_TYPE.SCV_SPEED_UP);
+        float upgraeAddVal = UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.SCV_SPEED_UP);
 
         float totalMoveSpeed = moveSpeed + upgraeAddVal;
         this.transform.position += this.transform.forward * totalMoveSpeed * Time.deltaTime;
@@ -56,7 +54,7 @@ public class ScvMove : MonoBehaviour
 
     void MinGet()//광물 수집 함수
     {
-        int totalMineral = minAmount + (int)UpgradeManager.instance.GetTotalActiveVal(UPGRADE_TYPE.SCV_AMOUNT_UP);
+        int totalMineral = minAmount + (int)UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.SCV_AMOUNT_UP);
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, totalMineral);
     }
 }
