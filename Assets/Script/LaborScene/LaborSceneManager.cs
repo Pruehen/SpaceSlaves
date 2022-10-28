@@ -26,15 +26,19 @@ public class LaborSceneManager : MonoBehaviour
 
     public void RefreshShipBuyBtns()
     {
-        // 함대 건조
+        TextMeshProUGUI[] targetTmp = new TextMeshProUGUI[20];
+
+        // 함대 건조창 데이터 입력
         for (int i = 0; i < 20; i++)
         {
-            shipNameTmp[i] = buildBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();//텍스트 배열에 객체 집어넣음.
-            shipQtyTmp[i] = buildBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();//위와 같음            
+            targetTmp[i] = buildBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();//함선 이름 텍스트 위치
+            SetShipName(targetTmp[i], i);//이름 입력
 
-            // 함선의 이름과 함선의 수량을 텍스트에 입력
-            SetShipName(shipNameTmp[i], i);
-            SetShipQty(shipQtyTmp[i], i);
+            shipQtyTmp[i] = buildBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>();//위와 같음            
+            SetShipQty(shipQtyTmp[i], i);//수량 입력
+
+            targetTmp[i] = buildBtnTrf.GetChild(i).GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>();//함선 가격 텍스트 위치
+            SetShipPrice(targetTmp[i], i);
         }
     }
 
@@ -67,32 +71,48 @@ public class LaborSceneManager : MonoBehaviour
     {
         qty.text = FleetManager.instance.GetFleetQtyData(id_).ToString();//함선의 수량을 텍스트에 입력
     }
-    
-    TextMeshProUGUI[] shipNameTmp = new TextMeshProUGUI[20]; //각 함선별 지정된 이름
-    TextMeshProUGUI[] shipQtyTmp = new TextMeshProUGUI[20]; //각 함선별 수량
 
+    public void SetShipPrice(TextMeshProUGUI price, int id_)
+    {
+        price.text = FleetManager.instance.GetShipData(id_).cost.ToString();//함선의 가격을 텍스트에 입력
+    }
 
     public GameObject buildWdw;
     public GameObject fleetFormationWdw;
     public GameObject shipSelectWdw;
     public GameObject shipInfoWdw;
 
+
+    TextMeshProUGUI[] shipQtyTmp = new TextMeshProUGUI[20]; //각 함선별 수량
     public void BuildWdwToggle(bool value)//함선 건조 버튼을 눌렀을 때 실행. bool이 true일 경우 창이 켜지고 false이면 창이 꺼짐
     {
         buildWdw.SetActive(value);
 
         if(value)//빌드창을 불러올 때, 플릿매니저에서 함대 수량 데이터를 같이 불러옴
         {
+            SoundManager.instance.clickSoundOn();
             for (int i = 0; i < 20; i++)
             {
                 SetShipQty(shipQtyTmp[i], i);
-            }
+            }            
+        }
+        else
+        {
+            SoundManager.instance.CloseSoundOn();
         }
     }
 
     public void ffWdwToggle(bool value)//플릿 포메이션 윈도우 토글
     {
         fleetFormationWdw.SetActive(value);
+        if(value)
+        {
+            SoundManager.instance.clickSoundOn();
+        }
+        else
+        {
+            SoundManager.instance.CloseSoundOn();
+        }    
     }
 
     public void ShipSelectWdwToggle(bool value)//함선 선택 윈도우 토글
@@ -100,10 +120,15 @@ public class LaborSceneManager : MonoBehaviour
         shipSelectWdw.SetActive(value);
         if(value)
         {
+            SoundManager.instance.clickSoundOn();
             for (int i = 0; i < 20; i++)
             {
                 SetShipQty(shipSelectBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>(), i);
             }
+        }
+        else
+        {
+            SoundManager.instance.CloseSoundOn();
         }
     }
 
@@ -114,12 +139,14 @@ public class LaborSceneManager : MonoBehaviour
         if(index == -1)
         {
             shipInfoWdw.SetActive(false);
+            SoundManager.instance.CloseSoundOn();
         }
         else
         {
             shipInfoWdw.SetActive(true);
+            SoundManager.instance.clickSoundOn();
 
-            shipDatas[0].text = shipNameTmp[index].text;//이름
+            shipDatas[0].text = FleetManager.instance.GetShipData(index).shipName;//이름
             shipDatas[1].text = FleetManager.instance.GetShipData(index).cost.ToString();//가격
             shipDatas[2].text = FleetManager.instance.GetShipData(index).dmg.ToString() + " (" + FleetManager.instance.GetShipData(index).dmgType.ToString() + ")";//공격력과 속성
             shipDatas[3].text = FleetManager.instance.GetShipData(index).fireDelay.ToString();//공격 속도
@@ -159,24 +186,36 @@ public class LaborSceneManager : MonoBehaviour
 
     public GameObject stageSelectWdw;
     public Transform stageBtnTrf;
-    public void StageSelectWdwToggle(bool value)
+    public void StageSelectWdwToggle(bool value)//스테이지 선택 윈도우 토글
     {
         RefreshStageNameBtns();
         stageSelectWdw.SetActive(value);
+
+        if (value)
+        {
+            SoundManager.instance.clickSoundOn();
+        }
+        else
+        {
+            SoundManager.instance.CloseSoundOn();
+        }
     }
 
 
     public GameObject stageInfoWdw;
     public TextMeshProUGUI stageInfoText;
-    public void StageInfoWdwToggle(int index)
+    public void StageInfoWdwToggle(int index)//스테이지별 테이터 윈도우 토글
     {
         if (index == -1)
         {
             stageInfoWdw.SetActive(false);
+            SoundManager.instance.CloseSoundOn();
         }
         else
         {
             stageInfoText.text = null;
+
+            SoundManager.instance.clickSoundOn();
 
             stageInfoWdw.SetActive(true);
             StageManager.instance.selectedStage = index;
@@ -192,7 +231,9 @@ public class LaborSceneManager : MonoBehaviour
 
     public void ShipAdd(int index)//함선 생산 버튼을 눌렀을 때 실행. 누른 버튼에 따라서 무슨 함선을 만들지 고름.
     {
-        if(UpgradeManager.instance.GetFleetLevel() - 1 < index)
+        SoundManager.instance.clickSoundOn();
+
+        if (UpgradeManager.instance.GetFleetLevel() - 1 < index)
         {
             Debug.Log("조선소 레벨이 부족합니다");
             return;

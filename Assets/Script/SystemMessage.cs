@@ -49,6 +49,7 @@ public class SystemMessage : MonoBehaviour
     public void SelectYes(string Message)//확인 후 실행
     {
         IsMessageIn = false;
+        SoundManager.instance.clickSoundOn();
         if (Message != "")
         {
             Log.SendMessage(Message);
@@ -57,6 +58,7 @@ public class SystemMessage : MonoBehaviour
     public void SelectNo(string Message)//확인 후 실행
     {
         IsMessageIn = false;
+        SoundManager.instance.clickSoundOn();
         if (Message != "")
         {
             Log.SendMessage(Message);
