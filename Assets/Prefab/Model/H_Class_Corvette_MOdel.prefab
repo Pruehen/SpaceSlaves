@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 1549211128236936081}
   - component: {fileID: 4892355999078146373}
   m_Layer: 3
-  m_Name: H_Class_Corvette_MOdel
+  m_Name: H_Class_Corvette_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
