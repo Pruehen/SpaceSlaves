@@ -78,79 +78,79 @@
     "req_upgrade_2": 0
   },
   "2000": {
-    "addval": 50,
+    "addval": 10,
     "cost": 10,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2001": {
-    "addval": 100,
+    "addval": 15,
     "cost": 20,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2002": {
-    "addval": 150,
+    "addval": 20,
     "cost": 40,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2003": {
-    "addval": 200,
+    "addval": 30,
     "cost": 80,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2004": {
-    "addval": 250,
+    "addval": 40,
     "cost": 160,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2005": {
-    "addval": 300,
+    "addval": 60,
     "cost": 320,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2006": {
-    "addval": 350,
+    "addval": 90,
     "cost": 640,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2007": {
-    "addval": 400,
+    "addval": 120,
     "cost": 1280,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2008": {
-    "addval": 450,
+    "addval": 180,
     "cost": 2560,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2009": {
-    "addval": 500,
+    "addval": 240,
     "cost": 5120,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2010": {
-    "addval": 550,
+    "addval": 300,
     "cost": 10000,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2011": {
-    "addval": 600,
+    "addval": 400,
     "cost": 20000,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
   "2012": {
-    "addval": 650,
+    "addval": 600,
     "cost": 40000,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0

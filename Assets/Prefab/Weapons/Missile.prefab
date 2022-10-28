@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   agility: 20
+  lifeTime: 10
 --- !u!198 &3498485040014963336
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -384,7 +385,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.02
+      scalar: 0.06
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5101,6 +5102,14 @@ PrefabInstance:
     - target: {fileID: 198166025632870074, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198604367962915600, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198604367962915600, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.scalar

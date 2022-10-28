@@ -10,8 +10,8 @@ public class HPBarControl : MonoBehaviour
     public Image SDBar;
     public GameObject HPbar;
     public GameObject SDbar;
-    float Cool = 1.5f;
-    float MaxCool = 1.5f;
+    float Cool = 5f;
+    float MaxCool = 5f;
     bool Cooling = false;
 
     private void Update()

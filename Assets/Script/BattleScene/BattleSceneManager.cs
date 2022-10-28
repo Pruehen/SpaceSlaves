@@ -56,17 +56,25 @@ public class BattleSceneManager : MonoBehaviour
         }
     }
 
+    float collectedDebri = 0;
+    public void AddDebri(float debri)
+    {
+        collectedDebri += debri;
+    }
+
     public void GameEnd(bool isWin)
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0;        
 
         if(isWin)
         {
+            CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, (int)(collectedDebri * 1.5f));
             MessageManager.instance.PopupOk("게임 승리!", gameObject);
             StageManager.instance.GetStageData(selectedStage).isClear = true;
         }
         else
         {
+            CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, (int)collectedDebri);
             MessageManager.instance.PopupOk("게임 패배!", gameObject);
         }
     }
