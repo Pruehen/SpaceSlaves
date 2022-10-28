@@ -31,7 +31,10 @@ public class FleetBarUI : MonoBehaviour
 
         if (goShipImage != null)
         {
-            goShipImage.SetActive(num > 0);
+            bool isActive = num > 0;
+            goShipImage.SetActive(isActive);
+            if (isActive)
+                goShipImage.GetComponent<Image>().sprite = FleetManager.instance.GetShipImage(shipidx);
         }
         if (goTextQty != null)
         {

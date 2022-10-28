@@ -75,6 +75,8 @@ public class FleetManager : MonoBehaviour
 
     public static FleetManager instance;
 
+    public Sprite[] shipImages;
+
     private void Awake()
     {
         if (instance != null)
@@ -119,6 +121,11 @@ public class FleetManager : MonoBehaviour
     public string GetShipName(int id_)
     {
         return GetShipData(id_).shipName;
+    }
+
+    public Sprite GetShipImage(int id_)
+    {
+        return shipImages[Math.Clamp(id_, 0, shipImages.Length-1)];
     }
 
     public string FleetSaveDataFileName = "FleetSaveData.json";

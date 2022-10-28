@@ -13,7 +13,6 @@ public class LaborSceneManager : MonoBehaviour
     public Transform buildBtnTrf;//버튼 상위 트랜스폼. 버튼들의 자식 객체들에게 접근하기 위함.
     public Transform shipSelectBtnTrf;
 
-
     private void Awake()
     {
         instance = this;
@@ -39,17 +38,20 @@ public class LaborSceneManager : MonoBehaviour
 
             targetTmp[i] = buildBtnTrf.GetChild(i).GetChild(3).GetComponent<TextMeshProUGUI>();//함선 가격 텍스트 위치
             SetShipPrice(targetTmp[i], i);
+
+            buildBtnTrf.GetChild(i).GetChild(2).GetComponent<Image>().sprite = FleetManager.instance.GetShipImage(i); // 함선이미지
         }
     }
 
     public void RefreshShipSelectBtns()
-    {
+    {        
         // 함대 편성 세팅
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < shipSelectBtnTrf.childCount; i++)
         {
             // 함선의 이름과 함선의 수량을 텍스트에 입력
             SetShipName(shipSelectBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>(), i);
             SetShipQty(shipSelectBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>(), i);
+            shipSelectBtnTrf.GetChild(i).GetChild(2).GetComponent<Image>().sprite = FleetManager.instance.GetShipImage(i);
         }
     }
 
