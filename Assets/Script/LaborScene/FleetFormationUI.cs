@@ -16,14 +16,14 @@ public class FleetFormationUI : MonoBehaviour
     int formIdx = 0;
     int idx = 0;
     int selAmount = 0;
-
+    // 편집할 편대 선택
     public void OnSelectFleet(int idx)
     {
         goSelectPop.SetActive(true);
         SoundManager.instance.clickSoundOn();
         formIdx = idx;
     }
-     
+    //함선을 선택
     public void OnSelectShip(int idx)
     {
         goQtySelect.SetActive(true);
@@ -76,9 +76,9 @@ public class FleetFormationUI : MonoBehaviour
     {
         if (goQtySelect.active)
         {
-            var qty = FleetManager.instance.GetFleetQtyData(idx);
-            qty = qty - FleetFormationManager.instance.GetFleetQty(idx);
+            var qty = FleetManager.instance.GetFleetQtyData(idx) - FleetFormationManager.instance.GetShipQty(idx);
             qty = Mathf.Max(qty, 0);
+
             selAmount = (int)Mathf.Floor(qty * goQtySlider.value);
             goQtySliderTxt.text = selAmount.ToString();
         }  

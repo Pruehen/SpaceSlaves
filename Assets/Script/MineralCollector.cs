@@ -54,6 +54,9 @@ public class MineralCollector : MonoBehaviour
             ));
 
         SaveData();
+
+        RefreshReward();
+        RefreshTimer();
     }
 
     public void SaveData()
