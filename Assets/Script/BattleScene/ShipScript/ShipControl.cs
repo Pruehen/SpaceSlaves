@@ -19,7 +19,7 @@ public class ShipControl : MonoBehaviour
     LineRenderer laser;
 
     int id = -1;//함선 고유 아이디. 0부터 시작
-    public int enemyId = -1;//적 함선 고유 아이디
+    public int enemyId = -1;//적 함선 고유 아이디. -1이면 아군이라는 뜻
     public string shipName;//함선 이름 (함급)
     public ship_Class shipClass;//함선 종류 (함종)
     public int cost;//함선 생산 가격
@@ -175,7 +175,13 @@ public class ShipControl : MonoBehaviour
             return;
 
         isDead = true;
+
+        if (enemyId != -1)
+        {
+            BattleSceneManager.instance.AddDebri((enemyId + 2) * (enemyId + 2));
+        }
         BattleSceneManager.instance.GameEndCheck();
+
         this.transform.SetParent(BattleSceneManager.instance.DestroyedShip);
 
         GameObject debri = Instantiate(shipDebriPrf, this.transform.position, this.transform.rotation);
