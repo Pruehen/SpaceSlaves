@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightMove : MonoBehaviour
 {
     [SerializeField] Transform bottom, top;
+
     Vector3 target;
     bool istop = false;
 
@@ -15,7 +16,7 @@ public class LightMove : MonoBehaviour
         SetToTop(); 
     }
 
-    float speed = 6f; 
+    float speed = 8f; 
 
     // Update is called once per frame
     void Update()
@@ -40,7 +41,7 @@ public class LightMove : MonoBehaviour
         }
         else
         {
-            target = bottom.position; 
+            transform.position = bottom.position; 
         }
         this.transform.forward = target - this.transform.position;
     }
