@@ -108,7 +108,13 @@ public class MineralCollector : MonoBehaviour
         var rewardValTick = Math.Min(now, maxRewardTime) - recentCollectedTime;
 
         var reward = MAX_REWARD * (float)(TimeSpan.FromTicks(rewardValTick).TotalSeconds / TimeSpan.FromTicks(maxtick).TotalSeconds);
-        goTextExpectedReward.text = ((int)reward).ToString();
+        string rewardText;
+        if (reward >= 10000)
+            rewardText = (reward / 1000).ToString() + "K";
+        else
+            rewardText = ((int)reward).ToString();
+
+        goTextExpectedReward.text = rewardText;
     }
     void RefreshTimer()
     {
@@ -117,6 +123,7 @@ public class MineralCollector : MonoBehaviour
         var now = DateTime.Now.Ticks;
         long maxtick = new TimeSpan(0, 0, MAX_TIME).Ticks;
         goRemainTime.SetAvail(now >= minRequiredTime);
+        goRemainTime.SetMax(now >= maxRewardTime);
         goRemainTime.UpdateTimer( Math.Min(now - recentCollectedTime, maxtick));
     }
     private void OnDestroy()
