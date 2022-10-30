@@ -62,11 +62,11 @@ public class ShipAi : MonoBehaviour
 
     public void AiStateSet()
     {
-        if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.fitRange)
+        if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.maxRange)
         {
             state = State.run;
         }
-        else if (mainShipInfo.toTargetVec.magnitude * 10 < mainShipInfo.fitRange && mainShipInfo.toTargetVec.magnitude * 10 > mainShipInfo.minRange)
+        else if (mainShipInfo.toTargetVec.magnitude * 10 < mainShipInfo.maxRange && mainShipInfo.toTargetVec.magnitude * 10 > mainShipInfo.minRange)
         {
             state = State.idle;
         }
@@ -80,8 +80,6 @@ public class ShipAi : MonoBehaviour
     public void TargetFound()
     {
         float ShortDis;
-
-        float time = Time.time;
 
         ShortDis = Vector3.Distance(gameObject.transform.position, mainShipInfo.FoundTarget.First.Value.transform.position);
 
@@ -98,8 +96,6 @@ public class ShipAi : MonoBehaviour
                 ShortDis = Distance;
             }
         }
-
-        Debug.Log(Time.time - time);
     }
 
     void TargetSet()

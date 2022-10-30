@@ -38,7 +38,7 @@ public class CameraControl : MonoBehaviour
 
         //ZoomTarget();
 
-        AutoRoll();
+        AutoRotate();
     }
 
     float camControlSpeed = 10f;
@@ -106,8 +106,6 @@ public class CameraControl : MonoBehaviour
                 zoomValue += Time.deltaTime * WheelSpeed;
                 this.transform.position += transform.forward * Time.deltaTime * zoomPower;
                 //transform.Rotate(transform.right, -0.5f);
-
-                rb.AddTorque(-transform.right, ForceMode.Force);
             }
             //Camera.main.fieldOfView += WheelSpeed; // fov로 이동
         }
@@ -118,8 +116,6 @@ public class CameraControl : MonoBehaviour
                 zoomValue -= Time.deltaTime * WheelSpeed;
                 this.transform.position -= transform.forward * Time.deltaTime * zoomPower;
                 //transform.Rotate(transform.right, 0.5f);
-
-                rb.AddTorque(transform.right, ForceMode.Force);
             }
             //Camera.main.fieldOfView -= WheelSpeed; //fov로 이동
         }
@@ -205,8 +201,12 @@ public class CameraControl : MonoBehaviour
         }
     }
 
-    void AutoRoll()
+    void AutoRotate()
     {
-        rb.AddTorque(this.transform.forward * -this.transform.right.y, ForceMode.Force);
+        float yPos = this.transform.position.y;
+        Debug.Log(yPos);
+
+        rb.AddTorque(this.transform.forward * -this.transform.right.y * 5, ForceMode.Force);
+        rb.AddTorque(this.transform.right * (yPos * 0.25f + this.transform.forward.y) * 5, ForceMode.Force);
     }
 }

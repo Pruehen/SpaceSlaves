@@ -21,7 +21,7 @@ public class Turret : MonoBehaviour
         this.dmgType = dmgType;
         this.fireDelay = fireDelay;
 
-        Debug.Log(dmg + " " + dmgType + " " + fireDelay);
+        //Debug.Log(dmg + " " + dmgType + " " + fireDelay);
     }
 
     private void Start()
@@ -44,7 +44,10 @@ public class Turret : MonoBehaviour
 
         if (mainShipControl.target != null)
         {
-            transform.LookAt(mainShipControl.target.transform.position);
+            if (dmgType != dmg_Type.explosion)
+            {
+                transform.LookAt(mainShipControl.target.transform.position);//미사일 발사기가 아닐 경우, 터렛방향 자동조정시켜줌
+            }
             if(mainShipControl.isRange && delayCount >= fireDelay + randomDelay)
             {
                 Attack(mainShipControl.target.GetComponent<ShipControl>());
@@ -60,7 +63,7 @@ public class Turret : MonoBehaviour
         laser.startWidth = laserWidth;
         laser.endWidth = laserWidth;
 
-        laserWidth *= 0.8f;
+        laserWidth *= 0.9f;
     }
 
     void Attack(ShipControl target)
@@ -78,6 +81,11 @@ public class Turret : MonoBehaviour
         {
             Projectile projectile = Instantiate(Shell, this.transform.position, this.transform.rotation).GetComponent<Projectile>();
             projectile.Init(dmg);
+        }
+        else if (dmgType == dmg_Type.explosion)
+        {
+            Missile missile = Instantiate(Shell, this.transform.position, this.transform.rotation).GetComponent<Missile>();
+            missile.Init(dmg, target.transform);
         }
         mainShipControl.shipSound.FireSoundPlay();
 

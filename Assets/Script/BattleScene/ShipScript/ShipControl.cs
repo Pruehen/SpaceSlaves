@@ -69,7 +69,7 @@ public class ShipControl : MonoBehaviour
         }
 
         InvokeRepeating("RangeCheck", 0, 1);
-        InvokeRepeating("ShieldGeneration", 1, 1);
+        //InvokeRepeating("ShieldGeneration", 1, 1);
         //shipAi.TargetFound();
     }
 
@@ -227,6 +227,12 @@ public class ShipControl : MonoBehaviour
                 controledMissile.Init(dmg, target.transform);
                 shipSound.FireSoundPlay();
             }
+            else if (dmgType == dmg_Type.kinetic)
+            {
+                Projectile projectile = Instantiate(shell, cannon.transform.position, cannon.transform.rotation).GetComponent<Projectile>();
+                projectile.Init(dmg);
+                shipSound.FireSoundPlay();
+            }
         }
         else if(isTurret)//터렛일 경우
         {
@@ -256,7 +262,7 @@ public class ShipControl : MonoBehaviour
         laser.startWidth = laserWidth;
         laser.endWidth = laserWidth;
 
-        laserWidth *= 0.8f;
+        laserWidth *= 0.9f;
     }
 
     void RotateTarget(float rotateOrder)//타겟 방향으로 방향 전환 함수

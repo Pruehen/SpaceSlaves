@@ -162,22 +162,34 @@ public class LaborSceneManager : MonoBehaviour
             switch(index)
             {
                 case 0:
-                    shipExplainTmp.text = " 레이저 주포를 가진 다목적 초계함.";
+                    shipExplainTmp.text = " 레이저 주포를 가진 값싼 다목적 초계함입니다.";
                     break;
                 case 1:
-                    shipExplainTmp.text = " 중거리 실탄 화력 지원형 초계함.";
+                    shipExplainTmp.text = " 중거리 실탄 화력 지원형 초계함입니다.";
                     break;
                 case 2:
-                    shipExplainTmp.text = " 긴 사거리를 가진 수직 미사일 발사대를 장착한 초계함.";
+                    shipExplainTmp.text = " 수직 미사일 발사대를 장착한 초계함입니다. 먼 거리에서 강력한 피해를 입힐 수 있습니다.";
                     break;
                 case 3:
-                    shipExplainTmp.text = " 중대형 구축함. 다량의 레이저 주포를 탑재하고 있다.";
+                    shipExplainTmp.text = " 중대형 구축함입니다. 다량의 레이저 주포를 탑재하고 있습니다.";
                     break;
                 case 4:
-                    shipExplainTmp.text = " 빠른 발사 속도를 가진 기관포를 탑재한 중거리 화력 지원 함선.";
+                    shipExplainTmp.text = " 빠른 발사 속도를 가진 기관포를 탑재한 중거리 화력 지원 함선입니다.";
                     break;
                 case 5:
-                    shipExplainTmp.text = " 막대한 피해를 주는 어뢰를 장거리에서 발사하는 중뇌장 구축함.";
+                    shipExplainTmp.text = " 막대한 피해를 주는 어뢰를 장거리에서 발사하는 중뇌장 구축함입니다.";
+                    break;
+                case 6:
+                    shipExplainTmp.text = " 강력한 순양함입니다. 높은 방어력과 강력한 화력을 가졌습니다.";
+                    break;
+                case 7:
+                    shipExplainTmp.text = " 수많은 실탄 투사포를 탑재하고 있어 높은 다수전 성능을 지닌 순양함입니다.";
+                    break;
+                case 8:
+                    shipExplainTmp.text = " 동체에 막대한 양의 미사일을 탑재한 아스널 쉽입니다. 미사일을 이용한 탄막 형성에 적합합니다.";
+                    break;
+                case 9:
+                    shipExplainTmp.text = " 전함의 주포를 함체에 고정시켜 탑재한 강력한 중순양함입니다. 장거리에서 강력한 화력을 투사할 수 있습니다.";
                     break;
                 default:
                     shipExplainTmp.text = "미구현된 함선입니다.";

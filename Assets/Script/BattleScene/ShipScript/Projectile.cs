@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().AddForce(this.transform.forward * 5, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(this.transform.forward * 10, ForceMode.Impulse);
     }
 
     float dmg;

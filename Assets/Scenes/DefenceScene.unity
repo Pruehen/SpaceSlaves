@@ -930,7 +930,11 @@ MonoBehaviour:
   - {fileID: 101806, guid: cd2b3eaf1287a154895af08884e8c333, type: 3}
   - {fileID: 101806, guid: 0225c5adbf1c7904b840863f9f786cd7, type: 3}
   - {fileID: 101806, guid: 8ea47aa12a04f6349b78c40ee29f4fdd, type: 3}
-  spaceBetX: 0.2
+  - {fileID: 101806, guid: 513b408b31232c546acdd8c508b374cd, type: 3}
+  - {fileID: 101806, guid: fc853318605123147b100d766990eb58, type: 3}
+  - {fileID: 101806, guid: 27036d28a58bb784eac592438e3d8f7f, type: 3}
+  - {fileID: 101806, guid: d044dba71f012f44e84a654ede695ac6, type: 3}
+  spaceBetX: 0.4
   spaceBetZ: 0.2
 --- !u!114 &249468269
 MonoBehaviour:
@@ -4321,7 +4325,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 1
-  m_AngularDrag: 1
+  m_AngularDrag: 10
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0

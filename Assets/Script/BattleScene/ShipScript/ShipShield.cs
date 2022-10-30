@@ -79,11 +79,11 @@ public class ShipShield : MonoBehaviour
         if (fadeIn)
         {
             a = 0;
-            b = 1;
+            b = 0.5f;
         }
         else
         {
-            a = 1;
+            a = 0.5f;
             b = 0;
         }
 

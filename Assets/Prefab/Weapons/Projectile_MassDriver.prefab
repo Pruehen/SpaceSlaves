@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7096125181597962737}
   - component: {fileID: 7096125181597962736}
   - component: {fileID: 199299101761771498}
-  m_Layer: 10
-  m_Name: Projectile_Enemy
+  m_Layer: 9
+  m_Name: Projectile_MassDriver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7096125181597962739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.196}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,13 +80,13 @@ TrailRenderer:
   m_Time: 0.05
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.10138204
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.02139423
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -98,8 +98,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.7398777, b: 0, a: 1}
-      key1: {r: 1, g: 0.7971698, b: 0.7971698, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 0.514151, g: 1, b: 0.9620173, a: 1}
       key2: {r: 1, g: 0.7971698, b: 0.7971698, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
