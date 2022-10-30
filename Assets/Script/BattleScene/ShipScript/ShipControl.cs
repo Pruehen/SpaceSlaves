@@ -69,7 +69,7 @@ public class ShipControl : MonoBehaviour
         }
 
         InvokeRepeating("RangeCheck", 0, 1);
-        //InvokeRepeating("ShieldGeneration", 0, 5);
+        InvokeRepeating("ShieldGeneration", 1, 1);
         //shipAi.TargetFound();
     }
 
@@ -287,7 +287,8 @@ public class ShipControl : MonoBehaviour
     {
         if(sd < maxSd)
         {
-            sd = Mathf.Clamp(maxSd - sd, 0, maxSd*0.2f);
+            sd += Mathf.Clamp(maxSd - sd, 0, maxSd*0.04f);
+            hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
         }
     }
 

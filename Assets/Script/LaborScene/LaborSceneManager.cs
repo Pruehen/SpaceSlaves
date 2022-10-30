@@ -25,10 +25,10 @@ public class LaborSceneManager : MonoBehaviour
 
     public void RefreshShipBuyBtns()
     {
-        TextMeshProUGUI[] targetTmp = new TextMeshProUGUI[20];
+        TextMeshProUGUI[] targetTmp = new TextMeshProUGUI[12];
 
         // 함대 건조창 데이터 입력
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 12; i++)
         {
             targetTmp[i] = buildBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>();//함선 이름 텍스트 위치
             SetShipName(targetTmp[i], i);//이름 입력
@@ -57,7 +57,7 @@ public class LaborSceneManager : MonoBehaviour
 
     void RefreshStageNameBtns()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 12; i++)
         {
             stageBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = StageManager.instance.GetStageData(i).stageName;
         }
@@ -85,7 +85,7 @@ public class LaborSceneManager : MonoBehaviour
     public GameObject shipInfoWdw;
 
 
-    TextMeshProUGUI[] shipQtyTmp = new TextMeshProUGUI[20]; //각 함선별 수량
+    TextMeshProUGUI[] shipQtyTmp = new TextMeshProUGUI[12]; //각 함선별 수량
     public void BuildWdwToggle(bool value)//함선 건조 버튼을 눌렀을 때 실행. bool이 true일 경우 창이 켜지고 false이면 창이 꺼짐
     {
         buildWdw.SetActive(value);
@@ -93,7 +93,7 @@ public class LaborSceneManager : MonoBehaviour
         if(value)//빌드창을 불러올 때, 플릿매니저에서 함대 수량 데이터를 같이 불러옴
         {
             SoundManager.instance.clickSoundOn();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 12; i++)
             {
                 SetShipQty(shipQtyTmp[i], i);
             }            
@@ -123,7 +123,7 @@ public class LaborSceneManager : MonoBehaviour
         if(value)
         {
             SoundManager.instance.clickSoundOn();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 12; i++)
             {
                 SetShipQty(shipSelectBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>(), i);
             }
@@ -171,13 +171,13 @@ public class LaborSceneManager : MonoBehaviour
                     shipExplainTmp.text = " 긴 사거리를 가진 수직 미사일 발사대를 장착한 초계함.";
                     break;
                 case 3:
-                    shipExplainTmp.text = " 중대형 호위함. 다량의 레이저 주포를 탑재하고 있다.";
+                    shipExplainTmp.text = " 중대형 구축함. 다량의 레이저 주포를 탑재하고 있다.";
                     break;
                 case 4:
                     shipExplainTmp.text = " 빠른 발사 속도를 가진 기관포를 탑재한 중거리 화력 지원 함선.";
                     break;
                 case 5:
-                    shipExplainTmp.text = " 막대한 피해를 주는 어뢰를 장거리에서 발사하는 뇌장 호위함.";
+                    shipExplainTmp.text = " 막대한 피해를 주는 어뢰를 장거리에서 발사하는 중뇌장 구축함.";
                     break;
                 default:
                     shipExplainTmp.text = "미구현된 함선입니다.";

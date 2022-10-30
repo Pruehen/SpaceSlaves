@@ -19,10 +19,8 @@ public enum dmg_Type
 public enum ship_Class
 {
     Corvette,//초계함
-    Frigate,//호위함
     Destroyer,//구축함
-    Light_Cruiser,//경순양함
-    heavy_cruiser,//중순양함
+    Cruiser,//경순양함
     Battleship//전함
 }
 
@@ -98,9 +96,9 @@ public class FleetManager : MonoBehaviour
         LoadStaticData();
         LoadFleetData();
 
-        if (fleetDatas.Count == 0)//기존 함대 데이터가 없을 경우, id 0부터 19까지 총 20개의 데이터 생성
+        if (fleetDatas.Count == 0)//기존 함대 데이터가 없을 경우, id 0부터 11까지 총 20개의 데이터 생성
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 12; i++)
             {
                 FleetSaveData fleet = new FleetSaveData();
                 fleet.id = i;
