@@ -31,6 +31,8 @@ public class Turret : MonoBehaviour
         this.dmgType = dmgType;
         this.fireDelay = fireDelay;
         subRange = range;
+
+        InvokeRepeating("SubRangeCheck", 1, 1);
     }
 
     private void Start()
@@ -44,8 +46,6 @@ public class Turret : MonoBehaviour
 
         randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
         delayCount = fireDelay - fireDelay * 0.5f;
-
-        InvokeRepeating("SubRangeCheck", 1, 1);
     }
 
     private void Update()
@@ -66,6 +66,7 @@ public class Turret : MonoBehaviour
             {
                 transform.LookAt(mainShipControl.target.transform.position);//미사일 발사기가 아닐 경우, 터렛방향 자동조정시켜줌
             }
+
             if(subRange == 0 && mainShipControl.isRange && delayCount >= fireDelay + randomDelay)//주포 공격 함수
             {
                 Attack(mainShipControl.target.GetComponent<ShipControl>());
