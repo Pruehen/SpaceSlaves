@@ -88,8 +88,8 @@ public class ShipAi : MonoBehaviour
         foreach (GameObject found in mainShipInfo.FoundTarget)
         {
             float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
-
-            if (Distance < ShortDis)
+            
+            if (Distance < ShortDis && found.activeSelf)
             {
                 mainShipInfo.target = found;
                 //mainShipInfo.targetNode = found;

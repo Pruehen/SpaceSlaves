@@ -98,6 +98,7 @@ public class ShipControl : MonoBehaviour
     }
     
     public GameObject target;//현재 함선이 지시하고 있는 타겟
+    public GameObject debugBall;
     //public LinkedListNode<GameObject> targetNode;
 
     void FixedUpdate()
@@ -111,6 +112,11 @@ public class ShipControl : MonoBehaviour
         {
             toTargetVec = target.transform.position - this.transform.position;//타겟을 향하는 벡터
             toTargetVec_Local = this.transform.InverseTransformDirection(toTargetVec).normalized;//위 벡터의 로컬화
+
+            if(debugBall != null)
+            {
+                debugBall.transform.position = target.transform.position;
+            }
         }       
 
         RotateTarget(toTargetVec_Local.x);//함선 자동 회전 제어
@@ -133,7 +139,7 @@ public class ShipControl : MonoBehaviour
         //ShipHP();
     }
 
-    bool isDead = false;
+    public bool isDead = false;
 
     float defaultLaserWidth = 0.01f;
     float laserWidth;
@@ -207,7 +213,7 @@ public class ShipControl : MonoBehaviour
 
     void Attack()//공격 함수
     {
-        if (target == null || Mathf.Abs(toTargetVec_Local.x) > 0.05f)
+        if (target == null || Mathf.Abs(toTargetVec_Local.x) > 0.01f)
             return;
 
         ShipControl targetSC = target.GetComponent<ShipControl>();
@@ -275,9 +281,25 @@ public class ShipControl : MonoBehaviour
         laserWidth *= 0.9f;
     }
 
+    float orderPro = 0;
+    float orderDiff = 0;
+    float orderIntg = 0;
+    float orderTemp = 0;
+
+    float kp = 1;
+    float kd = 50;
+    float ki = 0f;
+
     void RotateTarget(float rotateOrder)//타겟 방향으로 방향 전환 함수
     {
-        rigidbody.AddTorque(this.transform.up * agility * 0.001f * rotateOrder, ForceMode.Force);
+        orderPro = rotateOrder;
+        orderDiff = (rotateOrder - orderTemp) * kd;
+        orderIntg += orderPro * ki * Time.deltaTime;
+        orderTemp = orderPro;
+
+        float order = orderPro * kp + orderDiff + orderIntg;
+
+        rigidbody.AddTorque(this.transform.up * agility * 0.001f * order, ForceMode.Force);
     }
 
     void RangeCheck()//타겟과의 거리 체크 함수. invoke로 초당 1회씩 호출
