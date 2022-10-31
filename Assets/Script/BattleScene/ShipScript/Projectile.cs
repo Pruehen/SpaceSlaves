@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        this.gameObject.SetActive(false);
     }
 
     float dmg;
