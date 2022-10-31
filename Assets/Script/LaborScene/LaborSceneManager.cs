@@ -271,8 +271,8 @@ public class LaborSceneManager : MonoBehaviour
 
     public void SmMoney()
     {
-        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, 10000);
-        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, 1000);
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, 1000000);
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, 100000);
     }
     public void UgrdReset()
     {
