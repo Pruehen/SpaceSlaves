@@ -30918,7 +30918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3be72dea592f9148887cf13141c94ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spr: {fileID: 8728904072345658016, guid: 243116287d7be0d4bb141cee91316278, type: 3}
+  spr: {fileID: 5619924399492032052, guid: 3b13c26d2768a074d8b1bf99361e95e1, type: 3}
 --- !u!23 &2528135369384342423
 MeshRenderer:
   m_ObjectHideFlags: 0
