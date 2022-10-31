@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class FleetFormationUI : MonoBehaviour
 {
-    public GameObject goQtySelect;    
+    public GameObject goQtySelect;
     public Scrollbar goQtySlider;
     public TextMeshProUGUI goQtySliderTxt;
 
@@ -45,11 +45,14 @@ public class FleetFormationUI : MonoBehaviour
         goQtySelect.SetActive(false);
         SoundManager.instance.CloseSoundOn();
         goQtySlider.value = 0;
-        FleetFormationManager.instance.RemoveUnit(formIdx);
 
+        EmptyFleetSlot(formIdx);
+    }
+    public void EmptyFleetSlot(int id)
+    {
+        FleetFormationManager.instance.RemoveUnit(id);
         Refresh();
     }
-
     private void OnEnable()
     {
         Refresh();
