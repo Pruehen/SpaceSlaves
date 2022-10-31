@@ -29046,6 +29046,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241888341}
     m_Modifications:
+    - target: {fileID: 1524748385485376160, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376160, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376160, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1524748386160174469}
+    - target: {fileID: 1524748385485376160, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376160, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Pop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376160, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PopEffects, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376160, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376160, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673720, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_Name
       value: Collector
@@ -29156,6 +29188,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+--- !u!1 &1524748386160174468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1524748387453673720, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+  m_PrefabInstance: {fileID: 1524748386160174467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1524748386160174469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524748386160174468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3be72dea592f9148887cf13141c94ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spr: {fileID: 8728904072345658016, guid: 243116287d7be0d4bb141cee91316278, type: 3}
 --- !u!23 &2528135369384342423
 MeshRenderer:
   m_ObjectHideFlags: 0
