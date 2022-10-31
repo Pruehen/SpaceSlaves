@@ -7,6 +7,7 @@ using UnityEngine.Events;
 [Serializable]
 public class DialogueData
 {
+    [TextArea(2,4)]
     public string text;
 }
 
@@ -82,6 +83,7 @@ public class DialogueUI : MonoBehaviour
             return;
         }
         var dialData = queueDial.Dequeue();
+        dialData.text = dialData.text.Replace("\\n", "\n");
 
         goDial.SetText(dialData.text);
     }
