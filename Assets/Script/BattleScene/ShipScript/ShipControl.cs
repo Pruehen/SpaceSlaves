@@ -147,12 +147,15 @@ public class ShipControl : MonoBehaviour
             sd -= inputDmg * sdFactor;            
             shipShield.EffectOn();
             hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
+            shipSound.ShieldHitSoundPlay();
         }
         else if(sd > 0 && inputDmg * sdFactor > sd)
         {
             sd -= inputDmg * sdFactor;
             inputDmg = -sd;
             shipShield.EffectOn();
+            hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
+            shipSound.ShieldHitSoundPlay();
         }
 
         if (sd <= 0)

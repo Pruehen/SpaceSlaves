@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
 
         TrailRenderer.Clear();
 
-        GetComponent<Rigidbody>().AddForce(this.transform.forward * 15, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(this.transform.forward * 10, ForceMode.Impulse);
     }
 
     // Update is called once per frame
