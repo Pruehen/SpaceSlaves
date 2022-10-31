@@ -6,9 +6,16 @@ public class Missile : MonoBehaviour
 {
     float dmg;
     Transform target;
-    public void Init(float dmg, Transform target)
+    public void Init(float dmg, Transform target, Vector3 pos, Quaternion rot)
     {
         this.dmg = dmg;
+        this.target = target;
+        this.transform.position = pos;
+        this.transform.rotation = rot;
+        gameObject.SetActive(true);
+    }
+    public void NewTargetSet(Transform target)
+    {
         this.target = target;
     }
     Rigidbody rigidbody;
@@ -18,27 +25,36 @@ public class Missile : MonoBehaviour
     {
         rigidbody = this.GetComponent<Rigidbody>();
 
-        Destroy(this.gameObject, lifeTime);
+        ObjectReset();
     }
 
     public float speed = 1;
     public float agility = 10;
     public float lifeTime = 10;
+    float lifeTimeCount = 0;
 
     // Update is called once per frame
     void Update()
     {
-        rigidbody.AddForce(this.transform.forward * speed, ForceMode.Force);
+        if (this.gameObject.activeSelf)
+        {
+            rigidbody.AddForce(this.transform.forward * speed, ForceMode.Force);
 
-        //this.transform.Rotate(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized));
-        rigidbody.AddTorque(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized) * agility, ForceMode.Force);
-        //Guided();
+            //this.transform.Rotate(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized));
+            rigidbody.AddTorque(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized) * agility, ForceMode.Force);
+            //Guided();
+            lifeTimeCount += Time.deltaTime;
+            if(lifeTimeCount > lifeTime)
+            {
+                ObjectReset();
+            }
+        }
     }
 
     Vector3 angleError_diff;
     Vector3 angleError_temp;
 
-    void Guided()
+    void Guided()//사용하지 않음
     {
         Vector3 toTargetVec = target.position - this.transform.position;//missile to target Vector
         toTargetVec = toTargetVec.normalized;
@@ -55,19 +71,29 @@ public class Missile : MonoBehaviour
         //rigidbody.AddTorque(Vector3.ClampMagnitude(orderAxis * (rigidbody.velocity.magnitude * 0.002f), 10), ForceMode.Force);
         this.transform.Rotate(orderAxis * 500);
     }
+    public GameObject Effect;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 7 || other.gameObject.layer == 8)
         {
             other.GetComponent<ShipControl>().Hit(dmg, 1, 1);
-            GameObject effect = this.transform.GetChild(0).gameObject;
+            /*GameObject effect = this.transform.GetChild(0).gameObject;
             effect.transform.SetParent(null);
-            effect.SetActive(true);
+            effect.SetActive(true);*/
 
+            GameObject effect = Instantiate(Effect, this.transform.position, Quaternion.identity, null);
 
             Destroy(effect, 5);
-            Destroy(this.gameObject);
+
+            ObjectReset();
         }
+    }
+
+    void ObjectReset()
+    {
+        lifeTimeCount = 0;
+        rigidbody.velocity = Vector3.zero;
+        this.gameObject.SetActive(false);
     }
 }

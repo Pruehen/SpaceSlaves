@@ -14,6 +14,7 @@ public class Turret : MonoBehaviour
     float randomDelay= 0;
 
     public GameObject Shell;
+    Missile controledMissile;
 
     public void TurretDataInit(float dmg, dmg_Type dmgType, float fireDelay)
     {
@@ -28,6 +29,10 @@ public class Turret : MonoBehaviour
     {
         mainShipControl = this.transform.parent.parent.GetComponent<ShipControl>();
         laser = this.GetComponent<LineRenderer>();
+        controledMissile = Shell.GetComponent<Missile>();
+
+        randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
+        delayCount = fireDelay - fireDelay * 0.5f;
     }
 
     private void Update()
@@ -79,17 +84,21 @@ public class Turret : MonoBehaviour
         }
         else if(dmgType == dmg_Type.kinetic)
         {
-            Projectile projectile = Instantiate(Shell, this.transform.position, this.transform.rotation).GetComponent<Projectile>();
-            projectile.Init(dmg);
+            Projectile projectile = Shell.GetComponent<Projectile>();
+            projectile.Init(dmg, this.transform.position, this.transform.rotation);
         }
         else if (dmgType == dmg_Type.explosion)
         {
-            Missile missile = Instantiate(Shell, this.transform.position, this.transform.rotation).GetComponent<Missile>();
-            missile.Init(dmg, target.transform);
+            controledMissile.Init(dmg, target.transform, this.transform.position, this.transform.rotation);
         }
         mainShipControl.shipSound.FireSoundPlay();
 
         delayCount = 0;
         randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
+    }
+
+    public void NewTargetSet(Transform target)
+    {
+        controledMissile.NewTargetSet(target);
     }
 }

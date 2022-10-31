@@ -221,16 +221,16 @@ public class ShipControl : MonoBehaviour
                     TargetDestroyed();
                 }
             }
-            else if(dmgType == dmg_Type.explosion)
+            else if(dmgType == dmg_Type.explosion)//미사일 무기일 경우
             {
-                controledMissile = Instantiate(shell, cannon.transform.position, cannon.transform.rotation).GetComponent<Missile>();
-                controledMissile.Init(dmg, target.transform);
+                controledMissile = shell.GetComponent<Missile>();
+                controledMissile.Init(dmg, target.transform, cannon.transform.position, cannon.transform.rotation);
                 shipSound.FireSoundPlay();
             }
-            else if (dmgType == dmg_Type.kinetic)
+            else if (dmgType == dmg_Type.kinetic)//실탄 무기일 경우
             {
-                Projectile projectile = Instantiate(shell, cannon.transform.position, cannon.transform.rotation).GetComponent<Projectile>();
-                projectile.Init(dmg);
+                Projectile projectile = shell.GetComponent<Projectile>();
+                projectile.Init(dmg, cannon.transform.position, cannon.transform.rotation);
                 shipSound.FireSoundPlay();
             }
         }
@@ -252,7 +252,14 @@ public class ShipControl : MonoBehaviour
             shipAi.TargetFound();
             if (controledMissile != null)
             {
-                controledMissile.Init(dmg, target.transform);
+                controledMissile.NewTargetSet(target.transform);
+                if(turrets.Count > 0)
+                {
+                    for (int i = 0; i < turrets.Count; i++)
+                    {
+                        turrets[i].NewTargetSet(target.transform);
+                    }
+                }
             }
         }
     }
