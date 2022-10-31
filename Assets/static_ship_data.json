@@ -120,7 +120,7 @@
     "minRange": 10.0,
     "fitRange": 50.0,
     "hp": 3000.0,
-    "df": 45.0,
+    "df": 25.0,
     "sd": 4000.0,
     "defaultspeed": 40.0,
     "agility": 5.0
@@ -138,7 +138,7 @@
     "minRange": 10.0,
     "fitRange": 60.0,
     "hp": 3500.0,
-    "df": 45.0,
+    "df": 25.0,
     "sd": 3000.0,
     "defaultspeed": 40.0,
     "agility": 5.0
@@ -156,7 +156,7 @@
     "minRange": 20.0,
     "fitRange": 80.0,
     "hp": 1500.0,
-    "df": 25.0,
+    "df": 5.0,
     "sd": 1500.0,
     "defaultspeed": 20.0,
     "agility": 5.0
@@ -174,7 +174,7 @@
     "minRange": 20.0,
     "fitRange": 120.0,
     "hp": 3500.0,
-    "df": 45.0,
+    "df": 25.0,
     "sd": 3500.0,
     "defaultspeed": 30.0,
     "agility": 5.0
