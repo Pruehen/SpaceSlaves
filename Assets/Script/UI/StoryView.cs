@@ -12,7 +12,7 @@ public class StoryView : MonoBehaviour
 
     public int ArrowCount = 0;
     public GameObject CImage;
-    public List<Transform> CoverImage;
+    public List<Transform> CoverImage = new List<Transform>();
 
     private void Awake()
     {
@@ -38,7 +38,7 @@ public class StoryView : MonoBehaviour
 
     public void ButtonHighlighting(int count)
     {
-        CoverImage[count] = CImage.transform.GetChild(count);
+        CoverImage.Add(CImage.transform.GetChild(count));
 
         CoverImage[count].gameObject.SetActive(true);
     }
