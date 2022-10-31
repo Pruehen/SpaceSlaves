@@ -7,10 +7,13 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TrailRenderer = GetComponent<TrailRenderer>();
         this.gameObject.SetActive(false);
+        this.transform.SetParent(null);
     }
 
     float dmg;
+    TrailRenderer TrailRenderer;
 
     public void Init(float dmg, Vector3 pos, Quaternion rot)
     {
@@ -19,6 +22,8 @@ public class Projectile : MonoBehaviour
         this.dmg = dmg;
         this.transform.position = pos;
         this.transform.rotation = rot;
+
+        TrailRenderer.Clear();
 
         GetComponent<Rigidbody>().AddForce(this.transform.forward * 15, ForceMode.Impulse);
     }

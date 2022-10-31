@@ -68,7 +68,7 @@ public class ShipControl : MonoBehaviour
             }
         }
 
-        InvokeRepeating("RangeCheck", 0, 1);
+        InvokeRepeating("RangeCheck", 1, 1);
         //InvokeRepeating("ShieldGeneration", 1, 1);
         //shipAi.TargetFound();
     }
