@@ -41,7 +41,7 @@ public class LightMove : MonoBehaviour
         }
         else
         {
-            transform.position = bottom.position; 
+            transform.position = bottom.position;
         }
         this.transform.forward = target - this.transform.position;
     }

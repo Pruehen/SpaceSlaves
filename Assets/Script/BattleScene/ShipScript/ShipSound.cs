@@ -6,9 +6,11 @@ public class ShipSound : MonoBehaviour
 {
     List<AudioSource> weaponSounds = new List<AudioSource> ();
     List<AudioSource> subWeaponSounds = new List<AudioSource>();
+    List<AudioSource> shieldHitSounds = new List<AudioSource>();
 
     public Transform soundTrf;
     public Transform subSoundTrf;
+    public Transform shieldHitSoundTrf;
 
     private void Start()
     {
@@ -23,6 +25,10 @@ public class ShipSound : MonoBehaviour
                 subWeaponSounds.Add(subSoundTrf.GetChild(i).gameObject.GetComponent<AudioSource>());
             }
         }
+        for (int i = 0; i < shieldHitSoundTrf.childCount; i++)
+        {
+            shieldHitSounds.Add(shieldHitSoundTrf.GetChild(i).gameObject.GetComponent<AudioSource>());
+        }
     }
 
     public void FireSoundPlay()
@@ -34,5 +40,10 @@ public class ShipSound : MonoBehaviour
     {
         int count = Random.Range(0, subWeaponSounds.Count);
         subWeaponSounds[count].Play();
+    }
+    public void ShieldHitSoundPlay()
+    {
+        int count = Random.Range(0, shieldHitSounds.Count);
+        shieldHitSounds[count].Play();
     }
 }

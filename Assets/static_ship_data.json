@@ -123,7 +123,7 @@
     "df": 25.0,
     "sd": 4000.0,
     "defaultspeed": 40.0,
-    "agility": 5.0
+    "agility": 10.0
   },
   {
     "id": 7,
@@ -141,7 +141,7 @@
     "df": 25.0,
     "sd": 3000.0,
     "defaultspeed": 40.0,
-    "agility": 5.0
+    "agility": 10.0
   },
   {
     "id": 8,
@@ -159,7 +159,7 @@
     "df": 5.0,
     "sd": 1500.0,
     "defaultspeed": 20.0,
-    "agility": 5.0
+    "agility": 10.0
   },
   {
     "id": 9,
@@ -177,7 +177,7 @@
     "df": 25.0,
     "sd": 3500.0,
     "defaultspeed": 30.0,
-    "agility": 5.0
+    "agility": 10.0
   },
   {
     "id": 10,
@@ -195,24 +195,24 @@
     "df": 50.0,
     "sd": 8000.0,
     "defaultspeed": 20.0,
-    "agility": 3.0
+    "agility": 6.0
   },
   {
     "id": 11,
     "shipName": "S",
     "shipClass": 3,
     "cost": 204800,
-    "dmg": 10.0,
-    "dmgType": 2,
+    "dmg": 10000.0,
+    "dmgType": 0,
     "turretType": false,
-    "fireDelay": 1.0,
-    "maxRange": 10.0,
-    "minRange": 5.0,
-    "fitRange": 7.0,
-    "hp": 100.0,
-    "df": 1.0,
-    "sd": 100.0,
-    "defaultspeed": 30.0,
-    "agility": 20.0
+    "fireDelay": 5.0,
+    "maxRange": 200.0,
+    "minRange": 30.0,
+    "fitRange": 200.0,
+    "hp": 12000.0,
+    "df": 50.0,
+    "sd": 8000.0,
+    "defaultspeed": 20.0,
+    "agility": 6.0
   }
 ]
