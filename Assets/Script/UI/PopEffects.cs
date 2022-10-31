@@ -28,10 +28,7 @@ public class PopEffects : MonoBehaviour
 
         Vector3 pos = FindObjectsOfType<CurrencyUI>()[0].transform.GetChild(0).gameObject.transform.position;
         GameObject go = Instantiate<GameObject>(spr, transform);
-        Vector3 posDest = pos - transform.position;            
-
-        go.GetComponent<Rigidbody2D>().AddForce(posDest.normalized * 550, ForceMode2D.Impulse);
-        Destroy(go, 1.0f);
+        go.GetComponent<Mover>().Move(pos);
 
         timer = 0.05f;
     }

@@ -20,6 +20,12 @@ public class MineralCollector : MonoBehaviour
 
     string _saveFileName = "/data_m_collector.txt";
 
+    public void DoPopEffect()
+    {
+        var poper = GetComponent<PopEffects>();
+        poper.Pop(30);
+    }
+
     public void ClaimRewards()
     {
         var now = DateTime.Now.Ticks;
@@ -29,6 +35,8 @@ public class MineralCollector : MonoBehaviour
             Debug.Log("최소 10분은 기다려야 한다." + " " + new TimeSpan(minRequiredTime - now).Minutes + "분 남음");
             return;
         }
+
+        DoPopEffect();
 
         int maxReward = MAX_REWARD + (int)UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.COLLECTOR_CAPA);
 
