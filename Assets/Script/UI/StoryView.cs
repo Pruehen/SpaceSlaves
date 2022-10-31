@@ -8,9 +8,9 @@ public class StoryView : MonoBehaviour
 
     static bool isSkip = true;
 
-    public GameObject SelectBox;
-    public GameObject YesB;
     public List<GameObject> Arrow;
+
+    public int ArrowCount = 0;
 
     private void Awake()
     {
@@ -24,6 +24,18 @@ public class StoryView : MonoBehaviour
 
     public void ArrowPosCon()
     {
+        if (Arrow[ArrowCount] != null)
+        {
+            Arrow[ArrowCount].gameObject.SetActive(true);
 
+            ArrowCount++;
+
+            Debug.Log(ArrowCount);
+        }
+
+        if (ArrowCount > 0)
+        {
+            Arrow[ArrowCount - 1].gameObject.SetActive(false);
+        }
     }
 }
