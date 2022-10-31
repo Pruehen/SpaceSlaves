@@ -10,8 +10,18 @@ public class FleetBarUI : MonoBehaviour
 
     public GameObject goShipImage;
     public GameObject goWarningIcon;
+    public Button goEmptyBtn; 
     public TextMeshProUGUI goTextQty;
     public TextMeshProUGUI goTextFleetName;
+
+    private void Start()
+    {
+        //goEmptyBtn.onClick.AddListener(delegate() 
+        //{ 
+        //    OnClickEmpty();
+        //});
+    }
+
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -22,6 +32,11 @@ public class FleetBarUI : MonoBehaviour
     {
         if (goWarningIcon != null)
             goWarningIcon.SetActive(isSet);
+    }
+
+    public void OnClickEmpty()
+    {
+        FleetFormationManager.instance.RemoveUnit(id);
     }
 
     public void Refresh()

@@ -46,11 +46,7 @@ public class FleetFormationUI : MonoBehaviour
         SoundManager.instance.CloseSoundOn();
         goQtySlider.value = 0;
 
-        EmptyFleetSlot(formIdx);
-    }
-    public void EmptyFleetSlot(int id)
-    {
-        FleetFormationManager.instance.RemoveUnit(id);
+        FleetFormationManager.instance.RemoveUnit(formIdx);
         Refresh();
     }
     private void OnEnable()
@@ -58,7 +54,7 @@ public class FleetFormationUI : MonoBehaviour
         Refresh();
     }
 
-    void Refresh()
+    public void Refresh()
     {
         RefreshFleetBar();
     }

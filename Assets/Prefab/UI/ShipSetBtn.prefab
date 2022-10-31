@@ -198,13 +198,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8945792744205499718}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 8945792744205499713}
+        m_TargetAssemblyTypeName: FleetBarUI, Assembly-CSharp
+        m_MethodName: OnClickEmpty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -861,6 +861,7 @@ MonoBehaviour:
   id: 0
   goShipImage: {fileID: 3614152008795465571}
   goWarningIcon: {fileID: 6279522905603721335}
+  goEmptyBtn: {fileID: 6688992535312724653}
   goTextQty: {fileID: 8945792743973927547}
   goTextFleetName: {fileID: 8945792743666212716}
 --- !u!114 &8945792744205499715
