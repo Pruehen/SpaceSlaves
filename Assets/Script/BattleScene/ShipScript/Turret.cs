@@ -12,6 +12,7 @@ public class Turret : MonoBehaviour
     float fireDelay;//공격 속도, n초에 1회 공격
     float delayCount = 0;
     float randomDelay= 0;
+    float subRange = -1;
 
     public GameObject Shell;
     Missile controledMissile;
@@ -21,18 +22,30 @@ public class Turret : MonoBehaviour
         this.dmg = dmg;
         this.dmgType = dmgType;
         this.fireDelay = fireDelay;
-
+        subRange = 0;
         //Debug.Log(dmg + " " + dmgType + " " + fireDelay);
+    }
+    public void TurretDataInit(float dmg, dmg_Type dmgType, float fireDelay, float range)
+    {
+        this.dmg = dmg;
+        this.dmgType = dmgType;
+        this.fireDelay = fireDelay;
+        subRange = range;
     }
 
     private void Start()
     {
         mainShipControl = this.transform.parent.parent.GetComponent<ShipControl>();
         laser = this.GetComponent<LineRenderer>();
-        controledMissile = Shell.GetComponent<Missile>();
+        if (dmgType == dmg_Type.explosion)
+        {
+            controledMissile = Shell.GetComponent<Missile>();
+        }
 
         randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
         delayCount = fireDelay - fireDelay * 0.5f;
+
+        InvokeRepeating("SubRangeCheck", 1, 1);
     }
 
     private void Update()
@@ -53,7 +66,11 @@ public class Turret : MonoBehaviour
             {
                 transform.LookAt(mainShipControl.target.transform.position);//미사일 발사기가 아닐 경우, 터렛방향 자동조정시켜줌
             }
-            if(mainShipControl.isRange && delayCount >= fireDelay + randomDelay)
+            if(subRange == 0 && mainShipControl.isRange && delayCount >= fireDelay + randomDelay)//주포 공격 함수
+            {
+                Attack(mainShipControl.target.GetComponent<ShipControl>());
+            }
+            else if(subRange > 0 && subInRange && delayCount >= fireDelay + randomDelay)//부포 공격 함수
             {
                 Attack(mainShipControl.target.GetComponent<ShipControl>());
             }
@@ -91,7 +108,15 @@ public class Turret : MonoBehaviour
         {
             controledMissile.Init(dmg, target.transform, this.transform.position, this.transform.rotation);
         }
-        mainShipControl.shipSound.FireSoundPlay();
+
+        if (subRange == 0)
+        {
+            mainShipControl.shipSound.FireSoundPlay();
+        }
+        else if(subRange != 0)
+        {
+            mainShipControl.shipSound.FireSubSoundPlay();
+        }
 
         delayCount = 0;
         randomDelay = Random.Range(-fireDelay * 0.2f, fireDelay * 0.2f);
@@ -100,5 +125,23 @@ public class Turret : MonoBehaviour
     public void NewTargetSet(Transform target)
     {
         controledMissile.NewTargetSet(target);
+    }
+
+    bool subInRange = false;
+    void SubRangeCheck()//타겟과의 거리 체크 함수. invoke로 초당 1회씩 호출
+    {
+        if (mainShipControl.target == null && subRange == 0)
+        {
+            return;
+        }
+
+        if (mainShipControl.toTargetVec.magnitude * 10 < subRange && mainShipControl.toTargetVec.magnitude * 10 > 1)
+        {
+            subInRange = true;
+        }
+        else
+        {
+            subInRange = false;
+        }
     }
 }

@@ -204,7 +204,6 @@ public class CameraControl : MonoBehaviour
     void AutoRotate()
     {
         float yPos = this.transform.position.y;
-        Debug.Log(yPos);
 
         rb.AddTorque(this.transform.forward * -this.transform.right.y * 5, ForceMode.Force);
         rb.AddTorque(this.transform.right * (yPos * 0.25f + this.transform.forward.y) * 5, ForceMode.Force);
