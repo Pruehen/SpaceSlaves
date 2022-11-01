@@ -5,7 +5,6 @@ using UnityEngine;
 public class StoryView : MonoBehaviour
 {
     public DialogueUI DUI;
-    public DialogueUI DUI_;
 
     static bool isSkip = true;
 
@@ -64,11 +63,11 @@ public class StoryView : MonoBehaviour
         CoverImage[count].gameObject.SetActive(false);
     }
 
-    public void IsTutorialCheck()
+    public void IsTutorialCheck(DialogueUI _DUI)
     {
         if(isTutorial == true)
         {
-            DUI_.Play(isSkip);
+            _DUI.Play(isSkip);
         }
     }
 
