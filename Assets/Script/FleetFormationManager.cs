@@ -15,11 +15,22 @@ public class FleetFormation
 {
     // 없으면 명시적으로 -1로 변경
     public int idType = -1;
+    // 개수
     public int amount = 0;    
+
+    // 현재 사용 비용
+    public int cost = 0;    
+    // 최대 비용
+    public int size 
+    {
+        get
+        {
+            return 10 + (int)UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.FLEET_CAPA);
+        } 
+    }
     
     public void Add(int id, int qty, out bool isSuccess)
     {
-        int size = 10;
         isSuccess = false;
 
         // 새로운거 들어오면 초기화
@@ -32,17 +43,33 @@ public class FleetFormation
         if (amount == 0)
             idType = id;
 
+        int shipCost = (int)FleetManager.instance.GetShipFormationCost(idType);
+        int totalCost = qty * shipCost;
+
         // 사이즈 초과
-        if (qty > size)
-        {
-            qty = size;
+        if (totalCost > size)
+        {   
+            // 하나조차 못들어가? 그럼 파기
+            if (shipCost > size)
+            {
+                Remove();
+                return;
+            }
+
+            // 하나라도 들어가느 크기면  최대한 들어가는 만큼 넣는다.
+            qty = size / shipCost;
+            totalCost = qty * shipCost;
         }
 
         amount = qty;
+        cost = totalCost;
         isSuccess = true;
+
+        Debug.Log(string.Format("{0} / {1}", amount, size ));
     }
     public void Remove()
     {
+        cost = 0;
         amount = 0;
         idType = -1;
     }
@@ -52,7 +79,7 @@ public class FleetFormationManager : MonoBehaviour
 {
     [SerializeField]
     Dictionary<int, FleetFormation> formations = new Dictionary<int, FleetFormation>();
-    private string FormationSaveDataFileName = "/data_fleet_formation.json";
+    private string FormationSaveDataFileName = "/data_fleet_formation.txt";
     
     public static FleetFormationManager instance;
 
@@ -100,6 +127,23 @@ public class FleetFormationManager : MonoBehaviour
             return 0;
         
         return formations[formIdx].amount;
+    }
+
+
+    public int GetFleetCost(int formIdx)
+    {
+        if (!formations.ContainsKey(formIdx))
+            return 0;
+
+        return formations[formIdx].cost;
+    }
+
+    public int GetFleetMaxSize(int formIdx)
+    {
+        if (!formations.ContainsKey(formIdx))
+            return 10 + (int)UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.FLEET_CAPA);
+
+        return formations[formIdx].size;
     }
 
     public int GetShipQty(int shipId)

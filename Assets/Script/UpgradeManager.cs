@@ -15,6 +15,7 @@ public enum UPGRADE_TYPE
     SCV_AMOUNT_UP = 2,
     COLLECTOR_CAPA = 3,
     FLEET = 4,
+    FLEET_CAPA = 5,
 }
 
 
@@ -23,7 +24,7 @@ public class UpgradeManager : MonoBehaviour
 {
     public static  UpgradeManager instance;
 
-    string _saveFileName = "/data_upgrade_prog.json";
+    string _saveFileName = "/data_upgrade_prog.txt";
 
     // id 규칙 
     // 1000 단위로 카테고리 변경
