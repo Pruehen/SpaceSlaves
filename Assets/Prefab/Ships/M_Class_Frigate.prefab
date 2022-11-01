@@ -110,6 +110,8 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  debugBall: {fileID: 0}
+  isDead: 0
   shipDebriPrf: {fileID: 101806, guid: cdd001d77ba1d7e49a43b60947e25775, type: 3}
   shell: {fileID: 2484178620449062564}
   cannon: {fileID: 115078}
@@ -195,7 +197,7 @@ GameObject:
   - component: {fileID: 348611488574988434}
   - component: {fileID: 348611488574165122}
   - component: {fileID: 348611488572997328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavyTurretBarrelAnimated1White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +954,7 @@ GameObject:
   - component: {fileID: 588220668195654044}
   - component: {fileID: 7177489781183451872}
   - component: {fileID: 6106021681952933372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MineLayerCorvetteHullWhite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1246,7 +1248,7 @@ GameObject:
   - component: {fileID: 4835977147612967976}
   - component: {fileID: 4835977147612207978}
   - component: {fileID: 4835977147611117332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MultiGunCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1460,7 +1462,7 @@ GameObject:
   - component: {fileID: 5224488718689879332}
   - component: {fileID: 5224488718693226054}
   - component: {fileID: 5224488718692170666}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MineLayerCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,6 +1838,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torpedo
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 907cce660895d9843bdfd373c0add989, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 907cce660895d9843bdfd373c0add989, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1879,6 +1885,30 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 907cce660895d9843bdfd373c0add989, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 645024522964180517, guid: 907cce660895d9843bdfd373c0add989, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326820378594300773, guid: 907cce660895d9843bdfd373c0add989, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327454623408536641, guid: 907cce660895d9843bdfd373c0add989, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327491729785451257, guid: 907cce660895d9843bdfd373c0add989, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328342693392321815, guid: 907cce660895d9843bdfd373c0add989, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916771816484027642, guid: 907cce660895d9843bdfd373c0add989, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907cce660895d9843bdfd373c0add989, type: 3}

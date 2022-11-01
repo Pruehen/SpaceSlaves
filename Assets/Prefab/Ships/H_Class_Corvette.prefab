@@ -279,6 +279,8 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  debugBall: {fileID: 0}
+  isDead: 0
   shipDebriPrf: {fileID: 129358, guid: f699cfe6e2361f94c8502884c243961f, type: 3}
   shell: {fileID: 0}
   cannon: {fileID: 0}

@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6328612228847904751}
   - component: {fileID: 2240727728015252811}
   - component: {fileID: 4551835210713573866}
-  m_Layer: 7
-  m_Name: P_Class_Cruiser
+  m_Layer: 8
+  m_Name: P_Class_Cruiser_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   - {fileID: 4334282202082564944}
   shipSound: {fileID: 0}
   shipShield: {fileID: 0}
-  enemyId: -1
+  enemyId: 8
   shipName: 
   shipClass: 0
   cost: 0
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 445252}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Turrets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3111009882067605868}
   - component: {fileID: 3249847279011520750}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 171657962992188322}
   - component: {fileID: 171657962995152678}
   - component: {fileID: 171657962994459802}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LightCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a2dcede42294e942a5c4d64c34f645b, type: 2}
+  - {fileID: 2100000, guid: 5a48bf8ec0927c246bc5350033edd008, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 7710701884964277225}
   - component: {fileID: 7020106330340019664}
   - component: {fileID: 960093021654272388}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 7814273441762228519}
   - component: {fileID: 6027377053083062561}
   - component: {fileID: 3696189591312457494}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 7991228447136950139}
   - component: {fileID: 6721676817672950820}
   - component: {fileID: 4520640659877577193}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LightCorvetteHullWhite (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a2dcede42294e942a5c4d64c34f645b, type: 2}
+  - {fileID: 2100000, guid: 5a48bf8ec0927c246bc5350033edd008, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -687,7 +687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 139815897308463282}
   - component: {fileID: 5628599186298803750}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 5158635070295626074}
   - component: {fileID: 807585403467737660}
   - component: {fileID: 3868505421455485889}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,7 @@ GameObject:
   - component: {fileID: 5661239697829157816}
   - component: {fileID: 3045315222266355052}
   - component: {fileID: 2018396265809112854}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LightCorvetteHullWhite (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -869,7 +869,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a2dcede42294e942a5c4d64c34f645b, type: 2}
+  - {fileID: 2100000, guid: 5a48bf8ec0927c246bc5350033edd008, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -901,7 +901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7520571970087452010}
   - component: {fileID: 3471545729971566005}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 7052449319417900037}
   - component: {fileID: 7952718449322565079}
   - component: {fileID: 4755632753228977076}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8081968905105229269}
   - component: {fileID: 9172075033953537667}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,7 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6426163443874831275}
   - component: {fileID: 8598570299721192375}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1207,7 +1207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159825309794257764}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: WeaponSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1242,7 +1242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6782756426646202970}
   - component: {fileID: 7539374142807011831}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1290,7 +1290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8081673256876333783}
   - component: {fileID: 879870749786805434}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168107933407447416}
   - component: {fileID: 8309954301805940851}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542393686220031804}
   - component: {fileID: 2313438219042772130}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1435,7 +1435,7 @@ GameObject:
   - component: {fileID: 4125519396333680582}
   - component: {fileID: 3968633962411486897}
   - component: {fileID: 6501483247378102743}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1517,7 +1517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6333411325871353784}
   - component: {fileID: 8346556695371156307}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 3791975106659724965}
   - component: {fileID: 780039445445536744}
   - component: {fileID: 7110610226018748965}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1649,7 @@ GameObject:
   - component: {fileID: 9147746986157771799}
   - component: {fileID: 106692325515740549}
   - component: {fileID: 3939581742673847118}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1732,7 +1732,7 @@ GameObject:
   - component: {fileID: 8167005549096526166}
   - component: {fileID: 656500498341137748}
   - component: {fileID: 6890985604437141526}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LightCorvetteHullWhite (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1782,7 +1782,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a2dcede42294e942a5c4d64c34f645b, type: 2}
+  - {fileID: 2100000, guid: 5a48bf8ec0927c246bc5350033edd008, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1814,7 +1814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4037134933615473616}
   - component: {fileID: 3343843643255483838}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1862,7 +1862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1450992779383262516}
   - component: {fileID: 4166437322537232189}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1991,7 +1991,7 @@ GameObject:
   - component: {fileID: 4315152921835093227}
   - component: {fileID: 4315152921832300513}
   - component: {fileID: 4315152921833206375}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2047,7 +2047,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a4b63be164a7de41b552ee5e8c3dff0, type: 2}
+  - {fileID: 2100000, guid: 25910f2b46107f74ebb4838c4d2b53e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2080,7 +2080,7 @@ GameObject:
   - component: {fileID: 4114026222487597713}
   - component: {fileID: 1792842027737235875}
   - component: {fileID: 5733761852626607647}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2162,7 +2162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673525524488861025}
   - component: {fileID: 8192128318301391191}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2291,7 +2291,7 @@ GameObject:
   - component: {fileID: 3203900891003641286}
   - component: {fileID: 9184407304184110206}
   - component: {fileID: 3376610974971945914}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2373,7 +2373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5894027238995652606}
   - component: {fileID: 2900119131611832040}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2502,7 +2502,7 @@ GameObject:
   - component: {fileID: 6185121066254913904}
   - component: {fileID: 3982725950686278586}
   - component: {fileID: 7132440836518755160}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2585,7 +2585,7 @@ GameObject:
   - component: {fileID: 9008824913258432204}
   - component: {fileID: 1555906487646096166}
   - component: {fileID: 2899714685392305097}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LightCorvetteHullWhite (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2635,7 +2635,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a2dcede42294e942a5c4d64c34f645b, type: 2}
+  - {fileID: 2100000, guid: 5a48bf8ec0927c246bc5350033edd008, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2668,7 +2668,7 @@ GameObject:
   - component: {fileID: 4951892525984255341}
   - component: {fileID: 173531942654401638}
   - component: {fileID: 7376949008733701837}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2750,7 +2750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4850075210828915017}
   - component: {fileID: 8017306579081990742}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2798,7 +2798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7284185988370480401}
   - component: {fileID: 4538654090446023638}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2846,7 +2846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8464382352451415370}
   - component: {fileID: 6333212001837534107}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2975,7 +2975,7 @@ GameObject:
   - component: {fileID: 8476695401240023930}
   - component: {fileID: 3217311982907959762}
   - component: {fileID: 4591007999877353340}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3057,7 +3057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3386643832779521}
   - component: {fileID: 4334282202082564944}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3106,7 +3106,7 @@ GameObject:
   - component: {fileID: 732560939184466114}
   - component: {fileID: 5444608420699224725}
   - component: {fileID: 6248453144594053547}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3188,7 +3188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493080612949323159}
   - component: {fileID: 8471687509608751944}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3237,7 +3237,7 @@ GameObject:
   - component: {fileID: 4735750680352242877}
   - component: {fileID: 3648502444084183348}
   - component: {fileID: 7698386063734911205}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3318,7 +3318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6992558778590425390}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: ShieldHitSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3356,7 +3356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 87632769005717163}
   - component: {fileID: 2403901238961650200}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3405,7 +3405,7 @@ GameObject:
   - component: {fileID: 9172614550753584903}
   - component: {fileID: 7787044270970577460}
   - component: {fileID: 7492327091968607020}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3488,7 +3488,7 @@ GameObject:
   - component: {fileID: 3165374077614869518}
   - component: {fileID: 9157628865021382909}
   - component: {fileID: 4182163666819328577}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3570,7 +3570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2807561738202752422}
   - component: {fileID: 3845481733509043736}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3698,7 +3698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3567549384221928176}
   - component: {fileID: 6495586734439635718}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3746,7 +3746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7635245997159494879}
   - component: {fileID: 7398301592007814295}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3874,7 +3874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 448284652587062078}
   - component: {fileID: 5609971878835945698}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MissileTurret (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3923,7 +3923,7 @@ GameObject:
   - component: {fileID: 3990187711804896919}
   - component: {fileID: 2029970790543099635}
   - component: {fileID: 783172679846222437}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LightCorvetteHullWhite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3973,7 +3973,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a2dcede42294e942a5c4d64c34f645b, type: 2}
+  - {fileID: 2100000, guid: 5a48bf8ec0927c246bc5350033edd008, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4006,7 +4006,7 @@ GameObject:
   - component: {fileID: 8536491975426853716}
   - component: {fileID: 8536491975430245236}
   - component: {fileID: 8536491975429278132}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: HeavyMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4088,7 +4088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458329600819180937}
   - component: {fileID: 3784148108566172994}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4219,7 +4219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4290,7 +4290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4361,7 +4361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4432,7 +4432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4503,7 +4503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4574,7 +4574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4645,7 +4645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4716,7 +4716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4787,7 +4787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -4857,6 +4857,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4019493415329950733, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493415329950733, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -4865,8 +4869,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416000165470, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416000165470, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416128343070, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416128343070, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
@@ -4875,6 +4887,10 @@ PrefabInstance:
     - target: {fileID: 4019493416259861604, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416774953093, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416774953093, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
@@ -4972,6 +4988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HPCheck
       objectReference: {fileID: 0}
+    - target: {fileID: 4019493417242238094, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
 --- !u!114 &765112728892465253 stripped
@@ -5046,7 +5066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -5117,7 +5137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -5188,7 +5208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -5259,7 +5279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -5330,7 +5350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -5401,7 +5421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder
@@ -5472,7 +5492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52cea3b02fc5854458e69a363a5b710b, type: 3}
       propertyPath: m_RootOrder

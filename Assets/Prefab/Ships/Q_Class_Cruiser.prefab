@@ -109,6 +109,8 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  debugBall: {fileID: 0}
+  isDead: 0
   shipDebriPrf: {fileID: 101806, guid: bb1ef413fc95b4640a3bd4f8149b4642, type: 3}
   shell: {fileID: 5381388050627028287}
   cannon: {fileID: 4491346973921880251}
@@ -194,7 +196,7 @@ GameObject:
   - component: {fileID: 171657962992188322}
   - component: {fileID: 171657962995152678}
   - component: {fileID: 171657962994459802}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +441,7 @@ GameObject:
   - component: {fileID: 3189786255942121743}
   - component: {fileID: 3244536569174386416}
   - component: {fileID: 5585003340306509900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightCorvetteHullWhite (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +524,7 @@ GameObject:
   - component: {fileID: 4491346973921916059}
   - component: {fileID: 4491346973920621755}
   - component: {fileID: 4491346973919622779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserTurretBarrelWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +818,7 @@ GameObject:
   - component: {fileID: 4835977147612967976}
   - component: {fileID: 4835977147612207978}
   - component: {fileID: 4835977147611117332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MultiGunCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,7 +1289,7 @@ GameObject:
   - component: {fileID: 3574490865519426089}
   - component: {fileID: 4111911924714830678}
   - component: {fileID: 8936938779294644067}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightCorvetteHullWhite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1882,7 +1884,7 @@ GameObject:
   - component: {fileID: 8556375361257594235}
   - component: {fileID: 8556375361256762521}
   - component: {fileID: 8556375361255570155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavyTurretBarrelStaticWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2002,7 +2004,7 @@ GameObject:
   - component: {fileID: 8868418014811627890}
   - component: {fileID: 8868418014814502850}
   - component: {fileID: 8868418014813425834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavyTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2084,7 +2086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8868418014811626846}
   - component: {fileID: 8868418014804168778}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavyTurretWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2144,7 @@ GameObject:
   - component: {fileID: 8868418014811645194}
   - component: {fileID: 8868418014814435932}
   - component: {fileID: 8868418014813482216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavyTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,6 +2226,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: 3472a0f44e5af0441af22c3c4a465a1d, type: 3}
       propertyPath: m_Name
       value: Projectile_MassDriver
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: 3472a0f44e5af0441af22c3c4a465a1d, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: 3472a0f44e5af0441af22c3c4a465a1d, type: 3}
       propertyPath: m_RootOrder

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3498485040014963336}
   - component: {fileID: 5316221621942296837}
   m_Layer: 10
-  m_Name: Missile_Enemy
+  m_Name: Torpedo_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,10 +30,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0165, y: 0.0049000005, z: 2.7384799}
+  m_LocalRotation: {x: -0.00000003774895, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.00391, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1325672461532383977}
   m_Father: {fileID: 0}
@@ -130,9 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619d1baba17900341987206159df4b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  agility: 20
-  lifeTime: 10
+  speed: 0.75
+  agility: 1
+  lifeTime: 40
   Effect: {fileID: 0}
 --- !u!198 &3498485040014963336
 ParticleSystem:
@@ -386,7 +386,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.06
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5118,27 +5118,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198166025632870074, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.025
-      objectReference: {fileID: 0}
-    - target: {fileID: 198604367962915600, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
-      propertyPath: InitialModule.size3D
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 198604367962915600, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.scalar
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 198604367962915600, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
       value: 0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 198604367962915600, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.005
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.001
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 645024522964180517, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5597465522612539463, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: m_RootOrder
