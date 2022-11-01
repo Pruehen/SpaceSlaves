@@ -24,15 +24,31 @@ public class BgmManager : MonoBehaviour
             audioSources.Add(BgmTransform.GetChild(i).gameObject.GetComponent<AudioSource>());
         }
         BgmRandomPlay();
+
+        InvokeRepeating("BgmStopCheck", 60, 5);
     }
+
 
     public Transform BgmTransform;
     List<AudioSource> audioSources = new List<AudioSource>();
 
-    int tempPlayIndex = -1;
+    bool isPlay = false;
+    int tempPlayIndex = 0;
 
     public void BgmRandomPlay()
     {
-        audioSources[0].Play();
+        int count = Random.Range(0, audioSources.Count);
+
+        audioSources[count].Play();
+        tempPlayIndex = count;
+        isPlay = true;
+    }
+
+    void BgmStopCheck()
+    {
+        if (!audioSources[tempPlayIndex].isPlaying)
+        {
+            BgmRandomPlay();
+        }
     }
 }
