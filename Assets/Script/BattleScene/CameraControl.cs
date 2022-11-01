@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CameraControl : MonoBehaviour
 {
@@ -97,31 +96,31 @@ public class CameraControl : MonoBehaviour
     float zoomValue = 0; //0~1
     float zoomPower = 2.7f;
 
-    public Scrollbar scrollbar;
-
     void ZoomIN_Ont(Vector3 Pos)
     {
         Vector3 move = Vector3.zero;
         if (Input.GetAxis("Mouse ScrollWheel") > 0)//»Ÿ≥ª∏±ãö ¡‹¿Œ
         {
-
-                scrollbar.value += Time.deltaTime * WheelSpeed;
+            if(zoomValue < 1)
+            {
+                zoomValue += Time.deltaTime * WheelSpeed;
                 this.transform.position += transform.forward * Time.deltaTime * zoomPower;
                 //transform.Rotate(transform.right, -0.5f);
-            
+            }
             //Camera.main.fieldOfView += WheelSpeed; // fov∑Œ ¿Ãµø
         }
         else if(Input.GetAxis("Mouse ScrollWheel") < 0)//»Ÿ¥Á±Êãö ¡‹æ∆øÙ
         {
-
-                scrollbar.value -= Time.deltaTime * WheelSpeed;
+            if (zoomValue > 0)
+            {
+                zoomValue -= Time.deltaTime * WheelSpeed;
                 this.transform.position -= transform.forward * Time.deltaTime * zoomPower;
                 //transform.Rotate(transform.right, 0.5f);
-            
+            }
             //Camera.main.fieldOfView -= WheelSpeed; //fov∑Œ ¿Ãµø
         }
 
-        this.transform.position = new Vector3(transform.position.x, defaultCamPos.y - scrollbar.value * zoomPower, transform.position.z);
+        this.transform.position = new Vector3(transform.position.x, defaultCamPos.y - zoomValue * zoomPower, transform.position.z);
         //Debug.Log(zoomValue);
     }
 

@@ -13,20 +13,25 @@ public class StoryView : MonoBehaviour
 
     public int ArrowCount = 0;
     public GameObject CImage;
-    public List<Transform> CoverImage = new List<Transform>();
+    List<Transform> CoverImage = new List<Transform>();
 
     public bool isTutorial = false;
 
     public void TutorialStart()
     {
+        ArrowCount = 0;
         DUI.Play(isSkip);
         isTutorial = true;
     }
 
     public void ArrowPosCon()
     {
-        if (Arrow[ArrowCount] != null)
+        Debug.Log(ArrowCount);
+
+        if (Arrow[ArrowCount] != null && isTutorial == true)
         {
+            Debug.Log(ArrowCount);
+
             Arrow[ArrowCount].SetActive(true);
 
             if (ArrowCount > 0)
@@ -40,9 +45,15 @@ public class StoryView : MonoBehaviour
 
     public void ButtonHighlighting(int count)
     {
-        CoverImage.Add(CImage.transform.GetChild(count));
+        for(int i = 0; i < CImage.transform.childCount; i++)
+        {
+            CoverImage.Add(CImage.transform.GetChild(i));
+        }
 
-        CoverImage[count].gameObject.SetActive(true);
+        if (isTutorial == true)
+        {
+            CoverImage[count].gameObject.SetActive(true);
+        }
     }
 
     public void ButtonHighlightingOff(int count)
