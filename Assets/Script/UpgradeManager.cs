@@ -15,6 +15,7 @@ public enum UPGRADE_TYPE
     SCV_AMOUNT_UP = 2,
     COLLECTOR_CAPA = 3,
     FLEET = 4,
+    FLEET_CAPA = 5,
 }
 
 

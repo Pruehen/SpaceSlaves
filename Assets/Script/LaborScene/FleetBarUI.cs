@@ -36,12 +36,17 @@ public class FleetBarUI : MonoBehaviour
 
     public void OnClickEmpty()
     {
-        FleetFormationManager.instance.RemoveUnit(id);
+        if (FleetFormationManager.instance.RemoveUnit(id))
+        {
+            Debug.Log("ºñ¿öÁü " + id);
+        }
     }
 
     public void Refresh()
     {
-        var num = FleetFormationManager.instance.GetFleetQty(id);
+        var qty = FleetFormationManager.instance.GetFleetQty(id);
+        var num = FleetFormationManager.instance.GetFleetCost(id);
+        var maxNum = FleetFormationManager.instance.GetFleetMaxSize(id);
         var shipidx= FleetFormationManager.instance.GetFleetShipIdx(id);
 
         if (goShipImage != null)
@@ -53,7 +58,7 @@ public class FleetBarUI : MonoBehaviour
         }
         if (goTextQty != null)
         {
-            goTextQty.text = num.ToString();
+            goTextQty.text = qty.ToString() + "´ë :" + num.ToString() + "/" + maxNum.ToString();
         }
         if (goTextFleetName != null)
         {

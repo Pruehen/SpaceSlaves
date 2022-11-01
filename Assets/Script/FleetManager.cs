@@ -100,6 +100,11 @@ public class FleetManager : MonoBehaviour
         return GetShipData(id_).shipName;
     }
 
+    public float GetShipFormationCost(int id_)
+    {
+        return GetShipData(id_).formationCost;
+    }
+
     public Sprite GetShipImage(int id_)
     {
         return shipImages[Math.Clamp(id_, 0, shipImages.Length-1)];
