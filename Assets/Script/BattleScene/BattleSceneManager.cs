@@ -78,6 +78,13 @@ public class BattleSceneManager : MonoBehaviour
             MessageManager.instance.PopupOk("게임 패배!", gameObject);
         }
     }
+
+    public GameObject debriefingWdw;
+
+    public void DebriefingWdwToggle(bool value)
+    {
+        debriefingWdw.SetActive(value);
+    }
 }
 
 public enum battlePosition
