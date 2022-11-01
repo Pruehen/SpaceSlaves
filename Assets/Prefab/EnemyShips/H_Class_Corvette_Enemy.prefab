@@ -280,6 +280,8 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  debugBall: {fileID: 0}
+  isDead: 0
   shipDebriPrf: {fileID: 129358, guid: f699cfe6e2361f94c8502884c243961f, type: 3}
   shell: {fileID: 0}
   cannon: {fileID: 0}
@@ -1188,7 +1190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8682954838810012737}
   - component: {fileID: 5493427961882065872}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1572,7 +1574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2783199181898659024}
   - component: {fileID: 4837950146099912568}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1699,7 +1701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4907915602035872065}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: ShieldHitSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1865,7 +1867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3870470003639462982}
   - component: {fileID: 614482808976940193}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2121,7 +2123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887286731781673259}
   - component: {fileID: 4867380576117339606}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2249,7 +2251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942497170829824228}
   - component: {fileID: 6427022093715230344}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2505,7 +2507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2096214812604654773}
   - component: {fileID: 5136035509805742491}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

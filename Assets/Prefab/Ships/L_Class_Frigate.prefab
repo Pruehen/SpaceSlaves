@@ -110,6 +110,8 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  debugBall: {fileID: 0}
+  isDead: 0
   shipDebriPrf: {fileID: 101806, guid: 785a7ffd2631d894f95a62ca2f4274f1, type: 3}
   shell: {fileID: 0}
   cannon: {fileID: 0}
@@ -1109,7 +1111,7 @@ GameObject:
   - component: {fileID: 4835977147612967976}
   - component: {fileID: 4835977147612207978}
   - component: {fileID: 4835977147611117332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MultiGunCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1625,6 +1627,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder

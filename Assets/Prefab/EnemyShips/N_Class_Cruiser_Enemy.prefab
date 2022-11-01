@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6328612228847904751}
   - component: {fileID: 2240727728015252811}
   - component: {fileID: 4551835210713573866}
-  m_Layer: 7
-  m_Name: N_Class_Cruiser
+  m_Layer: 8
+  m_Name: N_Class_Cruiser_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   - {fileID: 6026076014644373283}
   shipSound: {fileID: 0}
   shipShield: {fileID: 0}
-  enemyId: -1
+  enemyId: 6
   shipName: 
   shipClass: 0
   cost: 0
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 445252}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Turrets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 810980073388556314}
   - component: {fileID: 4095596778922715164}
   - component: {fileID: 3233463979706530250}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretWhite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2278993060080670850}
   - component: {fileID: 6488805775361106384}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3207218578542891078}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 2481435815558138896}
   - component: {fileID: 37730652932587705}
   - component: {fileID: 7612781708851408713}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159825309794257764}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: WeaponSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 399687787555544635}
   - component: {fileID: 6921358149699702516}
   - component: {fileID: 3352310908311826543}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1299032027615501646}
   - component: {fileID: 5766239942813968415}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73368703147220187}
   - component: {fileID: 1463459333107227932}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 3016947329727141714}
   - component: {fileID: 3016947329724307794}
   - component: {fileID: 3016947329725345026}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1041,7 +1041,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5d8be9cdac49c26479802259375a38ef, type: 2}
+  - {fileID: 2100000, guid: 5d4b4397503d7a44d93af5fe0e06cf44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 3788132599881038390}
   - component: {fileID: 3475723429171606670}
   - component: {fileID: 631922041115832155}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,7 +1124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6f528bdcc2e2d94db8d2e142b4bc502, type: 2}
+  - {fileID: 2100000, guid: a0c6ce656ee42a74ba1d414ed4caf9bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1158,7 +1158,7 @@ GameObject:
   - component: {fileID: 3259663798840386399}
   - component: {fileID: 6915576073731140987}
   - component: {fileID: 3687445290650201301}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1328,7 +1328,7 @@ GameObject:
   - component: {fileID: 7085635768343627968}
   - component: {fileID: 6026076014644373283}
   - component: {fileID: 8727459183872644232}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretWhite (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,7 +1496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4227792126629703170}
   - component: {fileID: 7721643548075472700}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 3203900891003641286}
   - component: {fileID: 9184407304184110206}
   - component: {fileID: 3376610974971945914}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1706,7 +1706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8705041491464271208}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1739,7 +1739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7197252569414369007}
   - component: {fileID: 2328187006070541084}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1868,7 +1868,7 @@ GameObject:
   - component: {fileID: 4835977147612967976}
   - component: {fileID: 4835977147612207978}
   - component: {fileID: 4835977147611117332}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MultiGunCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1921,7 +1921,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f094d21b72782bb4b8170e6f2da9389c, type: 2}
+  - {fileID: 2100000, guid: 3cc6e778d2c7e104ab0dced80f074c21, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1953,7 +1953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8396242861664476354}
   - component: {fileID: 4332809705078585840}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2081,7 +2081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491932020892964572}
   - component: {fileID: 7230224838070966250}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2209,7 +2209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3567517134147276403}
   - component: {fileID: 649820248058794743}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2338,7 +2338,7 @@ GameObject:
   - component: {fileID: 4023917343194920211}
   - component: {fileID: 91608657660651540}
   - component: {fileID: 3707640108399531608}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MineLayerCorvetteHullWhite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2388,7 +2388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aa9f433c313f2944d94b639add482561, type: 2}
+  - {fileID: 2100000, guid: c097297b0fbb4f84f91198a0359e2a38, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2420,7 +2420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1381048344072780194}
   - component: {fileID: 3238428261991745879}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2549,7 +2549,7 @@ GameObject:
   - component: {fileID: 4064589828012955769}
   - component: {fileID: 809298510731237468}
   - component: {fileID: 6009693625772609926}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2632,7 +2632,7 @@ GameObject:
   - component: {fileID: 6196172419032665492}
   - component: {fileID: 4066442985527694591}
   - component: {fileID: 1139175006823889570}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2714,7 +2714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7719919000204645004}
   - component: {fileID: 3298268093911092307}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2841,7 +2841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7364707412764413523}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: ShieldHitSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2880,7 +2880,7 @@ GameObject:
   - component: {fileID: 720874704197625950}
   - component: {fileID: 4099285875817600086}
   - component: {fileID: 9087402805024499313}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2963,7 +2963,7 @@ GameObject:
   - component: {fileID: 3671321205734336352}
   - component: {fileID: 2504867757614312065}
   - component: {fileID: 7966787805870084506}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3013,7 +3013,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6f528bdcc2e2d94db8d2e142b4bc502, type: 2}
+  - {fileID: 2100000, guid: a0c6ce656ee42a74ba1d414ed4caf9bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3045,7 +3045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6525204263489033347}
   - component: {fileID: 5154762310937335219}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3174,7 +3174,7 @@ GameObject:
   - component: {fileID: 6475215935235759730}
   - component: {fileID: 2424195123185995417}
   - component: {fileID: 7091203237035958132}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3224,7 +3224,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6f528bdcc2e2d94db8d2e142b4bc502, type: 2}
+  - {fileID: 2100000, guid: a0c6ce656ee42a74ba1d414ed4caf9bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3256,7 +3256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1480874923270329851}
   - component: {fileID: 8955100030274172696}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Audio Source (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3385,7 +3385,7 @@ GameObject:
   - component: {fileID: 8408966322828640486}
   - component: {fileID: 8408966322827400068}
   - component: {fileID: 8408966322826378856}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MineLayerCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3435,7 +3435,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aa9f433c313f2944d94b639add482561, type: 2}
+  - {fileID: 2100000, guid: c097297b0fbb4f84f91198a0359e2a38, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3468,7 +3468,7 @@ GameObject:
   - component: {fileID: 3826063677585188068}
   - component: {fileID: 538483965283064712}
   - component: {fileID: 5287025415818858001}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3549,7 +3549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6983460802489619599}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: LaserTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3584,6 +3584,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4019493415329950733, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493415329950733, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -3592,8 +3596,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416000165470, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416000165470, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416128343070, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416128343070, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
@@ -3602,6 +3614,10 @@ PrefabInstance:
     - target: {fileID: 4019493416259861604, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493416774953093, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4019493416774953093, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_IsActive
@@ -3698,6 +3714,10 @@ PrefabInstance:
     - target: {fileID: 4019493417242238094, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
       propertyPath: m_Name
       value: HPCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019493417242238094, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b11a7cf1ef1367a40ac9715f3af616ae, type: 3}

@@ -109,6 +109,8 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  debugBall: {fileID: 0}
+  isDead: 0
   shipDebriPrf: {fileID: 101806, guid: 3b40de24edb874241b4563fcc4c0cfe8, type: 3}
   shell: {fileID: 0}
   cannon: {fileID: 0}
@@ -928,6 +930,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder

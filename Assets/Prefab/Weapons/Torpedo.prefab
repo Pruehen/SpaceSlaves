@@ -130,9 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619d1baba17900341987206159df4b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
+  speed: 0.75
   agility: 1
   lifeTime: 40
+  Effect: {fileID: 0}
 --- !u!198 &3498485040014963336
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5126,6 +5127,10 @@ PrefabInstance:
     - target: {fileID: 198917022394846920, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597465522612539463, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c3aff846ab0d146917f751b402efc0, type: 3}
