@@ -31,17 +31,23 @@ public class StoryView : MonoBehaviour
         {
             if(isTutorial == true)
             {
-                Debug.Log(ArrowCount);
-
                 Arrow[ArrowCount].SetActive(true);
 
-                if (ArrowCount > 0)
+                if (ArrowCount > 0 && ArrowCount < Arrow.Count)
                 {
                     Arrow[ArrowCount - 1].SetActive(false);
                 }
 
                 ArrowCount++;
             }         
+        }
+    }
+
+    public void ArrowHide()
+    {
+        if(Arrow[ArrowCount] != null)
+        {
+            Arrow[ArrowCount].SetActive(false);
         }
     }
 

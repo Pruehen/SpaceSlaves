@@ -3781,7 +3781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &246079331
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23798,6 +23798,7 @@ MonoBehaviour:
   - {fileID: 1842340050}
   - {fileID: 1487749272}
   - {fileID: 1799931612}
+  - {fileID: 246079330}
   ArrowCount: 0
   CImage: {fileID: 1711369365}
   CoverImage: []
@@ -30421,7 +30422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1722370618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37260,7 +37261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 605816957603037498, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: m_Name
-      value: DialogueBox
+      value: DialogueBox_Cheet
       objectReference: {fileID: 0}
     - target: {fileID: 605816957603037498, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: m_IsActive
@@ -37899,7 +37900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5113630106319701732, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5113630106319701732, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -37908,22 +37909,26 @@ PrefabInstance:
     - target: {fileID: 5113630106319701732, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1621837065}
+      objectReference: {fileID: 1334006871}
     - target: {fileID: 5113630106319701732, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5113630106319701732, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Play
+      value: IsTutorialCheck
       objectReference: {fileID: 0}
     - target: {fileID: 5113630106319701732, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: DialogueUI, Assembly-CSharp
+      value: StoryView, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5113630106319701732, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1621837065}
+    - target: {fileID: 5113630106319701732, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: DialogueUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5113630106319701734, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
       propertyPath: m_Name
