@@ -5,7 +5,6 @@ using UnityEngine;
 public class StoryView : MonoBehaviour
 {
     public DialogueUI DUI;
-    public DialogueUI DUI_;
 
     static bool isSkip = true;
 
@@ -32,17 +31,23 @@ public class StoryView : MonoBehaviour
         {
             if(isTutorial == true)
             {
-                Debug.Log(ArrowCount);
-
                 Arrow[ArrowCount].SetActive(true);
 
-                if (ArrowCount > 0)
+                if (ArrowCount > 0 && ArrowCount < Arrow.Count)
                 {
                     Arrow[ArrowCount - 1].SetActive(false);
                 }
 
                 ArrowCount++;
             }         
+        }
+    }
+
+    public void ArrowHide()
+    {
+        if(Arrow[ArrowCount] != null)
+        {
+            Arrow[ArrowCount].SetActive(false);
         }
     }
 
@@ -64,11 +69,11 @@ public class StoryView : MonoBehaviour
         CoverImage[count].gameObject.SetActive(false);
     }
 
-    public void IsTutorialCheck()
+    public void IsTutorialCheck(DialogueUI _DUI)
     {
         if(isTutorial == true)
         {
-            DUI_.Play(isSkip);
+            _DUI.Play(isSkip);
         }
     }
 
