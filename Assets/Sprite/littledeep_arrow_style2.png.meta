@@ -268,7 +268,7 @@ TextureImporter:
         serializedVersion: 2
         x: 686
         y: 353
-        width: 54
+        width: 206
         height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -284,54 +284,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: littledeep_arrow_style2_8
-      rect:
-        serializedVersion: 2
-        x: 761
-        y: 353
-        width: 54
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1baca2a4a8edeb488698564ee221a48
-      internalID: -2147439213
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: littledeep_arrow_style2_9
-      rect:
-        serializedVersion: 2
-        x: 836
-        y: 353
-        width: 54
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 818d14f1b96a5bf4a870494501e45432
-      internalID: -133493383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: littledeep_arrow_style2_10
       rect:
         serializedVersion: 2
         x: 314
         y: 234
-        width: 95
+        width: 159
         height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -342,27 +300,6 @@ TextureImporter:
       bones: []
       spriteID: 0133cc8056c3561459a922a65f9bb8e7
       internalID: -489328351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: littledeep_arrow_style2_11
-      rect:
-        serializedVersion: 2
-        x: 377
-        y: 234
-        width: 94
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a4f0e5a4517cde499707a3cf9a4cb6f
-      internalID: 1004975511
       vertices: []
       indices: 
       edges: []

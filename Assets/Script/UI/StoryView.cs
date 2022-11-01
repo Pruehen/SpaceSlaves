@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryView : MonoBehaviour
 {
@@ -25,8 +26,6 @@ public class StoryView : MonoBehaviour
 
     public void ArrowPosCon()
     {
-        Debug.Log(ArrowCount);
-
         if (Arrow[ArrowCount] != null)
         {
             if(isTutorial == true)
@@ -40,6 +39,27 @@ public class StoryView : MonoBehaviour
 
                 ArrowCount++;
             }         
+        }
+    }
+
+    public void ArrowPosConSlider(Scrollbar slider)
+    {
+        if (Arrow[ArrowCount] != null)
+        {
+            if (isTutorial == true)
+            {
+                Arrow[ArrowCount].SetActive(true);
+
+                if (ArrowCount > 0 && ArrowCount < Arrow.Count)
+                {
+                    Arrow[ArrowCount - 1].SetActive(false);
+                }
+
+                if (slider.value == 1)
+                {
+                    ArrowCount++;
+                }
+            }
         }
     }
 
