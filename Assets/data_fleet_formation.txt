@@ -1,0 +1,1 @@
+{"0":{"idType":6,"amount":8,"cost":40,"size":40},"2":{"idType":9,"amount":5,"cost":35,"size":40},"1":{"idType":7,"amount":6,"cost":36,"size":40},"3":{"idType":-1,"amount":0,"cost":0,"size":40},"4":{"idType":-1,"amount":0,"cost":0,"size":40}}

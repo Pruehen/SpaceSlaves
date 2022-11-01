@@ -187,7 +187,7 @@ public class ShipControl : MonoBehaviour
 
         if (enemyId != -1)
         {
-            BattleSceneManager.instance.AddDebri((enemyId + 2) * (enemyId + 2));
+            BattleSceneManager.instance.AddCurrency((enemyId + 2) * (enemyId + 2));
         }
         BattleSceneManager.instance.GameEndCheck();
 

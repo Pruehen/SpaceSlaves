@@ -57,34 +57,46 @@ public class BattleSceneManager : MonoBehaviour
     }
 
     float collectedDebri = 0;
-    public void AddDebri(float debri)
+    float collectedMin = 0;
+    public void AddCurrency(float cur)
     {
-        collectedDebri += debri;
+        collectedDebri += cur;
+        collectedMin += cur * 5;
     }
 
     public void GameEnd(bool isWin)
     {
-        Time.timeScale = 0;        
+        Time.timeScale = 0;
 
-        if(isWin)
+        int[] debugArray = new int[5];
+
+        debriefingWdw.gameObject.SetActive(true);
+
+        //debriefingWdw.SetTmp_LostShip(debugArray);
+        //debriefingWdw.SetTmp_ShipDmg(debugArray);
+
+        if (isWin)
         {
-            CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, (int)(collectedDebri * 1.5f));
-            MessageManager.instance.PopupOk("게임 승리!", gameObject);
+            collectedMin *= 1.5f;
+            collectedDebri *= 1.5f;
+
+            //MessageManager.instance.PopupOk("게임 승리!", gameObject);
+            debriefingWdw.winLoseTmp.text = "게임 승리!";
             StageManager.instance.GetStageData(selectedStage).isClear = true;
         }
         else
         {
-            CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, (int)collectedDebri);
-            MessageManager.instance.PopupOk("게임 패배!", gameObject);
+            debriefingWdw.winLoseTmp.text = "게임 패배!";
+            //MessageManager.instance.PopupOk("게임 패배!", gameObject);
         }
+
+        debriefingWdw.SetTmp_GetCurrency((int)collectedMin, (int)collectedDebri);
+
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, (int)collectedDebri);
+        CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, (int)collectedMin);
     }
 
-    public GameObject debriefingWdw;
-
-    public void DebriefingWdwToggle(bool value)
-    {
-        debriefingWdw.SetActive(value);
-    }
+    public DebriefingWdw debriefingWdw;
 }
 
 public enum battlePosition
