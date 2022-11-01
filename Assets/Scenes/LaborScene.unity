@@ -848,6 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abd340984d880248bf0133ff96fab26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BgmTransform: {fileID: 0}
 --- !u!1 &89925197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3875,8 +3876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 685, y: -421}
-  m_SizeDelta: {x: 63, y: 63}
+  m_AnchoredPosition: {x: 835.6, y: -417.9}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &246079332
 MonoBehaviour:
@@ -3925,9 +3926,9 @@ Animation:
   m_GameObject: {fileID: 246079330}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 0f06df0bb9f8fd542b3dcc393f84b366, type: 2}
+  m_Animation: {fileID: 7400000, guid: 001ad5808869f2642896be6f5c426dfd, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 0f06df0bb9f8fd542b3dcc393f84b366, type: 2}
+  - {fileID: 7400000, guid: 001ad5808869f2642896be6f5c426dfd, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -14463,7 +14464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &801699869
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14482,7 +14483,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 241, y: -387.2311}
-  m_SizeDelta: {x: 63, y: 63}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &801699870
 Animation:
@@ -14493,9 +14494,9 @@ Animation:
   m_GameObject: {fileID: 801699868}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 0f06df0bb9f8fd542b3dcc393f84b366, type: 2}
+  m_Animation: {fileID: 7400000, guid: 001ad5808869f2642896be6f5c426dfd, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 0f06df0bb9f8fd542b3dcc393f84b366, type: 2}
+  - {fileID: 7400000, guid: 001ad5808869f2642896be6f5c426dfd, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
