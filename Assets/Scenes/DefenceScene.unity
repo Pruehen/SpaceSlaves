@@ -1526,10 +1526,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 773876563}
-        m_TargetAssemblyTypeName: SystemMessage, Assembly-CSharp
-        m_MethodName: MessageQ
-        m_Mode: 5
+      - m_Target: {fileID: 249468271}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: GoLaborScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1932,15 +1932,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7099290239596815055, guid: 049988f0ef5555c46a8fd2d73f5ccaba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35018
+      value: -9170
       objectReference: {fileID: 0}
     - target: {fileID: 7099290239596815055, guid: 049988f0ef5555c46a8fd2d73f5ccaba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1087
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7099290239596815055, guid: 049988f0ef5555c46a8fd2d73f5ccaba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26872
+      value: 8747
       objectReference: {fileID: 0}
     - target: {fileID: 7099290239596815055, guid: 049988f0ef5555c46a8fd2d73f5ccaba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2626,6 +2626,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1796527607}
+        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
