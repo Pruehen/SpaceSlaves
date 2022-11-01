@@ -14,7 +14,7 @@
     "hp": 100,
     "df": 2,
     "sd": 100,
-    "defaultspeed": 30,
+    "defaultspeed": 50,
     "agility": 20,
     "formationCost": 1
   },
@@ -33,7 +33,7 @@
     "hp": 80,
     "df": 6,
     "sd": 100,
-    "defaultspeed": 20,
+    "defaultspeed": 45,
     "agility": 10,
     "formationCost": 1
   },
@@ -52,7 +52,7 @@
     "hp": 80,
     "df": 2,
     "sd": 160,
-    "defaultspeed": 20,
+    "defaultspeed": 40,
     "agility": 10,
     "formationCost": 3
   },
@@ -71,7 +71,7 @@
     "hp": 300,
     "df": 10,
     "sd": 600,
-    "defaultspeed": 25,
+    "defaultspeed": 40,
     "agility": 15,
     "formationCost": 3
   },
@@ -90,7 +90,7 @@
     "hp": 250,
     "df": 10,
     "sd": 400,
-    "defaultspeed": 20,
+    "defaultspeed": 35,
     "agility": 10,
     "formationCost": 4
   },
@@ -128,7 +128,7 @@
     "hp": 3000,
     "df": 25,
     "sd": 4000,
-    "defaultspeed": 40,
+    "defaultspeed": 30,
     "agility": 10,
     "formationCost": 5
   },
@@ -147,7 +147,7 @@
     "hp": 3500,
     "df": 25,
     "sd": 3000,
-    "defaultspeed": 40,
+    "defaultspeed": 25,
     "agility": 10,
     "formationCost": 6
   },
@@ -185,7 +185,7 @@
     "hp": 3500,
     "df": 25,
     "sd": 3500,
-    "defaultspeed": 30,
+    "defaultspeed": 20,
     "agility": 10,
     "formationCost": 7
   },
@@ -204,7 +204,7 @@
     "hp": 12000,
     "df": 50,
     "sd": 8000,
-    "defaultspeed": 20,
+    "defaultspeed": 15,
     "agility": 6,
     "formationCost": 8
   },
@@ -223,7 +223,7 @@
     "hp": 12000,
     "df": 50,
     "sd": 8000,
-    "defaultspeed": 20,
+    "defaultspeed": 15,
     "agility": 6,
     "formationCost": 8
   }

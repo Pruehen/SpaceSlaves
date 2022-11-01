@@ -1353,7 +1353,7 @@ GameObject:
   - component: {fileID: 5248379225743868250}
   - component: {fileID: 5248379225747259770}
   - component: {fileID: 5248379225746293690}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserTurretBarrelWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1647,7 +1647,7 @@ GameObject:
   - component: {fileID: 3809923581894476942}
   - component: {fileID: 2784651195874942350}
   - component: {fileID: 136137165989584001}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DebugTargetBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1858,7 +1858,7 @@ GameObject:
   - component: {fileID: 8364720031470195059}
   - component: {fileID: 8364720031480109239}
   - component: {fileID: 7599679919307920710}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1927,7 +1927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470224529}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,7 +1961,7 @@ GameObject:
   - component: {fileID: 8364720031470192203}
   - component: {fileID: 8364720031480091687}
   - component: {fileID: 2303069462330642630}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 8364720031470206649}
   - component: {fileID: 8364720031469484299}
   - component: {fileID: 8364720031468233573}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2113,7 +2113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470199195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2147,7 +2147,7 @@ GameObject:
   - component: {fileID: 8364720031470255125}
   - component: {fileID: 8364720031469485355}
   - component: {fileID: 8364720031468470453}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2230,7 +2230,7 @@ GameObject:
   - component: {fileID: 8364720031470247605}
   - component: {fileID: 8364720031469467311}
   - component: {fileID: 8364720031468431575}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2311,7 +2311,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470287455}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2345,7 +2345,7 @@ GameObject:
   - component: {fileID: 8364720031470225917}
   - component: {fileID: 8364720031469497955}
   - component: {fileID: 8364720031468454637}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DefaultDecal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2428,7 +2428,7 @@ GameObject:
   - component: {fileID: 8364720031470254723}
   - component: {fileID: 8364720031469451355}
   - component: {fileID: 8364720031468426219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2511,7 +2511,7 @@ GameObject:
   - component: {fileID: 8364720031470200515}
   - component: {fileID: 8364720031469463957}
   - component: {fileID: 8364720031468474419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2594,7 +2594,7 @@ GameObject:
   - component: {fileID: 8364720031470248931}
   - component: {fileID: 8364720031469475379}
   - component: {fileID: 8364720031468450343}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2677,7 +2677,7 @@ GameObject:
   - component: {fileID: 8364720031470209729}
   - component: {fileID: 8364720031480122409}
   - component: {fileID: 5641604382669024975}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2746,7 +2746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470273827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EquipmentNoCombineChildren
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2777,7 +2777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470210895}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2811,7 +2811,7 @@ GameObject:
   - component: {fileID: 8364720031470205453}
   - component: {fileID: 8364720031469408019}
   - component: {fileID: 8364720031468443643}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2894,7 +2894,7 @@ GameObject:
   - component: {fileID: 8364720031470195613}
   - component: {fileID: 8364720031469448207}
   - component: {fileID: 8364720031468252049}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2977,7 +2977,7 @@ GameObject:
   - component: {fileID: 8364720031470264845}
   - component: {fileID: 8364720031469453977}
   - component: {fileID: 8364720031468224525}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3060,7 +3060,7 @@ GameObject:
   - component: {fileID: 8364720031470248231}
   - component: {fileID: 8364720031469488735}
   - component: {fileID: 8364720031468228503}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DefaultDecal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3141,7 +3141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470225537}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3175,7 +3175,7 @@ GameObject:
   - component: {fileID: 8364720031470272975}
   - component: {fileID: 8364720031479916515}
   - component: {fileID: 7556383729653112080}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3246,7 +3246,7 @@ GameObject:
   - component: {fileID: 8364720031470242075}
   - component: {fileID: 8364720031480099059}
   - component: {fileID: 529288680066474568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3317,7 +3317,7 @@ GameObject:
   - component: {fileID: 8364720031470314085}
   - component: {fileID: 8364720031479904823}
   - component: {fileID: 9173688209088316834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3388,7 +3388,7 @@ GameObject:
   - component: {fileID: 8364720031470274319}
   - component: {fileID: 8364720031469518009}
   - component: {fileID: 8364720031468439543}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3471,7 +3471,7 @@ GameObject:
   - component: {fileID: 8364720031470280417}
   - component: {fileID: 8364720031469477287}
   - component: {fileID: 8364720031468237069}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3554,7 +3554,7 @@ GameObject:
   - component: {fileID: 8364720031470214661}
   - component: {fileID: 8364720031469486779}
   - component: {fileID: 8364720031468226677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3637,7 +3637,7 @@ GameObject:
   - component: {fileID: 8364720031470320399}
   - component: {fileID: 8364720031469442221}
   - component: {fileID: 8364720031468458841}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3720,7 +3720,7 @@ GameObject:
   - component: {fileID: 8364720031470315299}
   - component: {fileID: 8364720031469471281}
   - component: {fileID: 8364720031468251727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3803,7 +3803,7 @@ GameObject:
   - component: {fileID: 8364720031470245497}
   - component: {fileID: 8364720031480119607}
   - component: {fileID: 5199394492865235640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3872,7 +3872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470194251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3906,7 +3906,7 @@ GameObject:
   - component: {fileID: 8364720031470243627}
   - component: {fileID: 8364720031469406873}
   - component: {fileID: 8364720031468227725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3989,7 +3989,7 @@ GameObject:
   - component: {fileID: 8364720031470225159}
   - component: {fileID: 8364720031469488681}
   - component: {fileID: 8364720031468458019}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4070,7 +4070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470273219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4104,7 +4104,7 @@ GameObject:
   - component: {fileID: 8364720031470249513}
   - component: {fileID: 8364720031469471081}
   - component: {fileID: 8364720031468436821}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4187,7 +4187,7 @@ GameObject:
   - component: {fileID: 8364720031470259081}
   - component: {fileID: 8364720031469459431}
   - component: {fileID: 8364720031468282433}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4270,7 +4270,7 @@ GameObject:
   - component: {fileID: 8364720031470208759}
   - component: {fileID: 8364720031469482385}
   - component: {fileID: 8364720031468256215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4353,7 +4353,7 @@ GameObject:
   - component: {fileID: 8364720031470234275}
   - component: {fileID: 8364720031469502213}
   - component: {fileID: 8364720031468241689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4434,7 +4434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470257263}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BattleshipWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4470,7 +4470,7 @@ GameObject:
   - component: {fileID: 8364720031470210893}
   - component: {fileID: 8364720031479905087}
   - component: {fileID: 447276190875019763}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4541,7 +4541,7 @@ GameObject:
   - component: {fileID: 8364720031470238827}
   - component: {fileID: 8364720031469510733}
   - component: {fileID: 8364720031468428311}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BattleshipHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4624,7 +4624,7 @@ GameObject:
   - component: {fileID: 8364720031470227195}
   - component: {fileID: 8364720031469406973}
   - component: {fileID: 8364720031468429633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4707,7 +4707,7 @@ GameObject:
   - component: {fileID: 8364720031470240657}
   - component: {fileID: 8364720031469406653}
   - component: {fileID: 8364720031468285239}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4790,7 +4790,7 @@ GameObject:
   - component: {fileID: 8364720031470266095}
   - component: {fileID: 8364720031469437859}
   - component: {fileID: 8364720031468456603}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4872,7 +4872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8364720031470256701}
   - component: {fileID: 8364720031477092939}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Decals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4920,7 +4920,7 @@ GameObject:
   - component: {fileID: 8364720031470207311}
   - component: {fileID: 8364720031469531853}
   - component: {fileID: 8364720031468234497}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5001,7 +5001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470198593}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5035,7 +5035,7 @@ GameObject:
   - component: {fileID: 8364720031470288231}
   - component: {fileID: 8364720031469467107}
   - component: {fileID: 8364720031468236909}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5118,7 +5118,7 @@ GameObject:
   - component: {fileID: 8364720031470214097}
   - component: {fileID: 8364720031469466249}
   - component: {fileID: 8364720031468454725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5201,7 +5201,7 @@ GameObject:
   - component: {fileID: 8364720031470248459}
   - component: {fileID: 8364720031469489779}
   - component: {fileID: 8364720031468243521}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5284,7 +5284,7 @@ GameObject:
   - component: {fileID: 8364720031470225799}
   - component: {fileID: 8364720031469488069}
   - component: {fileID: 8364720031468234489}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5367,7 +5367,7 @@ GameObject:
   - component: {fileID: 8364720031470251851}
   - component: {fileID: 8364720031480144097}
   - component: {fileID: 1674782280648153105}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5436,7 +5436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470279839}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5470,7 +5470,7 @@ GameObject:
   - component: {fileID: 8364720031470199585}
   - component: {fileID: 8364720031480102517}
   - component: {fileID: 5604983918129870024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5539,7 +5539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470283921}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5573,7 +5573,7 @@ GameObject:
   - component: {fileID: 8364720031470228931}
   - component: {fileID: 8364720031469525613}
   - component: {fileID: 8364720031468445299}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5656,7 +5656,7 @@ GameObject:
   - component: {fileID: 8364720031470199937}
   - component: {fileID: 8364720031469443217}
   - component: {fileID: 8364720031468242843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5739,7 +5739,7 @@ GameObject:
   - component: {fileID: 8364720031470264207}
   - component: {fileID: 8364720031469532735}
   - component: {fileID: 8364720031468230381}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5822,7 +5822,7 @@ GameObject:
   - component: {fileID: 8364720031470321581}
   - component: {fileID: 8364720031469485305}
   - component: {fileID: 8364720031468426603}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5905,7 +5905,7 @@ GameObject:
   - component: {fileID: 8364720031470207847}
   - component: {fileID: 8364720031469465463}
   - component: {fileID: 8364720031468450009}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5988,7 +5988,7 @@ GameObject:
   - component: {fileID: 8364720031470315195}
   - component: {fileID: 8364720031479900293}
   - component: {fileID: 8536186386990589176}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretWhite 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6057,7 +6057,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8364720031470267089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MediumTurretBarrelAnimated1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6219,6 +6219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6302,6 +6306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile_Lance
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Time
       value: 3
@@ -6309,10 +6317,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1d11412570f90ba4caf1b0b6dea27152, type: 2}
+      objectReference: {fileID: 2100000, guid: d4c406b5d941319458ddccf4b6f76be3, type: 2}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthMultiplier
-      value: 0.09774922
+      value: 0.49352425
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
@@ -6320,11 +6328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.17927241
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0.70408386
+      value: 0.10784602
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inSlope
@@ -6332,7 +6336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
-      value: -0.048927344
+      value: -2.2121847
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outSlope
@@ -6340,11 +6344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
-      value: 0.20851064
+      value: 0.17283952
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
-      value: -0.048927344
+      value: -2.2121847
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962742, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
@@ -6376,7 +6380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.798
+      value: 0.377
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: 2c3c0489796e6e949bcef6ca279b65bb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6428,6 +6432,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
@@ -6496,6 +6504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6562,6 +6574,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
@@ -6630,6 +6646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6697,6 +6717,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6763,6 +6787,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
@@ -7067,6 +7095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7133,6 +7165,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
@@ -7201,6 +7237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7267,6 +7307,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder

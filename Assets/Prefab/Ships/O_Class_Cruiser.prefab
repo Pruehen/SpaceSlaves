@@ -116,6 +116,8 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  debugBall: {fileID: 0}
+  isDead: 0
   shipDebriPrf: {fileID: 101806, guid: 3514ed9072ce56e43a9577c6ef9da144, type: 3}
   shell: {fileID: 0}
   cannon: {fileID: 0}
@@ -208,7 +210,7 @@ GameObject:
   - component: {fileID: 171657962992188322}
   - component: {fileID: 171657962995152678}
   - component: {fileID: 171657962994459802}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +293,7 @@ GameObject:
   - component: {fileID: 537812769794294003}
   - component: {fileID: 9184903373896353066}
   - component: {fileID: 4876178497026228124}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightCorvetteHullWhite (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1591,7 +1593,7 @@ GameObject:
   - component: {fileID: 3189786255942121743}
   - component: {fileID: 3244536569174386416}
   - component: {fileID: 5585003340306509900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightCorvetteHullWhite (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1972,7 +1974,7 @@ GameObject:
   - component: {fileID: 4835977147612967976}
   - component: {fileID: 4835977147612207978}
   - component: {fileID: 4835977147611117332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MultiGunCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2615,7 +2617,7 @@ GameObject:
   - component: {fileID: 3574490865519426089}
   - component: {fileID: 4111911924714830678}
   - component: {fileID: 8936938779294644067}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightCorvetteHullWhite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3745,7 +3747,7 @@ GameObject:
   - component: {fileID: 8408966322828640486}
   - component: {fileID: 8408966322827400068}
   - component: {fileID: 8408966322826378856}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MineLayerCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4076,6 +4078,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4155,6 +4161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4233,6 +4243,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
@@ -4501,6 +4515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4579,6 +4597,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
@@ -4659,6 +4681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4737,6 +4763,10 @@ PrefabInstance:
     - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096125181597962739, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7096125181597962743, guid: e65936ceac7c3ea4aa64bf82ddd46649, type: 3}
       propertyPath: m_RootOrder

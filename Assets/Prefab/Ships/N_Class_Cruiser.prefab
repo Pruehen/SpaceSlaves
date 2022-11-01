@@ -112,6 +112,8 @@ MonoBehaviour:
   toTargetVec: {x: 0, y: 0, z: 0}
   toTargetVec_Local: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
+  debugBall: {fileID: 0}
+  isDead: 0
   shipDebriPrf: {fileID: 101806, guid: 036f5749d521ddf4ea666a360eaf4898, type: 3}
   shell: {fileID: 0}
   cannon: {fileID: 0}
@@ -989,7 +991,7 @@ GameObject:
   - component: {fileID: 3016947329727141714}
   - component: {fileID: 3016947329724307794}
   - component: {fileID: 3016947329725345026}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LaserCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1866,7 +1868,7 @@ GameObject:
   - component: {fileID: 4835977147612967976}
   - component: {fileID: 4835977147612207978}
   - component: {fileID: 4835977147611117332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MultiGunCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2336,7 +2338,7 @@ GameObject:
   - component: {fileID: 4023917343194920211}
   - component: {fileID: 91608657660651540}
   - component: {fileID: 3707640108399531608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MineLayerCorvetteHullWhite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3383,7 +3385,7 @@ GameObject:
   - component: {fileID: 8408966322828640486}
   - component: {fileID: 8408966322827400068}
   - component: {fileID: 8408966322826378856}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MineLayerCorvetteHullWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

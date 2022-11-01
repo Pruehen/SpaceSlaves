@@ -10,7 +10,9 @@ public class AstroBuilder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         planetSystems[StageManager.instance.selectedStage].SetActive(true);
+
 
         switch (StageManager.instance.selectedStage)
         {

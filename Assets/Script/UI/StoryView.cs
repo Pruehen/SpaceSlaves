@@ -5,6 +5,7 @@ using UnityEngine;
 public class StoryView : MonoBehaviour
 {
     public DialogueUI DUI;
+    public DialogueUI DUI_;
 
     static bool isSkip = true;
 
@@ -14,32 +15,65 @@ public class StoryView : MonoBehaviour
     public GameObject CImage;
     public List<Transform> CoverImage = new List<Transform>();
 
-    private void Awake()
+    public bool isTutorial = false;
+
+    public void TutorialStart()
     {
+        ArrowCount = 0;
         DUI.Play(isSkip);
+        isTutorial = true;
     }
 
     public void ArrowPosCon()
     {
+        Debug.Log(ArrowCount);
+
         if (Arrow[ArrowCount] != null)
         {
-            Arrow[ArrowCount].SetActive(true);
-
-            if (ArrowCount > 0)
+            if(isTutorial == true)
             {
-                Arrow[ArrowCount - 1].SetActive(false);
-            }
+                Debug.Log(ArrowCount);
 
-            ArrowCount++;
+                Arrow[ArrowCount].SetActive(true);
 
-            Debug.Log(ArrowCount);
+                if (ArrowCount > 0)
+                {
+                    Arrow[ArrowCount - 1].SetActive(false);
+                }
+
+                ArrowCount++;
+            }         
         }
     }
 
     public void ButtonHighlighting(int count)
     {
-        CoverImage.Add(CImage.transform.GetChild(count));
+        for(int i = 0; i < CImage.transform.childCount; i++)
+        {
+            CoverImage.Add(CImage.transform.GetChild(i));
+        }
+        Debug.Log(isTutorial);
+        if (isTutorial == true)
+        {
+            CoverImage[count].gameObject.SetActive(true);
+        }
+    }
 
-        CoverImage[count].gameObject.SetActive(true);
+    public void ButtonHighlightingOff(int count)
+    {
+        CoverImage[count].gameObject.SetActive(false);
+    }
+
+    public void IsTutorialCheck()
+    {
+        if(isTutorial == true)
+        {
+            DUI_.Play(isSkip);
+        }
+    }
+
+    public void IsTutorialToggle()
+    {
+        isTutorial = false;
     }
 }
