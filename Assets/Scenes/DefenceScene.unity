@@ -2111,7 +2111,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: GoLaborScene
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &462688573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7549,7 +7549,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: "\uC815\uB9D0 \uC885\uB8CC\uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &2008096236
 MonoBehaviour:
   m_ObjectHideFlags: 0
