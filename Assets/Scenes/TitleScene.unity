@@ -2245,7 +2245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space Slaves
+  m_text: "Space Fleet \nIdle"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51ecbb1755599dd4ea95fe78e18e5565, type: 2}
   m_sharedMaterial: {fileID: 8870548436173100142, guid: 51ecbb1755599dd4ea95fe78e18e5565, type: 2}
