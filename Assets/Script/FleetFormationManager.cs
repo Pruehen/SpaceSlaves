@@ -79,7 +79,7 @@ public class FleetFormationManager : MonoBehaviour
 {
     [SerializeField]
     Dictionary<int, FleetFormation> formations = new Dictionary<int, FleetFormation>();
-    private string FormationSaveDataFileName = "/data_fleet_formation.json";
+    private string FormationSaveDataFileName = "/data_fleet_formation.txt";
     
     public static FleetFormationManager instance;
 

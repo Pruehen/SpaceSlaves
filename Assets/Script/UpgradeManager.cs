@@ -24,7 +24,7 @@ public class UpgradeManager : MonoBehaviour
 {
     public static  UpgradeManager instance;
 
-    string _saveFileName = "/data_upgrade_prog.json";
+    string _saveFileName = "/data_upgrade_prog.txt";
 
     // id 규칙 
     // 1000 단위로 카테고리 변경

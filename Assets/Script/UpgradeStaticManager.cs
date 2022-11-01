@@ -17,7 +17,7 @@ public struct UpgradeData
 public class UpgradeStaticManager : MonoBehaviour
 {
 
-    string _saveFileName = "/static_data_upgrade.json";
+    string _saveFileName = "/static_data_upgrade.txt";
     public static UpgradeStaticManager instance;
 
     Dictionary<string, UpgradeData> upgradeStaticData = new Dictionary<string, UpgradeData>();
