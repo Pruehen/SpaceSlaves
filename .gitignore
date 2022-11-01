@@ -75,3 +75,4 @@ crashlytics-build.properties
 /Assets/data_currency_save.json.meta
 /Assets/data_m_collector.txt
 /Assets/data_m_collector.txt.meta
+/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
