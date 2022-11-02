@@ -22,9 +22,18 @@ public class UpgradeProgText : MonoBehaviour
     void Refresh()
     {
         var total = UpgradeManager.GetTotalActiveVal(type);
-        var lv = UpgradeManager.instance.GetBestUpgradeId(type) % 1000;
+        var bestId = UpgradeManager.instance.GetBestUpgradeId(type);
+        var lv = bestId % 1000;
 
-        priceTxt.text = UpgradeStaticManager.instance.GetCost(UpgradeManager.instance.GetBestUpgradeId(type)).ToString();
+        if (UpgradeStaticManager.instance.IsExist(bestId))
+        {
+            priceTxt.text = UpgradeStaticManager.instance.GetCost(bestId).ToString();
+        }
+        else
+        {
+            priceTxt.text = "N/A";
+        }
+
         // 함대 레벨은 다르게 처리
         switch (type)
         {
