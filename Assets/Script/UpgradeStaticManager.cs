@@ -40,7 +40,6 @@ public class UpgradeStaticManager : MonoBehaviour
 
     public int GetCost(int id)
     {
-        
         return upgradeStaticData[id.ToString()].cost;
     }
 
@@ -59,8 +58,6 @@ public class UpgradeStaticManager : MonoBehaviour
         return upgradeStaticData[id.ToString()].req_upgrade_2;
     }
 
-
-
     public bool IsExist(int id)
     {
         return upgradeStaticData.ContainsKey(id.ToString());
@@ -74,11 +71,5 @@ public class UpgradeStaticManager : MonoBehaviour
         var fileData = File.ReadAllText(Application.dataPath + _saveFileName);
         var data = JsonConvert.DeserializeObject<Dictionary<string, UpgradeData>>(fileData);
         upgradeStaticData = data;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 }

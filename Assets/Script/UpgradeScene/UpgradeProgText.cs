@@ -8,6 +8,8 @@ public class UpgradeProgText : MonoBehaviour
     public UPGRADE_TYPE type;
     public TMPro.TMP_Text infoTxt;
     public TMPro.TMP_Text priceTxt;
+    public GameObject arrowUpAni;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,19 @@ public class UpgradeProgText : MonoBehaviour
     void Update()
     {
         Refresh();
+    }
+
+    public void OnClickUpgrade()
+    {
+        if (UpgradeManager.instance.DoBestUpgrade(type))
+        {
+            PopArrowUPAniI();
+        }        
+    }
+
+    public void PopArrowUPAniI()
+    {
+        Destroy(Instantiate(arrowUpAni, transform), 0.3f);
     }
 
     void Refresh()

@@ -260,10 +260,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
+      - m_Target: {fileID: 4250525720878560929}
+        m_TargetAssemblyTypeName: UpgradeProgText, Assembly-CSharp
         m_MethodName: OnClickUpgrade
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -287,6 +287,7 @@ MonoBehaviour:
   type: 1
   infoTxt: {fileID: 1260223203940730951}
   priceTxt: {fileID: 5713084570173135846}
+  arrowUpAni: {fileID: 9212292205882966773, guid: c76832d1cbf52654baac07c80afefa72, type: 3}
 --- !u!1 &5006899148328118760
 GameObject:
   m_ObjectHideFlags: 0

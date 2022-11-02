@@ -123,10 +123,11 @@ public class UpgradeManager : MonoBehaviour
 
     // 업그레이드를 한다. 
     // 에디터 사용을 위해 파라미터는 int로 
-    public void DoBestUpgrade(int idType)
+    public bool DoBestUpgrade(UPGRADE_TYPE idType)
     {
-        var type = (UPGRADE_TYPE)idType;
-        _DoUpgrade(GetBestUpgradeId(type));
+        bool isSuccess = _DoUpgrade(GetBestUpgradeId(idType));
+        // return the val after proccess
+        return isSuccess;
     }
 
     // 사전 업그레이드 조건체크
@@ -150,21 +151,21 @@ public class UpgradeManager : MonoBehaviour
         return result;
     }
 
-    void _DoUpgrade(int id, bool isLoading = false)
+    bool _DoUpgrade(int id, bool isLoading = false)
     {
         // 존재 여부 체크
         // 없는 업그레이드는 진행 할 수 없다.
         if (!UpgradeStaticManager.instance.IsExist(id))
         {
             Debug.Log("상위 업그레이드 없음");
-            return;
+            return false;
         }
 
         // 사전 업그레이드 조건이 충족되지 않은 업그레이드는 할수없다.
         if (!_CheckReqUpgrade(id, out string reError))
         {
             Debug.Log("먼저 업그레이드 필요 : " + reError);
-            return;
+            return false;
         }
 
         // 돈 체크
@@ -175,7 +176,7 @@ public class UpgradeManager : MonoBehaviour
             if (!CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
             {
                 Debug.Log("돈없음 / " + cost + " 필요");
-                return;
+                return false;
             }
             else // 돈이 충분한 상태일때 
             {
@@ -203,6 +204,7 @@ public class UpgradeManager : MonoBehaviour
         }
 
         Debug.Log(id.ToString() + " upgraded");
+        return true;
     }
 
     public void SaveData()
@@ -248,5 +250,12 @@ public class UpgradeManager : MonoBehaviour
     public void TestCur(int amount = 300)
     {
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Debri, amount);
+    }
+    // 강제로 리셋, 테스트용
+    public void TestReset()
+    {
+        this.UpgradeActiveDict.Clear();
+        this.UpgradeMaxId.Clear();
+        this.UpgradeTotal.Clear();
     }
 }

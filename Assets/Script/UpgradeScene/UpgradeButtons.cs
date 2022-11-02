@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class UpgradeButtons : MonoBehaviour
 {
-    public void OnClickUpgrade(int id)
+
+    public void ResetAllUpgrade()
     {
-        UpgradeManager.instance.DoBestUpgrade(id);
+        UpgradeManager.instance.TestReset();
     }
 }
