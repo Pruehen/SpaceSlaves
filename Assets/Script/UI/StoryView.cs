@@ -72,7 +72,7 @@ public class StoryView : MonoBehaviour
 
                 if (slider.value == 1)
                 {
-                    ArrowCount++;
+                    ArrowCount = 8;
                 }
             }
         }
@@ -111,6 +111,22 @@ public class StoryView : MonoBehaviour
                 }
 
                 count++;
+            }
+        }
+    }
+
+    public void ButtonHighlightONScroll(Scrollbar slider)
+    {
+        if (Arrow[ArrowCount] != null)
+        {
+            if (isTutorial == true)
+            {
+                CoverImage[count].gameObject.SetActive(true);
+
+                if (count > 0 && count < CoverImage.Count)
+                {
+                    CoverImage[count - 1].gameObject.SetActive(false);
+                }
             }
         }
     }
