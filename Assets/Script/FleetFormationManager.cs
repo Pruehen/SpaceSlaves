@@ -6,14 +6,32 @@ using UnityEngine;
 
 public class FleetCheckResultData 
 {
-    public bool isGood = false;
-    public List<int> ProbFleetIdx = new List<int>();
+    public Dictionary<int, bool> ProbFleetIdx = new Dictionary<int, bool>();
+    public bool isEmpty = false;
+    public bool isFleetHaveProblem(int id)
+    {
+        return ProbFleetIdx.ContainsKey(id) ? ProbFleetIdx[id] : false;
+    }
+    public bool isGood 
+    {
+        get 
+        {            
+            foreach (var item in ProbFleetIdx.Values)
+            {
+                if (item) // 하나라도 문제있으면 리젝
+                    return false;             
+            }
+            // 편대 배정된 개수보다 보유 수량이 적거나, 완전이 함대가 비어있으면 리젝먹이기
+            return !isEmpty;
+
+        }
+    }
 }
 
 [SerializeField]
 public class FleetFormation
 {
-    // 없으면 명시적으로 -1로 변경
+    // 함선 종류, 없으면 명시적으로 -1로 변경
     public int idType = -1;
     // 개수
     public int amount = 0;    
@@ -99,6 +117,9 @@ public class FleetFormationManager : MonoBehaviour
 
     public bool SetUnit(int id, int formIdx, int qty)
     {
+        if (qty <= 0)
+            return false;
+
         if (formations.ContainsKey(formIdx))
         {
             formations[formIdx].Add(id, qty, out bool success);
@@ -184,45 +205,40 @@ public class FleetFormationManager : MonoBehaviour
     public FleetCheckResultData MakeValidateData()
     {
         FleetCheckResultData data = new FleetCheckResultData();
-        bool isGoodToGo = true;
 
         // 편성된 함선들의 합, 타입당갯수를 기록 <함선 타입, 합개>
         Dictionary<int, int> dict = new Dictionary<int, int>();
 
-        //편성에 들어간 합계
-        foreach (var fleet in formations.Values)
+        //편성에 들어간 합계, dict을 조작함
+        foreach (var fleetid in formations.Keys)
         {
-            int id_type = fleet.idType;
-            if (id_type == -1)
+            int shiptype= formations[fleetid].idType;
+            if (shiptype == -1 || formations[fleetid].amount <= 0)
                 continue;
 
-            if (!dict.ContainsKey(id_type))
-                dict.Add(id_type, fleet.amount);
+            if (!dict.ContainsKey(shiptype))
+                dict.Add(shiptype, formations[fleetid].amount);
             else
-                dict[id_type] += fleet.amount;
-
+                dict[shiptype] += formations[fleetid].amount;
         }
-        foreach (var id_type in dict.Keys)
+        //ProbFleetIdx을 조작함
+        foreach (var fleetid in formations.Keys)
         {
-            int curQty = dict[id_type];
-            int stockQty = FleetManager.instance.GetFleetQtyData(id_type);
-            if (curQty > stockQty)
+            int shiptype = formations[fleetid].idType;
+            if (shiptype == -1)
             {
-                data.ProbFleetIdx.Add(id_type);
-                isGoodToGo = false;                
+                continue;
             }
+            int stockQty = FleetManager.instance.GetFleetQtyData(shiptype);
+            int curQty = dict.ContainsKey(shiptype) ? dict[shiptype] : 0;
+            data.ProbFleetIdx.Add(fleetid, curQty > stockQty);
         }
-        // 한 개도  없으면 안된다
+        // 한 개도 없으면 안된다
         int totalQty = 0;
         foreach (var qty in dict.Values)
             totalQty += qty;
 
-        if (totalQty <= 0)
-        {
-            isGoodToGo = false;
-        }
-        
-        data.isGood = isGoodToGo;
+        data.isEmpty = totalQty <= 0;
 
         return data;
     }

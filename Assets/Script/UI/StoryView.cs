@@ -24,8 +24,11 @@ public class StoryView : MonoBehaviour
     private void Awake()
     {
         isTutorial = false;
+    }
 
-        PlayerPrefs.SetInt("Tutorial", 0);
+    private void Start()
+    {
+        //UpgradeSceneTutorial(DUI);
     }
 
     public void TutorialStart()
@@ -72,7 +75,7 @@ public class StoryView : MonoBehaviour
 
                 if (slider.value == 1)
                 {
-                    ArrowCount++;
+                    ArrowCount = 8;
                 }
             }
         }
@@ -115,6 +118,22 @@ public class StoryView : MonoBehaviour
         }
     }
 
+    public void ButtonHighlightONScroll(Scrollbar slider)
+    {
+        if (Arrow[ArrowCount] != null)
+        {
+            if (isTutorial == true)
+            {
+                CoverImage[count].gameObject.SetActive(true);
+
+                if (count > 0 && count < CoverImage.Count)
+                {
+                    CoverImage[count - 1].gameObject.SetActive(false);
+                }
+            }
+        }
+    }
+
     public void ButtonHighlightOff(int count)
     {
         if(CoverImage[count] != null)
@@ -141,28 +160,32 @@ public class StoryView : MonoBehaviour
         else
         {
             isTutorial = false;
-            PlayerPrefs.SetInt("Tutorial", 0);
+            PlayerPrefs.DeleteKey("Tutorial");
+            PlayerPrefs.DeleteKey("TutorialU");
             TutoUI.SetActive(false);
         }
     }
 
     public void BattleSceneTutorial(DialogueUI _DUI)
     {
-        if(PlayerPrefs.GetInt("Tutorial") == 1)
+        if(PlayerPrefs.HasKey("Tutorial") == true)
         {
             SoundManager.instance.clickSoundOn();
+            Time.timeScale = 1;
             _DUI.Play(isSkip);
+            PlayerPrefs.SetInt("TutorialU", 1);
         }
-        else if(PlayerPrefs.GetInt("Tutorial") == 0)
+        else if(PlayerPrefs.HasKey("Tutorial") == false)
         {
             SoundManager.instance.clickSoundOn();
+            Time.timeScale = 1;
             SceneManager.LoadScene("LaborScene");
         }
     }
 
     public void UpgradeSceneTutorial(DialogueUI _DUI)
     {
-        if (PlayerPrefs.GetInt("Tutorial") == 1)
+        if (PlayerPrefs.HasKey("Tutorial") == true && PlayerPrefs.HasKey("TutorialU") == true)
         {
             _DUI.Play(isSkip);
         }
