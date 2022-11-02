@@ -526,5 +526,5 @@
     "cost": 30000,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
-  },
+  }
 }
