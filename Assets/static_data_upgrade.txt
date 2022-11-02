@@ -289,17 +289,11 @@
   },
   "4009": {
     "addval": 1,
-    "cost": 8000,
-    "req_upgrade_1": 0,
-    "req_upgrade_2": 0
-  },
-  "4010": {
-    "addval": 1,
     "cost": 30000,
     "req_upgrade_1": 0,
     "req_upgrade_2": 0
   },
-  "4011": {
+  "4010": {
     "addval": 1,
     "cost": 50000,
     "req_upgrade_1": 0,

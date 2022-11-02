@@ -16,6 +16,11 @@ public enum UPGRADE_TYPE
     COLLECTOR_CAPA = 3,
     FLEET = 4,
     FLEET_CAPA = 5,
+    PARTICLE_DMG = 6,//입자 무기 데미지 강화
+    KINETIC_DMG = 7,//실탄 무기 데미지 강화
+    MISSILE_DMG = 8,//미사일 무기 데미지 강화
+    DF_ENHANCE= 9,//장갑 수치 강화
+    SD_ENHANCE = 10,//보호막 수치 강화
 }
 
 

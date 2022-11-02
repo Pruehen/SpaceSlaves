@@ -166,7 +166,7 @@ public class ShipControl : MonoBehaviour
 
         if (sd <= 0)
         {
-            hp = hp - (inputDmg * hpFactor - df);
+            hp = hp - Mathf.Clamp(inputDmg * hpFactor - df, 1, inputDmg * hpFactor);
             hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
             if (hp <= 0)
             {
