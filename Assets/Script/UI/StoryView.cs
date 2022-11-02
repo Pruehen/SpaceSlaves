@@ -24,8 +24,6 @@ public class StoryView : MonoBehaviour
     private void Awake()
     {
         isTutorial = false;
-
-        PlayerPrefs.SetInt("Tutorial", 0);
     }
 
     public void TutorialStart()
@@ -157,28 +155,32 @@ public class StoryView : MonoBehaviour
         else
         {
             isTutorial = false;
-            PlayerPrefs.SetInt("Tutorial", 0);
+            PlayerPrefs.DeleteKey("Tutorial");
+            PlayerPrefs.DeleteKey("TutorialU");
             TutoUI.SetActive(false);
         }
     }
 
     public void BattleSceneTutorial(DialogueUI _DUI)
     {
-        if(PlayerPrefs.GetInt("Tutorial") == 1)
+        if(PlayerPrefs.HasKey("Tutorial") == true)
         {
             SoundManager.instance.clickSoundOn();
+            Time.timeScale = 1;
             _DUI.Play(isSkip);
+            PlayerPrefs.SetInt("TutorialU", 1);
         }
-        else if(PlayerPrefs.GetInt("Tutorial") == 0)
+        else if(PlayerPrefs.HasKey("Tutorial") == false)
         {
             SoundManager.instance.clickSoundOn();
+            Time.timeScale = 1;
             SceneManager.LoadScene("LaborScene");
         }
     }
 
     public void UpgradeSceneTutorial(DialogueUI _DUI)
     {
-        if (PlayerPrefs.GetInt("Tutorial") == 1)
+        if (PlayerPrefs.HasKey("Tutorial") == true && PlayerPrefs.HasKey("TutorialU") == true)
         {
             _DUI.Play(isSkip);
         }
