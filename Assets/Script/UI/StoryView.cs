@@ -26,6 +26,11 @@ public class StoryView : MonoBehaviour
         isTutorial = false;
     }
 
+    private void Start()
+    {
+        //UpgradeSceneTutorial(DUI);
+    }
+
     public void TutorialStart()
     {
         ArrowCount = 0;
