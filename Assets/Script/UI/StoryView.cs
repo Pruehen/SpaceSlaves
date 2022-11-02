@@ -17,19 +17,18 @@ public class StoryView : MonoBehaviour
     public List<Transform> CoverImage = new List<Transform>();
 
     public bool isTutorial = false;
+    public GameObject TutoUI;
 
     private void Awake()
     {
         isTutorial = false;
 
         PlayerPrefs.SetInt("Tutorial", 0);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        UpgradeSceneTutorial(DUI);
+        ButtonHighlighting();
     }
 
     public void TutorialStart()
@@ -38,6 +37,7 @@ public class StoryView : MonoBehaviour
         DUI.Play(isSkip);
         isTutorial = true;
         PlayerPrefs.SetInt("Tutorial", 1);
+        TutoUI.SetActive(true);
     }
 
     public void ArrowPosCon()
@@ -71,7 +71,7 @@ public class StoryView : MonoBehaviour
                     Arrow[ArrowCount - 1].SetActive(false);
                 }
 
-                if (slider.value == 1)
+                if (slider.value >= 1)
                 {
                     ArrowCount++;
                 }
@@ -87,22 +87,43 @@ public class StoryView : MonoBehaviour
         }
     }
 
-    public void ButtonHighlighting(int count)
+    void ButtonHighlighting()
     {
         if (isTutorial == true)
         {
             for (int i = 0; i < CImage.transform.childCount; i++)
             {
                 CoverImage.Add(CImage.transform.GetChild(i));
-            }
-
-            CoverImage[count].gameObject.SetActive(true);
+            }   
         }
     }
 
-    public void ButtonHighlightingOff(int count)
+    public void ButtonHighlightON()
     {
-        CoverImage[count].gameObject.SetActive(false);
+        int count = 0;
+
+        if (Arrow[ArrowCount] != null)
+        {
+            if (isTutorial == true)
+            {
+                CoverImage[count].gameObject.SetActive(true);
+
+                if (count > 0 && count < CoverImage.Count)
+                {
+                    CoverImage[count - 1].gameObject.SetActive(false);
+                }
+
+                count++;
+            }
+        }
+    }
+
+    public void ButtonHighlightOff(int count)
+    {
+        if(CoverImage[count] != null)
+        {
+            CoverImage[count].gameObject.SetActive(true);
+        }
     }
 
     public void IsTutorialCheck(DialogueUI _DUI)
