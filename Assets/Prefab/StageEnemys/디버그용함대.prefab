@@ -54,6 +54,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: M_Class_Frigate_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: 5579c12c538bc4f45823b369b67b7144, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: 5579c12c538bc4f45823b369b67b7144, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -115,6 +119,10 @@ PrefabInstance:
     - target: {fileID: 101806, guid: 6863fe8d2deac6d47a9cdd2891555790, type: 3}
       propertyPath: m_Name
       value: S_Class_BattleShip_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: 6863fe8d2deac6d47a9cdd2891555790, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: 6863fe8d2deac6d47a9cdd2891555790, type: 3}
       propertyPath: m_RootOrder
@@ -178,6 +186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: I_Class_Corvette_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: e111685569ef4ff42b7f30e3490f867c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -239,6 +251,10 @@ PrefabInstance:
     - target: {fileID: 101806, guid: 8020c1849434497409de0621b54877e4, type: 3}
       propertyPath: m_Name
       value: Q_Class_Cruiser_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: 8020c1849434497409de0621b54877e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: 8020c1849434497409de0621b54877e4, type: 3}
       propertyPath: m_RootOrder
@@ -364,6 +380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: L_Class_Frigate_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: 1e1a329b86dc5904a9358de0bd145d62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: 1e1a329b86dc5904a9358de0bd145d62, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -425,6 +445,10 @@ PrefabInstance:
     - target: {fileID: 129358, guid: 518d605a43d141845a48174696a5b731, type: 3}
       propertyPath: m_Name
       value: J_Class_Corvette_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 129358, guid: 518d605a43d141845a48174696a5b731, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 518d605a43d141845a48174696a5b731, type: 3}
       propertyPath: m_RootOrder
@@ -488,6 +512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: O_Class_Cruiser_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: f303e9be442fb2345b90af42108181ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: f303e9be442fb2345b90af42108181ba, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -549,6 +577,10 @@ PrefabInstance:
     - target: {fileID: 101806, guid: ff7f0807c5f62bb4eba9db5d207f9aea, type: 3}
       propertyPath: m_Name
       value: K_Class_Corvette_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: ff7f0807c5f62bb4eba9db5d207f9aea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: ff7f0807c5f62bb4eba9db5d207f9aea, type: 3}
       propertyPath: m_RootOrder
@@ -612,6 +644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: H_Class_Corvette_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 129358, guid: 769688593f8bc364b92abe1723617055, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 424012, guid: 769688593f8bc364b92abe1723617055, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -674,6 +710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: N_Class_Cruiser_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: 75038da49cf1af54ebffb98f682a12aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: 75038da49cf1af54ebffb98f682a12aa, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -735,6 +775,10 @@ PrefabInstance:
     - target: {fileID: 101806, guid: c0cbcfa7145e6ed428327e5fd2582444, type: 3}
       propertyPath: m_Name
       value: P_Class_Cruiser_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 101806, guid: c0cbcfa7145e6ed428327e5fd2582444, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492140, guid: c0cbcfa7145e6ed428327e5fd2582444, type: 3}
       propertyPath: m_RootOrder
