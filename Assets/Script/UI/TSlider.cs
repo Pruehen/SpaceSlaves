@@ -19,8 +19,6 @@ public class TSlider : MonoBehaviour
     {
         if(isT == true && TScroll.value > 0)
         {
-            TScroll.value = 1;
-
             OScroll.value = TScroll.value;
         }
     }
