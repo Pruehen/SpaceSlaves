@@ -105,7 +105,7 @@ public class ShipControl : MonoBehaviour
     {
         if(dmgType == dmg_Type.particle && !isTurret)//레이저 고정 주포일 경우, 레이저 셋팅
         {
-            LaserGrapic();
+            LaserGrapic(); 
         }
         
         if(target != null)//타겟벡터 생성제어
