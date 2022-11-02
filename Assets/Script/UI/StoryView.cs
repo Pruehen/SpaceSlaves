@@ -19,16 +19,13 @@ public class StoryView : MonoBehaviour
     public bool isTutorial = false;
     public GameObject TutoUI;
 
+    public int count = 0;
+
     private void Awake()
     {
         isTutorial = false;
 
         PlayerPrefs.SetInt("Tutorial", 0);
-    }
-
-    private void Start()
-    {
-        ButtonHighlighting();
     }
 
     public void TutorialStart()
@@ -38,6 +35,8 @@ public class StoryView : MonoBehaviour
         isTutorial = true;
         PlayerPrefs.SetInt("Tutorial", 1);
         TutoUI.SetActive(true);
+
+        ButtonHighlighting();
     }
 
     public void ArrowPosCon()
@@ -71,7 +70,7 @@ public class StoryView : MonoBehaviour
                     Arrow[ArrowCount - 1].SetActive(false);
                 }
 
-                if (slider.value >= 1)
+                if (slider.value == 1)
                 {
                     ArrowCount++;
                 }
@@ -100,8 +99,6 @@ public class StoryView : MonoBehaviour
 
     public void ButtonHighlightON()
     {
-        int count = 0;
-
         if (Arrow[ArrowCount] != null)
         {
             if (isTutorial == true)
@@ -145,6 +142,7 @@ public class StoryView : MonoBehaviour
         {
             isTutorial = false;
             PlayerPrefs.SetInt("Tutorial", 0);
+            TutoUI.SetActive(false);
         }
     }
 
