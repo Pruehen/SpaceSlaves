@@ -1210,7 +1210,7 @@ PrefabInstance:
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 45445267}
+      objectReference: {fileID: 206241323}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1220,8 +1220,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UpgradeSceneTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeProgText, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1337,6 +1345,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+--- !u!114 &206241323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4250525720878560929, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+  m_PrefabInstance: {fileID: 206241322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1d9af9221576048bdb6a2696290382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &220148010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3179,7 +3198,7 @@ PrefabInstance:
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 45445267}
+      objectReference: {fileID: 674346683}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3189,8 +3208,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UpgradeSceneTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeProgText, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -3310,6 +3337,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+--- !u!114 &674346683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4250525720878560929, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+  m_PrefabInstance: {fileID: 674346682}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1d9af9221576048bdb6a2696290382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &689787509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8250113047921840432, guid: b76f846b3379607468a593969b575654, type: 3}
@@ -3849,7 +3887,7 @@ PrefabInstance:
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 45445267}
+      objectReference: {fileID: 953616816}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3859,8 +3897,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UpgradeSceneTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeProgText, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -3976,6 +4022,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+--- !u!114 &953616816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4250525720878560929, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+  m_PrefabInstance: {fileID: 953616815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1d9af9221576048bdb6a2696290382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &994859622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8483,7 +8540,7 @@ PrefabInstance:
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 45445267}
+      objectReference: {fileID: 1992098236}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -8493,8 +8550,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UpgradeSceneTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeProgText, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -8615,6 +8680,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2669465599781150640, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
   m_PrefabInstance: {fileID: 1992098234}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992098236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4250525720878560929, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+  m_PrefabInstance: {fileID: 1992098234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1d9af9221576048bdb6a2696290382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1998698836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9968,7 +10044,7 @@ PrefabInstance:
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 45445267}
+      objectReference: {fileID: 2669465599187864016}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -9978,8 +10054,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UpgradeSceneTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeProgText, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -10095,6 +10179,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+--- !u!114 &2669465599187864016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4250525720878560929, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+  m_PrefabInstance: {fileID: 2669465599187864015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1d9af9221576048bdb6a2696290382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &4043558739193989942
 MeshCollider:
   m_ObjectHideFlags: 0
