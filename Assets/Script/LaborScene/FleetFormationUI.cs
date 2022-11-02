@@ -61,12 +61,12 @@ public class FleetFormationUI : MonoBehaviour
 
     void RefreshFleetBar()
     {
+        var data = FleetFormationManager.instance.MakeValidateData();
+
         foreach (var item in goFleets)
         {
-            var data = FleetFormationManager.instance.MakeValidateData();
-
             item.Refresh();
-            item.SetWarningIcon(data.ProbFleetIdx.Contains(item.id));            
+            item.SetWarningIcon(data.isFleetHaveProblem(item.id));            
         }        
     }
 
