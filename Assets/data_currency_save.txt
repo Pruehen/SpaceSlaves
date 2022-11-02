@@ -1,1 +1,1 @@
-{"minerals":3882258,"debris":332536}
+{"minerals":1039038,"debris":433098}
