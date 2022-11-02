@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StoryView : MonoBehaviour
@@ -17,11 +18,26 @@ public class StoryView : MonoBehaviour
 
     public bool isTutorial = false;
 
+    private void Awake()
+    {
+        isTutorial = false;
+
+        PlayerPrefs.SetInt("Tutorial", 0);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        UpgradeSceneTutorial(DUI);
+    }
+
     public void TutorialStart()
     {
         ArrowCount = 0;
         DUI.Play(isSkip);
         isTutorial = true;
+        PlayerPrefs.SetInt("Tutorial", 1);
     }
 
     public void ArrowPosCon()
@@ -73,13 +89,13 @@ public class StoryView : MonoBehaviour
 
     public void ButtonHighlighting(int count)
     {
-        for(int i = 0; i < CImage.transform.childCount; i++)
-        {
-            CoverImage.Add(CImage.transform.GetChild(i));
-        }
-        Debug.Log(isTutorial);
         if (isTutorial == true)
         {
+            for (int i = 0; i < CImage.transform.childCount; i++)
+            {
+                CoverImage.Add(CImage.transform.GetChild(i));
+            }
+
             CoverImage[count].gameObject.SetActive(true);
         }
     }
@@ -97,8 +113,39 @@ public class StoryView : MonoBehaviour
         }
     }
 
-    public void IsTutorialToggle()
+    public void IsTutorialToggle(bool isT)
     {
-        isTutorial = false;
+        if (isT == true)
+        {
+            isTutorial = true;
+            PlayerPrefs.SetInt("Tutorial", 1);
+        }
+        else
+        {
+            isTutorial = false;
+            PlayerPrefs.SetInt("Tutorial", 0);
+        }
+    }
+
+    public void BattleSceneTutorial(DialogueUI _DUI)
+    {
+        if(PlayerPrefs.GetInt("Tutorial") == 1)
+        {
+            SoundManager.instance.clickSoundOn();
+            _DUI.Play(isSkip);
+        }
+        else if(PlayerPrefs.GetInt("Tutorial") == 0)
+        {
+            SoundManager.instance.clickSoundOn();
+            SceneManager.LoadScene("LaborScene");
+        }
+    }
+
+    public void UpgradeSceneTutorial(DialogueUI _DUI)
+    {
+        if (PlayerPrefs.GetInt("Tutorial") == 1)
+        {
+            _DUI.Play(isSkip);
+        }
     }
 }
