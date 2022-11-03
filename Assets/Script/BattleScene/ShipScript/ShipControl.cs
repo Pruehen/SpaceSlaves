@@ -151,7 +151,7 @@ public class ShipControl : MonoBehaviour
         DmgTextType dmgTextType = DmgTextType.ShieldHit;
         float randomDmgFactor = Random.Range(0.9f, 1.1f);
         
-        if (sd > 0 && inputDmg * sdFactor <= sd)
+        if (sd > 0 && inputDmg * sdFactor * randomDmgFactor <= sd)
         {
             sd -= inputDmg * sdFactor * randomDmgFactor;
             acmDmg += inputDmg * sdFactor * randomDmgFactor;
@@ -160,18 +160,18 @@ public class ShipControl : MonoBehaviour
             hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
             shipSound.ShieldHitSoundPlay();
         }
-        else if(sd > 0 && inputDmg * sdFactor > sd)
+        else if(sd > 0 && inputDmg * sdFactor * randomDmgFactor > sd)
         {
             sd -= inputDmg * sdFactor * randomDmgFactor;
-            inputDmg = -sd;
             acmDmg += inputDmg * sdFactor * randomDmgFactor + sd;
+            sd = 0;
             dmgTextType = DmgTextType.ShieldBreake;
             shipShield.EffectOn();
             hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
             shipSound.ShieldHitSoundPlay();
         }
 
-        if (sd <= 0)
+        else if (sd <= 0)
         {
             hp = hp - Mathf.Clamp(inputDmg * hpFactor * randomDmgFactor - df, 1, inputDmg * hpFactor * randomDmgFactor);
             acmDmg += Mathf.Clamp(inputDmg * hpFactor * randomDmgFactor - df, 1, inputDmg * hpFactor * randomDmgFactor);
@@ -209,7 +209,7 @@ public class ShipControl : MonoBehaviour
 
         if (enemyId != -1)
         {
-            BattleSceneManager.instance.AddCurrency((enemyId + 2) * (enemyId + 2));
+            BattleSceneManager.instance.AddCurrency(enemyId+1, (int)this.shipClass+1);
         }
         BattleSceneManager.instance.GameEndCheck();
 

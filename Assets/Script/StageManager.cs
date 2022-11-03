@@ -76,6 +76,35 @@ public class StageManager : MonoBehaviour
         "스테이지 20"
     };
 
+    string[] stageInfoArray =
+{
+        "스테이지 1 에 대한 설명을 적으시오",
+        "스테이지 2 에 대한 설명을 적으시오",
+        "스테이지 3 에 대한 설명을 적으시오",
+        "스테이지 4 에 대한 설명을 적으시오",
+        "스테이지 5 에 대한 설명을 적으시오",
+        "스테이지 6 에 대한 설명을 적으시오",
+        "스테이지 7 에 대한 설명을 적으시오",
+        "스테이지 8 에 대한 설명을 적으시오",
+        "스테이지 9 에 대한 설명을 적으시오",
+        "스테이지 10 에 대한 설명을 적으시오",
+        "스테이지 11 에 대한 설명을 적으시오",
+        "스테이지 12 에 대한 설명을 적으시오",
+        "스테이지 13 에 대한 설명을 적으시오",
+        "스테이지 14 에 대한 설명을 적으시오",
+        "스테이지 15 에 대한 설명을 적으시오",
+        "스테이지 16 에 대한 설명을 적으시오",
+        "스테이지 17 에 대한 설명을 적으시오",
+        "스테이지 18 에 대한 설명을 적으시오",
+        "스테이지 19 에 대한 설명을 적으시오",
+        "스테이지 20 에 대한 설명을 적으시오"
+    };
+
+    public string GetStageStoryString(int stageNum)
+    {
+        return stageInfoArray[stageNum];
+    }
+
     public GameObject[] stageEnemyPrfs = new GameObject[STAGE_COUNT];
 
     public int selectedStage = 0;

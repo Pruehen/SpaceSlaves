@@ -65,10 +65,12 @@ public class BattleSceneManager : MonoBehaviour
 
     float collectedDebri = 0;
     float collectedMin = 0;
-    public void AddCurrency(float cur)
+    public void AddCurrency(float id, int shipClass)
     {
-        collectedDebri += cur;
-        collectedMin += cur * 5;
+        int getCur = (int)(id * shipClass * shipClass * shipClass) + 2;
+
+        collectedDebri += getCur;
+        collectedMin += getCur * 5;
     }
 
     public void GameEnd(bool isWin)

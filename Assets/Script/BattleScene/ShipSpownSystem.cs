@@ -10,8 +10,8 @@ public class ShipSpownSystem : MonoBehaviour
     //함대 마다 스폰될 위치
     Transform spawnPos;
 
-    public float spaceBetX = 0.2f;
-    public float spaceBetZ = 0.2f;
+    float spaceBetX = 0.1f;
+    float spaceBetZ = 0.05f;
 
     // 아군 함선 소환 
     public void FriendlyShipSpown(Transform center)
@@ -30,6 +30,23 @@ public class ShipSpownSystem : MonoBehaviour
                 // 데이터가 비어있는경우 
                 if (shipid == -1)
                     continue;
+
+                if(FleetManager.instance.GetShipData(shipid).shipClass == ship_Class.Corvette)
+                {
+                    spaceBetX = 0.07f;
+                }
+                else if (FleetManager.instance.GetShipData(shipid).shipClass == ship_Class.Destroyer)
+                {
+                    spaceBetX = 0.2f;
+                }
+                else if (FleetManager.instance.GetShipData(shipid).shipClass == ship_Class.Cruiser)
+                {
+                    spaceBetX = 0.4f;
+                }
+                else if (FleetManager.instance.GetShipData(shipid).shipClass == ship_Class.Battleship)
+                {
+                    spaceBetX = 0.8f;
+                }
 
                 for (int j = 0; j < shipQty; j++)
                 {

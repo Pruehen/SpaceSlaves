@@ -191,6 +191,12 @@ public class LaborSceneManager : MonoBehaviour
                 case 9:
                     shipExplainTmp.text = " 전함의 주포를 함체에 고정시켜 탑재한 강력한 중순양함입니다. 장거리에서 강력한 화력을 투사할 수 있습니다.";
                     break;
+                case 10:
+                    shipExplainTmp.text = " 강력한 전함입니다. 강력한 주포 포탑이 탑재되어 있으며, 근접한 적은 부포로 공격합니다.";
+                    break;
+                case 11:
+                    shipExplainTmp.text = " 공성전에 특화된 전함입니다. 다수의 적을 관통하는 랜스를 발사해서 막대한 피해를 줄 수 있습니다.";
+                    break;
                 default:
                     shipExplainTmp.text = "미구현된 함선입니다.";
                     break;
@@ -218,6 +224,7 @@ public class LaborSceneManager : MonoBehaviour
 
     public GameObject stageInfoWdw;
     public TextMeshProUGUI stageInfoText;
+    public TextMeshProUGUI stageStoryText;
     public void StageInfoWdwToggle(int index)//스테이지별 테이터 윈도우 토글
     {
         if (index == -1)
@@ -240,6 +247,7 @@ public class LaborSceneManager : MonoBehaviour
             {
                 stageInfoText.text = stageInfoText.text + kvp.Key + "급 X" + kvp.Value + "\n";
             }
+            stageStoryText.text = StageManager.instance.GetStageStoryString(index);
         }
     }
 

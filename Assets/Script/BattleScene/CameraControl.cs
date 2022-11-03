@@ -140,7 +140,7 @@ public class CameraControl : MonoBehaviour
             Pos.z = Pos.y;
             Pos.y = 0f;
 
-            Vector3 move = Pos * (Time.deltaTime * dragSpeed);
+            Vector3 move = Vector3.ClampMagnitude(Pos * (Time.deltaTime * dragSpeed), 1);
 
             float y = transform.position.y;
 
