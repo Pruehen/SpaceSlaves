@@ -147,18 +147,25 @@ public class ShipControl : MonoBehaviour
     public float Hit(float dmg, float hpFactor, float sdFactor)//함선 피격 함수
     {
         float inputDmg = dmg;
+        float acmDmg = 0;
+        DmgTextType dmgTextType = DmgTextType.ShieldHit;
+        float randomDmgFactor = Random.Range(0.9f, 1.1f);
         
         if (sd > 0 && inputDmg * sdFactor <= sd)
         {
-            sd -= inputDmg * sdFactor;            
+            sd -= inputDmg * sdFactor * randomDmgFactor;
+            acmDmg += inputDmg * sdFactor * randomDmgFactor;
+            dmgTextType = DmgTextType.ShieldHit;
             shipShield.EffectOn();
             hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
             shipSound.ShieldHitSoundPlay();
         }
         else if(sd > 0 && inputDmg * sdFactor > sd)
         {
-            sd -= inputDmg * sdFactor;
+            sd -= inputDmg * sdFactor * randomDmgFactor;
             inputDmg = -sd;
+            acmDmg += inputDmg * sdFactor * randomDmgFactor + sd;
+            dmgTextType = DmgTextType.ShieldBreake;
             shipShield.EffectOn();
             hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
             shipSound.ShieldHitSoundPlay();
@@ -166,12 +173,27 @@ public class ShipControl : MonoBehaviour
 
         if (sd <= 0)
         {
-            hp = hp - Mathf.Clamp(inputDmg * hpFactor - df, 1, inputDmg * hpFactor);
-            hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
-            if (hp <= 0)
+            hp = hp - Mathf.Clamp(inputDmg * hpFactor * randomDmgFactor - df, 1, inputDmg * hpFactor * randomDmgFactor);
+            acmDmg += Mathf.Clamp(inputDmg * hpFactor * randomDmgFactor - df, 1, inputDmg * hpFactor * randomDmgFactor);
+            if(dmgTextType != DmgTextType.ShieldBreake)
             {
-                ShipDestroy();
+                if (acmDmg > df * 0.5f)
+                {
+                    dmgTextType = DmgTextType.ArmorHit;
+                }
+                else if(acmDmg <= df * 0.5f)
+                {
+                    dmgTextType = DmgTextType.ArmorDefence;
+                }
             }
+            hpbarCon.ShipHP(hp, sd, maxHp, maxSd);
+        }
+
+        BattleSceneManager.instance.SetDmgTmp(this.transform, (int)acmDmg, dmgTextType);
+
+        if (hp <= 0)
+        {
+            ShipDestroy();
         }
 
         return hp;

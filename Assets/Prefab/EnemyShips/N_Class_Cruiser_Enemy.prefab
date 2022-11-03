@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shell: {fileID: 0}
-  defaultLaserWidth: 0.1
+  defaultLaserWidth: 0.2
 --- !u!120 &3233463979706530250
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shell: {fileID: 0}
-  defaultLaserWidth: 0.1
+  defaultLaserWidth: 0.2
 --- !u!120 &3687445290650201301
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shell: {fileID: 0}
-  defaultLaserWidth: 0.1
+  defaultLaserWidth: 0.2
 --- !u!120 &8727459183872644232
 LineRenderer:
   m_ObjectHideFlags: 0

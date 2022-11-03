@@ -41,7 +41,14 @@ public class BattleSceneManager : MonoBehaviour
         this.GetComponent<ShipSpownSystem>().EnemyShipSpown(EnemyManager, selectedStage);
         //this.GetComponent<ShipSpownSystem>().FriendlyShipSpown(positioningShipId);
     }
-    
+
+    public DmgTextManager DmgTextManager;
+
+    public void SetDmgTmp(Transform targetTrf, int text, DmgTextType dmgTextType)
+    {
+        DmgTextManager.SetDmgTmp(targetTrf, text, dmgTextType);
+    }
+
     public void GameEndCheck()
     {
         //Debug.Log(EnemyManager.childCount);
