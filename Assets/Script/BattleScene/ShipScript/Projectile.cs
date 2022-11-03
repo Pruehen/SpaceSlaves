@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject hitEffect;
     void Start()
     {
         TrailRenderer = GetComponent<TrailRenderer>();
@@ -40,6 +41,7 @@ public class Projectile : MonoBehaviour
         {
             other.GetComponent<ShipControl>().Hit(dmg, 0.75f, 1.5f);
             pierceValue--;
+            HitEffectSet(other.transform.position);
 
             if (pierceValue <= 0)
             {
@@ -47,5 +49,15 @@ public class Projectile : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
+    }
+
+    void HitEffectSet(Vector3 position)
+    {
+        hitEffect.SetActive(true);
+        hitEffect.transform.position = position;
+        hitEffect.GetComponent<ParticleSystem>().Play();
+        hitEffect.GetComponent<AudioSource>().Play();
+        hitEffect.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+        hitEffect.transform.SetParent(null);
     }
 }

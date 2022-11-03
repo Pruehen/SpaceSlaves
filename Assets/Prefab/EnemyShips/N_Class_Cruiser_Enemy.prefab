@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shell: {fileID: 0}
-  defaultLaserWidth: 0.05
+  defaultLaserWidth: 0.1
 --- !u!120 &3233463979706530250
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bddb8412ba8047642802bd10825548cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -326,8 +326,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.05724919, g: 1, b: 0, a: 1}
-      key1: {r: 1, g: 0.9964248, b: 0, a: 1}
+      key0: {r: 1, g: 0.6811324, b: 0, a: 1}
+      key1: {r: 1, g: 0.8955007, b: 0, a: 1}
       key2: {r: 0.27843142, g: 0.88339925, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shell: {fileID: 0}
-  defaultLaserWidth: 0.05
+  defaultLaserWidth: 0.1
 --- !u!120 &3687445290650201301
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1237,7 +1237,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bddb8412ba8047642802bd10825548cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1281,8 +1281,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.05724919, g: 1, b: 0, a: 1}
-      key1: {r: 1, g: 0.9964248, b: 0, a: 1}
+      key0: {r: 1, g: 0.6811324, b: 0, a: 1}
+      key1: {r: 1, g: 0.8955007, b: 0, a: 1}
       key2: {r: 0.27843142, g: 0.88339925, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shell: {fileID: 0}
-  defaultLaserWidth: 0.05
+  defaultLaserWidth: 0.1
 --- !u!120 &8727459183872644232
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1407,7 +1407,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bddb8412ba8047642802bd10825548cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1451,8 +1451,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.05724919, g: 1, b: 0, a: 1}
-      key1: {r: 1, g: 0.9964248, b: 0, a: 1}
+      key0: {r: 1, g: 0.6811324, b: 0, a: 1}
+      key1: {r: 1, g: 0.8955007, b: 0, a: 1}
       key2: {r: 0.27843142, g: 0.88339925, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
