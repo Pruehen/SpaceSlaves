@@ -17,18 +17,19 @@ public class StoryView : MonoBehaviour
     public List<Transform> CoverImage = new List<Transform>();
 
     public bool isTutorial = false;
-    public GameObject TutoUI;
-
-    public int count = 0;
 
     private void Awake()
     {
         isTutorial = false;
+
+        PlayerPrefs.SetInt("Tutorial", 0);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        //UpgradeSceneTutorial(DUI);
+        UpgradeSceneTutorial(DUI);
     }
 
     public void TutorialStart()
@@ -37,9 +38,6 @@ public class StoryView : MonoBehaviour
         DUI.Play(isSkip);
         isTutorial = true;
         PlayerPrefs.SetInt("Tutorial", 1);
-        TutoUI.SetActive(true);
-
-        ButtonHighlighting();
     }
 
     public void ArrowPosCon()
@@ -75,7 +73,7 @@ public class StoryView : MonoBehaviour
 
                 if (slider.value == 1)
                 {
-                    ArrowCount = 8;
+                    ArrowCount++;
                 }
             }
         }
@@ -89,57 +87,22 @@ public class StoryView : MonoBehaviour
         }
     }
 
-    void ButtonHighlighting()
+    public void ButtonHighlighting(int count)
     {
         if (isTutorial == true)
         {
             for (int i = 0; i < CImage.transform.childCount; i++)
             {
                 CoverImage.Add(CImage.transform.GetChild(i));
-            }   
-        }
-    }
-
-    public void ButtonHighlightON()
-    {
-        if (Arrow[ArrowCount] != null)
-        {
-            if (isTutorial == true)
-            {
-                CoverImage[count].gameObject.SetActive(true);
-
-                if (count > 0 && count < CoverImage.Count)
-                {
-                    CoverImage[count - 1].gameObject.SetActive(false);
-                }
-
-                count++;
             }
-        }
-    }
 
-    public void ButtonHighlightONScroll(Scrollbar slider)
-    {
-        if (Arrow[ArrowCount] != null)
-        {
-            if (isTutorial == true)
-            {
-                CoverImage[count].gameObject.SetActive(true);
-
-                if (count > 0 && count < CoverImage.Count)
-                {
-                    CoverImage[count - 1].gameObject.SetActive(false);
-                }
-            }
-        }
-    }
-
-    public void ButtonHighlightOff(int count)
-    {
-        if(CoverImage[count] != null)
-        {
             CoverImage[count].gameObject.SetActive(true);
         }
+    }
+
+    public void ButtonHighlightingOff(int count)
+    {
+        CoverImage[count].gameObject.SetActive(false);
     }
 
     public void IsTutorialCheck(DialogueUI _DUI)
@@ -160,32 +123,27 @@ public class StoryView : MonoBehaviour
         else
         {
             isTutorial = false;
-            PlayerPrefs.DeleteKey("Tutorial");
-            PlayerPrefs.DeleteKey("TutorialU");
-            TutoUI.SetActive(false);
+            PlayerPrefs.SetInt("Tutorial", 0);
         }
     }
 
     public void BattleSceneTutorial(DialogueUI _DUI)
     {
-        if(PlayerPrefs.HasKey("Tutorial") == true)
+        if(PlayerPrefs.GetInt("Tutorial") == 1)
         {
             SoundManager.instance.clickSoundOn();
-            Time.timeScale = 1;
             _DUI.Play(isSkip);
-            PlayerPrefs.SetInt("TutorialU", 1);
         }
-        else if(PlayerPrefs.HasKey("Tutorial") == false)
+        else if(PlayerPrefs.GetInt("Tutorial") == 0)
         {
             SoundManager.instance.clickSoundOn();
-            Time.timeScale = 1;
             SceneManager.LoadScene("LaborScene");
         }
     }
 
     public void UpgradeSceneTutorial(DialogueUI _DUI)
     {
-        if (PlayerPrefs.HasKey("Tutorial") == true && PlayerPrefs.HasKey("TutorialU") == true)
+        if (PlayerPrefs.GetInt("Tutorial") == 1)
         {
             _DUI.Play(isSkip);
         }
