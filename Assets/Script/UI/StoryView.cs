@@ -18,6 +18,8 @@ public class StoryView : MonoBehaviour
 
     public bool isTutorial = false;
 
+    int count = 0;
+
     private void Awake()
     {
         isTutorial = false;
