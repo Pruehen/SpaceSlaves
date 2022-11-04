@@ -136,12 +136,15 @@ public class LaborSceneManager : MonoBehaviour
 
     public TextMeshProUGUI[] shipDatas = new TextMeshProUGUI[10];
     public TextMeshProUGUI shipExplainTmp;
+    public ModelCam modelCam;
     public void ShipInfoWdwToggle(int index)
     {
         if(index == -1)
         {
             shipInfoWdw.SetActive(false);
             SoundManager.instance.CloseSoundOn();
+
+            modelCam.CamSetOff();
         }
         else
         {
@@ -159,7 +162,9 @@ public class LaborSceneManager : MonoBehaviour
             shipDatas[8].text = FleetManager.instance.GetShipData(index).defaultspeed.ToString();//속도
             shipDatas[9].text = FleetManager.instance.GetShipData(index).agility.ToString();//기동성
 
-            switch(index)
+            modelCam.CamSet(index);
+
+            switch (index)
             {
                 case 0:
                     shipExplainTmp.text = " 레이저 주포를 가진 값싼 다목적 초계함입니다.";
