@@ -13,7 +13,7 @@ public class StoryView : MonoBehaviour
     public List<GameObject> Arrow;
 
     public int ArrowCount = 0;
-    public GameObject CImage;
+    public Transform CImage;
     public List<GameObject> CoverImage = new List<GameObject>();
 
     public GameObject Tuto;
@@ -31,8 +31,6 @@ public class StoryView : MonoBehaviour
 
     private void Start()
     {
-        ButtonSet();
-
         //UpgradeSceneTutorial(DUI);
     }
 
@@ -46,14 +44,6 @@ public class StoryView : MonoBehaviour
         Tuto.SetActive(true);
 
         
-    }
-
-    void ButtonSet()
-    {
-        for (int i = 0; i < CImage.transform.childCount; i++)
-        {
-            CoverImage[i] = CImage.transform.GetChild(i).gameObject;
-        }
     }
 
     public void ArrowPosCon()
@@ -111,7 +101,7 @@ public class StoryView : MonoBehaviour
 
             if (count > 0 && count < CoverImage.Count)
             {
-                Arrow[count - 1].SetActive(false);
+                CoverImage[count - 1].SetActive(false);
             }
 
             count++;
