@@ -3637,7 +3637,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 287291804}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3853,8 +3853,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 216, y: 430}
-  m_SizeDelta: {x: 450, y: 437.6}
+  m_AnchoredPosition: {x: 216, y: 379.1}
+  m_SizeDelta: {x: 400, y: 350}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &287291805
 MonoBehaviour:
@@ -3876,8 +3876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC88C\uD45C:\n\uAC70\uB9AC:\n\uC704\uD5D8\uB3C4:\n\uC0C1\uB300\uC801
-    \uC804\uB825\uCC28:"
+  m_text: "\uC801 \uC218\uB7C9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
   m_sharedMaterial: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
@@ -4114,7 +4113,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 804381813}
   m_Direction: 2
   m_Value: 1.0000001
-  m_Size: 0.2857143
+  m_Size: 0.28571433
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10593,7 +10592,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC801 \uBAA9\uB85D\uC5D0 \uAD00\uD574 \uC801\uC744 \uAC83"
+  m_text: "\uC2A4\uD14C\uC774\uC9C0 \uC124\uBA85"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
   m_sharedMaterial: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
@@ -22787,8 +22786,8 @@ MonoBehaviour:
   stageSelectWdw: {fileID: 1816720893}
   stageBtnTrf: {fileID: 727907542}
   stageInfoWdw: {fileID: 545767974}
-  stageInfoText: {fileID: 779036916}
-  stageStoryText: {fileID: 0}
+  stageInfoText: {fileID: 287291805}
+  stageStoryText: {fileID: 779036916}
 --- !u!4 &1487191643
 Transform:
   m_ObjectHideFlags: 0
