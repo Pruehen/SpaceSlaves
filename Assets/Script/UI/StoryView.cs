@@ -13,8 +13,10 @@ public class StoryView : MonoBehaviour
     public List<GameObject> Arrow;
 
     public int ArrowCount = 0;
-    public GameObject CImage;
-    public List<Transform> CoverImage = new List<Transform>();
+    public Transform CImage;
+    public List<GameObject> CoverImage = new List<GameObject>();
+
+    public GameObject Tuto;
 
     public bool isTutorial = false;
 
@@ -39,10 +41,9 @@ public class StoryView : MonoBehaviour
         isTutorial = true;
         PlayerPrefs.SetInt("Tutorial", 1);
 
-        for (int i = 0; i < CImage.transform.childCount; i++)
-        {
-            CoverImage[i] = CImage.transform.GetChild(i);
-        }
+        Tuto.SetActive(true);
+
+        
     }
 
     public void ArrowPosCon()
@@ -100,7 +101,7 @@ public class StoryView : MonoBehaviour
 
             if (count > 0 && count < CoverImage.Count)
             {
-                Arrow[count - 1].SetActive(false);
+                CoverImage[count - 1].SetActive(false);
             }
 
             count++;
@@ -125,7 +126,7 @@ public class StoryView : MonoBehaviour
         }
     }
 
-    public void ButtonHighlightingOff(int count)
+    public void ButtonHighlightingOff()
     {
         CoverImage[count].gameObject.SetActive(false);
     }
