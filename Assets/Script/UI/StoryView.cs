@@ -31,21 +31,19 @@ public class StoryView : MonoBehaviour
 
     private void Start()
     {
-        if(UTuto != null)
-        {            
-            UTuto.SetActive(false);
-        }
-        //Tuto.SetActive(false);
-
         if (PlayerPrefs.HasKey("Tutorial") == true && Tuto != null)
         {
             Tuto.SetActive(true);
-            if(PlayerPrefs.HasKey("UTutorial") == true && UTuto != null)
+            if(PlayerPrefs.HasKey("UTutorial") == true&& UTuto != null)
             UTuto.SetActive(true);
         }
         else if(PlayerPrefs.HasKey("Tutorial") == false)
         {
             Tuto.SetActive(false);
+            if (UTuto != null)
+            {
+                UTuto.SetActive(false);
+            }
         }
     }
 
@@ -198,5 +196,10 @@ public class StoryView : MonoBehaviour
     {
         Tuto.SetActive(false);
         UTuto.SetActive(false);
+    }
+
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
