@@ -11,7 +11,10 @@ public class StageDialogueView : MonoBehaviour
     private void Start()
     {
         StageDetect();
-        DUI.Play(isSkip);
+        if(DUI != null)
+        {
+            DUI.Play(isSkip);
+        }     
     }
 
     void StageDetect()

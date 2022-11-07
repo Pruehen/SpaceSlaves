@@ -9393,18 +9393,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StoryView, Assembly-CSharp
-        m_MethodName: ArrowHide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &709001375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18895,42 +18883,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StoryView, Assembly-CSharp
-        m_MethodName: ArrowPosCon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StoryView, Assembly-CSharp
-        m_MethodName: ButtonHighlightingOff
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StoryView, Assembly-CSharp
-        m_MethodName: ButtonHighlighting
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29872,8 +29824,20 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7381787237132195057, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381787237132195057, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1487191644}
+    - target: {fileID: 7381787237132195057, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoDefenceScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381787237132195057, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ButtonHighlightingOff
+      value: ButtonHighlighting
       objectReference: {fileID: 0}
     - target: {fileID: 7381787237221812043, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
       propertyPath: m_IsActive
@@ -30019,6 +29983,14 @@ PrefabInstance:
       propertyPath: OScroll
       value: 
       objectReference: {fileID: 1258590151}
+    - target: {fileID: 7381787237962544332, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1487191642}
+    - target: {fileID: 7381787237962544332, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StageInfoWdwToggle
+      objectReference: {fileID: 0}
     - target: {fileID: 7381787237962544332, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: ButtonHighlighting
