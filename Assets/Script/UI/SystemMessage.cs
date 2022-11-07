@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class SystemMessage : MonoBehaviour
@@ -12,6 +13,7 @@ public class SystemMessage : MonoBehaviour
     float defaultMessageCool = 1.5f;
     bool IsFade = false;
     GameObject Log;
+    public Image Fade;
 
     public void Start()
     {
@@ -102,12 +104,21 @@ public class SystemMessage : MonoBehaviour
 
     void MassageCoolManage() //사라지는 창 쿨
     {
+        Color color = Fade.color;
+
         MessageCool -= Time.deltaTime;
         if(MessageCool <= 0)
         {
             IsFade = false;
             IsMessageIn = false;
             MessageCool = defaultMessageCool;
+        }
+        else if(MessageCool <= 1)
+        {
+            logText.color = new Color(logText.color.r, logText.color.g, logText.color.b, logText.color.a - Time.deltaTime / defaultMessageCool);
+
+            color.a -= Time.deltaTime / defaultMessageCool;
+            Fade.color = color;
         }
     }
 }
