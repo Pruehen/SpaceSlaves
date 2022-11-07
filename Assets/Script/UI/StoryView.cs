@@ -142,7 +142,7 @@ public class StoryView : MonoBehaviour
     {
         if (CoverImage[count - 1] != null)
         {
-            Debug.Log("dajkhfdk");
+            //Debug.Log("dajkhfdk");
             CoverImage[count - 1].gameObject.SetActive(false);
         }      
     }
