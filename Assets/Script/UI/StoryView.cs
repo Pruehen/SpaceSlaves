@@ -31,6 +31,9 @@ public class StoryView : MonoBehaviour
 
     private void Start()
     {
+        Tuto.SetActive(false);
+        UTuto.SetActive(false);
+
         if(PlayerPrefs.HasKey("Tutorial") == true && UTuto != null && Tuto != null)
         {
             Tuto.SetActive(true);
