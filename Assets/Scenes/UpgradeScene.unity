@@ -1370,8 +1370,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_text
-      value: Collector Capacity
+      value: "\uC624\uD504\uB77C\uC778 \uC790\uC6D0 \n\uD6A8\uC728 \uC99D\uAC00"
       objectReference: {fileID: 0}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -3434,8 +3442,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_text
-      value: SCV Resource More
+      value: "\uC790\uC6D0 \uC218\uC9D1\uB7C9 \uC99D\uAC00"
       objectReference: {fileID: 0}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4453,8 +4473,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_text
-      value: "Fleet \nResearch Level"
+      value: "\uD568\uC120 \uC0DD\uC0B0 \n\uB808\uBCA8 \uC99D\uAC00"
       objectReference: {fileID: 0}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -10197,8 +10229,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_text
-      value: Fleet Max Cost
+      value: "\uBC30\uCE58 \uCF54\uC2A4\uD2B8 \uC99D\uAC00"
       objectReference: {fileID: 0}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
     - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -11836,7 +11880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_text
-      value: "\uC790\uC6D0 \uC218\uC9D1 \uC18D\uB3C4 \uC99D\uAC00"
+      value: "\uC790\uC6D0 \uC218\uC9D1\n\uC18D\uB3C4 \uC99D\uAC00"
       objectReference: {fileID: 0}
     - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_fontAsset

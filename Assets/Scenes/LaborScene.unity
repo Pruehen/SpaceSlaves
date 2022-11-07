@@ -29906,6 +29906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Story_BackGround
       objectReference: {fileID: 0}
+    - target: {fileID: 7381787237516245074, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7381787237575577361, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
