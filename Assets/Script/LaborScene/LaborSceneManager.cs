@@ -262,7 +262,7 @@ public class LaborSceneManager : MonoBehaviour
     {
         if (UpgradeManager.instance.GetFleetLevel() - 1 < index)
         {
-            Smessage.SendMessage("조선소 레벨이 부족합니다");
+            Smessage.SendMessage("MessageQFade", "조선소 레벨이 부족합니다");
             Debug.Log("조선소 레벨이 부족합니다");
             SoundManager.instance.clickSoundOn();
             return;
