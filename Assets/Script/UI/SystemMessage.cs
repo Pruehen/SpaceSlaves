@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class SystemMessage : MonoBehaviour
@@ -82,7 +81,7 @@ public class SystemMessage : MonoBehaviour
         }    
     }
 
-    public void MessageQ(string Message)//메시지 인식하는 역할
+    public void MessageQ(string Message)//메시지 받는 역할
     {
         IsMessageIn = true;
         if (IsMessageIn == true)
@@ -91,7 +90,7 @@ public class SystemMessage : MonoBehaviour
         }
     }
 
-    public void MessageQFade(string Message)//메시지 인식하는 역할 // 몇초후 사라짐
+    public void MessageQFade(string Message)//메시지 받는 역할 // 몇초후 사라짐
     {
         IsMessageIn = true;
         IsFade = true;
