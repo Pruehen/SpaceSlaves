@@ -1745,7 +1745,7 @@ MonoBehaviour:
   ArrowCount: 0
   CImage: {fileID: 0}
   CoverImage: []
-  Tuto: {fileID: 0}
+  Tuto: {fileID: 317997148}
   UTuto: {fileID: 0}
   isTutorial: 0
 --- !u!1 &317997148

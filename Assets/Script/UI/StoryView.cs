@@ -42,7 +42,7 @@ public class StoryView : MonoBehaviour
             Tuto.SetActive(true);
             UTuto.SetActive(true);
         }
-        else
+        else if(PlayerPrefs.HasKey("Tutorial") == false)
         {
             Tuto.SetActive(false);
         }
@@ -107,7 +107,7 @@ public class StoryView : MonoBehaviour
 
     public void ButtonHighlighting()
     {
-        if (isTutorial == true)
+        if (isTutorial == true && CoverImage != null)
         {
             CoverImage[count].gameObject.SetActive(true);
 
