@@ -14,7 +14,9 @@ public class StoryView : MonoBehaviour
 
     public int ArrowCount = 0;
     public GameObject CImage;
-    public List<Transform> CoverImage = new List<Transform>();
+    public List<GameObject> CoverImage = new List<GameObject>();
+
+    public GameObject Tuto;
 
     public bool isTutorial = false;
 
@@ -29,6 +31,8 @@ public class StoryView : MonoBehaviour
 
     private void Start()
     {
+        ButtonSet();
+
         //UpgradeSceneTutorial(DUI);
     }
 
@@ -39,9 +43,16 @@ public class StoryView : MonoBehaviour
         isTutorial = true;
         PlayerPrefs.SetInt("Tutorial", 1);
 
+        Tuto.SetActive(true);
+
+        
+    }
+
+    void ButtonSet()
+    {
         for (int i = 0; i < CImage.transform.childCount; i++)
         {
-            CoverImage[i] = CImage.transform.GetChild(i);
+            CoverImage[i] = CImage.transform.GetChild(i).gameObject;
         }
     }
 
@@ -125,7 +136,7 @@ public class StoryView : MonoBehaviour
         }
     }
 
-    public void ButtonHighlightingOff(int count)
+    public void ButtonHighlightingOff()
     {
         CoverImage[count].gameObject.SetActive(false);
     }
