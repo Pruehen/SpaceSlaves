@@ -151,6 +151,8 @@ public class UpgradeManager : MonoBehaviour
         return result;
     }
 
+    public GameObject SMessage;
+
     bool _DoUpgrade(int id, bool isLoading = false)
     {
         // 존재 여부 체크
@@ -176,6 +178,8 @@ public class UpgradeManager : MonoBehaviour
             if (!CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
             {
                 Debug.Log("돈없음 / " + cost + " 필요");
+                SMessage.SendMessage("MessageQFade", cost + " 의자원이 부족합니다!");
+
                 return false;
             }
             else // 돈이 충분한 상태일때 
