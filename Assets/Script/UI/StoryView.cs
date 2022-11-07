@@ -13,11 +13,11 @@ public class StoryView : MonoBehaviour
     public List<GameObject> Arrow;
 
     public int ArrowCount = 0;
-    public GameObject CImage;
+    public Transform CImage;
     public List<GameObject> CoverImage = new List<GameObject>();
 
     public GameObject Tuto;
-
+    public GameObject UTuto;
     public bool isTutorial = false;
 
     int count = 0;
@@ -31,8 +31,11 @@ public class StoryView : MonoBehaviour
 
     private void Start()
     {
-        ButtonSet();
-
+        if(PlayerPrefs.HasKey("Tutorial") == true)
+        {
+            Tuto.SetActive(true);
+            UTuto.SetActive(true);
+        }
         //UpgradeSceneTutorial(DUI);
     }
 
@@ -43,17 +46,7 @@ public class StoryView : MonoBehaviour
         isTutorial = true;
         PlayerPrefs.SetInt("Tutorial", 1);
 
-        Tuto.SetActive(true);
-
-        
-    }
-
-    void ButtonSet()
-    {
-        for (int i = 0; i < CImage.transform.childCount; i++)
-        {
-            CoverImage[i] = CImage.transform.GetChild(i).gameObject;
-        }
+        Tuto.SetActive(true);       
     }
 
     public void ArrowPosCon()
@@ -111,7 +104,7 @@ public class StoryView : MonoBehaviour
 
             if (count > 0 && count < CoverImage.Count)
             {
-                Arrow[count - 1].SetActive(false);
+                CoverImage[count - 1].SetActive(false);
             }
 
             count++;
@@ -169,6 +162,7 @@ public class StoryView : MonoBehaviour
         {
             SoundManager.instance.clickSoundOn();
             _DUI.Play(isSkip);
+            PlayerPrefs.SetInt("UTutorial", 1);
         }
         else
         {
@@ -179,9 +173,10 @@ public class StoryView : MonoBehaviour
 
     public void UpgradeSceneTutorial(DialogueUI _DUI)
     {
-        if (PlayerPrefs.HasKey("Tutorial"))
+        if (PlayerPrefs.HasKey("Tutorial") && PlayerPrefs.HasKey("UTutorial"))
         {
             _DUI.Play(isSkip);
+            PlayerPrefs.DeleteAll();
         }
     }
 }

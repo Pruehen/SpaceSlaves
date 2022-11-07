@@ -30,6 +30,6 @@ public class PopEffects : MonoBehaviour
         GameObject go = Instantiate<GameObject>(spr, transform);
         go.GetComponent<Mover>().Move(pos);
 
-        timer = 0.05f;
+        timer = 0.015f;
     }
 }

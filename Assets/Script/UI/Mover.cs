@@ -7,6 +7,8 @@ public class Mover : MonoBehaviour
     Vector3 posDest = Vector3.zero;
     Vector3 posStart = Vector3.zero;
     Vector3 dir = Vector3.zero;
+
+    float speedTendency = 1;
     // Start is called before the first frame update
     public void Move(Vector3 pos)
     {
@@ -23,7 +25,7 @@ public class Mover : MonoBehaviour
         posDest = pos;
         dir = pos - posStart;
         dir = dir.normalized;
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 5.5f);
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class Mover : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        transform.Translate(dir * 300 * Time.deltaTime, Space.Self);
+        speedTendency += 65 * Time.deltaTime;
+        transform.Translate(dir * 5 * speedTendency * Time.deltaTime, Space.Self);
     }
 }
