@@ -10,6 +10,8 @@ public class TSlider : MonoBehaviour
     public Scrollbar TScroll;
     public Scrollbar OScroll;
 
+    public GameObject FButton;
+
     private void Update()
     {
         SliderCon(storyView.isTutorial);
@@ -20,6 +22,14 @@ public class TSlider : MonoBehaviour
         if(isT == true && TScroll.value > 0)
         {
             OScroll.value = TScroll.value;
+        }
+    }
+
+    public void ButtonOn()
+    {
+        if(OScroll.value >= 1)
+        {
+            FButton.SetActive(true);
         }
     }
 }
