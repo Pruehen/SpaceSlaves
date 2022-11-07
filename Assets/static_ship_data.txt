@@ -54,7 +54,7 @@
     "sd": 160,
     "defaultspeed": 40,
     "agility": 10,
-    "formationCost": 3
+    "formationCost": 1
   },
   {
     "id": 3,
@@ -73,7 +73,7 @@
     "sd": 600,
     "defaultspeed": 40,
     "agility": 15,
-    "formationCost": 3
+    "formationCost": 2
   },
   {
     "id": 4,
@@ -92,7 +92,7 @@
     "sd": 400,
     "defaultspeed": 35,
     "agility": 10,
-    "formationCost": 4
+    "formationCost": 2
   },
   {
     "id": 5,
@@ -111,7 +111,7 @@
     "sd": 800,
     "defaultspeed": 30,
     "agility": 20,
-    "formationCost": 5
+    "formationCost": 2
   },
   {
     "id": 6,
@@ -130,7 +130,7 @@
     "sd": 4000,
     "defaultspeed": 30,
     "agility": 10,
-    "formationCost": 5
+    "formationCost": 4
   },
   {
     "id": 7,
@@ -149,7 +149,7 @@
     "sd": 3000,
     "defaultspeed": 25,
     "agility": 10,
-    "formationCost": 6
+    "formationCost": 4
   },
   {
     "id": 8,
@@ -168,7 +168,7 @@
     "sd": 1500,
     "defaultspeed": 20,
     "agility": 10,
-    "formationCost": 6
+    "formationCost": 4
   },
   {
     "id": 9,
@@ -187,7 +187,7 @@
     "sd": 3500,
     "defaultspeed": 20,
     "agility": 10,
-    "formationCost": 7
+    "formationCost": 4
   },
   {
     "id": 10,
