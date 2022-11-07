@@ -29,6 +29,8 @@ public class MineralCollector : MonoBehaviour
         poper.Pop(50);
     }
 
+    public GameObject Smessage;
+
     public void ClaimRewards()
     {
         var now = DateTime.Now.Ticks;
@@ -42,6 +44,7 @@ public class MineralCollector : MonoBehaviour
             }
 
             Debug.Log("최소 10분은 기다려야 한다." + " " + new TimeSpan(minRequiredTime - now).Minutes + "분 남음");
+            Smessage.SendMessage("MessageQFade", "최소 10분은 기다려야 한다." + " " + new TimeSpan(minRequiredTime - now).Minutes + "분 남음");
             return;
         }
 

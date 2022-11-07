@@ -256,10 +256,13 @@ public class LaborSceneManager : MonoBehaviour
         }
     }
 
+    public GameObject Smessage;
+
     public void ShipAdd(int index)//함선 생산 버튼을 눌렀을 때 실행. 누른 버튼에 따라서 무슨 함선을 만들지 고름.
     {
         if (UpgradeManager.instance.GetFleetLevel() - 1 < index)
         {
+            Smessage.SendMessage("조선소 레벨이 부족합니다");
             Debug.Log("조선소 레벨이 부족합니다");
             SoundManager.instance.clickSoundOn();
             return;

@@ -178,7 +178,7 @@ public class UpgradeManager : MonoBehaviour
             if (!CurrencyManager.instance.CheckCurrency(CURRENCY_TYPE.Debri, cost))
             {
                 Debug.Log("돈없음 / " + cost + " 필요");
-                SMessage.SendMessage("MessageQFade", "자원이 부족합니다!");
+                SMessage.SendMessage("MessageQFade", "자원이 부족합니다!" + cost + "필요");
 
                 return false;
             }
