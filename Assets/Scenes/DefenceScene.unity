@@ -260,6 +260,7 @@ MonoBehaviour:
   CImage: {fileID: 0}
   CoverImage: []
   Tuto: {fileID: 0}
+  UTuto: {fileID: 0}
   isTutorial: 0
 --- !u!1 &31670426
 GameObject:
@@ -1745,6 +1746,7 @@ MonoBehaviour:
   CImage: {fileID: 0}
   CoverImage: []
   Tuto: {fileID: 0}
+  UTuto: {fileID: 0}
   isTutorial: 0
 --- !u!1 &317997148
 GameObject:
@@ -1763,7 +1765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &317997149
 RectTransform:
   m_ObjectHideFlags: 0
