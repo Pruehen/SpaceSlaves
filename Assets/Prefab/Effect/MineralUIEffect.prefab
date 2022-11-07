@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8519954574061062462}
   - component: {fileID: 1155407105276114247}
   m_Layer: 5
-  m_Name: MIneral
+  m_Name: MineralUIEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

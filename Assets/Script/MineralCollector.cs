@@ -20,6 +20,9 @@ public class MineralCollector : MonoBehaviour
 
     string _saveFileName = "/data_m_collector.txt";
 
+    // 
+    bool test_PopEffect = false;
+
     public void DoPopEffect()
     {
         var poper = GetComponent<PopEffects>();
@@ -32,6 +35,12 @@ public class MineralCollector : MonoBehaviour
         // 최소 필요 시간이 지나야 함
         if (minRequiredTime > now)
         {
+            // 조건 불충분에서 버튼을 누를시 테스트 시작
+            if (test_PopEffect)
+            {
+                DoPopEffect();
+            }
+
             Debug.Log("최소 10분은 기다려야 한다." + " " + new TimeSpan(minRequiredTime - now).Minutes + "분 남음");
             return;
         }

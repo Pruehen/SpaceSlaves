@@ -24,14 +24,12 @@ public class StoryView : MonoBehaviour
     {
         isTutorial = false;
 
-        PlayerPrefs.SetInt("Tutorial", 0);
-
-        DontDestroyOnLoad(gameObject);
+       // DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        UpgradeSceneTutorial(DUI);
+        //UpgradeSceneTutorial(DUI);
     }
 
     public void TutorialStart()
@@ -40,6 +38,11 @@ public class StoryView : MonoBehaviour
         DUI.Play(isSkip);
         isTutorial = true;
         PlayerPrefs.SetInt("Tutorial", 1);
+
+        for (int i = 0; i < CImage.transform.childCount; i++)
+        {
+            CoverImage[i] = CImage.transform.GetChild(i);
+        }
     }
 
     public void ArrowPosCon()
@@ -89,16 +92,36 @@ public class StoryView : MonoBehaviour
         }
     }
 
-    public void ButtonHighlighting(int count)
+    public void ButtonHighlighting()
     {
         if (isTutorial == true)
         {
-            for (int i = 0; i < CImage.transform.childCount; i++)
+            CoverImage[count].gameObject.SetActive(true);
+
+            if (count > 0 && count < CoverImage.Count)
             {
-                CoverImage.Add(CImage.transform.GetChild(i));
+                Arrow[count - 1].SetActive(false);
             }
 
+            count++;
+        }
+    }
+
+    public void ButtonHighlightingSlider(Scrollbar slider)
+    {
+        if (isTutorial == true)
+        {
             CoverImage[count].gameObject.SetActive(true);
+
+            if (count > 0 && count < CoverImage.Count)
+            {
+                Arrow[count - 1].SetActive(false);
+            }
+
+            if (slider.value == 1)
+            {
+                count++;
+            }
         }
     }
 
@@ -125,18 +148,18 @@ public class StoryView : MonoBehaviour
         else
         {
             isTutorial = false;
-            PlayerPrefs.SetInt("Tutorial", 0);
+            PlayerPrefs.DeleteKey("Tutorial");
         }
     }
 
     public void BattleSceneTutorial(DialogueUI _DUI)
     {
-        if(PlayerPrefs.GetInt("Tutorial") == 1)
+        if(PlayerPrefs.HasKey("Tutorial"))
         {
             SoundManager.instance.clickSoundOn();
             _DUI.Play(isSkip);
         }
-        else if(PlayerPrefs.GetInt("Tutorial") == 0)
+        else
         {
             SoundManager.instance.clickSoundOn();
             SceneManager.LoadScene("LaborScene");
@@ -145,7 +168,7 @@ public class StoryView : MonoBehaviour
 
     public void UpgradeSceneTutorial(DialogueUI _DUI)
     {
-        if (PlayerPrefs.GetInt("Tutorial") == 1)
+        if (PlayerPrefs.HasKey("Tutorial"))
         {
             _DUI.Play(isSkip);
         }
