@@ -26,7 +26,7 @@ public class MineralCollector : MonoBehaviour
     public void DoPopEffect()
     {
         var poper = GetComponent<PopEffects>();
-        poper.Pop(30);
+        poper.Pop(50);
     }
 
     public void ClaimRewards()
