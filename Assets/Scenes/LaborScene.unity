@@ -3886,7 +3886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC801 \uC218\uB7C9"
+  m_text: "\uC801 \uC218\uB7C9\n\uC801 \uC218\uB7C9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
   m_sharedMaterial: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
@@ -3925,7 +3925,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 128.5
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -25130,20 +25130,20 @@ MonoBehaviour:
   - {fileID: 3673702338490259487, guid: 891a4247e18299c418e84e7b21938369, type: 3}
   - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
   - {fileID: 3673702338490259487, guid: a1a1125e71c64514e907277fc39afded, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
-  - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
+  - {fileID: 3673702338490259487, guid: 5c8490c6b74f9244db38640cffcabf3f, type: 3}
+  - {fileID: 3673702338490259487, guid: bcde14cbd4389484e942303f0a4f1ab6, type: 3}
+  - {fileID: 3673702338490259487, guid: e65e88cdc352c4f4191e67e083ce6bca, type: 3}
+  - {fileID: 3673702338490259487, guid: ccd74a2dd9e7afb45bf9448fdaf38f70, type: 3}
+  - {fileID: 3673702338490259487, guid: 734806b3b15bf5a459b0578c851083a5, type: 3}
+  - {fileID: 3673702338490259487, guid: 4a5ea4f29507d684eb120f410b52e181, type: 3}
+  - {fileID: 3673702338490259487, guid: 0525cc3a54ffe1d4c9a220f7caca1066, type: 3}
+  - {fileID: 3673702338490259487, guid: f913458eb8a5ea24680c8692ae166742, type: 3}
+  - {fileID: 3673702338490259487, guid: 4108c92c880184b41a1763e99f025dd8, type: 3}
+  - {fileID: 3673702338490259487, guid: 57d851abc1e072a409e24ca9a1740d48, type: 3}
+  - {fileID: 3673702338490259487, guid: e3649b8fbcba60f4f8ce740b1643ea01, type: 3}
+  - {fileID: 3673702338490259487, guid: d4a86179b58ede244bed31ca9f49cb05, type: 3}
+  - {fileID: 3673702338490259487, guid: a21b9457ef967d845a0d8c6234eda527, type: 3}
+  - {fileID: 3673702338490259487, guid: 97ad4067271bff74288bdc1d73dd1470, type: 3}
   selectedStage: 0
 --- !u!1 &1625304042
 GameObject:
