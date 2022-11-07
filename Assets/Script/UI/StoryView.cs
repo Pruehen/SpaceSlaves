@@ -17,7 +17,7 @@ public class StoryView : MonoBehaviour
     public List<GameObject> CoverImage = new List<GameObject>();
 
     public GameObject Tuto;
-
+    public GameObject UTuto;
     public bool isTutorial = false;
 
     int count = 0;
@@ -31,7 +31,20 @@ public class StoryView : MonoBehaviour
 
     private void Start()
     {
-        //UpgradeSceneTutorial(DUI);
+        if (PlayerPrefs.HasKey("Tutorial") == true && Tuto != null)
+        {
+            Tuto.SetActive(true);
+            if(PlayerPrefs.HasKey("UTutorial") == true&& UTuto != null)
+            UTuto.SetActive(true);
+        }
+        else if(PlayerPrefs.HasKey("Tutorial") == false)
+        {
+            Tuto.SetActive(false);
+            if (UTuto != null)
+            {
+                UTuto.SetActive(false);
+            }
+        }
     }
 
     public void TutorialStart()
@@ -41,9 +54,7 @@ public class StoryView : MonoBehaviour
         isTutorial = true;
         PlayerPrefs.SetInt("Tutorial", 1);
 
-        Tuto.SetActive(true);
-
-        
+        Tuto.SetActive(true);       
     }
 
     public void ArrowPosCon()
@@ -87,15 +98,15 @@ public class StoryView : MonoBehaviour
 
     public void ArrowHide()
     {
-        if(Arrow[ArrowCount] != null)
+        if(Arrow[ArrowCount - 1] != null)
         {
-            Arrow[ArrowCount].SetActive(false);
+            Arrow[ArrowCount - 1].SetActive(false);
         }
     }
 
     public void ButtonHighlighting()
     {
-        if (isTutorial == true)
+        if (isTutorial == true && CoverImage != null)
         {
             CoverImage[count].gameObject.SetActive(true);
 
@@ -128,7 +139,11 @@ public class StoryView : MonoBehaviour
 
     public void ButtonHighlightingOff()
     {
-        CoverImage[count].gameObject.SetActive(false);
+        if (CoverImage[count - 1] != null)
+        {
+            //Debug.Log("dajkhfdk");
+            CoverImage[count - 1].gameObject.SetActive(false);
+        }      
     }
 
     public void IsTutorialCheck(DialogueUI _DUI)
@@ -159,6 +174,7 @@ public class StoryView : MonoBehaviour
         {
             SoundManager.instance.clickSoundOn();
             _DUI.Play(isSkip);
+            PlayerPrefs.SetInt("UTutorial", 1);
         }
         else
         {
@@ -169,9 +185,21 @@ public class StoryView : MonoBehaviour
 
     public void UpgradeSceneTutorial(DialogueUI _DUI)
     {
-        if (PlayerPrefs.HasKey("Tutorial"))
+        if (PlayerPrefs.HasKey("Tutorial") && PlayerPrefs.HasKey("UTutorial"))
         {
             _DUI.Play(isSkip);
+            PlayerPrefs.DeleteAll();
         }
+    }
+
+    public void TutoOff()
+    {
+        Tuto.SetActive(false);
+        UTuto.SetActive(false);
+    }
+
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
