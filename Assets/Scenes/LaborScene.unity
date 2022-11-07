@@ -29826,6 +29826,10 @@ PrefabInstance:
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: ButtonHighlighting
       objectReference: {fileID: 0}
+    - target: {fileID: 7381787237516245072, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
+      propertyPath: Tuto
+      value: 
+      objectReference: {fileID: 1936024484}
     - target: {fileID: 7381787237516245073, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -30094,6 +30098,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ce98d5dd806124bbceb461b93c5dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1936024484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7381787237783313933, guid: 8f2a97be85433a34381a1239d7bdbab3, type: 3}
+  m_PrefabInstance: {fileID: 1936024479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1939476637
 GameObject:
   m_ObjectHideFlags: 0
