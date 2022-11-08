@@ -12105,7 +12105,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -289.40002, y: 0}
-  m_SizeDelta: {x: 100, y: 1895.4543}
+  m_SizeDelta: {x: 100, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &877985284
 MonoBehaviour:
@@ -23474,7 +23474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageEnemyPrfs:
   - {fileID: 3673702338490259487, guid: e007d6f8256e07e4eac7aa5c070d2fed, type: 3}
-  - {fileID: 3673702338490259487, guid: bb6e2a95be6245145a0a57b960625ce7, type: 3}
+  - {fileID: 3673702338490259487, guid: 0a322d93cb87b5a41b7a4a73831f23a8, type: 3}
   - {fileID: 3673702338490259487, guid: 8e07ec6e9cb1ea34592c91fc754031b3, type: 3}
   - {fileID: 3673702338490259487, guid: 5c8490c6b74f9244db38640cffcabf3f, type: 3}
   - {fileID: 3673702338490259487, guid: e65e88cdc352c4f4191e67e083ce6bca, type: 3}
