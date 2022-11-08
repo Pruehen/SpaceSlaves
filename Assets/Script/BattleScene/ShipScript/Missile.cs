@@ -34,11 +34,11 @@ public class Missile : MonoBehaviour
     float lifeTimeCount = 0;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (this.gameObject.activeSelf)
         {
-            rigidbody.AddForce(this.transform.forward * speed, ForceMode.Force);
+            rigidbody.AddForce(this.transform.forward * speed * Time.timeScale, ForceMode.Force);
 
             //this.transform.Rotate(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized));
             rigidbody.AddTorque(Vector3.Cross(this.transform.forward, (target.position - this.transform.position).normalized) * agility, ForceMode.Force);

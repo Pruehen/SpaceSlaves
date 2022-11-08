@@ -245,7 +245,7 @@ public class LaborSceneManager : MonoBehaviour
     public GameObject stageInfoWdw;
     public TextMeshProUGUI stageInfoText;
     public TextMeshProUGUI stageStoryText;
-    public void StageInfoWdwToggle(int index)//스테이지별 테이터 윈도우 토글
+    public void StageInfoWdwToggle(int index)//스테이지별 테이터 윈도우 토글//
     {
         if (index == -1)
         {

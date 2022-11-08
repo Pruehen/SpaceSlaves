@@ -19,9 +19,9 @@ public class StageManager : MonoBehaviour
     }
 
     public static int STAGE_COUNT = 10;
-    List<StageData> stages = new List<StageData>();
+    List<StageData> stages = new List<StageData>();//스테이지 클래스들을 담고 있는 리스트
 
-    public StageData GetStageData(int index)
+    public StageData GetStageData(int index)//변수로 인덱스를 넣으면 인덱스에 맞는 스테이지를 리턴해줌 (0 = 0스테이지 (표기는 1스테이지))
     {
         return stages[index];
     }
