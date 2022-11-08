@@ -84,7 +84,6 @@ public class LaborSceneManager : MonoBehaviour
     public GameObject shipSelectWdw;
     public GameObject shipInfoWdw;
 
-
     TextMeshProUGUI[] shipQtyTmp = new TextMeshProUGUI[12]; //각 함선별 수량
     public void BuildWdwToggle(bool value)//함선 건조 버튼을 눌렀을 때 실행. bool이 true일 경우 창이 켜지고 false이면 창이 꺼짐
     {
