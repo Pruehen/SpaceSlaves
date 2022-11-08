@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipLock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Image> Lock = new List<Image>();
+
+    private void Start()
     {
-        
+        LockState();
     }
 
-    // Update is called once per frame
-    void Update()
+    void LockState()
     {
-        
+        for(int i = 0; i < Lock.Count; i++)
+        {
+            if (UpgradeManager.instance.GetFleetLevel() - 1 < i)
+            {
+                Lock[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                Lock[i].gameObject.SetActive(false);
+            }
+        }   
     }
 }
