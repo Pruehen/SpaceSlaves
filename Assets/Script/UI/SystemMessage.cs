@@ -13,6 +13,7 @@ public class SystemMessage : MonoBehaviour
     float defaultMessageCool = 1.5f;
     bool IsFade = false;
     GameObject Log;
+    public Image Fade;
 
     public void Start()
     {
@@ -82,7 +83,7 @@ public class SystemMessage : MonoBehaviour
         }    
     }
 
-    public void MessageQ(string Message)//메시지 인식하는 역할
+    public void MessageQ(string Message)//메시지 받는 역할
     {
         IsMessageIn = true;
         if (IsMessageIn == true)
@@ -91,7 +92,7 @@ public class SystemMessage : MonoBehaviour
         }
     }
 
-    public void MessageQFade(string Message)//메시지 인식하는 역할 // 몇초후 사라짐
+    public void MessageQFade(string Message)//메시지 받는 역할 // 몇초후 사라짐
     {
         IsMessageIn = true;
         IsFade = true;
@@ -103,12 +104,21 @@ public class SystemMessage : MonoBehaviour
 
     void MassageCoolManage() //사라지는 창 쿨
     {
+        Color color = Fade.color;
+
         MessageCool -= Time.deltaTime;
         if(MessageCool <= 0)
         {
             IsFade = false;
             IsMessageIn = false;
             MessageCool = defaultMessageCool;
+        }
+        else if(MessageCool <= 1)
+        {
+            logText.color = new Color(logText.color.r, logText.color.g, logText.color.b, logText.color.a - Time.deltaTime / defaultMessageCool);
+
+            color.a -= Time.deltaTime / defaultMessageCool;
+            Fade.color = color;
         }
     }
 }

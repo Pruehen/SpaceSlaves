@@ -95,6 +95,8 @@ public class CurrencyManager : MonoBehaviour
 
     void LoadCurrencyData()
     {
+        if (!File.Exists(Application.dataPath + CurrencySaveDataFileName))
+            return;
         string filePath = Application.dataPath + CurrencySaveDataFileName;
         string FromJsonData = File.ReadAllText(filePath);
         currencyData = JsonConvert.DeserializeObject<CurrencyData>(FromJsonData);

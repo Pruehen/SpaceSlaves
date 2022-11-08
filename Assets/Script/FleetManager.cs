@@ -110,7 +110,7 @@ public class FleetManager : MonoBehaviour
         return shipImages[Math.Clamp(id_, 0, shipImages.Length-1)];
     }
 
-    public string FleetSaveDataFileName = "/data_fleet_save.txt";
+    string FleetSaveDataFileName = "/data_fleet_save.txt";
 
     List<FleetSaveData> fleetDatas = new List<FleetSaveData>();//함종별 수량 데이터. id 0 = index 0
     List<ShipInfoData> staticShipDatas = new List<ShipInfoData>();//함종별 속성 데이터. 위 리스트와 1:1 대응    
@@ -141,6 +141,8 @@ public class FleetManager : MonoBehaviour
 
     void LoadFleetData()
     {
+        if (!File.Exists(Application.dataPath + FleetSaveDataFileName))
+            return;
         string filePath = Application.dataPath + FleetSaveDataFileName;
         string FromJsonData = File.ReadAllText(filePath);
         fleetDatas = JsonConvert.DeserializeObject<List<FleetSaveData>>(FromJsonData);

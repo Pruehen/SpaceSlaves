@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62004a83282ffa245820e5ae81f1e984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpinOj: {fileID: 0}
+  SpinOj: {fileID: 7381787238182721089}
   rotateSpeed: 3
 --- !u!1 &7381787236457766422
 GameObject:
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62004a83282ffa245820e5ae81f1e984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpinOj: {fileID: 0}
+  SpinOj: {fileID: 7381787237132195059}
   rotateSpeed: 3
 --- !u!1 &7381787236635983023
 GameObject:
@@ -1758,7 +1758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7381787237516245073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1820,7 +1820,18 @@ MonoBehaviour:
   - {fileID: 0}
   ArrowCount: 0
   CImage: {fileID: 7381787237582807889}
-  CoverImage: []
+  CoverImage:
+  - {fileID: 4252707723342862549}
+  - {fileID: 8311849365084709155}
+  - {fileID: 7381787237575577363}
+  - {fileID: 2343599263214337455}
+  - {fileID: 7381787238142764245}
+  - {fileID: 1897343082310544053}
+  - {fileID: 4143170617858955981}
+  - {fileID: 7381787237873742437}
+  - {fileID: 7381787238182721089}
+  - {fileID: 7381787236457766422}
+  - {fileID: 7381787237132195059}
   Tuto: {fileID: 7381787237783313933}
   UTuto: {fileID: 0}
   isTutorial: 0
@@ -2231,7 +2242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7381787237817642268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2336,9 +2347,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
-        m_MethodName: ShipSelectWdwToggle
-        m_Mode: 6
+        m_TargetAssemblyTypeName: FleetFormationUI, Assembly-CSharp
+        m_MethodName: OnConfirmShip
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2348,9 +2359,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FleetFormationUI, Assembly-CSharp
-        m_MethodName: OnConfirmShip
-        m_Mode: 1
+        m_TargetAssemblyTypeName: LaborSceneManager, Assembly-CSharp
+        m_MethodName: ShipSelectWdwToggle
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2373,12 +2384,24 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7381787237516245072}
         m_TargetAssemblyTypeName: StoryView, Assembly-CSharp
-        m_MethodName: ButtonHighlightOff
-        m_Mode: 3
+        m_MethodName: ArrowHide
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7381787237516245072}
+        m_TargetAssemblyTypeName: StoryView, Assembly-CSharp
+        m_MethodName: ButtonHighlightingOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2589,13 +2612,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7381787237516245072}
-        m_TargetAssemblyTypeName: StoryView, Assembly-CSharp
-        m_MethodName: ArrowPosConSlider
-        m_Mode: 2
+      - m_Target: {fileID: 7381787237873742432}
+        m_TargetAssemblyTypeName: TSlider, Assembly-CSharp
+        m_MethodName: ButtonOn
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 7381787237873742435}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Scrollbar, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2616,6 +2639,7 @@ MonoBehaviour:
   storyView: {fileID: 7381787237516245072}
   TScroll: {fileID: 7381787237873742435}
   OScroll: {fileID: 0}
+  FButton: {fileID: 7381787237817642269}
 --- !u!1 &7381787237903677199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4316,6 +4340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipSetBtn_F
       objectReference: {fileID: 0}
+    - target: {fileID: 4543425229445799988, guid: 6ed404c344459b34a9b9520813fdd058, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4543425229445799990, guid: 6ed404c344459b34a9b9520813fdd058, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -4324,6 +4352,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 7381787237516245072}
+    - target: {fileID: 4543425229445799990, guid: 6ed404c344459b34a9b9520813fdd058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSelectFleet
+      objectReference: {fileID: 0}
     - target: {fileID: 4543425229445799991, guid: 6ed404c344459b34a9b9520813fdd058, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4410,6 +4442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ed404c344459b34a9b9520813fdd058, type: 3}
+--- !u!1 &1897343082310544053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4543425229445799988, guid: 6ed404c344459b34a9b9520813fdd058, type: 3}
+  m_PrefabInstance: {fileID: 2691404729598085761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1897343082310544054 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4543425229445799991, guid: 6ed404c344459b34a9b9520813fdd058, type: 3}
@@ -4464,10 +4501,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
@@ -4475,7 +4520,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7381787237516245072}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7381787237516245072}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
@@ -4483,7 +4540,23 @@ PrefabInstance:
       value: ArrowPosCon
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ffWdwToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ButtonHighlighting
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StoryView, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LaborSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: StoryView, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
@@ -4492,6 +4565,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 605816957603037498, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
@@ -5178,11 +5259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -5234,7 +5315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ArrowPosCon
+      value: IsTutorialCheck
       objectReference: {fileID: 0}
     - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -5277,6 +5358,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7381787237717903009}
+    - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 7381787237717903009}
@@ -5286,7 +5371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: DialogueUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6849447096046944251, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5313,6 +5398,11 @@ PrefabInstance:
 --- !u!224 &4143170617858955980 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6849447096046944228, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
+  m_PrefabInstance: {fileID: 7381787236966393128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4143170617858955981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6849447096046944229, guid: d282b51b6a6ab61468a6b0a3505ec165, type: 3}
   m_PrefabInstance: {fileID: 7381787236966393128}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7381787237111395558
@@ -5618,7 +5708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -5627,7 +5717,7 @@ PrefabInstance:
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7381787237516245072}
+      objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -5642,7 +5732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ButtonHighlighting
+      value: BuildWdwToggle
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -5650,7 +5740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: StoryView, Assembly-CSharp
+      value: LaborSceneManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -6208,6 +6298,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6734507919617204991, guid: 21abb77c566d28c41bc8b1f87e02f31a, type: 3}
   m_PrefabInstance: {fileID: 7381787237769280043}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4252707723342862549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6734507919617204990, guid: 21abb77c566d28c41bc8b1f87e02f31a, type: 3}
+  m_PrefabInstance: {fileID: 7381787237769280043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8221932867941963149 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1471353267667988390, guid: 21abb77c566d28c41bc8b1f87e02f31a, type: 3}
@@ -6365,6 +6460,11 @@ PrefabInstance:
 --- !u!224 &2343599263214337454 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5113630106319701735, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
+  m_PrefabInstance: {fileID: 7381787237793151817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2343599263214337455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5113630106319701734, guid: ec9ca1f1ea7c7dc4da1b2197435fa211, type: 3}
   m_PrefabInstance: {fileID: 7381787237793151817}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7381787237941287535
@@ -6718,14 +6818,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7381787237516245072}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7381787237516245072}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
@@ -6733,19 +6841,35 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonHighlighting
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ArrowPosCon
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: StoryView, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: StoryView, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
       propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 606235162, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}
+      propertyPath: OnEndDial.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 605816957603037498, guid: 412e6484a8e83054bb443a3e5eb65a23, type: 3}

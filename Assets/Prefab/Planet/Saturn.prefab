@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2595597320731103765}
   - component: {fileID: 2595597320731103764}
   m_Layer: 0
-  m_Name: Saturn_NoRing
+  m_Name: Saturn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
