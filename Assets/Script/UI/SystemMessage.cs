@@ -112,6 +112,10 @@ public class SystemMessage : MonoBehaviour
             IsFade = false;
             IsMessageIn = false;
             MessageCool = defaultMessageCool;
+
+            logText.color = new Color(logText.color.r, logText.color.g, logText.color.b, 1);
+            color.a = 1;
+            Fade.color = color;
         }
         else if(MessageCool <= 1)
         {
