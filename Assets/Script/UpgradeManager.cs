@@ -151,8 +151,6 @@ public class UpgradeManager : MonoBehaviour
         return result;
     }
 
-    public GameObject SMessage;
-
     bool _DoUpgrade(int id, bool isLoading = false)
     {
         // 존재 여부 체크
@@ -179,7 +177,7 @@ public class UpgradeManager : MonoBehaviour
             {
                 int lackingVal = CurrencyManager.instance.GetLackingAmount(CURRENCY_TYPE.Debri, cost);
                 Debug.Log("돈없음 / " + lackingVal + " 필요");
-                SMessage.SendMessage("MessageQFade", lackingVal + " 의 자원이 부족합니다!");
+                GameObject.Find("SystemMessage").GetComponent<SystemMessage>().MessageQFade(string.Format(lackingVal + " 외계 파편이 부족합니다!"));
 
                 return false;
             }
