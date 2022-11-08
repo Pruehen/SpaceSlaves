@@ -78,7 +78,8 @@ public class FleetFormationUI : MonoBehaviour
             var qty = FleetManager.instance.GetFleetQtyData(idx)                // 총 보유량
                 - FleetFormationManager.instance.GetShipQty(idx)                // 현재 사용량
                 + FleetFormationManager.instance.GetOneFormationQty(formIdx);   // 당장 세팅할때 고려하지 않아도 되는 량
-            qty = Mathf.Max(qty, 0);
+            
+            qty = Mathf.Clamp(qty, 0, FleetFormationManager.instance.GetFleetMaxSize(formIdx));
 
             selAmount = (int)Mathf.Floor(qty * goQtySlider.value);
             goQtySliderTxt.text = selAmount.ToString();
