@@ -26,7 +26,8 @@ public class SceneChange : MonoBehaviour
         SoundManager.instance.clickSoundOn();
         if (!FleetFormationManager.instance.CheckValidateData())
         {
-            MessageManager.instance.PopupOk("함선이 부족하여 진행 할 수 없습니다.");
+            //MessageManager.instance.PopupOk("함선이 부족하여 진행 할 수 없습니다.");
+            Message.SendMessage("MessageQ", "함선이 부족하여 진행 할 수 없습니다.");
             return;
         }
 
