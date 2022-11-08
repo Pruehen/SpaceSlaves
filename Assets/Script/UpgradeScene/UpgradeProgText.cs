@@ -46,7 +46,7 @@ public class UpgradeProgText : MonoBehaviour
         }
         else
         {
-            priceTxt.text = "N/A";
+            priceTxt.text = "MAX";
         }
 
         // 함대 레벨은 다르게 처리
