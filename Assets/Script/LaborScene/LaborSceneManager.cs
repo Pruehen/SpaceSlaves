@@ -114,6 +114,22 @@ public class LaborSceneManager : MonoBehaviour
         else
         {
             SoundManager.instance.CloseSoundOn();
+        }   
+        
+    }
+
+    public GameObject HelpWin;
+
+    public void HelpWinToggle(bool value)//도움말 토글
+    {
+        HelpWin.SetActive(value);
+        if(value)
+        {
+            SoundManager.instance.clickSoundOn();
+        }
+        else
+        {
+            SoundManager.instance.CloseSoundOn();
         }    
     }
 
