@@ -84,20 +84,27 @@ public class ShipControl : MonoBehaviour
 
         dmgType = refData.dmgType;//무기 타입
 
-        switch (dmgType)
+        if (enemyId == -1)//아군일 시 업그레이드 적용
         {
-            case dmg_Type.particle:
-                dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.PARTICLE_DMG));//발당 공격력, 발당 n의 기초 데미지
-                break;
-            case dmg_Type.kinetic:
-                dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.KINETIC_DMG));//발당 공격력, 발당 n의 기초 데미지
-                break;
-            case dmg_Type.explosion:
-                dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.MISSILE_DMG));//발당 공격력, 발당 n의 기초 데미지
-                break;
-            default:
-                dmg = refData.dmg;//발당 공격력, 발당 n의 기초 데미지
-                break;
+            switch (dmgType)
+            {
+                case dmg_Type.particle:
+                    dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.PARTICLE_DMG));//발당 공격력, 발당 n의 기초 데미지
+                    break;
+                case dmg_Type.kinetic:
+                    dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.KINETIC_DMG));//발당 공격력, 발당 n의 기초 데미지
+                    break;
+                case dmg_Type.explosion:
+                    dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.MISSILE_DMG));//발당 공격력, 발당 n의 기초 데미지
+                    break;
+                default:
+                    dmg = refData.dmg;//발당 공격력, 발당 n의 기초 데미지
+                    break;
+            }
+        }
+        else//적군일 시 업그레이드 미적용
+        {
+            dmg = refData.dmg;
         }
 
         isTurret = refData.turretType;
@@ -107,8 +114,16 @@ public class ShipControl : MonoBehaviour
         fitRange = refData.fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
         hp = refData.hp;//체력
         maxHp = hp;
-        df = refData.df * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.DF_ENHANCE));//방어력
-        sd = refData.sd * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.SD_ENHANCE));//보호막    
+        if (enemyId == -1)
+        {
+            df = refData.df * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.DF_ENHANCE));//방어력
+            sd = refData.sd * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.SD_ENHANCE));//보호막
+        }
+        else
+        {
+            df = refData.df;
+            sd = refData.sd;
+        }
         maxSd = sd;
         defaultspeed = refData.defaultspeed;//기본 이동 속도
         agility = refData.agility;//선회 속도   
