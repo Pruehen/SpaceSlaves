@@ -46,7 +46,7 @@ public class UpgradeProgText : MonoBehaviour
         }
         else
         {
-            priceTxt.text = "N/A";
+            priceTxt.text = "MAX LV";
         }
 
         // 함대 레벨은 다르게 처리
@@ -55,11 +55,24 @@ public class UpgradeProgText : MonoBehaviour
             case UPGRADE_TYPE.NONE:
                 infoTxt.text = "WTF is this type of value doing here?";
                 break;
+            case UPGRADE_TYPE.SCV_SPEED_UP:
+                infoTxt.text = string.Format("{0} lv / +{1}%", lv + 1, (1 + total*0.2f) * 100);
+                break;
+            case UPGRADE_TYPE.SCV_AMOUNT_UP:
+                infoTxt.text = string.Format("{0} lv / +{1}", lv + 1, total);
+                break;
+            case UPGRADE_TYPE.COLLECTOR_CAPA:
+                infoTxt.text = string.Format("{0} lv / +{1}", lv + 1, total);
+                break;
             case UPGRADE_TYPE.FLEET:
                 infoTxt.text = string.Format("{0} lv", lv + 1);
                 break;
+            case UPGRADE_TYPE.FLEET_CAPA:
+                infoTxt.text = string.Format("{0} lv / +{1}", lv + 1, total);
+                break;
+
             default:
-                infoTxt.text = string.Format("{0} lv / 총합 {1} + ", lv, total);
+                infoTxt.text = string.Format("{0} lv / +{1}% ", lv, (1 + total) * 100);
                 break;
         }
 
