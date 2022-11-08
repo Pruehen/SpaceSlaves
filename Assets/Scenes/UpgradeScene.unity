@@ -3141,10 +3141,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136862272}
     m_Modifications:
-    - target: {fileID: 1360280915, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
-      propertyPath: m_Name
-      value: Window
-      objectReference: {fileID: 0}
     - target: {fileID: 4047415295642555223, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
       propertyPath: Fade
       value: 
