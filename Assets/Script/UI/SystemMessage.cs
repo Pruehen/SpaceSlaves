@@ -112,6 +112,10 @@ public class SystemMessage : MonoBehaviour
             IsFade = false;
             IsMessageIn = false;
             MessageCool = defaultMessageCool;
+
+            // 꺼질때는 알파값 원상 복귀가 필요하다.
+            Fade.color = Color.white;
+            logText.color = Color.white;
         }
         else if(MessageCool <= 1)
         {

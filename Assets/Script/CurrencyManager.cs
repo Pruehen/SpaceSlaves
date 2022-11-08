@@ -91,7 +91,18 @@ public class CurrencyManager : MonoBehaviour
             return true;
         }
         return false;
-    }    
+    }
+
+    public int GetLackingAmount(CURRENCY_TYPE type, int amount)
+    {
+        ref int currency = ref GetCurrency(type);
+        if (currency >= amount)
+        {
+            return 0;
+        }
+
+        return amount - currency;
+    }
 
     void LoadCurrencyData()
     {
