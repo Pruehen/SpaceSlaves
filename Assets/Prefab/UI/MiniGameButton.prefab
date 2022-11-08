@@ -381,6 +381,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuddenMiniGame
       objectReference: {fileID: 0}
+    - target: {fileID: 4456748898548804071, guid: 414799001fbc79549b7b129863e214e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456748898714888976, guid: 414799001fbc79549b7b129863e214e5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4456748899832169167, guid: 414799001fbc79549b7b129863e214e5, type: 3}
       propertyPath: m_RootOrder
       value: 0
