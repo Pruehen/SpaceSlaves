@@ -57,7 +57,7 @@ public class LaborSceneManager : MonoBehaviour
 
     void RefreshStageNameBtns()
     {
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 10; i++)
         {
             stageBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().text = StageManager.instance.GetStageData(i).stageName;
         }
