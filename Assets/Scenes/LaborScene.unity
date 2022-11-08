@@ -11979,7 +11979,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -289.40002, y: 0}
-  m_SizeDelta: {x: 100, y: 500}
+  m_SizeDelta: {x: 100, y: 1895.4543}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &877985284
 MonoBehaviour:
@@ -22412,7 +22412,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2075078042}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.6130031
+  m_Size: 0.29470268
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24555,9 +24555,27 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1487191642}
-    - target: {fileID: 5336898010990037988, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HelpWinToggle
+    - target: {fileID: 5336898011144406644, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_text
+      value: "\uD568\uC120 \uAD6C\uB9E4\uC5D0 \uC4F0\uC778\uB2E4                \uC5C5\uADF8\uB808\uC774\uB4DC\uC5D0
+        \uC4F0\uC778\uB2E4.                   \uC774 \uB808\uBCA8\uC5D0 \uB530\uB77C
+        \uC0B4 \uC218 \uC788\uB294 \uD568\uC120\uC758 \uC885\uB958\uAC00 \uACB0\uC815\uB41C\uB2E4.\t\t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898011144406644, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_margin.z
+      value: -1355.5315
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898011276826123, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898011480846986, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898011507799105, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5336898012563021380, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_Pivot.x
@@ -24646,6 +24664,39 @@ PrefabInstance:
     - target: {fileID: 5336898012563021383, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_Name
       value: HelpWin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898012563021383, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898012634410404, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898012664896202, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_text
+      value: "\uBBF8\uB124\uB784                         \uC678\uACC4\uC790\uC6D0                          
+        \uC870\uC120\uC18C \uB808\uBCA8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898012664896202, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_margin.z
+      value: -1114.0115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898012752558378, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336898012903568772, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477985489617672515, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477985489617672515, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
@@ -28432,7 +28483,7 @@ RectTransform:
   m_Father: {fileID: 1746434049}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.38699692}
+  m_AnchorMin: {x: 0, y: 0.70529735}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
