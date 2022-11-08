@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class AstroBuilder : MonoBehaviour
 {
-    public List<GameObject> planetSystems;
+    List<GameObject> planetSystems;
     public Light sunLight;
 
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            planetSystems.Add(this.transform.GetChild(i).gameObject);
+        }
 
         planetSystems[StageManager.instance.selectedStage].SetActive(true);
 

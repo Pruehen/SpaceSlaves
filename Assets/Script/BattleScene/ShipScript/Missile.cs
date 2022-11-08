@@ -8,11 +8,11 @@ public class Missile : MonoBehaviour
     Transform target;
     public void Init(float dmg, Transform target, Vector3 pos, Quaternion rot)
     {
+        gameObject.SetActive(true);
         this.dmg = dmg;
         this.target = target;
         this.transform.position = pos;
         this.transform.rotation = rot;
-        gameObject.SetActive(true);
     }
     public void NewTargetSet(Transform target)
     {

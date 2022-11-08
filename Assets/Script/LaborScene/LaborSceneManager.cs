@@ -281,6 +281,7 @@ public class LaborSceneManager : MonoBehaviour
         else
         {
             Debug.Log("광물이 더 필요합니다");
+            Smessage.SendMessage("MessageQFade","광물이 더 필요합니다");
             SoundManager.instance.clickSoundOn();
         }
     }

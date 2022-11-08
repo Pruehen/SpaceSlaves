@@ -15,6 +15,7 @@ public class CameraControl : MonoBehaviour
     float WheelSpeed = 10f;
     public GameObject Cam;
     private float xRotateMove;
+    private float yRotateMove;
     Vector3 defaultCamPos;
 
 
@@ -101,14 +102,14 @@ public class CameraControl : MonoBehaviour
     void ZoomIN_Ont(Vector3 Pos)
     {
         Vector3 move = Vector3.zero;
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)//ÈÙ³»¸±‹š ÁÜÀÎ
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && scrollbar.value < 1)//ÈÙ³»¸±‹š ÁÜÀÎ
         {
             scrollbar.value += Time.deltaTime * WheelSpeed;
             this.transform.position += transform.forward * Time.deltaTime * zoomPower;
             //transform.Rotate(transform.right, -0.5f);
             //Camera.main.fieldOfView += WheelSpeed; // fov·Î ÀÌµ¿
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0)//ÈÙ´ç±æ‹š ÁÜ¾Æ¿ô
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0 && scrollbar.value > 0)//ÈÙ´ç±æ‹š ÁÜ¾Æ¿ô
         {
             scrollbar.value -= Time.deltaTime * WheelSpeed;
             this.transform.position -= transform.forward * Time.deltaTime * zoomPower;
@@ -164,10 +165,12 @@ public class CameraControl : MonoBehaviour
             }
 
             xRotateMove = Input.GetAxis("Mouse X") * Time.deltaTime * dragSpeed;
+            yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * dragSpeed;
             //yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * dragSpeed;
 
             //transform.RotateAround(Pos, Vector3.right, -yRotateMove);
             transform.RotateAround(Pos, Vector3.up, xRotateMove);
+            transform.RotateAround(Pos, this.transform.right, -yRotateMove);
 
             //transform.LookAt(Pos);
         }
@@ -202,6 +205,6 @@ public class CameraControl : MonoBehaviour
         float yPos = this.transform.position.y;
 
         rb.AddTorque(this.transform.forward * -this.transform.right.y * 5, ForceMode.Force);
-        rb.AddTorque(this.transform.right * (yPos * 0.25f + this.transform.forward.y) * 5, ForceMode.Force);
+        //rb.AddTorque(this.transform.right * (yPos * 0.25f + this.transform.forward.y) * 5, ForceMode.Force);
     }
 }
