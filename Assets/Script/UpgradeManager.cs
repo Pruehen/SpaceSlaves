@@ -10,12 +10,12 @@ using UnityEngine.Rendering;
 public enum UPGRADE_TYPE 
 {
     // 변경하지 말것
-    NONE = 0,//null
-    SCV_SPEED_UP =1,//채굴 속도 강화
-    SCV_AMOUNT_UP = 2,//채굴량 강화
-    COLLECTOR_CAPA = 3,//자원 수집량 강화
-    FLEET = 4,//조선소 레벨 강화
-    FLEET_CAPA = 5,//정박소 레벨 강화
+    NONE = 0,
+    SCV_SPEED_UP =1,
+    SCV_AMOUNT_UP = 2,
+    COLLECTOR_CAPA = 3,
+    FLEET = 4,
+    FLEET_CAPA = 5,
     PARTICLE_DMG = 6,//입자 무기 데미지 강화
     KINETIC_DMG = 7,//실탄 무기 데미지 강화
     MISSILE_DMG = 8,//미사일 무기 데미지 강화

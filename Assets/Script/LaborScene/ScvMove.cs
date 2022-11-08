@@ -18,7 +18,7 @@ public class ScvMove : MonoBehaviour
         DirSet();
     }
 
-    float moveSpeed = 5f;
+    float moveSpeed = 5.4f;
     public int minAmount = 5;
 
     // Update is called once per frame
