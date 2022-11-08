@@ -86,7 +86,7 @@ public class Turret : MonoBehaviour
         laser.startWidth = laserWidth;
         laser.endWidth = laserWidth;
 
-        laserWidth *= 0.98f;
+        laserWidth *= 0.95f;
     }
 
     void Attack(ShipControl target)
