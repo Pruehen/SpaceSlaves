@@ -262,6 +262,8 @@ public class FleetFormationManager : MonoBehaviour
 
     void LoadFormationData()
     {
+        if (!File.Exists(Application.dataPath + FormationSaveDataFileName))
+            return;
         string filePath = Application.dataPath + FormationSaveDataFileName;
         string FromJsonData = File.ReadAllText(filePath);
         formations = JsonConvert.DeserializeObject<Dictionary<int, FleetFormation>>(FromJsonData);
