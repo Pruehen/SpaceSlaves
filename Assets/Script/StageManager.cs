@@ -18,7 +18,7 @@ public class StageManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public static int STAGE_COUNT = 20;
+    public static int STAGE_COUNT = 10;
     List<StageData> stages = new List<StageData>();
 
     public StageData GetStageData(int index)
@@ -63,17 +63,7 @@ public class StageManager : MonoBehaviour
         "스테이지 7",
         "스테이지 8",
         "스테이지 9",
-        "스테이지 10",
-        "스테이지 11",
-        "스테이지 12",
-        "스테이지 13",
-        "스테이지 14",
-        "스테이지 15",
-        "스테이지 16",
-        "스테이지 17",
-        "스테이지 18",
-        "스테이지 19",
-        "스테이지 20"
+        "스테이지 10"
     };
 
     string[] stageInfoArray =
@@ -87,17 +77,7 @@ public class StageManager : MonoBehaviour
         "스테이지 7 에 대한 설명을 적으시오",
         "스테이지 8 에 대한 설명을 적으시오",
         "스테이지 9 에 대한 설명을 적으시오",
-        "스테이지 10 에 대한 설명을 적으시오",
-        "스테이지 11 에 대한 설명을 적으시오",
-        "스테이지 12 에 대한 설명을 적으시오",
-        "스테이지 13 에 대한 설명을 적으시오",
-        "스테이지 14 에 대한 설명을 적으시오",
-        "스테이지 15 에 대한 설명을 적으시오",
-        "스테이지 16 에 대한 설명을 적으시오",
-        "스테이지 17 에 대한 설명을 적으시오",
-        "스테이지 18 에 대한 설명을 적으시오",
-        "스테이지 19 에 대한 설명을 적으시오",
-        "스테이지 20 에 대한 설명을 적으시오"
+        "스테이지 10 에 대한 설명을 적으시오"
     };
 
     public string GetStageStoryString(int stageNum)
