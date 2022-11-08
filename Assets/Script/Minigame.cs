@@ -22,9 +22,10 @@ public class Minigame : MonoBehaviour
     public int attempts = 3;
 
     public Image goObSti_Blocker;
-
     public int rewardM_Amount = 1000;
     public int rewardD_Amount = 1000;
+
+    public TimeGatedObject timegate;
 
     // the winner is...
     bool isGameOver = false;
@@ -61,7 +62,7 @@ public class Minigame : MonoBehaviour
     void PlaySpinner()
     { 
         isSpinActive = true;
-    }
+    }   
 
     void StopSpinner()
     {
@@ -78,22 +79,30 @@ public class Minigame : MonoBehaviour
 
     void OnSuccesse()
     {
-        isGameOver = true;
-        RefreshUI();
-        ResultPop.SetActive(true);
+        OnResult();        
         ResultWIN.SetActive(true);
         rewardPoptxt.text = string.Format("±§π∞{0} / ¿‹«ÿ{1}", rewardM_Amount, rewardD_Amount);
-
         Invoke("Reward", 2.50f);
     }
 
     void OnFailed()
     {
-        isGameOver = true;
-        RefreshUI();
-        ResultPop.SetActive(true);
+        OnResult();
         ResultFAIL.SetActive(true);
         Destroy(btn, 2.50f); 
+    }
+    void OnResult()
+    {
+        if(timegate)
+            timegate.CheckGate();
+
+        isGameOver = true;
+
+        RefreshUI();
+        ResultPop.SetActive(true);
+
+        ResultWIN.SetActive(false);
+        ResultFAIL.SetActive(false);
     }
 
     void RefreshUI()

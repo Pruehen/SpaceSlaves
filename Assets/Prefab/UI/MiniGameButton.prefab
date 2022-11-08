@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 5839907266938808779}
   - component: {fileID: 5839907266938808778}
   - component: {fileID: 5839907266938808773}
+  - component: {fileID: 357196670644649895}
   m_Layer: 5
   m_Name: MiniGameButton
   m_TagString: Untagged
@@ -270,6 +271,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &357196670644649895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839907266938808775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c66f225203c034a83ad6ce3689e89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _save_key: Bonusgame
+  gateTime: 600
 --- !u!1001 &7841340026207260249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,6 +296,10 @@ PrefabInstance:
       propertyPath: btn
       value: 
       objectReference: {fileID: 5839907266938808775}
+    - target: {fileID: 4456748898548804069, guid: 414799001fbc79549b7b129863e214e5, type: 3}
+      propertyPath: timegate
+      value: 
+      objectReference: {fileID: 357196670644649895}
     - target: {fileID: 4456748898548804070, guid: 414799001fbc79549b7b129863e214e5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
