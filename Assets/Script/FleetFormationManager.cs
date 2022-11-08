@@ -167,6 +167,17 @@ public class FleetFormationManager : MonoBehaviour
         return formations[formIdx].size;
     }
 
+    public int GetOneFormationQty(int formId)
+    {
+        foreach (var item in formations)
+        {
+            if (item.Key == formId)
+                return item.Value.amount;
+        }
+
+        return 0;
+    }
+
     public int GetShipQty(int shipId)
     {
         int cnt = 0;
