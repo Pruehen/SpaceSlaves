@@ -1822,7 +1822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &288028848
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4082,6 +4082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SystemMessageUI: {fileID: 357353456}
   logText: {fileID: 368320329}
+  Fade: {fileID: 0}
 --- !u!222 &773876564
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9422,6 +9423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SystemMessageUI: {fileID: 163059807}
   logText: {fileID: 1543094093}
+  Fade: {fileID: 0}
 --- !u!222 &1796527610
 CanvasRenderer:
   m_ObjectHideFlags: 0
