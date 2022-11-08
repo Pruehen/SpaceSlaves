@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Minigame : MonoBehaviour
 {
@@ -20,8 +21,10 @@ public class Minigame : MonoBehaviour
 
     public int attempts = 3;
 
-    int rewardM_Amount = 1000;
-    int rewardD_Amount = 1000;
+    public Image goObSti_Blocker;
+
+    public int rewardM_Amount = 1000;
+    public int rewardD_Amount = 1000;
 
     // the winner is...
     bool isGameOver = false;
@@ -100,6 +103,15 @@ public class Minigame : MonoBehaviour
 
     void GameStart()
     {
+        // init
+        goObSti_Blocker.fillAmount = Random.Range(0.2f, 0.4f);
+        goObSti_Blocker.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+
+        var spinerStartVal = Quaternion.Euler(0, 0, Random.Range(0, 360));
+        SpinOne.transform.rotation = spinerStartVal;
+        SpinTwo.transform.rotation = spinerStartVal;
+
+
         isGameOver = false;
         isSpinActive = false;
         isSuccesseAble = false;
@@ -119,10 +131,16 @@ public class Minigame : MonoBehaviour
         isSuccesseAble = dist < minDist;
 
         if (isSpinActive)
-        { 
+        {
             float spinSpeed = 200;
             SpinOne.transform.Rotate(Vector3.back, spinSpeed * Time.deltaTime);
-            SpinTwo.transform.Rotate(Vector3.back, -spinSpeed * Time.deltaTime );
+            SpinTwo.transform.Rotate(Vector3.back, -spinSpeed * Time.deltaTime);
+
+            goObSti_Blocker.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            goObSti_Blocker.color = new Color(1, 1, 1, 0.5f);
         }
     }
 }
