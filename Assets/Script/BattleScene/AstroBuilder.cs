@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AstroBuilder : MonoBehaviour
 {
-    List<GameObject> planetSystems;
+    public List<GameObject> planetSystems;
     public Light sunLight;
 
     // Start is called before the first frame update
