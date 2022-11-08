@@ -81,8 +81,25 @@ public class ShipControl : MonoBehaviour
         shipName = refData.shipName;//함선 이름 (함급)
         shipClass = refData.shipClass;//함선 종류 (함종)
         cost = refData.cost;//함선 생산 가격
-        dmg = refData.dmg;//발당 공격력, 발당 n의 기초 데미지
+
         dmgType = refData.dmgType;//무기 타입
+
+        switch (dmgType)
+        {
+            case dmg_Type.particle:
+                dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.PARTICLE_DMG));//발당 공격력, 발당 n의 기초 데미지
+                break;
+            case dmg_Type.kinetic:
+                dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.KINETIC_DMG));//발당 공격력, 발당 n의 기초 데미지
+                break;
+            case dmg_Type.explosion:
+                dmg = refData.dmg * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.MISSILE_DMG));//발당 공격력, 발당 n의 기초 데미지
+                break;
+            default:
+                dmg = refData.dmg;//발당 공격력, 발당 n의 기초 데미지
+                break;
+        }
+
         isTurret = refData.turretType;
         fireDelay = refData.fireDelay;//공격 속도, n초에 1회 공격
         maxRange = refData.maxRange;//최대 사거리
@@ -90,8 +107,8 @@ public class ShipControl : MonoBehaviour
         fitRange = refData.fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
         hp = refData.hp;//체력
         maxHp = hp;
-        df = refData.df;//방어력
-        sd = refData.sd;//보호막    
+        df = refData.df * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.DF_ENHANCE));//방어력
+        sd = refData.sd * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.SD_ENHANCE));//보호막    
         maxSd = sd;
         defaultspeed = refData.defaultspeed;//기본 이동 속도
         agility = refData.agility;//선회 속도   
