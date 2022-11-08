@@ -130,9 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619d1baba17900341987206159df4b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 2
   agility: 20
-  lifeTime: 10
+  lifeTime: 20
   Effect: {fileID: 0}
 --- !u!198 &3498485040014963336
 ParticleSystem:
