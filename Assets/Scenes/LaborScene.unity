@@ -21745,7 +21745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 874, y: 917}
+  m_AnchoredPosition: {x: 880, y: 920}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539371961
@@ -24551,19 +24551,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241888341}
     m_Modifications:
+    - target: {fileID: 97124925, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098615456, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5336898010990037988, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1487191642}
-    - target: {fileID: 5336898011144406644, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
-      propertyPath: m_text
-      value: "\uD568\uC120 \uAD6C\uB9E4\uC5D0 \uC4F0\uC778\uB2E4                \uC5C5\uADF8\uB808\uC774\uB4DC\uC5D0
-        \uC4F0\uC778\uB2E4.                   \uC774 \uB808\uBCA8\uC5D0 \uB530\uB77C
-        \uC0B4 \uC218 \uC788\uB294 \uD568\uC120\uC758 \uC885\uB958\uAC00 \uACB0\uC815\uB41C\uB2E4.\t\t"
+    - target: {fileID: 5336898010990037991, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -30
       objectReference: {fileID: 0}
-    - target: {fileID: 5336898011144406644, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
-      propertyPath: m_margin.z
-      value: -1355.5315
+    - target: {fileID: 5336898010990037991, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 5336898011276826123, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_RootOrder
@@ -24673,15 +24679,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5336898012664896202, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
-      propertyPath: m_text
-      value: "\uBBF8\uB124\uB784                         \uC678\uACC4\uC790\uC6D0                          
-        \uC870\uC120\uC18C \uB808\uBCA8"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5336898012664896202, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
-      propertyPath: m_margin.z
-      value: -1114.0115
-      objectReference: {fileID: 0}
     - target: {fileID: 5336898012752558378, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -24692,11 +24689,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7477985489617672515, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 388.63
       objectReference: {fileID: 0}
     - target: {fileID: 7477985489617672515, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 82.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
