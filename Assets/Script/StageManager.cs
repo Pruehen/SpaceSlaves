@@ -111,6 +111,13 @@ public class StageManager : MonoBehaviour
                 stages[i].isClear = stageClearData[i];//저장된 클리어 여부 데이터를 새로 생성된 스테이지 데이터에 입력
             }
         }
+        else
+        {
+            for (int i = 0; i < STAGE_COUNT; i++)//데이터 로딩 실패시
+            {
+                stageClearData.Add(false);//새로 생성
+            }
+        }
         SaveStageData();
 
     }
