@@ -146,11 +146,6 @@ public class MineralCollector : MonoBehaviour
         goRemainTime.SetMax(now >= maxRewardTime);
         goRemainTime.UpdateTimer( Math.Min(now - recentCollectedTime, maxtick));
     }
-    private void OnDestroy()
-    {
-        SaveData();
-    }
-
     private void OnApplicationQuit()
     {
         SaveData();
