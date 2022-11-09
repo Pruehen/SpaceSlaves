@@ -23,6 +23,7 @@ public class StageManager : MonoBehaviour
 
     public static int STAGE_COUNT = 10;
     List<StageData> stages = new List<StageData>();//스테이지 클래스들을 담고 있는 리스트
+    List<bool> stageClearData = new List<bool>();
 
     public StageData GetStageData(int index)//변수로 인덱스를 넣으면 인덱스에 맞는 스테이지를 리턴해줌 (0 = 0스테이지 (표기는 1스테이지))
     {
@@ -94,17 +95,24 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
-        if (!LoadStageData())//데이터 로딩 시도
+        for (int i = 0; i < STAGE_COUNT; i++)
         {
+            StageData data = new StageData();
+            data.SetStageData(i, stageNameArray[i], stageEnemyPrfs[i]);
+
+            stages.Add(data);
+        }
+
+        if (LoadStageData())//데이터 로딩 시도
+        {
+            //데이터 로딩 성공시
             for (int i = 0; i < STAGE_COUNT; i++)
             {
-                StageData data = new StageData();
-                data.SetStageData(i, stageNameArray[i], stageEnemyPrfs[i]);
-
-                stages.Add(data);
+                stages[i].isClear = stageClearData[i];//저장된 클리어 여부 데이터를 새로 생성된 스테이지 데이터에 입력
             }
-            SaveStageData();
         }
+        SaveStageData();
+
     }
 
     string StageSaveDataFileName = "/data_stage_save.txt";
@@ -115,7 +123,7 @@ public class StageManager : MonoBehaviour
             return false;
         string filePath = Application.dataPath + StageSaveDataFileName;
         string FromJsonData = File.ReadAllText(filePath);
-        stages = JsonConvert.DeserializeObject<List<StageData>>(FromJsonData);
+        stageClearData = JsonConvert.DeserializeObject<List<bool>>(FromJsonData);
 
         Debug.Log("스테이지 데이터 불러오기 성공");
         return true;
@@ -123,7 +131,12 @@ public class StageManager : MonoBehaviour
 
     public void SaveStageData()
     {
-        string ToJsonData = JsonConvert.SerializeObject(stages);
+        for (int i = 0; i < STAGE_COUNT; i++)
+        {
+            stageClearData[i] = stages[i].isClear;//스테이지 데이터의 클리어 여부 데이터를 저장할 데이터에 입력
+        }
+
+        string ToJsonData = JsonConvert.SerializeObject(stageClearData);
         string filePath = Application.dataPath + StageSaveDataFileName;
         File.WriteAllText(filePath, ToJsonData);
 
