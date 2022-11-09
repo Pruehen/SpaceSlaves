@@ -115,7 +115,7 @@ public class StageManager : MonoBehaviour
         {
             for (int i = 0; i < STAGE_COUNT; i++)//데이터 로딩 실패시
             {
-                stageClearData.Add(false);//새로 생성
+                stageClearData[i] = false;//새로 초기화
             }
         }
         SaveStageData();

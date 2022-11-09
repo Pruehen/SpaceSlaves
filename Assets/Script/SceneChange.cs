@@ -7,14 +7,6 @@ public class SceneChange : MonoBehaviour
 {
     public GameObject Message;
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            ExitButton();
-        }
-    }
-
     public void GoLaborScene()
     {
         Time.timeScale = 1;
@@ -41,23 +33,4 @@ public class SceneChange : MonoBehaviour
         SoundManager.instance.clickSoundOn();
         SceneManager.LoadScene("UpgradeScene");
     }
-
-    public void ExitButton()
-    {        
-        //Message.SendMessage("MessageQ","종료하시겠습니까?");
-        Application.Quit();
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
-    public void GoTitle()
-    {
-        Time.timeScale = 1;
-        SoundManager.instance.clickSoundOn();
-        SceneManager.LoadScene("TitleScene");
-    }
-
 }
