@@ -70,7 +70,7 @@ public class BattleSceneManager : MonoBehaviour
         int getCur = (int)(id * shipClass * shipClass * shipClass) + 2;
 
         collectedDebri += getCur * 3;
-        collectedMin += getCur * 10;
+        collectedMin += getCur;
     }
 
     public void GameEnd(bool isWin)
