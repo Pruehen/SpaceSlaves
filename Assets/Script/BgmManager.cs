@@ -22,6 +22,7 @@ public class BgmManager : MonoBehaviour
         for (int i = 0; i < BgmTransform.childCount; i++)
         {
             audioSources.Add(BgmTransform.GetChild(i).gameObject.GetComponent<AudioSource>());
+            bgmInitVols.Add(audioSources[i].volume);
         }
         BgmRandomPlay();
 
@@ -31,6 +32,7 @@ public class BgmManager : MonoBehaviour
 
     public Transform BgmTransform;
     List<AudioSource> audioSources = new List<AudioSource>();
+    List<float> bgmInitVols = new List<float>();
 
     bool isPlay = false;
     int tempPlayIndex = 0;
@@ -49,6 +51,15 @@ public class BgmManager : MonoBehaviour
         if (!audioSources[tempPlayIndex].isPlaying)
         {
             BgmRandomPlay();
+        }
+    }
+
+    public void BgmSettingSet()
+    {
+        float bgmValue = GameManager.instance.bgmValue;
+        for(int i = 0; i < audioSources.Count; i++)
+        {
+            audioSources[i].volume = bgmInitVols[i] * bgmValue;
         }
     }
 }

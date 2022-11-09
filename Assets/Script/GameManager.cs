@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,5 +28,21 @@ public class GameManager : MonoBehaviour
 
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+
+    public void GameExit()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+    }
+
+    public float bgmValue;
+    public float soundValue;
+    public float difficulty;
+
+    public void SettingApplication()
+    {
+        SoundManager.instance.SoundSettingSet();
+        BgmManager.instance.BgmSettingSet();
     }
 }

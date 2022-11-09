@@ -16,8 +16,24 @@ public class SoundManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this);
     }
+    private void Start()
+    {
+        clickSoundVol_Init = clickSound.volume;
+        closeSoundVol_Init = closeSound.volume;
+        shipBuildSoundVol_Init = shipBuildSound.volume;
+    }
 
     public AudioSource clickSound, closeSound, shipBuildSound;
+    float clickSoundVol_Init, closeSoundVol_Init, shipBuildSoundVol_Init;    
+
+    public void SoundSettingSet()
+    {
+        float soundValue = GameManager.instance.soundValue;
+        clickSound.volume = clickSoundVol_Init * soundValue;
+        closeSound.volume = closeSoundVol_Init * soundValue;
+        shipBuildSoundVol_Init = shipBuildSoundVol_Init * soundValue;
+    }
+
     public void clickSoundOn()
     {
         clickSound.Play();
@@ -29,17 +45,5 @@ public class SoundManager : MonoBehaviour
     public void ShipBuildSoundOn()
     {
         shipBuildSound.Play();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
