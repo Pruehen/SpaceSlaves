@@ -6,8 +6,8 @@ public class BackGroundStory : MonoBehaviour
 {
     public DialogueUI DUI;
     bool isSkip = false;
-    float MCooltime = 3f;
-    float DefaultMCooltime = 3f;
+    float MCooltime = 2f;
+    float DefaultMCooltime = 2f;
 
     void Start()
     {
