@@ -87,3 +87,6 @@ crashlytics-build.properties
 /Assets/data_fleet_save.txt
 /Assets/data_time_gate.txt
 /Assets/data_time_gate.txt.meta
+/Assets/data_stage_save.txt
+/Assets/data_stage_save.txt.meta
+/Assets/data_fleet_save.txt.meta
