@@ -13,6 +13,7 @@ public class AstroBuilder : MonoBehaviour
         for (int i = 0; i < this.transform.childCount; i++)
         {
             planetSystems.Add(this.transform.GetChild(i).gameObject);
+            planetSystems[i].gameObject.SetActive(false);
         }
 
         planetSystems[StageManager.instance.selectedStage].SetActive(true);
