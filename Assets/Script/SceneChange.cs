@@ -24,6 +24,7 @@ public class SceneChange : MonoBehaviour
         }
 
         Time.timeScale = 1;
+        LaborSceneManager.instance.SettingApplication();
         SceneManager.LoadScene("DefenceScene");
     }
 
@@ -31,6 +32,7 @@ public class SceneChange : MonoBehaviour
     {
         Time.timeScale = 1;
         SoundManager.instance.clickSoundOn();
+        LaborSceneManager.instance.SettingApplication();
         SceneManager.LoadScene("UpgradeScene");
     }
 }

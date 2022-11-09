@@ -319,6 +319,37 @@ public class LaborSceneManager : MonoBehaviour
         }
     }
 
+    public GameObject SettingWdw;
+    public void SettingWdwToggle(bool value)
+    {
+        SettingWdw.SetActive(value);
+        if(value)
+        {
+            SoundManager.instance.clickSoundOn();
+        }
+        else
+        {
+            SettingApplication();
+            SoundManager.instance.CloseSoundOn();
+        }
+    }
+
+    public Slider bgmSlider;
+    public Slider soundSlider;
+    public Slider difficultySlider;
+    public void DifficultyReset()
+    {
+        SoundManager.instance.clickSoundOn();
+        difficultySlider.value = 1;
+    }
+    public void SettingApplication()
+    {
+        GameManager.instance.bgmValue = bgmSlider.value;
+        GameManager.instance.soundValue = soundSlider.value;
+        GameManager.instance.difficulty = difficultySlider.value;
+        GameManager.instance.SettingApplication();
+    }
+
     public void SmMoney()
     {
         CurrencyManager.instance.AddCurrency(CURRENCY_TYPE.Mineral, 1000000);

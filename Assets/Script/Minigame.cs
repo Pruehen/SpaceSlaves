@@ -27,10 +27,18 @@ public class Minigame : MonoBehaviour
 
     public TimeGatedObject timegate;
 
+    AudioSource audi;
+    public AudioClip seWrong;
+    public AudioClip seDingdong;
+
     // the winner is...
     bool isGameOver = false;
     bool isSuccesseAble = false;
     bool isSpinActive = false;
+    private void Start()
+    {
+        audi = GetComponent<AudioSource>();
+    }
 
     private void OnEnable()
     {
@@ -79,6 +87,7 @@ public class Minigame : MonoBehaviour
 
     void OnSuccesse()
     {
+        audi.PlayOneShot(seDingdong);
         OnResult();        
         ResultWIN.SetActive(true);
         rewardPoptxt.text = string.Format("±§π∞{0} / ¿‹«ÿ{1}", rewardM_Amount, rewardD_Amount);
@@ -87,6 +96,7 @@ public class Minigame : MonoBehaviour
 
     void OnFailed()
     {
+        audi.PlayOneShot(seWrong);
         OnResult();
         ResultFAIL.SetActive(true);
         Destroy(btn, 2.50f); 

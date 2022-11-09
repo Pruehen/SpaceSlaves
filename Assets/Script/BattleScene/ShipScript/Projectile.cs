@@ -57,6 +57,7 @@ public class Projectile : MonoBehaviour
         hitEffect.transform.position = position;
         hitEffect.transform.rotation = this.transform.rotation;
         hitEffect.GetComponent<ParticleSystem>().Play();
+        hitEffect.GetComponent<AudioSource>().volume *= GameManager.instance.soundValue;
         hitEffect.GetComponent<AudioSource>().Play();
         hitEffect.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
         hitEffect.transform.SetParent(null);
