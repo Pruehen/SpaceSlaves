@@ -120,7 +120,7 @@ public class MineralCollector : MonoBehaviour
         InvokeRepeating("RefreshTimer", 0, 1);
         InvokeRepeating("RefreshReward", 0, 1);
     }
-    
+
     void RefreshReward()
     {
         var now = DateTime.Now.Ticks;
@@ -144,8 +144,22 @@ public class MineralCollector : MonoBehaviour
         long maxtick = new TimeSpan(0, 0, MAX_TIME).Ticks;
         goRemainTime.SetAvail(now >= minRequiredTime);
         goRemainTime.SetMax(now >= maxRewardTime);
-        goRemainTime.UpdateTimer( Math.Min(now - recentCollectedTime, maxtick));
+        goRemainTime.UpdateTimer(Math.Min(now - recentCollectedTime, maxtick));
     }
+
+    public void TestSetToMaxTime() // 강제로 MAX 보상을 받을수있는 상태로 만든다.
+    {
+        long mintick = new TimeSpan(0, 0, MIN_TIME).Ticks;
+        long maxtick = new TimeSpan(0, 0, MAX_TIME).Ticks;
+
+        var now = DateTime.Now.Ticks - maxtick;
+
+        recentCollectedTime = now;
+        minRequiredTime = recentCollectedTime + mintick;
+        maxRewardTime = recentCollectedTime + maxtick;
+    }
+
+
     private void OnApplicationQuit()
     {
         SaveData();
