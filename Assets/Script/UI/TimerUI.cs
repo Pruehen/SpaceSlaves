@@ -8,7 +8,13 @@ using TMPro;
 public class TimerUI : MonoBehaviour
 {
     public TMP_Text timerTxt;
-    public GameObject goIsMax;
+    public TextMeshProUGUI MaxText;
+    public Image goIsMax;
+
+    float FadeCool = 1f;
+    float defaultFadeCool = 1f;
+
+    bool isFade;
 
     // Update is called once per frame
     public void UpdateTimer(long ticks)
@@ -23,6 +29,45 @@ public class TimerUI : MonoBehaviour
 
     public void SetMax(bool isActive)
     {
-        goIsMax.SetActive(isActive);
+        goIsMax.gameObject.SetActive(isActive);
+
+        isFade = isActive;
+    }
+
+    private void Update()
+    {
+        MaxEffect();
+    }
+
+    void MaxEffect()
+    {
+        Color color = goIsMax.color;
+
+        if (isFade == true)
+        {
+            if (color.a <= 0)
+            {
+                FadeCool = defaultFadeCool;
+
+                color.a = 1;
+                goIsMax.color = color;
+
+                MaxText.color = Color.white;
+            }
+            else
+            {
+                FadeCool = defaultFadeCool;
+
+                color.a -= Time.deltaTime / defaultFadeCool;
+                goIsMax.color = color;
+
+                MaxText.color = new Color(MaxText.color.r, MaxText.color.g, MaxText.color.b, MaxText.color.a - Time.deltaTime / defaultFadeCool);
+
+            }
+        }
+        else
+        {
+            return;
+        }
     }
 }
