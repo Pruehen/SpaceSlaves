@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackGroundStory : MonoBehaviour
+public class AutoDialogue : MonoBehaviour
 {
     public DialogueUI DUI;
     bool isSkip = false;
-    float MCooltime = 2f;
-    float DefaultMCooltime = 2f;
+    float MCooltime = 3f;
+    float DefaultMCooltime = 3f;
 
     void Start()
     {
