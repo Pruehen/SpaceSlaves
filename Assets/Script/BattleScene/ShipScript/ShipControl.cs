@@ -205,8 +205,17 @@ public class ShipControl : MonoBehaviour
 
         else if (sd <= 0)
         {
-            hp = hp - Mathf.Clamp(inputDmg * hpFactor * randomDmgFactor - df, 1, inputDmg * hpFactor * randomDmgFactor);
-            acmDmg += Mathf.Clamp(inputDmg * hpFactor * randomDmgFactor - df, 1, inputDmg * hpFactor * randomDmgFactor);
+            if (hpFactor <= 1)
+            {
+                hp = hp - Mathf.Clamp((inputDmg * hpFactor * randomDmgFactor * (100 - df) * 0.01f) - df, 10, inputDmg * hpFactor * randomDmgFactor);
+                acmDmg += Mathf.Clamp((inputDmg * hpFactor * randomDmgFactor * (100 - df) * 0.01f) - df, 10, inputDmg * hpFactor * randomDmgFactor);
+            }
+            else if (hpFactor > 1)
+            {
+                hp = hp - inputDmg * hpFactor * randomDmgFactor;
+                acmDmg += inputDmg * hpFactor * randomDmgFactor;
+            }
+
             if(dmgTextType != DmgTextType.ShieldBreake)
             {
                 if (acmDmg > df * 0.5f)
