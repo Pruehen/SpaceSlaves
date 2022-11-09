@@ -66,7 +66,25 @@ public class LaborSceneManager : MonoBehaviour
     public void SetShipName(TextMeshProUGUI name, int id_)
     {
         ShipInfoData data = FleetManager.instance.GetShipData(id_);//i 함선 데이터 불러옴
-        name.text = data.shipName + "Class " + data.shipClass;//함선의 이름과 함종을 불러와서 텍스트에 입력
+
+        string shipClassName = "";
+        switch(data.shipClass)
+        {
+            case ship_Class.Corvette:
+                shipClassName = "초계함";
+                break;
+            case ship_Class.Destroyer:
+                shipClassName = "구축함";
+                break;
+            case ship_Class.Cruiser:
+                shipClassName = "순양함";
+                break;
+            case ship_Class.Battleship:
+                shipClassName = "전함";
+                break;
+        }
+
+        name.text = data.shipName + "급\n" + shipClassName;//함선의 이름과 함종을 불러와서 텍스트에 입력
     }
 
     public void SetShipQty(TextMeshProUGUI qty, int id_)

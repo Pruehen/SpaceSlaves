@@ -1,6 +1,9 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using static CurrencyManager;
 
 public class StageManager : MonoBehaviour
 {
@@ -91,13 +94,45 @@ public class StageManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < STAGE_COUNT; i++)
+        if (!LoadStageData())//데이터 로딩 시도
         {
-            StageData data = new StageData();
-            data.SetStageData(i, stageNameArray[i], stageEnemyPrfs[i]);
+            for (int i = 0; i < STAGE_COUNT; i++)
+            {
+                StageData data = new StageData();
+                data.SetStageData(i, stageNameArray[i], stageEnemyPrfs[i]);
 
-            stages.Add(data);
+                stages.Add(data);
+            }
+            SaveStageData();
         }
+    }
+
+    string StageSaveDataFileName = "/data_stage_save.txt";
+
+    bool LoadStageData()
+    {
+        if (!File.Exists(Application.dataPath + StageSaveDataFileName))
+            return false;
+        string filePath = Application.dataPath + StageSaveDataFileName;
+        string FromJsonData = File.ReadAllText(filePath);
+        stages = JsonConvert.DeserializeObject<List<StageData>>(FromJsonData);
+
+        Debug.Log("스테이지 데이터 불러오기 성공");
+        return true;
+    }
+
+    public void SaveStageData()
+    {
+        string ToJsonData = JsonConvert.SerializeObject(stages);
+        string filePath = Application.dataPath + StageSaveDataFileName;
+        File.WriteAllText(filePath, ToJsonData);
+
+        Debug.Log("스테이지 데이터 저장 완료");
+    }
+
+    void OnApplicationQuit()
+    {
+        SaveStageData();
     }
 }
 
@@ -115,3 +150,5 @@ public class StageData
         this.enemysPrf = enemysPrf;
     }
 }
+
+

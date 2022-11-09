@@ -92,6 +92,7 @@ public class BattleSceneManager : MonoBehaviour
             //MessageManager.instance.PopupOk("°ÔÀÓ ½Â¸®!", gameObject);
             debriefingWdw.winLoseTmp.text = "°ÔÀÓ ½Â¸®!";
             StageManager.instance.GetStageData(selectedStage).isClear = true;
+            StageManager.instance.SaveStageData();
         }
         else
         {

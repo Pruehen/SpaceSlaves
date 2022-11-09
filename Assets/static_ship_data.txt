@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "shipName": "H",
+    "shipName": "알파",
     "shipClass": 0,
     "cost": 100,
     "dmg": 20,
@@ -20,7 +20,7 @@
   },
   {
     "id": 1,
-    "shipName": "I",
+    "shipName": "감마",
     "shipClass": 0,
     "cost": 120,
     "dmg": 30,
@@ -39,7 +39,7 @@
   },
   {
     "id": 2,
-    "shipName": "J",
+    "shipName": "엡실론",
     "shipClass": 0,
     "cost": 200,
     "dmg": 100,
@@ -58,7 +58,7 @@
   },
   {
     "id": 3,
-    "shipName": "K",
+    "shipName": "에타",
     "shipClass": 1,
     "cost": 400,
     "dmg": 25,
@@ -77,7 +77,7 @@
   },
   {
     "id": 4,
-    "shipName": "L",
+    "shipName": "요타",
     "shipClass": 1,
     "cost": 750,
     "dmg": 40,
@@ -96,7 +96,7 @@
   },
   {
     "id": 5,
-    "shipName": "M",
+    "shipName": "람다",
     "shipClass": 1,
     "cost": 1250,
     "dmg": 1200,
@@ -115,7 +115,7 @@
   },
   {
     "id": 6,
-    "shipName": "N",
+    "shipName": "뉴",
     "shipClass": 2,
     "cost": 6400,
     "dmg": 150,
@@ -134,7 +134,7 @@
   },
   {
     "id": 7,
-    "shipName": "O",
+    "shipName": "오미크론",
     "shipClass": 2,
     "cost": 8000,
     "dmg": 250,
@@ -153,7 +153,7 @@
   },
   {
     "id": 8,
-    "shipName": "P",
+    "shipName": "로",
     "shipClass": 2,
     "cost": 9600,
     "dmg": 500,
@@ -172,7 +172,7 @@
   },
   {
     "id": 9,
-    "shipName": "Q",
+    "shipName": "타우",
     "shipClass": 2,
     "cost": 12000,
     "dmg": 2000,
@@ -191,7 +191,7 @@
   },
   {
     "id": 10,
-    "shipName": "R",
+    "shipName": "파이",
     "shipClass": 3,
     "cost": 102400,
     "dmg": 2000,
@@ -210,7 +210,7 @@
   },
   {
     "id": 11,
-    "shipName": "S",
+    "shipName": "오메가",
     "shipClass": 3,
     "cost": 204800,
     "dmg": 10000,
