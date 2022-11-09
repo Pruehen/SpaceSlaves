@@ -234,6 +234,7 @@ public class UpgradeManager : MonoBehaviour
     }
     public void ResetUpgradeData()
     {
+        TestReset();
         File.WriteAllText(Application.dataPath + _saveFileName, "");
     }
 

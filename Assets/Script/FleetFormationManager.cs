@@ -294,6 +294,7 @@ public class FleetFormationManager : MonoBehaviour
     public void ResetFomationData()
     {
         string filePath = Application.dataPath + FormationSaveDataFileName;
+        formations.Clear();
         File.WriteAllText(filePath, "");
     }
 }
