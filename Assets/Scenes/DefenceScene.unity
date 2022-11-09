@@ -9059,7 +9059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608844196418366168, guid: beabaa466e64a3847b57d51098cf7c06, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.83551615
+      value: -0.79482234
       objectReference: {fileID: 0}
     - target: {fileID: 8608844196418366168, guid: beabaa466e64a3847b57d51098cf7c06, type: 3}
       propertyPath: m_LocalRotation.x
@@ -9067,7 +9067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608844196418366168, guid: beabaa466e64a3847b57d51098cf7c06, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5494659
+      value: -0.6068422
       objectReference: {fileID: 0}
     - target: {fileID: 8608844196418366168, guid: beabaa466e64a3847b57d51098cf7c06, type: 3}
       propertyPath: m_LocalRotation.z
@@ -9079,7 +9079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608844196418366168, guid: beabaa466e64a3847b57d51098cf7c06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 66.661
+      value: -285.277
       objectReference: {fileID: 0}
     - target: {fileID: 8608844196418366168, guid: beabaa466e64a3847b57d51098cf7c06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -10069,7 +10069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2057748440
 Transform:
   m_ObjectHideFlags: 0
