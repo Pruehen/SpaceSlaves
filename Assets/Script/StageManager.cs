@@ -150,6 +150,15 @@ public class StageManager : MonoBehaviour
         Debug.Log("스테이지 데이터 저장 완료");
     }
 
+    public void ResetStageData()
+    {
+        for (int i = 0; i < STAGE_COUNT; i++)
+        {
+            stages[i].isClear = false;            
+        }
+        SaveStageData();
+    }
+
     void OnApplicationQuit()
     {
         SaveStageData();

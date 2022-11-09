@@ -232,6 +232,10 @@ public class UpgradeManager : MonoBehaviour
 
         Debug.Log("업그레이드 데이터 불러오기 완료");
     }
+    public void ResetUpgradeData()
+    {
+        File.WriteAllText(Application.dataPath + _saveFileName, "");
+    }
 
     private void OnApplicationQuit()
     {

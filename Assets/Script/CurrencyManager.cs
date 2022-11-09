@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI; 
 using TMPro;
+using static CurrencyManager;
 // 재화타입
 public enum CURRENCY_TYPE
 {
@@ -122,6 +123,13 @@ public class CurrencyManager : MonoBehaviour
         File.WriteAllText(filePath, ToJsonData);
 
         Debug.Log("재화 데이터 저장 완료");
+    }
+
+    public void ResetSaveData()
+    {
+        currencyData.minerals = 0;
+        currencyData.debris = 0;
+        SaveCurrencyData();
     }
 
     void OffCurrencyData()

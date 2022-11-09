@@ -158,6 +158,15 @@ public class FleetManager : MonoBehaviour
         Debug.Log("함대 데이터 저장 완료");
     }
 
+    public void ResetFleetData()
+    {
+        for(int i = 0; i < fleetDatas.Count; i++)
+        {
+            fleetDatas[i].qty = 0;
+        }
+        SaveFleetData();
+    }
+
     void OnApplicationQuit()
     {
         SaveFleetData();

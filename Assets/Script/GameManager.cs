@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager instance;
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SaveDataReset()
     {
-        
+        StageManager.instance.ResetStageData();
+        CurrencyManager.instance.ResetSaveData();
+        UpgradeManager.instance.ResetUpgradeData();
+        FleetManager.instance.ResetFleetData();
+        FleetFormationManager.instance.ResetFomationData();
+
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }

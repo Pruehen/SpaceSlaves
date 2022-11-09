@@ -291,4 +291,9 @@ public class FleetFormationManager : MonoBehaviour
         Debug.Log("함대 편성 데이터 저장 완료");
     }
 
+    public void ResetFomationData()
+    {
+        string filePath = Application.dataPath + FormationSaveDataFileName;
+        File.WriteAllText(filePath, "");
+    }
 }
