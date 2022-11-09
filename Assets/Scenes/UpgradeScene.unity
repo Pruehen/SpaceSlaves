@@ -6508,6 +6508,9 @@ MonoBehaviour:
   goObSti_Blocker: {fileID: 0}
   rewardM_Amount: 1000
   rewardD_Amount: 1000
+  timegate: {fileID: 0}
+  seWrong: {fileID: 8300000, guid: c29f36184e1e6b14283a9b4193689b9a, type: 3}
+  seDingdong: {fileID: 8300000, guid: 8c2cc08b4c747404f89052b507b85744, type: 3}
 --- !u!1 &1091375324
 GameObject:
   m_ObjectHideFlags: 0
