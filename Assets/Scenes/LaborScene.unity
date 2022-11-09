@@ -32803,6 +32803,46 @@ PrefabInstance:
       propertyPath: Smessage
       value: 
       objectReference: {fileID: 438620205}
+    - target: {fileID: 1524748385485376161, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 538.687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376161, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 244.117
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376161, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.3770142
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376161, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.5079956
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376167, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376167, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300024, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+    - target: {fileID: 1524748385485376167, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376167, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376167, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748385485376167, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673720, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_Name
       value: Collector
@@ -32909,6 +32949,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673727, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524748387532134377, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1524748387532134383, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
