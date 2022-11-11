@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 2163832727450001360}
-  pierceCount: 10
+  pierceCount: 100
 --- !u!1001 &8644112867507980522
 PrefabInstance:
   m_ObjectHideFlags: 0

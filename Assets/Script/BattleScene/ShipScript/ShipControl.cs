@@ -112,18 +112,22 @@ public class ShipControl : MonoBehaviour
         maxRange = refData.maxRange;//최대 사거리
         minRange = refData.minRange;//최소 사거리
         fitRange = refData.fitRange;//적정 사거리. 함선은 이 거리에 머무르려고 노력함
-        hp = refData.hp;//체력
-        maxHp = hp;
+
+
         if (enemyId == -1)
         {
+            hp = refData.hp;//체력
             df = refData.df * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.DF_ENHANCE));//방어력
             sd = refData.sd * (1 + UpgradeManager.GetTotalActiveVal(UPGRADE_TYPE.SD_ENHANCE));//보호막
         }
         else
         {
+            hp = refData.hp * GameManager.instance.Difficulty;
             df = refData.df;
-            sd = refData.sd;
+            sd = refData.sd * GameManager.instance.Difficulty;
         }
+
+        maxHp = hp;
         maxSd = sd;
         defaultspeed = refData.defaultspeed;//기본 이동 속도
         agility = refData.agility;//선회 속도   
