@@ -29,13 +29,13 @@ public class GameManager : MonoBehaviour
         FleetManager.instance.ResetFleetData();
         FleetFormationManager.instance.ResetFomationData();
 
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
     public void GameExit()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
