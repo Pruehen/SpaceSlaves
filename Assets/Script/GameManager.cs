@@ -71,14 +71,29 @@ public class GameManager : MonoBehaviour
         BgmManager.instance.BgmSettingSet();
     }
 
-
+    string _key_se_value   = "SEval";
+    string _key_bgm_value  = "BGMval";
+    string _key_diff_value = "DifficultyVal";
     // ¿˙¿Â
     public void SaveSettings()
     {
-        
+        PlayerPrefs.SetFloat(_key_se_value, SEValue);
+        PlayerPrefs.SetFloat(_key_bgm_value, BGMValue);
+        PlayerPrefs.SetFloat(_key_diff_value, difficulty);
     }
     public void LoadSettings()
     {
-        
+        if (PlayerPrefs.HasKey(_key_se_value))
+        {
+            SEValue = PlayerPrefs.GetFloat(_key_se_value);
+        }
+        if (PlayerPrefs.HasKey(_key_bgm_value))
+        {
+            BGMValue = PlayerPrefs.GetFloat(_key_bgm_value);
+        }
+        if (PlayerPrefs.HasKey(_key_se_value))
+        {
+            Difficulty = PlayerPrefs.GetFloat(_key_diff_value);
+        }
     }
 }
