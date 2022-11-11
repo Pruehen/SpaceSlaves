@@ -63,6 +63,12 @@ public class LaborSceneManager : MonoBehaviour
         }
     }
 
+    public void OnBtnGameGuit()
+    {
+        GameManager.instance.GameExit();
+    }
+
+
     public void SetShipName(TextMeshProUGUI name, int id_)
     {
         ShipInfoData data = FleetManager.instance.GetShipData(id_);//i 함선 데이터 불러옴

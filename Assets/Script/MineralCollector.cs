@@ -115,6 +115,8 @@ public class MineralCollector : MonoBehaviour
             long maxtick = new TimeSpan(0, 0, MAX_TIME).Ticks;
             minRequiredTime = recentCollectedTime + mintick;
             maxRewardTime = recentCollectedTime + maxtick;
+
+            SaveData();
         }
 
         InvokeRepeating("RefreshTimer", 0, 1);
