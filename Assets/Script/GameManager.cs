@@ -21,6 +21,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            GameExit();
+        }
+    }
+
     public void SaveDataReset()
     {
         StageManager.instance.ResetStageData();
