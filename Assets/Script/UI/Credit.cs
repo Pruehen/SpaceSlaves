@@ -7,12 +7,13 @@ public class Credit : MonoBehaviour
     public GameObject creditView;
     public GameObject credit;
     bool IsCredit;
+    float speed = 1.5f;
 
     void Update()
     {
         if (IsCredit == true)
         {
-            credit.transform.Translate(Vector3.up * Time.deltaTime);
+            credit.transform.Translate(Vector3.up * Time.deltaTime * speed);
         }
         else if(IsCredit == false)
         {
