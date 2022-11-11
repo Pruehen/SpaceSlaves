@@ -11,7 +11,10 @@ public class AutoDialogue : MonoBehaviour
 
     void Start()
     {
-        DUI.Play(isSkip);
+        if (DUI != null)
+        {
+            DUI.Play(isSkip);
+        }
     }
 
     private void Update()
