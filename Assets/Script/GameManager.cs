@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
+
+        LoadSettings();
+
         DontDestroyOnLoad(this);
     }
 
@@ -36,19 +39,16 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    private void OnApplicationQuit()
+    {
+        SaveSettings();
+    }
+
 
     /// 이 아래로 <Setting>
     /// 게임 전반적으로 사용되는 value들이 있는 파일
-    public float BGMValue
-    {
-        set;
-        get;
-    }
-    public float SEValue
-    {
-        set;
-        get;
-    }
+    public float BGMValue;
+    public float SEValue;
 
     // 게임 난이도
     // 1 이하로 값을 내릴수 없도록 수정
@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat(_key_bgm_value, BGMValue);
         PlayerPrefs.SetFloat(_key_diff_value, difficulty);
     }
+    // 설정 불러오기
     public void LoadSettings()
     {
         if (PlayerPrefs.HasKey(_key_se_value))
@@ -95,5 +96,7 @@ public class GameManager : MonoBehaviour
         {
             Difficulty = PlayerPrefs.GetFloat(_key_diff_value);
         }
+
+        Debug.Log(string.Format("SE : {0}, BGM : {1}, DIFF : {2}", SEValue, BGMValue, Difficulty));
     }
 }

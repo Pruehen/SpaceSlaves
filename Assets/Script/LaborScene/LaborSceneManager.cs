@@ -325,6 +325,7 @@ public class LaborSceneManager : MonoBehaviour
         SettingWdw.SetActive(value);
         if(value)
         {
+            LoadSetting();
             SoundManager.instance.clickSoundOn();
         }
         else
@@ -341,6 +342,13 @@ public class LaborSceneManager : MonoBehaviour
     {
         SoundManager.instance.clickSoundOn();
         difficultySlider.value = 1;
+    }
+
+    void LoadSetting()
+    {
+        bgmSlider.value         = GameManager.instance.BGMValue;
+        soundSlider.value       = GameManager.instance.SEValue;
+        difficultySlider.value  = GameManager.instance.Difficulty;
     }
     public void SettingApplication()
     {
