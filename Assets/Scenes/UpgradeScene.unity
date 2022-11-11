@@ -817,14 +817,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136862272}
     m_Modifications:
-    - target: {fileID: 3384993156039174423, guid: 21abb77c566d28c41bc8b1f87e02f31a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 160
+    - target: {fileID: 464197688229675708, guid: 21abb77c566d28c41bc8b1f87e02f31a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5203599971783156186, guid: 21abb77c566d28c41bc8b1f87e02f31a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 072e347b56ce9804fac5d3af943006b0, type: 3}
     - target: {fileID: 6734507919617204990, guid: 21abb77c566d28c41bc8b1f87e02f31a, type: 3}
       propertyPath: m_Name
       value: Currencies
@@ -3244,6 +3240,10 @@ PrefabInstance:
     - target: {fileID: 4047415295642555243, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
       propertyPath: m_Name
       value: SystemMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098741394926172203, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1127f382cbab88c41980040aee04e87a, type: 3}
@@ -8479,8 +8479,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uB178\uB3D9"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
-  m_sharedMaterial: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1d075d089d9a24a4e9504550f1629d7d, type: 2}
+  m_sharedMaterial: {fileID: -2424556683103397921, guid: 1d075d089d9a24a4e9504550f1629d7d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13062,94 +13062,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 45445266}
     m_Modifications:
-    - target: {fileID: 1260223203940730951, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260223203940730951, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260223203940730951, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260223203940730951, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_text
-      value: "\uC790\uC6D0 \uC218\uC9D1\n\uC18D\uB3C4 \uC99D\uAC00"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
-    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465598854903715, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
-    - target: {fileID: 2669465598854903717, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150542, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2669465599187864016}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 929778205}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClickUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UpgradeSceneTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UpgradeProgText, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: StoryView, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1083774369}
-    - target: {fileID: 2669465599781150543, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: DialogueUI, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 2669465599781150640, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13238,27 +13150,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeBtn
       objectReference: {fileID: 0}
-    - target: {fileID: 2669465599781150641, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5006899148328118760, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
---- !u!114 &2669465599187864016 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4250525720878560929, guid: 528fc8cb0c1bfdf46b0e6bb8568afce1, type: 3}
-  m_PrefabInstance: {fileID: 2669465599187864015}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df1d9af9221576048bdb6a2696290382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &4043558739193989942
 MeshCollider:
   m_ObjectHideFlags: 0

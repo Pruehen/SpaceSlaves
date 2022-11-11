@@ -493,8 +493,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "H_Class \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
-  m_sharedMaterial: {fileID: -1136380595410088680, guid: 59ecba3487070824f8adc9cca7b629f7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 05221345d47eeee4b82dba3539b2b15d, type: 2}
+  m_sharedMaterial: {fileID: -8595935247422950390, guid: 05221345d47eeee4b82dba3539b2b15d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
