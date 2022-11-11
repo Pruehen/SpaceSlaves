@@ -39,6 +39,9 @@ public class AstroBuilder : MonoBehaviour
             case 5:
                 sunLight.intensity = 1f;
                 break;
+            case 9:
+                sunLight.intensity = 1.7f;
+                break;
             default:
                 sunLight.intensity = 1 - (StageManager.instance.selectedStage - 5) * 0.05f;
                 break;
