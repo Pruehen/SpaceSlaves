@@ -15,20 +15,21 @@ public class TipView : MonoBehaviour
     public void RandomPick()
     {
         StartText = Random.Range(0, TipTexts.Count);
+        Debug.Log(StartText);
     }
 
     public void TextViewNext()
     {
         TipText.text = TipTexts[StartText];      
 
-        if(StartText == TipTexts.Count - 1)
-        {
+        /*if(StartText == TipTexts.Count - 1)
+         {
             StartText = 0;
-        }
-        else
-        {
+         }
+         else
+         {
             StartText++;
-        }
+         }*/
     }
 
     void Start()
@@ -49,6 +50,7 @@ public class TipView : MonoBehaviour
         if (MCooltime <= 0)
         {
             MCooltime = DefaultMCooltime;
+            RandomPick();
             TextViewNext();
         }
     }
