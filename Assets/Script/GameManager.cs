@@ -50,11 +50,19 @@ public class GameManager : MonoBehaviour
         get;
     }
 
-// 게임 난이도
+    // 게임 난이도
+    // 1 이하로 값을 내릴수 없도록 수정
+    public float difficulty = 1;
+
     public float Difficulty
     {
-        set;
-        get;
+        set {
+            difficulty = Mathf.Max(value, 1);
+        }
+        get 
+        {
+            return difficulty;
+        }
     }
 
     public void SettingApplication()
@@ -63,4 +71,14 @@ public class GameManager : MonoBehaviour
         BgmManager.instance.BgmSettingSet();
     }
 
+
+    // 저장
+    public void SaveSettings()
+    {
+        
+    }
+    public void LoadSettings()
+    {
+        
+    }
 }
