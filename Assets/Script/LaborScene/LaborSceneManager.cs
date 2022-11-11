@@ -344,9 +344,9 @@ public class LaborSceneManager : MonoBehaviour
     }
     public void SettingApplication()
     {
-        GameManager.instance.bgmValue = bgmSlider.value;
-        GameManager.instance.soundValue = soundSlider.value;
-        GameManager.instance.difficulty = difficultySlider.value;
+        GameManager.instance.BGMValue = bgmSlider.value;
+        GameManager.instance.SEValue = soundSlider.value;
+        GameManager.instance.Difficulty = difficultySlider.value;
         GameManager.instance.SettingApplication();
     }
 

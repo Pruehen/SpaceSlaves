@@ -17,20 +17,20 @@ public class ShipSound : MonoBehaviour
         for (int i = 0; i < soundTrf.childCount; i++)
         {
             weaponSounds.Add(soundTrf.GetChild(i).gameObject.GetComponent<AudioSource>());
-            weaponSounds[i].volume *= GameManager.instance.soundValue;
+            weaponSounds[i].volume *= GameManager.instance.SEValue;
         }
         if(subSoundTrf != null)
         {
             for (int i = 0; i < subSoundTrf.childCount; i++)
             {
                 subWeaponSounds.Add(subSoundTrf.GetChild(i).gameObject.GetComponent<AudioSource>());
-                subWeaponSounds[i].volume *= GameManager.instance.soundValue;
+                subWeaponSounds[i].volume *= GameManager.instance.SEValue;
             }
         }
         for (int i = 0; i < shieldHitSoundTrf.childCount; i++)
         {
             shieldHitSounds.Add(shieldHitSoundTrf.GetChild(i).gameObject.GetComponent<AudioSource>());
-            shieldHitSounds[i].volume *= GameManager.instance.soundValue;
+            shieldHitSounds[i].volume *= GameManager.instance.SEValue;
         }
     }
 

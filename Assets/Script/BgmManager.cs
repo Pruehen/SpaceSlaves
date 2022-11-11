@@ -56,10 +56,10 @@ public class BgmManager : MonoBehaviour
 
     public void BgmSettingSet()
     {
-        float bgmValue = GameManager.instance.bgmValue;
+        float BGMValue = GameManager.instance.BGMValue;
         for(int i = 0; i < audioSources.Count; i++)
         {
-            audioSources[i].volume = bgmInitVols[i] * bgmValue;
+            audioSources[i].volume = bgmInitVols[i] * BGMValue;
         }
     }
 }

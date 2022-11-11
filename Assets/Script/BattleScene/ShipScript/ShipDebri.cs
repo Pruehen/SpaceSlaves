@@ -40,7 +40,7 @@ public class ShipDebri : MonoBehaviour
             weaponSounds.Add(soundTrf.GetChild(i).gameObject.GetComponent<AudioSource>());
         }
         int count = Random.Range(0, weaponSounds.Count);
-        weaponSounds[count].volume *= GameManager.instance.soundValue;
+        weaponSounds[count].volume *= GameManager.instance.SEValue;
         weaponSounds[count].Play();
     }
 }

@@ -39,15 +39,28 @@ public class GameManager : MonoBehaviour
 
     /// 이 아래로 <Setting>
     /// 게임 전반적으로 사용되는 value들이 있는 파일
-    public float bgmValue;
-    public float soundValue;
+    public float BGMValue
+    {
+        set;
+        get;
+    }
+    public float SEValue
+    {
+        set;
+        get;
+    }
 
-    // 게임 난이도
-    public float difficulty;
+// 게임 난이도
+    public float Difficulty
+    {
+        set;
+        get;
+    }
 
     public void SettingApplication()
     {
         SoundManager.instance.SoundSettingSet();
         BgmManager.instance.BgmSettingSet();
     }
+
 }
