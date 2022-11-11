@@ -28,10 +28,10 @@ public class SoundManager : MonoBehaviour
 
     public void SoundSettingSet()
     {
-        float soundValue = GameManager.instance.soundValue;
-        clickSound.volume = clickSoundVol_Init * soundValue;
-        closeSound.volume = closeSoundVol_Init * soundValue;
-        shipBuildSoundVol_Init = shipBuildSoundVol_Init * soundValue;
+        float SEValue = GameManager.instance.SEValue;
+        clickSound.volume = clickSoundVol_Init * SEValue;
+        closeSound.volume = closeSoundVol_Init * SEValue;
+        shipBuildSoundVol_Init = shipBuildSoundVol_Init * SEValue;
     }
 
     public void clickSoundOn()
