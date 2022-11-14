@@ -8,6 +8,8 @@ public class Mover : MonoBehaviour
     Vector3 posStart = Vector3.zero;
     Vector3 dir = Vector3.zero;
 
+//    public AudioClip seOnSpawn;    
+
     float speedTendency = 1;
     // Start is called before the first frame update
     public void Move(Vector3 pos)
@@ -41,5 +43,12 @@ public class Mover : MonoBehaviour
         }
         speedTendency += 65 * Time.deltaTime;
         transform.Translate(dir * 5 * speedTendency * Time.deltaTime, Space.Self);
+    }
+    private void Start()
+    {
+        //SoundManager.instance.PlayClip(,);
+        var audi = GetComponent<AudioSource>();
+        audi.volume *= GameManager.instance.SEValue;
+        audi.Play();
     }
 }

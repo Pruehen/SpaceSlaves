@@ -10,8 +10,8 @@ public class CameraControl : MonoBehaviour
     Vector2 UpPoint;
     Vector2 MovePos;
     float dragSpeed = 10f;
-    float defaultdragSpeed = 10f;
-    float defaultRotateSpeed = 400f;
+    public float defaultdragSpeed = 10f;
+    public float defaultRotateSpeed = 400f;
     float WheelSpeed = 10f;
     public GameObject Cam;
     private float xRotateMove;

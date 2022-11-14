@@ -22,6 +22,9 @@ public class FleetFormationUI : MonoBehaviour
         goSelectPop.SetActive(true);
         SoundManager.instance.clickSoundOn();
         formIdx = idx;
+
+        LaborSceneManager.instance.SelectFomrationIdx(formIdx);
+        LaborSceneManager.instance.RefreshShipSelectBtns();
     }
     //함선을 선택
     public void OnSelectShip(int idx)

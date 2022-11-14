@@ -12,29 +12,35 @@ public class TipView : MonoBehaviour
     float MCooltime = 3f;
     float DefaultMCooltime = 3f;
 
-    public void RandomPick()
+    List<int> Textindex = new List<int>();
+
+    void RandomPick()
     {
         StartText = Random.Range(0, TipTexts.Count);
+
+        do
+        {
+            StartText = Random.Range(0, TipTexts.Count);
+        } while (Textindex.IndexOf(StartText) != -1);
+
+        Textindex.Add(StartText);
+
+        if (Textindex.Count == TipTexts.Count)
+        {
+            Textindex.Clear();
+        }
     }
 
-    public void TextViewNext()
+    void TextViewNext()
     {
         TipText.text = TipTexts[StartText];      
-
-        if(StartText == TipTexts.Count - 1)
-        {
-            StartText = 0;
-        }
-        else
-        {
-            StartText++;
-        }
     }
 
-    void Start()
+    private void Awake()
     {
-        RandomPick();
-        TextViewNext();
+        StartText = Random.Range(0, TipTexts.Count);
+        Textindex.Add(StartText);
+        Debug.Log(StartText);
     }
 
     private void Update()
@@ -49,7 +55,9 @@ public class TipView : MonoBehaviour
         if (MCooltime <= 0)
         {
             MCooltime = DefaultMCooltime;
+            RandomPick();
             TextViewNext();
+            Debug.Log(StartText);
         }
     }
 }
