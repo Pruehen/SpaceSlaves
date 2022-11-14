@@ -23,6 +23,9 @@ public class DmgTmp : MonoBehaviour
 
     public void Set(Transform targetTrf, int text, DmgTextType dmgTextType)
     {
+        if (Camera.main.WorldToScreenPoint(targetTrf.position).z < 0)
+            return;
+
         this.targetTrf = targetTrf;
         this.transform.position = Camera.main.WorldToScreenPoint(this.targetTrf.position);
         textMeshProUGUI.text = text.ToString();
@@ -58,7 +61,7 @@ public class DmgTmp : MonoBehaviour
         {
             count += Time.deltaTime;
             this.transform.position = Camera.main.WorldToScreenPoint(this.targetTrf.position) + new Vector3(0, count * 30, 0);
-            textMeshProUGUI.fontSize *= 0.999f;
+            textMeshProUGUI.fontSize *= 0.995f;
         }
     }
 

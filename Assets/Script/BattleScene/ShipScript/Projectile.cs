@@ -30,7 +30,6 @@ public class Projectile : MonoBehaviour
 
         pierceValue = pierceCount;
         GetComponent<Rigidbody>().AddForce(this.transform.forward * 10, ForceMode.Impulse);
-        Debug.Log(this.transform.rotation);
     }
 
     public int pierceCount = 1;
