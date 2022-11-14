@@ -14649,7 +14649,7 @@ GameObject:
   - component: {fileID: 905369520}
   - component: {fileID: 905369519}
   m_Layer: 5
-  m_Name: "\uC0E4\uB77C\uB77C\uB77D"
+  m_Name: Credit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36191,11 +36191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673727, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 560
+      value: 578.51
       objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673727, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 283.096
+      value: 255.331
       objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673727, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_LocalScale.x
@@ -36239,11 +36239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673727, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 117
+      value: 103.118
       objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673727, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 92
+      value: 87.373
       objectReference: {fileID: 0}
     - target: {fileID: 1524748387453673727, guid: 97d7ac78a32cd2f44bd10c896ebd277a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
