@@ -6061,10 +6061,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\uC81C\uC791\uC790\uB4E4\n\n\uB178\uB3D9 \uC52C\n\uACE0\uC218\uBBFC\n\n\uC804\uD22C
+  m_text: "\n\uC81C\uC791\uC790\uB4E4\n\n\uBA54\uC778 \uC52C\n\uACE0\uC218\uBBFC\n\n\uC804\uD22C
     \uC52C\n\uAD8C\uC9C0\uD638 \uAC15\uB2E4\uD604\n\n\uC5C5\uADF8\uB808\uC774\uB4DC
-    \uC52C \n\uAE40\uAD00\uC6B0\nUI\n\uAC15\uB2E4\uD604 \uACE0\uC218\uBBFC \uAD8C\uC9C0\uD638
-    \uAE40\uAD00\uC6B0\n\n\uAE30\uD68D\n\uAD8C\uC9C0\uD638\n\uAC15\uB2E4\uD604\n\n\uC601\uC0C1
+    \uC52C \n\uAE40\uAD00\uC6B0\n\nUI\n\uAC15\uB2E4\uD604 \uACE0\uC218\uBBFC \uAD8C\uC9C0\uD638
+    \uAE40\uAD00\uC6B0\n\n\uAE30\uD68D\n\uAD8C\uC9C0\uD638 \uAC15\uB2E4\uD604\n\n\uC601\uC0C1
     \uBC0F \uD3EC\uC2A4\uD130 \uC81C\uC791\n\uACE0\uC218\uBBFC\n\n\uD568\uB300 \uD3B8\uC131
     / \uC7AC\uD654 \uAD00\uB9AC\n\uAE40\uAD00\uC6B0"
   m_isRightToLeft: 0
@@ -6093,7 +6093,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -30032,7 +30032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1685963859636708167, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1685963859636708168, guid: 186405f73f8c93b4088aa6eab3dcbb29, type: 3}
       propertyPath: m_RootOrder
