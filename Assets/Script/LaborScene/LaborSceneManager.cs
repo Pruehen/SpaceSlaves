@@ -13,6 +13,12 @@ public class LaborSceneManager : MonoBehaviour
     public Transform buildBtnTrf;//버튼 상위 트랜스폼. 버튼들의 자식 객체들에게 접근하기 위함.
     public Transform shipSelectBtnTrf;
 
+    int selectedFormIdx = -1;
+    public void SelectFomrationIdx(int formIdx)
+    {
+        selectedFormIdx = formIdx;
+    }
+
     private void Awake()
     {
         instance = this;
@@ -50,7 +56,7 @@ public class LaborSceneManager : MonoBehaviour
         {
             // 함선의 이름과 함선의 수량을 텍스트에 입력
             SetShipName(shipSelectBtnTrf.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>(), i);
-            SetShipQty(shipSelectBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>(), i);
+            SetShipFormationQty(shipSelectBtnTrf.GetChild(i).GetChild(1).GetComponent<TextMeshProUGUI>(), i);
             shipSelectBtnTrf.GetChild(i).GetChild(2).GetComponent<Image>().sprite = FleetManager.instance.GetShipImage(i);
         }
     }
@@ -97,6 +103,18 @@ public class LaborSceneManager : MonoBehaviour
     {
         qty.text = FleetManager.instance.GetFleetQtyData(id_).ToString();//함선의 수량을 텍스트에 입력
     }
+
+    public void SetShipFormationQty(TextMeshProUGUI qtyText, int idx)
+    {
+        var qty = FleetManager.instance.GetFleetQtyData(idx)                // 총 보유량
+                   - FleetFormationManager.instance.GetShipQty(idx);                // 현재 사용량
+
+        if(FleetFormationManager.instance.GetFleetShipIdx(selectedFormIdx) == idx) // 당장 세팅할때 고려하지 않아도 되는 량
+            qty += FleetFormationManager.instance.GetOneFormationQty(selectedFormIdx);   
+
+        qtyText.text = qty.ToString();//함선의 수량을 텍스트에 입력
+    }
+
 
     public void SetShipPrice(TextMeshProUGUI price, int id_)
     {
