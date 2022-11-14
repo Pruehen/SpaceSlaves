@@ -46,4 +46,10 @@ public class SoundManager : MonoBehaviour
     {
         shipBuildSound.Play();
     }
+
+    public void PlayClip(AudioClip clip)
+    {
+        float SEValue = GameManager.instance.SEValue;
+        clickSound.PlayOneShot(clip, SEValue);
+    }
 }
