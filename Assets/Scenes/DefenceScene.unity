@@ -9724,6 +9724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5428955711d947b4baff6be948605e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultdragSpeed: 10
+  defaultRotateSpeed: 400
   Cam: {fileID: 1929763833}
   scrollbar: {fileID: 615048895}
 --- !u!45 &1929763838
