@@ -36,7 +36,7 @@ public class TipView : MonoBehaviour
         TipText.text = TipTexts[StartText];      
     }
 
-    private void Start()
+    private void Awake()
     {
         StartText = Random.Range(0, TipTexts.Count);
         Textindex.Add(StartText);
