@@ -32,7 +32,7 @@ public class DmgTmp : MonoBehaviour
         textMeshProUGUI.fontSize = startFontSize + Mathf.Log10(text) * 2;
 
         this.gameObject.SetActive(true);
-        Invoke("PushPool", 0.75f);
+        Invoke("PushPool", 0.3f);
         count = 0;
         
         if(dmgTextType == DmgTextType.ShieldHit)

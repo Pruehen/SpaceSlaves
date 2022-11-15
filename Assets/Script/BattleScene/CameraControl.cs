@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CameraControl : MonoBehaviour
 {
+    //public TimeScaleCon TimeScale;
+
     bool isClicked = false;
     bool IsRClicked = false;
     Vector2 clickPoint;
     Vector2 UpPoint;
     Vector2 MovePos;
-    float dragSpeed = 10f;
+    public float dragSpeed = 10f;
     public float defaultdragSpeed = 10f;
-    public float defaultRotateSpeed = 400f;
+    public float defaultRotateSpeed = 300f;
     float WheelSpeed = 10f;
     public GameObject Cam;
     private float xRotateMove;
@@ -28,6 +30,8 @@ public class CameraControl : MonoBehaviour
 
     private void Update()
     {
+        //CamSpeedCon(TimeScale.count, TimeScale.isClicked);
+
         Vector3 CamPos = Cam.transform.position;
 
         ClickCheck();
@@ -41,6 +45,19 @@ public class CameraControl : MonoBehaviour
 
         AutoRotate();
     }
+
+    /*void CamSpeedCon(float count, bool isClick)
+    {
+        if (isClick == true)
+        {
+            dragSpeed /= count;
+            defaultRotateSpeed /= count;
+
+            Debug.Log(defaultRotateSpeed);
+
+            TimeScale.isClicked = false;
+        }
+    }*/
 
     float camControlSpeed = 10f;
     Vector2 valueTemp;
@@ -141,7 +158,7 @@ public class CameraControl : MonoBehaviour
             Pos.z = Pos.y;
             Pos.y = 0f;
 
-            Vector3 move = Vector3.ClampMagnitude(Pos * (Time.deltaTime * dragSpeed), 1);
+            Vector3 move = Vector3.ClampMagnitude(Pos * (Time.deltaTime * dragSpeed * (1/Time.timeScale)), 1);
 
             float y = transform.position.y;
 
@@ -164,8 +181,8 @@ public class CameraControl : MonoBehaviour
                 dragSpeed = defaultRotateSpeed;
             }
 
-            xRotateMove = Input.GetAxis("Mouse X") * Time.deltaTime * dragSpeed;
-            yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * dragSpeed;
+            xRotateMove = Input.GetAxis("Mouse X") * Time.deltaTime * dragSpeed * (1 / Time.timeScale);
+            yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * dragSpeed * (1 / Time.timeScale);
             //yRotateMove = Input.GetAxis("Mouse Y") * Time.deltaTime * dragSpeed;
 
             //transform.RotateAround(Pos, Vector3.right, -yRotateMove);

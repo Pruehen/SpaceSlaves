@@ -9725,7 +9725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultdragSpeed: 10
-  defaultRotateSpeed: 400
+  defaultRotateSpeed: 300
   Cam: {fileID: 1929763833}
   scrollbar: {fileID: 615048895}
 --- !u!45 &1929763838
@@ -10478,6 +10478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d61821b01647b04c83a4217fd82c822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CamCon: {fileID: 1929763837}
+  count: 1
   TimeScaleText: {fileID: 1217783649}
 --- !u!4 &2507088847069963472
 Transform:
