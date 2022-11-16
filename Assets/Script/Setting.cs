@@ -6,6 +6,7 @@ public class Setting : MonoBehaviour
 {
     // 원래는 sceneChange에 있었으나 부적절해 보여 이곳으로 옮기기로 했음
     public GameObject SettingWin;
+    float TimeScaleSave = 0;
 
     private void Start()
     {
@@ -14,13 +15,14 @@ public class Setting : MonoBehaviour
 
     public void SettingsOn()
     {
+        TimeScaleSave = Time.timeScale;
         Time.timeScale = 0;
         SettingWin.gameObject.SetActive(true);
     }
 
     public void SettingOff()
     {
-        Time.timeScale = 1;
+        Time.timeScale = TimeScaleSave;
         SettingWin.gameObject.SetActive(false);
     }
 }
