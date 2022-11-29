@@ -60,7 +60,7 @@ public class ShipAi : MonoBehaviour
         }
     }
 
-    public void AiStateSet()
+    public void AiStateSet() // 상태 변경
     {
         if (mainShipInfo.toTargetVec.magnitude * 10 >= mainShipInfo.maxRange)
         {
@@ -77,7 +77,7 @@ public class ShipAi : MonoBehaviour
     }
 
     Transform enemyManager;//적 트랜스폼 검색 용도
-    public void TargetFound()
+    public void TargetFound()//연결리스트에 있는 적들 거리 탐지 후 가장 가까운 적에게로 타겟 설정
     {
         float ShortDis;
 
@@ -98,7 +98,7 @@ public class ShipAi : MonoBehaviour
         }
     }
 
-    void TargetSet()
+    void TargetSet() //적 함대 연결 리스트에 넣어서
     {
         for (int i = 0; i < enemyManager.childCount; i++)
         {
